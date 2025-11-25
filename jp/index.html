@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Avisail Global Trading</title>
+<link rel="canonical" href="https://avisail.com/ja/index.html">
+<link rel="alternate" hreflang="ja" href="https://avisail.com/ja/index.html">
+<link rel="alternate" hreflang="en" href="https://avisail.com/en/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --line: rgba(255,255,255,.08);
+  /* 指定された画像URL */
+  --home-hero: url('/images/hero.jpg'); 
+  --contact-bg: url('/images/contact-hero.jpg');
+}
+*{ box-sizing: border-box; }
+html,body{
+  margin:0;
+  background:#0a0f1a;
+  color:#e9f0ff;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  line-height:1.7;
+}
+a{ color:#cfe2ff; text-decoration:none; transition: color 0.3s; }
+a:hover{ color:#7ef0d4; }
+.wrap{ max-width:1200px; margin:0 auto; padding:0 20px; }
+header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(to bottom, rgba(10,15,26,.9), rgba(10,15,26,.6));
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; height:70px; }
+.brand{ display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:0.05em; }
+.logo{ width:32px; height:32px; border-radius:8px; background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4); }
+nav ul{ display:flex; gap:24px; list-style:none; margin:0; padding:0; align-items:center; font-size:0.95rem; }
+.menu-item{ position:relative; padding:10px 0; }
+.dropdown{
+  position:absolute; top:100%; left:-10px; min-width:200px;
+  background:#0d1424; border:1px solid var(--line); border-radius:12px; padding:12px; display:none;
+  flex-direction:column; gap:8px; box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+.menu-item:hover .dropdown{ display:flex; }
+.dropdown a{ padding:6px 12px; border-radius:6px; color:#9fb0cc; }
+.dropdown a:hover{ background:rgba(255,255,255,0.05); color:#fff; }
+
+.btn{
+  display:inline-block; padding:10px 20px; border-radius:50px;
+  border:1px solid var(--line); background:rgba(255,255,255,0.05); color:#e9f0ff; font-size:0.9rem;
+}
+.cta{
+  display:inline-block; padding:10px 24px; border-radius:50px;
+  background:linear-gradient(135deg,#6aa6ff,#7ef0d4);
+  color:#06101a; font-weight:700; font-size:0.9rem;
+  box-shadow:0 10px 20px rgba(106,166,255,.2);
+  border:none;
+}
+.cta:hover{ transform:translateY(-2px); box-shadow:0 15px 30px rgba(106,166,255,.3); }
+
+.hero{
+  position:relative; overflow:hidden;
+  min-height: 85vh; display:flex; align-items:center;
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:1;
+  background: radial-gradient(circle at center, rgba(106, 166, 255, 0.08) 0%, rgba(5, 8, 15, 0) 70%),
+              linear-gradient(180deg, rgba(5,8,15,0.3) 0%, rgba(5,8,15,1) 100%),
+              var(--home-hero) center/cover no-repeat;
+}
+.hero .wrap{ position:relative; z-index:2; width:100%; }
+.hero h1{
+  font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 24px;
+  background: linear-gradient(to right, #fff, #9fb0cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.lead{ font-size:1.1rem; color:#cfe2ff; max-width:700px; margin-bottom:16px; }
+.slogan{ font-family:'Inter'; letter-spacing:0.2em; color:#7ef0d4; text-transform:uppercase; margin-bottom:16px; display:block; }
+.muted{ color:#9fb0cc; font-size:0.95rem; }
+
+section{ padding:100px 0; border-bottom:1px solid var(--line); position:relative; }
+h2{ font-size:2rem; margin-bottom:40px; display:flex; align-items:center; gap:16px; }
+h2::before{ content:''; width:4px; height:32px; background:linear-gradient(to bottom, #6aa6ff, #7ef0d4); display:block; }
+
+.card{
+  background:rgba(255,255,255,0.02); backdrop-filter:blur(10px);
+  border:1px solid var(--line); border-radius:24px; padding:32px;
+  height:100%; display:flex; flex-direction:column;
+  transition:transform 0.3s;
+}
+.card:hover{ transform:translateY(-5px); border-color:rgba(106,166,255,0.3); }
+.card h3{ margin-top:0; font-size:1.4rem; color:#fff; }
+.card p{ color:#9fb0cc; margin-bottom:24px; flex-grow:1; }
+
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+.grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; }
+@media(max-width:980px){ .grid-3,.grid-2{ grid-template-columns:1fr; } nav ul{ display:none; } }
+
+.thumb{
+  width:100%; height:200px; border-radius:16px; margin-bottom:24px;
+  background:#0e1424 center/cover no-repeat; border:1px solid var(--line);
+}
+.lang-switch{ border:1px solid var(--line); padding:6px 12px; border-radius:6px; color:#9fb0cc; font-size:0.85rem; }
+
+/* Contact Section Background */
+.bg-contact {
+  background: linear-gradient(rgba(5,8,15,0.9), rgba(5,8,15,0.95)), var(--contact-bg) center/cover;
+}
+
+/* Vimeo */
+#intro{ position:fixed; inset:0; z-index:9999; background:#000; display:flex; align-items:center; justify-content:center; }
+#vimeo-wrap{ position:absolute; inset:0; overflow:hidden; }
+#vimeo-wrap iframe{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:177.78vh; height:100vh; min-width:100vw; min-height:56.25vw; }
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<section id="intro" style="transition:opacity .6s ease,visibility .6s ease">
+  <button class="btn" style="position:absolute; top:20px; right:20px; z-index:3; border-color:rgba(255,255,255,0.3);">Skip Intro</button>
+  <div style="position:absolute; inset:0; pointer-events:none; z-index:2; display:grid; place-items:center;">
+    <h1 style="font-size:4rem; letter-spacing:0.2em; color:#fff; text-shadow:0 0 30px rgba(0,0,0,0.5);">AVISAIL</h1>
+  </div>
+  <div id="vimeo-wrap"></div>
+</section>
+
+<div id="site" style="opacity:0; visibility:hidden; transition:opacity 1.2s ease;">
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><div class="logo"></div><span>Avisail Global Trading</span></div>
+      <nav>
+        <ul>
+          <li><a class="active" href="/ja/index.html">Home</a></li>
+          <li><a href="/ja/about.html">About</a></li>
+          <li class="menu-item">
+            <span>Services ▾</span>
+            <div class="dropdown">
+              <a href="/ja/services/vessel-trading.html">Vessel Trading</a>
+              <a href="/ja/services/investment.html">Investment</a>
+              <a href="/ja/services/technology.html">Technology</a>
+            </div>
+          </li>
+          <li><a href="/ja/contact.html">Contact</a></li>
+          <li><a class="lang-switch" href="/en/index.html">English</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="wrap">
+      <span class="slogan">Driven by Discovery.</span>
+      <h1>Navigating the Future.</h1>
+      <p class="lead">Avisail Global Trading は、AIと探究の力で貿易・投資・技術を再定義する次世代のテクノロジー商社です。</p>
+      
+      <p class="muted" style="border-left:2px solid #7ef0d4; padding-left:16px; margin-top:24px;">
+        船は「進歩の象徴」。私たちは最先端技術を積み、まだ見ぬ地平へと航海します。
+      </p>
+      
+      <div style="margin-top:40px; display:flex; gap:16px;">
+        <a href="/ja/services/vessel-trading.html" class="cta">サービスを見る</a>
+        <a href="/ja/contact.html" class="btn">お問い合わせ</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="wrap">
+    <div class="grid-2">
+      <div class="card">
+        <h3>Passion</h3>
+        <p>世界は日々近づき、文化は隣り合っています。目の前に巨大な船が現れたとき、私たちは恐れず前に進み、テクノロジーを「実際に価値ある使い方」へと導きます。勇気はイノベーションの火種です。その価値を人々に届けることに、私たちは情熱を注ぎます。</p>
+      </div>
+      <div class="card" style="border-color:#7ef0d4;">
+        <h3>Purpose</h3>
+        <p>人と人のつながりと信頼を第一に価値を届けます。技術による変革で豊かさへのアクセスを広げ、進歩を止めないために常に価値向上へ努めます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>事業内容</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="thumb" style="background-image:url('/images/vessel-trading-hero.jpg');"></div>
+        <h3>船舶貿易</h3>
+        <p>アジアと欧州・中東の商圏をつなぎ、ご要望に応じた最適在庫をご紹介。AIによる在庫更新と安全な支払い枠組みを提供します。</p>
+        <div style="margin-top:auto;"><a class="btn" href="/ja/services/vessel-trading.html">詳しく見る</a></div>
+      </div>
+      <div class="card">
+        <div class="thumb" style="background-image:url('/images/investment-hero.jpg');"></div>
+        <h3>投資</h3>
+        <p>Aviscore などの社内システムを核に、AI洞察と規律ある判断を統合。持続的な成長を志向します。</p>
+        <div style="margin-top:auto;"><a class="btn" href="/ja/services/investment.html">詳しく見る</a></div>
+      </div>
+      <div class="card">
+        <div class="thumb" style="background-image:url('/images/technology-hero.jpg');"></div>
+        <h3>技術開発</h3>
+        <p>現場運用まで落とし込む実装志向のAI開発。データ基盤・評価・安全性まで統合的に設計します。</p>
+        <div style="margin-top:auto;"><a class="btn" href="/ja/services/technology.html">詳しく見る</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap bg-contact">
+    <h2>パートナーシップ & お問い合わせ</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>営業・パートナー提案</h3>
+        <p>各事業にご興味がございましたら、お気軽にご連絡ください。最適な担当が具体的な進め方をご提案します。</p>
+        <a class="cta" href="/ja/contact.html">お問い合わせ</a>
+      </div>
+      <div class="card">
+        <h3>投資家の皆さまへ</h3>
+        <p>原則として株式による受け入れは行っておりません。代わりに特定プロジェクトへの参加スキームをご用意しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="wrap"><p>© 2025 Avisail Global Trading — All rights reserved.</p></div></footer>
+
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+(function(){
+  var intro=document.getElementById('intro'), site=document.getElementById('site'), wrap=document.getElementById('vimeo-wrap'), btn=intro.querySelector('button');
+  var iframe=document.createElement('iframe');
+  iframe.src="https://player.vimeo.com/video/1110865623?autoplay=1&muted=1&controls=0&loop=0&background=1";
+  wrap.appendChild(iframe);
+  var player=new Vimeo.Player(iframe);
+  function reveal(){ intro.style.opacity='0'; intro.style.visibility='hidden'; site.style.opacity='1'; site.style.visibility='visible'; player.pause(); }
+  player.on('ended',reveal); btn.onclick=reveal;
+  setTimeout(function(){ if(site.style.visibility!=='visible') reveal(); }, 15000);
+})();
+</script>
+</body>
+</html>
