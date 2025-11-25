@@ -1,360 +1,233 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Avisail Global Trading</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Avisail Global Trading</title>
+<link rel="canonical" href="https://avisail.com/en/index.html">
+<link rel="alternate" hreflang="ja" href="https://avisail.com/ja/index.html">
+<link rel="alternate" hreflang="en" href="https://avisail.com/en/index.html">
+<style>
 
-  <!-- Main Styles -->
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      background: #020617;
-      color: #ffffff;
-    }
+:root{
+  --line: rgba(255,255,255,.08);
+  /* Hero background image (replace URL below after you upload): */
+  --home-hero: url('https://avisail.com/wp-content/uploads/2025/11/hero-index.jpg'); /* EDIT HERE */
+}
+*{ box-sizing: border-box; }
+html,body{
+  margin:0;
+  background:#0a0f1a;
+  color:#e9f0ff;
+  font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans;
+  line-height:1.7;
+}
+a{ color:#cfe2ff; text-decoration:none; }
+.wrap{ max-width:1200px; margin:0 auto; padding:0 20px; }
+header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(to bottom, rgba(10,15,26,.9), rgba(10,15,26,.6));
+  border-bottom:1px solid var(--line);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; height:70px; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo{ width:36px; height:36px; border-radius:10px; background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4); }
+nav ul{ display:flex; gap:22px; list-style:none; margin:0; padding:0; align-items:center; }
+.menu-item{ position:relative; }
+.dropdown{
+  position:absolute; top:100%; left:0; min-width:240px;
+  background:#0d1424; border:1px solid var(--line); border-radius:12px; padding:8px; display:none;
+}
+.menu-item:hover .dropdown{ display:block; }
+.btn{
+  padding:10px 16px; border-radius:12px;
+  border:1px solid var(--line); background:transparent; color:#e9f0ff;
+}
+.cta{
+  padding:10px 16px; border-radius:12px;
+  background:linear-gradient(135deg,#6aa6ff,#7ef0d4);
+  color:#06101a; font-weight:700;
+  box-shadow:0 10px 20px rgba(106,166,255,.25);
+}
+.hero{
+  position:relative; overflow:hidden;
+  padding:140px 0 100px;
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.65)), var(--home-hero) center/cover no-repeat;
+}
+.hero .wrap{ position:relative; z-index:2; }
+.muted{ color:#9fb0cc; }
+section{ padding:80px 0; border-bottom:1px solid var(--line); }
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+  border:1px solid var(--line); border-radius:18px; padding:24px;
+}
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+@media(max-width:980px){ .grid-3,.grid-2{ grid-template-columns:1fr; } }
+.thumb{
+  width:100%; height:160px; border-radius:12px; margin-bottom:12px;
+  background:#0e1424 center/cover no-repeat; border:1px solid var(--line);
+}
+footer .wrap{ padding:20px 0; }
 
-    /****************************************
-      GLOBAL LAYOUT
-    *****************************************/
-    header {
-      width: 100%;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      background: rgba(2, 6, 23, 0.65);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
 
-    header .logo {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+/* Intro video: always full-bleed */
+#intro,
+#intro .intro-inner{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#vimeo-wrap{ position: absolute; inset: 0; overflow: hidden; }
+/* Vimeo iframe cover trick */
+#vimeo-wrap iframe{
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%) !important;
+  width: 177.78vh !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 56.25vw !important;
+}
+#intro .intro-title h1{
+  margin:0; font-size:clamp(40px,7vw,88px); font-weight:300;
+  letter-spacing:.18em; color:#fff; text-shadow:0 2px 28px rgba(0,0,0,.45);
+  font-variant:all-small-caps;
+}
+#intro button.cta{ position:absolute; top:20px; right:20px; z-index:3; }
 
-    header nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #93c5fd;
-      font-size: 15px;
-      transition: 0.25s;
-    }
-    header nav a:hover {
-      color: #38bdf8;
-    }
-
-    /****************************************
-      HERO SECTION
-    *****************************************/
-    .hero {
-      height: 88vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 24px;
-      position: relative;
-      overflow: hidden;
-      margin-top: 80px; /* offset for fixed header */
-    }
-
-    /* Background layering */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(14,165,233,0.18), transparent),
-                  radial-gradient(circle at 70% 70%, rgba(14,165,233,0.12), transparent),
-                  linear-gradient(180deg, #0f172a 0%, #020617 100%);
-      z-index: 1;
-    }
-
-    /* AI network layer */
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url('EDIT-HERE/hero-bg.jpg'); /* REPLACE IMAGE HERE */
-      background-size: cover;
-      background-position: center;
-      opacity: 0.35;
-      z-index: 2;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 900px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin-bottom: 18px;
-      font-weight: 700;
-      color: #e2e8f0;
-      text-shadow: 0 0 18px rgba(56,189,248,0.25);
-    }
-
-    .hero p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #cbd5e1;
-      margin: 6px 0;
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #38bdf8;
-      font-size: 14px;
-      opacity: 0.8;
-      animation: float 2s infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -12px); }
-      100% { transform: translate(-50%, 0); }
-    }
-
-    /****************************************
-      SECTION STYLES
-    *****************************************/
-    section {
-      padding: 80px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 34px;
-      margin-bottom: 20px;
-      color: #e2e8f0;
-      text-align: center;
-      text-shadow: 0 0 16px rgba(56,189,248,0.25);
-    }
-
-    .section-sub {
-      text-align: center;
-      margin-bottom: 50px;
-      color: #94a3b8;
-    }
-
-    /****************************************
-      BUSINESS CARDS
-    *****************************************/
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
-      background: rgba(15,23,42,0.65);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 32px;
-      border-radius: 18px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.35);
-      transition: 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #38bdf8;
-      box-shadow: 0 0 25px rgba(14,165,233,0.35);
-    }
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      color: #38bdf8;
-    }
-    .card p {
-      font-size: 15px;
-      line-height: 1.5;
-      color: #cbd5e1;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 16px;
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 15px;
-    }
-    .card a:hover {
-      text-decoration: underline;
-    }
-
-    /****************************************
-      FOUNDER MESSAGE
-    *****************************************/
-    .founder-box {
-      background: rgba(15,23,42,0.75);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 40px;
-      border-radius: 16px;
-      max-width: 900px;
-      margin: 40px auto;
-      box-shadow: 0 0 24px rgba(0,0,0,0.4);
-    }
-
-    .founder-box h3 {
-      color: #38bdf8;
-      margin-bottom: 14px;
-      font-size: 22px;
-    }
-    .founder-box p {
-      color: #cbd5e1;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
-    /****************************************
-      CTA SECTION
-    *****************************************/
-    .cta {
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 14px 26px;
-      margin: 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      background: #0ea5e9;
-      color: white;
-      transition: 0.25s;
-      box-shadow: 0 0 12px rgba(14,165,233,0.45);
-      font-weight: 600;
-    }
-    .cta a:hover {
-      background: #38bdf8;
-    }
-
-    /****************************************
-      FOOTER
-    *****************************************/
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #64748b;
-      font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      margin-top: 40px;
-    }
-
-  </style>
+</style>
 </head>
-
 <body>
 
-<!-- Header -->
-<header>
-  <div class="logo">Avisail Global Trading</div>
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/services/vessel.html">Vessel</a>
-    <a href="/services/investment.html">Investment</a>
-    <a href="/services/tech.html">Tech</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/jp/index.html" style="color:#facc15;">JP</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Driven by Discovery.</h1>
-    <p>Ships are the vessels of progress.  
-       We carry the world's frontier technologies  
-       and navigate toward unseen horizons.</p>
-
-    <p>Purpose: The world grows closer every day,  
-       cultures passing beside each other like ships.</p>
-
-    <p>Passion: If a massive vessel appeared before you,  
-       would you fear it—or board it?</p>
-  </div>
-  <div class="scroll-indicator">Scroll</div>
-</section>
-
-<!-- BUSINESS AREAS -->
-<section>
-  <h2 class="section-title">Our Core Businesses</h2>
-  <p class="section-sub">The three pillars that define Avisail</p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Vessel Trading</h3>
-      <p>Specialized in mid-sized vessels, fishing boats, tugboats, workboats, and tankers.  
-      Matching-based global trading across Japan, Korea, Asia, the Middle East, and Europe.</p>
-      <a href="/services/vessel.html">Learn more →</a>
+<section id="intro" data-video-id="1110865623" style="z-index:9999;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease">
+  <button class="cta" aria-label="Skip">Skip</button>
+  <div class="intro-inner">
+    <div id="vimeo-wrap"></div>
+    <div class="intro-title" style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2">
+      <h1>AVISAIL</h1>
     </div>
+    <div id="click-skip" style="position:absolute;inset:0"></div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Investment (Aviscore)</h3>
-      <p>AI-driven multi-factor scoring engine combining technical, risk, and sentiment signals.  
-      Non-stock model with periodic reports and fully automated analysis.</p>
-      <a href="/services/investment.html">Explore Aviscore →</a>
+<div id="site" style="opacity:0;visibility:hidden;transition:opacity 1.2s ease,visibility 1.2s ease">
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><div class="logo"></div><span>Avisail Global Trading</span></div>
+      <nav>
+        <ul>
+          <li><a class="active" href="/en/index.html">Home</a></li>
+          <li><a href="/en/about.html">About</a></li>
+          <li class="menu-item">
+            <a href="/en/services-vessel.html">Services</a>
+            <div class="dropdown">
+              <a href="/en/services-vessel.html">Vessel Trading</a>
+              <a href="/en/services-investment.html">Investment</a>
+              <a href="/en/services-tech.html">Technology</a>
+            </div>
+          </li>
+          <li><a href="/en/contact.html">Contact</a></li>
+          <li><a class="lang" href="/ja/index.html">日本語</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <h3>AI Technology</h3>
-      <p>Advanced practical AI solutions:  
-      AviSecure (Active Defense), AviDraft (3D→CAD AI), and operational AI tools.</p>
-      <a href="/services/tech.html">View technologies →</a>
+  <main class="hero">
+    <div class="wrap">
+      <h1>Avisail Global Trading</h1>
+      <p class="lead">A next-generation technology trading firm redefining trade, investment, and engineering through AI and a spirit of discovery.</p>
+      <h3 style="margin-top:22px">Driven by Discovery.</h3>
+      <p class="muted" style="max-width:900px">A ship is a symbol of progress. We carry frontier technologies and sail toward horizons yet unseen.</p>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="/en/services-vessel.html" class="cta">Explore Services</a>
+        <a href="/en/contact.html" class="cta">Contact</a>
+      </div>
     </div>
-  </div>
-</section>
+  </main>
 
-<!-- FOUNDER MESSAGE -->
-<section>
-  <h2 class="section-title">Message from the Founder</h2>
+  <section class="wrap">
+    <h2>Passion & Purpose</h2>
+    <div class="card" style="margin:16px 0">
+      <h3>Passion</h3>
+      <p>The world grows closer every day and cultures sit side by side. When a great ship appears, we choose courage—stepping forward to put technology to truly valuable use, as our ancestors once rowed into the open sea. There may be no unknown oceans today, yet the great ship of technology appears before us daily. Courage is the spark of innovation. We dedicate ourselves to delivering that value to people.</p>
+    </div>
+    <div class="card">
+      <h3>Purpose</h3>
+      <p>We place human connection and trust first to deliver value. Through technology-driven transformation, we broaden access to prosperity—and we never stop striving to elevate that value.</p>
+    </div>
+  </section>
 
-  <div class="founder-box">
-    <h3>Building What the World Demands — Faster, Smarter, and Without Borders.</h3>
-    <p>
-      Avisail was founded on a simple belief:  
-      meaningful progress happens when exploration and execution meet.  
-      Whether it's a vessel crossing borders or an AI engine uncovering hidden patterns,  
-      value emerges when technology and real-world operations truly align.
-    </p>
+  <section class="wrap">
+    <h2>Services</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="thumb" style="background-image:url('https://avisail.com/wp-content/uploads/2025/11/thumb-vessel.jpg');"></div> <!-- EDIT HERE -->
+        <h3>A. Vessel Trading</h3>
+        <p>We bridge maritime business between Asia and Europe/the Middle East. With AI-updated inventories, legally safeguarded payment terms, and investment-linked structures where appropriate, we deliver optimal options for each request.</p>
+        <a class="btn" href="/en/services-vessel.html">Learn more</a>
+      </div>
+      <div class="card">
+        <div class="thumb" style="background-image:url('https://avisail.com/wp-content/uploads/2025/11/thumb-fund.jpg');"></div> <!-- EDIT HERE -->
+        <h3>B. Investment</h3>
+        <p>Using in-house systems like Aviscore, we integrate AI insights with disciplined judgment to grow proprietary and entrusted assets.</p>
+        <a class="btn" href="/en/services-investment.html">Learn more</a>
+      </div>
+      <div class="card">
+        <div class="thumb" style="background-image:url('https://avisail.com/wp-content/uploads/2025/11/thumb-ai.jpg');"></div> <!-- EDIT HERE -->
+        <h3>C. Technology Development</h3>
+        <p>We build AI solutions designed for daily use in real operations. See project details on the Technology page.</p>
+        <a class="btn" href="/en/services-tech.html">Learn more</a>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      Our mission is to eliminate friction — in trade, in intelligence, in action.  
-      We operate fast, stay lean, and adapt instantly to global needs.  
-      We don’t just observe change.  
-      We navigate it.
-    </p>
+  <section class="wrap">
+    <h2>Partnership & Contact</h2>
+    <div class="card" style="margin:16px 0">
+      <h3>Partnerships & Proposals</h3>
+      <p>If you are interested in any division, please contact us and we will connect you with the right team.</p>
+    </div>
+    <div class="card">
+      <h3>For Investors</h3>
+      <p>We generally do not accept equity investments. Instead, we offer project-based participation schemes. Please contact us for details.</p>
+      <p><a class="cta" href="/en/contact.html">Contact</a></p>
+    </div>
+  </section>
 
-    <p>— Founder, Avisail Global Trading</p>
-  </div>
-</section>
+  <footer><div class="wrap"><p>© 2025 Avisail Global Trading — All rights reserved.</p></div></footer>
 
-<!-- CTA -->
-<section>
-  <div class="cta">
-    <a href="/services/vessel.html">See Vessel Inventory</a>
-    <a href="/contact.html">Contact Us</a>
-    <a href="/services/investment.html">Join Aviscore Beta</a>
-  </div>
-</section>
+</div>
 
-<footer>
-  © Avisail Global Trading — All rights reserved.
-</footer>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+(function(){
+  var intro=document.getElementById('intro');
+  var site=document.getElementById('site');
+  var vwrap=document.getElementById('vimeo-wrap');
+  var skipBtn=intro.querySelector('button');
+  var clickSkip=document.getElementById('click-skip');
+  var iframe=document.createElement('iframe');
+  var params=new URLSearchParams({autoplay:1,muted:1,controls:0,loop:0,background:1,playsinline:1,byline:0,title:0,portrait:0,dnt:1});
+  iframe.src="https://player.vimeo.com/video/1110865623?" + params.toString();
+  iframe.allow="autoplay; fullscreen; picture-in-picture";
+  iframe.setAttribute('title','Avisail Intro');
+  vwrap.appendChild(iframe);
+  var player=new Vimeo.Player(iframe);
+  function reveal(){intro.style.opacity='0';intro.style.visibility='hidden';site.style.opacity='1';site.style.visibility='visible';player.pause().catch(function(){});}
+  player.on('ended',reveal);
+  [skipBtn,clickSkip].forEach(function(e){e.addEventListener('click',reveal);});
+  setTimeout(function(){ if(site.style.visibility!=='visible') reveal(); },15000);
+})();
+</script>
 
 </body>
 </html>
+
 
