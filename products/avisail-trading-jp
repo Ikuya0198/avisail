@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avisail Ship Brokerage | AI船舶売買プラットフォーム</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-deep:#020617;
+    --bg-main:#0B1120;
+    --bg-card:#111827;
+    --accent:#38BDF8;
+    --text:#E2E8F0;
+    --text-soft:#94A3B8;
+}
+
+body {
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg-deep);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* HERO */
+.hero {
+    height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:url('https://avisail.com/wp-content/uploads/2024/11/ship-hero.jpg') center/cover no-repeat;
+    position:relative;
+    text-align:center;
+}
+.hero::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+.hero-content {
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:0 20px;
+}
+.hero h1 {
+    font-size:3rem;
+    font-weight:700;
+}
+.hero p {
+    font-size:1.2rem;
+    color:var(--text-soft);
+}
+
+/* SECTION BASE */
+.section {
+    padding:90px 8%;
+    background:var(--bg-deep);
+}
+.section:nth-child(even) {
+    background:var(--bg-main);
+}
+.section h2 {
+    font-size:2.4rem;
+    margin-bottom:20px;
+}
+.section p {
+    color:var(--text-soft);
+    font-size:1.05rem;
+}
+
+/* CARD GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+.card {
+    background:var(--bg-card);
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #1E293B;
+}
+
+/* CTA BUTTONS */
+.btn {
+    display:inline-block;
+    padding:16px 40px;
+    background:var(--accent);
+    color:#000;
+    font-weight:700;
+    border-radius:10px;
+    text-decoration:none;
+    transition:.25s;
+}
+.btn:hover {opacity:.85;}
+
+/* FEATURE BOX */
+.feature-box {
+    padding:26px;
+    background:var(--bg-card);
+    border-radius:14px;
+    border:1px solid #1E293B;
+}
+
+/* FOOTER */
+.footer {
+    padding:40px 8%;
+    background:#000;
+    text-align:center;
+    color:var(--text-soft);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Avisail Ship Brokerage</h1>
+    <p>AIが世界中の中古船舶マーケットを毎日スキャンし、  
+       最適な一隻をあなたに届ける。アジアの優良船舶に特化した次世代プラットフォーム。</p>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="section">
+  <h2>AI × 船舶売買の新しい形</h2>
+  <p>
+    Avisail Ship Brokerage は、AIが世界の船舶マーケット情報を自動で収集し、  
+    価格・コンディション・稼働履歴を総合評価した上で、  
+    <strong>「今、本当に買うべき中古船」</strong> をレコメンドする次世代型の売買サービスです。<br><br>
+
+    特に日本・韓国・東南アジアには整備状態が良く、  
+    強度・稼働率・維持コストのバランスが優れた“優良中古船”が多く存在します。
+  </p>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section">
+  <h2>AIが自動で収集するデータ</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>① 船舶マーケットの在庫情報</h3>
+      <p>商用サイト、港湾データ、ブローカー情報をクロール。</p>
+    </div>
+    <div class="card">
+      <h3>② 船齢・整備履歴・稼働ログ</h3>
+      <p>AISトラッキングにより実稼働・航海実績を分析。</p>
+    </div>
+    <div class="card">
+      <h3>③ 価格査定 & バリュエーション</h3>
+      <p>過去の売買履歴から適正価格帯を算出。</p>
+    </div>
+    <div class="card">
+      <h3>④ 船型別の最適用途分析</h3>
+      <p>貨物船・タグボート・ランディングクラフトなど用途別提案。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="section">
+  <h2>在庫一覧</h2>
+  <p>最新の中古船舶情報は以下から確認できます。</p>
+  <a href="#" class="btn">在庫を見る（Inventory）</a>
+</section>
+
+<!-- SECTION 4 -->
+<section class="section">
+  <h2>希望船舶のリクエスト</h2>
+  <p>
+    「こういうタイプが欲しい」「この価格帯で探してほしい」  
+    といった要望に応じて、AIが最適な候補を抽出します。
+  </p>
+  <a href="#" class="btn">船舶をリクエストする</a>
+</section>
+
+<!-- SECTION 5 -->
+<section class="section">
+  <h2>エスクロー決済で安心の取引</h2>
+  <p>
+    高額な船舶取引は詐欺リスクもあるため、Avisailでは  
+    <strong>国際エスクロー（第三者保全）</strong> に対応しています。<br><br>
+
+    ● 購入者 → エスクロー口座へ入金  
+    ● 船舶の検査・名義変更・引き渡し完了後に支払われる  
+    ● 国を跨いだ取引でも安全  
+  </p>
+</section>
+
+<!-- SECTION 6 -->
+<section class="section">
+  <h2>行政手続きと技術的サポート</h2>
+
+  <div class="grid">
+    <div class="feature-box">
+      <h3>名義変更・船籍登録</h3>
+      <p>国交省、海事局での登録申請をサポート。</p>
+    </div>
+    <div class="feature-box">
+      <h3>輸出通関 & ロジスティクス</h3>
+      <p>港湾手配、曳航、海上輸送などをワンストップで。</p>
+    </div>
+    <div class="feature-box">
+      <h3>船舶検査（Survey）</h3>
+      <p>検査官の手配・整備工場との連携も可能。</p>
+    </div>
+    <div class="feature-box">
+      <h3>船舶デューデリジェンス</h3>
+      <p>過去の所有者・故障歴・AIS航跡チェック。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 -->
+<section class="section">
+  <h2>Avisail が選ばれる理由</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>● アジアの“良質中古船”に特化</h3>
+      <p>日本・韓国の整備品質は世界最高クラス。</p>
+    </div>
+
+    <div class="card">
+      <h3>● AIによる価格の可視化</h3>
+      <p>買い手・売り手どちらも納得の価格設定。</p>
+    </div>
+
+    <div class="card">
+      <h3>● 行政手続きの完全サポート</h3>
+      <p>法律・登録・輸送の壁を徹底的に排除。</p>
+    </div>
+
+    <div class="card">
+      <h3>● 国際取引エスクロー対応</h3>
+      <p>中東・アジア市場でも安心して売買できる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align:center;">
+  <h2>船舶売買について相談したい方へ</h2>
+  <a href="#" class="btn">お問い合わせ</a>
+</section>
+
+<div class="footer">
+  © 2025 Avisail Global Trading — All Rights Reserved.
+</div>
+
+</body>
+</html>
