@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Avisecure | Active Defense Cybersecurity</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-dark: #030712;
+    --bg-light: #0F172A;
+    --accent: #38BDF8;
+    --text: #E2E8F0;
+    --text-soft: #94A3B8;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://avisail.com/wp-content/uploads/2024/11/av-secure-hero.jpg') center/cover no-repeat;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.hero p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: var(--text-soft);
+}
+
+/* SECTIONS */
+.section {
+    padding: 90px 8%;
+    background: var(--bg-dark);
+}
+.section:nth-child(even) {
+    background: var(--bg-light);
+}
+
+.section h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.section p {
+    font-size: 1.1rem;
+    color: var(--text-soft);
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+.feature-box {
+    padding: 30px;
+    border: 1px solid #1E293B;
+    border-radius: 14px;
+    background: #0B1120;
+}
+.feature-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.feature-box p {
+    color: var(--text-soft);
+    font-size: 1rem;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 110px 8%;
+    background: #020617;
+}
+.cta h2 {
+    font-size: 2.4rem;
+}
+.cta-button {
+    margin-top: 30px;
+    padding: 16px 40px;
+    background: var(--accent);
+    color: #000;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: 0.25s;
+}
+.cta-button:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    padding: 40px 8%;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    background: #020617;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Avisecure Active Defense</h1>
+    <p>AI × サイバー防御。中小企業のための実戦型セキュリティ。</p>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="section">
+  <h2>なぜ“Active Defense”なのか</h2>
+  <p>
+    現代の攻撃は、従来のアンチウイルスやFWでは防げません。  
+    Avisecureは「攻撃を受けてから気づく」のではなく、  
+    <strong>攻撃者の振る舞いそのものをAIが検知し、事前に防御</strong>します。
+  </p>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section">
+  <h2>提供する４つのコア機能</h2>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>① AI脅威検知</h3>
+      <p>ゼロデイ攻撃・ランサムウェア・EDR回避型攻撃まで深層学習モデルが検知。</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>② ネットワーク監視</h3>
+      <p>異常な通信パターン・権限昇格・横展開行動をリアルタイム可視化。</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>③ Active Defense封じ込め</h3>
+      <p>攻撃が検知された瞬間、端末隔離・強制ログアウトなど自動処理。</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>④ 24/365 セキュリティ監視</h3>
+      <p>小規模企業でも導入しやすい“サブスク型SOC”。人件費はゼロ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="section">
+  <h2>導入が多い業種</h2>
+  <p>
+    ● 法律事務所（機密情報保護）<br>
+    ● 医療機関（個人情報保護）<br>
+    ● 不動産登記事務所（顧客データ保護）<br>
+    ● 製造業（工場停止リスクの回避）<br><br>
+    特に **“少人数 × 機密データ”** を扱う企業に最適です。
+  </p>
+</section>
+
+<!-- SECTION 4 -->
+<section class="section">
+  <h2>価格と導入モデル</h2>
+  <p>
+    固定費を抑えるためすべてを「サブスク型」で提供。  
+    台数単位ではなく、事業規模に応じた柔軟なプランを採用しています。<br><br>
+
+    🔹 **ライト（個人事務所・～5名）**：月額 9,800円〜  
+    🔹 **スタンダード（10〜30名）**：月額 29,800円〜  
+    🔹 **エンタープライズ**：個別見積もり（医療・法律機関向け）
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>導入相談・デモのご依頼はこちら</h2>
+  <a href="https://avisail.com/contact" class="cta-button">無料で相談する</a>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2025 Avisail Global Trading — All Rights Reserved.
+</div>
+
+</body>
+</html>
