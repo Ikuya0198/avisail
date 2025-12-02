@@ -1090,7 +1090,7 @@ footer{
             <a href="mailto:info@avisail.com" style="color:var(--accent-teal);">info@avisail.com</a>
           </div>
           <div>
-            <span style="color:var(--text-muted);">多言語対応: 日本語 / English / Italiano</span>
+            <span style="color:var(--text-muted);">多言語対応可能</span>
           </div>
           <div>
             <span style="color:var(--text-muted);">24時間以内に返信</span>
