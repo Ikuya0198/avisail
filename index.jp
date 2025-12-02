@@ -752,17 +752,17 @@ footer{
     </div>
     <nav>
       <ul>
-        <li><a href="#top">ホーム</a></li>
-        <li><a href="#about">会社概要</a></li>
+        <li><a href="index.jp">ホーム</a></li>
+        <li><a href="ja/about.html">会社概要</a></li>
         <li class="menu-item">
           <a href="#business">事業概要</a>
           <div class="dropdown">
-            <a href="#business-trading">貿易</a>
-            <a href="#business-investment">投資</a>
-            <a href="#business-security">セキュリティ</a>
+            <a href="ja/services/vessel-trading.html">貿易</a>
+            <a href="ja/services/investment.html">投資</a>
+            <a href="ja/services/technology.html">セキュリティ</a>
           </div>
         </li>
-        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="ja/contact.html">お問い合わせ</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li class="lang-selector">
           <span class="globe-icon">🌐</span>
@@ -770,7 +770,6 @@ footer{
           <div class="lang-dropdown">
             <a href="index.jp">日本語</a>
             <a href="index.html">English</a>
-            <a href="#">Italiano</a>
           </div>
         </li>
       </ul>
