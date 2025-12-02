@@ -3,338 +3,1261 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Avisail Technologies</title>
-<link rel="canonical" href="https://avisail.com/">
-<link rel="alternate" hreflang="en" href="https://avisail.com/">
-<link rel="alternate" hreflang="ja" href="https://avisail.com/ja/index.html">
+<title>Avisail Technologies - AI × Trading × Investment × Security</title>
+<meta name="description" content="Avisail Technologies is a next-generation technology company redefining trading, investment, and security through the power of AI and technological exploration">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --line: rgba(255,255,255,.08);
-  --home-hero: url('/images/hero.jpg');
-  --contact-bg: url('/images/contact-hero.jpg');
+  --primary-gradient: linear-gradient(135deg,#6aa6ff,#7ef0d4);
+  --accent-teal: #7ef0d4;
+  --accent-blue: #6aa6ff;
+  --bg-dark: #0a0f1a;
+  --bg-darker: #05080f;
+  --text-primary: #e9f0ff;
+  --text-secondary: #cfe2ff;
+  --text-muted: #9fb0cc;
 }
-*{ box-sizing: border-box; }
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
 html,body{
   margin:0;
-  background:#0a0f1a;
-  color:#e9f0ff;
-  font-family: 'Inter', sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-primary);
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
   line-height:1.7;
 }
+
 html{ scroll-behavior: smooth; }
-a{ color:#cfe2ff; text-decoration:none; transition: color 0.3s; }
-a:hover{ color:#7ef0d4; }
-.wrap{ max-width:1200px; margin:0 auto; padding:0 20px; }
+
+a{
+  color:var(--text-secondary);
+  text-decoration:none;
+  transition: color 0.3s;
+}
+a:hover{ color:var(--accent-teal); }
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* ========== HEADER ========== */
 header{
-  position:sticky; top:0; z-index:50;
-  background:linear-gradient(to bottom, rgba(10,15,26,.9), rgba(10,15,26,.6));
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:linear-gradient(to bottom, rgba(10,15,26,.95), rgba(10,15,26,.85));
   border-bottom:1px solid var(--line);
   backdrop-filter: blur(10px);
 }
-.nav{ display:flex; align-items:center; justify-content:space-between; height:70px; }
-.brand{ display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:0.05em; color:#fff; }
-.logo{ width:32px; height:32px; border-radius:8px; background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4); }
-nav ul{ display:flex; gap:24px; list-style:none; margin:0; padding:0; align-items:center; font-size:0.95rem; }
-.menu-item{ position:relative; padding:10px 0; }
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:70px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  color:#fff;
+}
+
+.logo{
+  width:32px;
+  height:32px;
+  border-radius:8px;
+  background:conic-gradient(from 210deg,var(--accent-blue),var(--accent-teal));
+}
+
+nav ul{
+  display:flex;
+  gap:24px;
+  list-style:none;
+  align-items:center;
+  font-size:0.9rem;
+}
+
+.menu-item{
+  position:relative;
+  padding:10px 0;
+}
+
 .dropdown{
-  position:absolute; top:100%; left:-10px; min-width:200px;
-  background:#0d1424; border:1px solid var(--line); border-radius:12px; padding:12px; display:none;
-  flex-direction:column; gap:8px; box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  position:absolute;
+  top:100%;
+  left:-10px;
+  min-width:200px;
+  background:#0d1424;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  display:none;
+  flex-direction:column;
+  gap:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
+
 .menu-item:hover .dropdown{ display:flex; }
-.dropdown a{ padding:6px 12px; border-radius:6px; color:#9fb0cc; }
-.dropdown a:hover{ background:rgba(255,255,255,0.05); color:#fff; }
 
-.globe-icon{ font-size:1.2rem; cursor:pointer; color:#9fb0cc; transition:color 0.3s; }
-.globe-icon:hover{ color:#7ef0d4; }
-
-.btn{
-  display:inline-block; padding:10px 20px; border-radius:50px;
-  border:1px solid var(--line); background:rgba(255,255,255,0.05); color:#e9f0ff; font-size:0.9rem;
-  transition:all 0.3s;
-}
-.btn:hover{ border-color:rgba(106,166,255,0.5); }
-.cta{
-  display:inline-block; padding:10px 24px; border-radius:50px;
-  background:linear-gradient(135deg,#6aa6ff,#7ef0d4);
-  color:#06101a; font-weight:700; font-size:0.9rem;
-  box-shadow:0 10px 20px rgba(106,166,255,.2);
-  border:none; transition:all 0.3s;
-}
-.cta:hover{ transform:translateY(-2px); box-shadow:0 15px 30px rgba(106,166,255,.3); }
-
-.hero{
-  position:relative; overflow:hidden;
-  min-height: 85vh; display:flex; align-items:center;
-}
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:1;
-  background: radial-gradient(circle at center, rgba(106, 166, 255, 0.08) 0%, rgba(5, 8, 15, 0) 70%),
-              linear-gradient(180deg, rgba(5,8,15,0.3) 0%, rgba(5,8,15,1) 100%),
-              var(--home-hero) center/cover no-repeat;
-}
-.hero .wrap{ position:relative; z-index:2; width:100%; }
-.hero h1{
-  font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 24px;
-  background: linear-gradient(to right, #fff, #9fb0cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.lead{ font-size:1.1rem; color:#cfe2ff; max-width:700px; margin-bottom:16px; }
-.slogan{ font-family:'Inter'; letter-spacing:0.2em; color:#7ef0d4; text-transform:uppercase; margin-bottom:16px; display:block; }
-.muted{ color:#9fb0cc; font-size:0.95rem; }
-
-section{ padding:100px 0; border-bottom:1px solid var(--line); position:relative; }
-h2{ font-size:2rem; margin-bottom:40px; display:flex; align-items:center; gap:16px; color:#fff; }
-h2::before{ content:''; width:4px; height:32px; background:linear-gradient(to bottom, #6aa6ff, #7ef0d4); display:block; }
-
-.card{
-  background:rgba(255,255,255,0.02); backdrop-filter:blur(10px);
-  border:1px solid var(--line); border-radius:24px; padding:32px;
-  height:100%; display:flex; flex-direction:column;
-  transition:transform 0.3s, border-color 0.3s;
-}
-.card:hover{ transform:translateY(-5px); border-color:rgba(106,166,255,0.3); }
-.card h3{ margin-top:0; font-size:1.4rem; color:#fff; }
-.card p{ color:#9fb0cc; margin-bottom:24px; flex-grow:1; }
-
-.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
-.grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; }
-
-.thumb{
-  width:100%; height:200px; border-radius:16px; margin-bottom:24px;
-  background:#0e1424 center/cover no-repeat; border:1px solid var(--line);
-}
-
-/* FAQ */
-.faq-item{ border-bottom:1px solid var(--line); padding:24px 0; }
-.faq-item:last-child{ border-bottom:none; }
-.faq-q{ font-size:1.1rem; font-weight:600; color:#fff; margin-bottom:12px; display:flex; align-items:start; gap:12px; }
-.faq-q::before{ content:'Q.'; color:#7ef0d4; font-weight:700; }
-.faq-a{ color:#9fb0cc; padding-left:32px; }
-
-/* Footer */
-footer{
-  background:rgba(5,8,15,0.8);
-  padding:60px 0 30px;
-  border-top:1px solid var(--line);
-}
-.footer-content{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-bottom:40px; }
-.footer-col h4{ color:#fff; font-size:1.1rem; margin-bottom:20px; }
-.footer-col ul{ list-style:none; padding:0; margin:0; }
-.footer-col ul li{ margin-bottom:12px; }
-.footer-col a{ color:#9fb0cc; font-size:0.9rem; }
-.footer-col a:hover{ color:#7ef0d4; }
-.footer-bottom{
-  border-top:1px solid var(--line);
-  padding-top:30px;
-  text-align:center;
-  color:#9fb0cc;
+.dropdown a{
+  padding:6px 12px;
+  border-radius:6px;
+  color:var(--text-muted);
   font-size:0.85rem;
 }
 
-.bg-contact {
-  background: linear-gradient(rgba(5,8,15,0.9), rgba(5,8,15,0.95)), var(--contact-bg) center/cover;
+.dropdown a:hover{
+  background:rgba(255,255,255,0.05);
+  color:#fff;
 }
 
-#intro{ position:fixed; inset:0; z-index:9999; background:#000; display:flex; align-items:center; justify-content:center; }
-#vimeo-wrap{ position:absolute; inset:0; overflow:hidden; }
-#vimeo-wrap iframe{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:177.78vh; height:100vh; min-width:100vw; min-height:56.25vw; }
+.lang-selector{
+  position:relative;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 12px;
+  border-radius:8px;
+  transition:background 0.3s;
+}
 
+.lang-selector:hover{
+  background:rgba(255,255,255,0.05);
+}
+
+.lang-selector .globe-icon{
+  width:20px;
+  height:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.lang-dropdown{
+  position:absolute;
+  top:100%;
+  right:0;
+  min-width:140px;
+  background:#0d1424;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:8px;
+  display:none;
+  flex-direction:column;
+  gap:4px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  margin-top:8px;
+}
+
+.lang-selector:hover .lang-dropdown{ display:flex; }
+
+.lang-dropdown a{
+  padding:6px 12px;
+  border-radius:6px;
+  color:var(--text-muted);
+  font-size:0.85rem;
+}
+
+.lang-dropdown a:hover{
+  background:rgba(255,255,255,0.05);
+  color:#fff;
+}
+
+.mobile-menu-btn{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  padding:8px;
+  cursor:pointer;
+}
+
+.mobile-menu-btn span{
+  width:24px;
+  height:2px;
+  background:var(--accent-teal);
+  border-radius:2px;
+}
+
+/* ========== BUTTONS ========== */
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:50px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.05);
+  color:var(--text-primary);
+  font-size:0.9rem;
+  transition:all 0.3s;
+  cursor:pointer;
+}
+
+.btn:hover{
+  border-color:rgba(106,166,255,0.5);
+  transform:translateY(-2px);
+}
+
+.cta{
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:50px;
+  background:var(--primary-gradient);
+  color:#06101a;
+  font-weight:700;
+  font-size:0.95rem;
+  box-shadow:0 10px 20px rgba(106,166,255,.2);
+  border:none;
+  transition:all 0.3s;
+  cursor:pointer;
+}
+
+.cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 30px rgba(106,166,255,.3);
+}
+
+/* ========== HERO ========== */
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height: 85vh;
+  display:flex;
+  align-items:center;
+  background: radial-gradient(circle at center, rgba(106, 166, 255, 0.08) 0%, rgba(5, 8, 15, 0) 70%),
+              linear-gradient(180deg, rgba(5,8,15,0.3) 0%, rgba(5,8,15,1) 100%),
+              url('images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero .wrap{
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding-top:50px;
+  padding-bottom:60px;
+}
+
+.slogan{
+  font-family:'Inter';
+  letter-spacing:0.25em;
+  color:var(--accent-teal);
+  text-transform:uppercase;
+  margin-bottom:16px;
+  display:block;
+  font-size:0.8rem;
+  font-weight:600;
+}
+
+.hero h1{
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #fff, var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero h1 .gradient-text{
+  background:var(--primary-gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  display:block;
+  margin-top:8px;
+}
+
+.lead{
+  font-size:1.05rem;
+  color:var(--text-secondary);
+  max-width:900px;
+  margin-bottom:20px;
+  line-height:1.75;
+}
+
+.hero-quote{
+  border-left:2px solid var(--accent-teal);
+  padding-left:16px;
+  margin-top:24px;
+  max-width:650px;
+  color:var(--text-muted);
+  font-size:0.95rem;
+  font-style:italic;
+}
+
+/* ========== SECTIONS ========== */
+section{
+  padding:70px 0;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+
+h2{
+  font-size:1.8rem;
+  margin-bottom:32px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  color:#fff;
+}
+
+h2::before{
+  content:'';
+  width:4px;
+  height:28px;
+  background:var(--primary-gradient);
+  display:block;
+  border-radius:2px;
+}
+
+h3{
+  color:#fff;
+  font-size:1.3rem;
+}
+
+/* ========== CARDS ========== */
+.card{
+  background:rgba(255,255,255,0.02);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  transition:transform 0.3s, border-color 0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(106,166,255,0.3);
+}
+
+.card h3{
+  margin-top:0;
+  font-size:1.3rem;
+}
+
+.card p{
+  color:var(--text-muted);
+  margin-bottom:16px;
+  flex-grow:1;
+  line-height:1.75;
+}
+
+.card-highlight{
+  background:linear-gradient(135deg, rgba(126,240,212,0.08), rgba(106,166,255,0.04));
+  border:1px solid rgba(126,240,212,0.25);
+}
+
+/* ========== GRID LAYOUTS ========== */
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+/* ========== THUMBNAILS ========== */
+.thumb{
+  width:100%;
+  height:160px;
+  border-radius:14px;
+  margin-bottom:18px;
+  background:#0e1424 center/cover no-repeat;
+  border:1px solid var(--line);
+}
+
+/* ========== BUSINESS SECTION 3+1 LAYOUT ========== */
+.business-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-bottom:24px;
+}
+
+.business-tech{
+  grid-column:1/-1;
+  background:linear-gradient(135deg, rgba(126,240,212,0.05), rgba(106,166,255,0.03));
+  border:1px solid rgba(126,240,212,0.15);
+  padding:32px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.business-tech h3{
+  margin-bottom:12px;
+  font-size:1.4rem;
+}
+
+.business-tech p{
+  color:var(--text-muted);
+  line-height:1.75;
+  margin:0 auto;
+  max-width:900px;
+}
+
+/* ========== USE CASE BOX ========== */
+.use-case-box{
+  background:rgba(126,240,212,0.03);
+  border:1px solid rgba(126,240,212,0.15);
+  border-radius:12px;
+  padding:16px 20px;
+  margin-top:16px;
+}
+
+.use-case-box h4{
+  color:var(--accent-teal);
+  font-size:0.95rem;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.use-case-box p{
+  color:var(--text-muted);
+  font-size:0.9rem;
+  line-height:1.7;
+  margin-bottom:12px;
+}
+
+.use-case-details{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:0.85rem;
+  color:var(--text-muted);
+}
+
+.use-case-details span{
+  display:block;
+}
+
+.use-case-details strong{
+  color:var(--text-secondary);
+}
+
+/* ========== STATS ========== */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:32px;
+}
+
+.stat-item{
+  text-align:center;
+  padding:20px 16px;
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--line);
+  border-radius:14px;
+  transition:all 0.3s;
+}
+
+.stat-item:hover{
+  border-color:rgba(126,240,212,0.3);
+  transform:translateY(-3px);
+}
+
+.stat-number{
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--accent-teal);
+  margin-bottom:6px;
+}
+
+.stat-label{
+  color:var(--text-muted);
+  font-size:0.85rem;
+}
+
+/* ========== WHY AVISAIL (HORIZONTAL CARDS) ========== */
+.why-avisail-grid{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.why-card{
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:24px 28px;
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  transition:all 0.3s;
+}
+
+.why-card:hover{
+  border-color:rgba(106,166,255,0.3);
+  transform:translateX(5px);
+}
+
+.why-icon{
+  width:48px;
+  height:48px;
+  min-width:48px;
+  background:var(--primary-gradient);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+}
+
+.why-content h3{
+  margin:0 0 8px 0;
+  font-size:1.2rem;
+}
+
+.why-content p{
+  margin:0;
+  color:var(--text-muted);
+  line-height:1.7;
+  font-size:0.95rem;
+}
+
+/* ========== FAQ ========== */
+.faq-item{
+  border-bottom:1px solid var(--line);
+  padding:20px 0;
+}
+
+.faq-item:last-child{ border-bottom:none; }
+
+.faq-q{
+  font-size:1.05rem;
+  font-weight:600;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.faq-a{
+  color:var(--text-muted);
+  line-height:1.8;
+  font-size:0.95rem;
+}
+
+.faq-a strong{
+  color:var(--text-secondary);
+}
+
+/* ========== FORM ========== */
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
+  font-size:0.85rem;
+  color:var(--text-secondary);
+  margin-bottom:8px;
+  font-weight:500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:11px 15px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--text-primary);
+  font-family:inherit;
+  font-size:0.9rem;
+  transition:all 0.3s;
+  outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--accent-blue);
+  background:rgba(255,255,255,0.06);
+}
+
+.form-group select{
+  cursor:pointer;
+}
+
+.form-group textarea{
+  resize:vertical;
+  min-height:110px;
+}
+
+/* ========== FOOTER ========== */
+footer{
+  background:var(--bg-darker);
+  padding:60px 0 30px;
+  border-top:1px solid var(--line);
+  margin-top:0;
+}
+
+.footer-content{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+  margin-bottom:40px;
+}
+
+.footer-col h4{
+  color:#fff;
+  font-size:1rem;
+  margin-bottom:16px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:10px;
+}
+
+.footer-col a{
+  color:var(--text-muted);
+  font-size:0.85rem;
+}
+
+.footer-col a:hover{
+  color:var(--accent-teal);
+}
+
+.footer-brand{
+  color:var(--text-muted);
+  line-height:1.7;
+  font-size:0.88rem;
+  margin-top:12px;
+}
+
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--text-muted);
+  font-size:0.82rem;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+/* ========== RESPONSIVE ========== */
 @media(max-width:980px){
-  .grid-3,.grid-2{ grid-template-columns:1fr; }
-  .footer-content{ grid-template-columns:1fr; }
-  nav ul{ display:none; }
+  .grid-2,.grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .business-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-content{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  nav ul{
+    display:none;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .lead{
+    font-size:1rem;
+  }
+
+  section{
+    padding:50px 0;
+  }
+
+  h2{
+    font-size:1.5rem;
+  }
 }
+
+@media(max-width:640px){
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:75vh;
+  }
+
+  .hero .wrap{
+    padding-top:30px;
+    padding-bottom:40px;
+  }
+
+  .why-card{
+    flex-direction:column;
+  }
+
+  section{
+    padding:40px 0;
+  }
+}
+
+/* ========== UTILITY CLASSES ========== */
+.text-center{ text-align:center; }
+.mb-0{ margin-bottom:0; }
+.mb-1{ margin-bottom:8px; }
+.mb-2{ margin-bottom:16px; }
+.mb-3{ margin-bottom:24px; }
+.mb-4{ margin-bottom:32px; }
+.mt-0{ margin-top:0; }
+.mt-1{ margin-top:8px; }
+.mt-2{ margin-top:16px; }
+.mt-3{ margin-top:24px; }
+.mt-4{ margin-top:32px; }
 </style>
 </head>
 <body>
 
-<!-- INTRO -->
-<section id="intro" style="transition:opacity .6s ease,visibility .6s ease">
-  <button class="btn" style="position:absolute; top:20px; right:20px; z-index:3; border-color:rgba(255,255,255,0.3);">Skip Intro</button>
-  <div style="position:absolute; inset:0; pointer-events:none; z-index:2; display:grid; place-items:center;">
-    <h1 style="font-size:4rem; letter-spacing:0.2em; color:#fff; text-shadow:0 0 30px rgba(0,0,0,0.5);">AVISAIL</h1>
+<!-- ========================================
+     HEADER / NAVIGATION
+======================================== -->
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <span>Avisail Technologies</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="menu-item">
+          <a href="#business">Business</a>
+          <div class="dropdown">
+            <a href="#business-trading">Trading</a>
+            <a href="#business-investment">Investment</a>
+            <a href="#business-security">Security</a>
+          </div>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="lang-selector">
+          <span class="globe-icon">🌐</span>
+          <span style="font-size:0.85rem;">EN</span>
+          <div class="lang-dropdown">
+            <a href="index.jp">日本語</a>
+            <a href="index.html">English</a>
+            <a href="#">Italiano</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
-  <div id="vimeo-wrap"></div>
+</header>
+
+<!-- ========================================
+     SECTION 1: HERO
+======================================== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="slogan">DRIVEN BY DISCOVERY.</span>
+
+    <p class="hero-quote">
+      Ships symbolize progress. We carry cutting-edge technology and sail toward uncharted horizons
+    </p>
+
+    <h1>
+      Navigating the Future.
+      <span class="gradient-text">Trading × Investment × Security × AI</span>
+    </h1>
+
+    <p class="lead">
+      Avisail Technologies is a next-generation technology company redefining trading, investment, and security through the power of AI and technological exploration.<br>
+      AI-driven automation, analysis, and decision support empower every business domain, from international vessel trading to asset management and cybersecurity
+    </p>
+
+    <div style="margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="#business" class="cta">Explore Our Business</a>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </div>
 </section>
 
-<div id="site" style="opacity:0; visibility:hidden; transition:opacity 1.2s ease;">
-
-  <header>
-    <div class="wrap nav">
-      <div class="brand"><div class="logo"></div><span>Avisail Technologies</span></div>
-      <nav>
-        <ul>
-          <li><a class="active" href="/">Home</a></li>
-          <li><a href="/en/about.html">About</a></li>
-          <li class="menu-item">
-            <span>Services ▾</span>
-            <div class="dropdown">
-              <a href="/en/services/vessel-trading.html">Vessel Trading</a>
-              <a href="/en/services/investment.html">Investment</a>
-              <a href="/en/services/technology.html">Technology</a>
-            </div>
-          </li>
-          <li><a href="/en/contact.html">Contact</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li class="menu-item">
-            <span class="globe-icon">🌐 ▾</span>
-            <div class="dropdown">
-              <a href="/">English</a>
-              <a href="/ja/index.html">日本語</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="hero">
-    <div class="wrap">
-      <span class="slogan">DRIVEN BY DISCOVERY.</span>
-      <h1>Navigating the Future.</h1>
-      <p class="lead">Avisail Technologies is a next-generation technology firm redefining trade, investment, and engineering through AI and a spirit of discovery.</p>
-
-      <p class="muted" style="border-left:2px solid #7ef0d4; padding-left:16px; margin-top:24px;">
-        A ship is a symbol of progress. We carry frontier technologies and sail toward horizons yet unseen.
-      </p>
-
-      <div style="margin-top:40px; display:flex; gap:16px; flex-wrap:wrap;">
-        <a href="#business" class="cta">Explore Services</a>
-        <a href="/en/contact.html" class="btn">Contact Us</a>
-      </div>
-    </div>
-  </main>
-
-  <section class="wrap">
+<!-- ========================================
+     SECTION 2: PASSION & PURPOSE
+======================================== -->
+<section id="about">
+  <div class="wrap">
+    <h2>About Us</h2>
     <div class="grid-2">
-      <div class="card">
-        <h3>Passion</h3>
-        <p>We believe that the notion of "distance" no longer exists in our world. Cultures and markets stand side by side, and new technologies appear before us every day.</p>
-        <p>When a vast vessel — a metaphor for emerging technology — arrives before us, we do not retreat. We move forward and guide that technology toward a truly meaningful and valuable purpose.</p>
-        <p style="margin-bottom:0;">Courage is the spark of innovation. Delivering that value to people is where our passion lives.</p>
-      </div>
-      <div class="card" style="border-color:#7ef0d4;">
-        <h3>Purpose</h3>
-        <p>We devote ourselves to refining technologies that directly enhance human well-being, expanding the new forms of access that transformation makes possible.</p>
-        <p style="margin-bottom:0;">To never halt progress, and to continually elevate the value we create— that is the purpose that drives our work.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="wrap" id="business">
+      <!-- PASSION -->
+      <div class="card">
+        <h3 style="margin-bottom:16px;">Passion</h3>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.8; margin-bottom:0;">
+          We believe the concept of distance no longer exists in the world.<br>
+          Cultures and markets are neighbors, and new technologies constantly appear before us.<br><br>
+          When a giant ship (new technology) appears, we fearlessly move forward and guide technology toward practical, valuable applications.<br><br>
+          Courage is the spark of innovation.<br>
+          We are passionate about delivering that value to people
+        </p>
+      </div>
+
+      <!-- PURPOSE -->
+      <div class="card card-highlight">
+        <h3 style="margin-bottom:16px;">Purpose</h3>
+        <p style="color:var(--text-primary); font-size:1rem; line-height:1.8; font-weight:400; margin-bottom:0;">
+          We sincerely refine technology that contributes to human prosperity and expand new access created by transformation.<br><br>
+          To never stop progressing, to continuously enhance technological value through implementation-based approaches, and to provide convenience—this is our purpose
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 3: Our Business (3+1 Layout)
+======================================== -->
+<section id="business">
+  <div class="wrap">
     <h2>Our Business</h2>
-    <div class="grid-3">
-      <div class="card">
-        <div class="thumb" style="background-image:url('/images/vessel-trading-hero.jpg');"></div>
-        <h3>Vessel Trading</h3>
-        <p>Global matching service connecting Asia to the world. We combine AI-driven inventory updates with secure payment structures including ETF-based options and escrow services.</p>
-        <div style="margin-top:auto;"><a class="btn" href="/en/services/vessel-trading.html">Learn More</a></div>
+    <p style="color:var(--text-secondary); max-width:850px; margin-bottom:48px; font-size:1rem; line-height:1.75;">
+      Avisail leverages AI technology across four business domains to revolutionize traditional methods.<br>
+      Each business operates independently yet is united by a common AI foundation
+    </p>
+
+    <!-- TOP 3 BUSINESSES -->
+    <div class="business-grid">
+
+      <!-- TRADING -->
+      <div class="card" id="business-trading">
+        <div class="thumb" style="background-image:url('images/vessel-trading.jpg');"></div>
+        <h3>Trading</h3>
+        <p>
+          A global vessel matching platform connecting Asia and the world.<br>
+          AI-driven inventory management and real-time market analysis enable swift matching of optimal vessels.<br>
+          Secure payment structures and escrow services eliminate concerns in international transactions
+        </p>
+        <div class="use-case-box">
+          <h4>Use Case: Ensuring Safe International Transactions</h4>
+          <p>Companies considering their first vessel purchase. Escrow services and transparent transaction processes eliminate concerns arising from language and cultural differences</p>
+          <div class="use-case-details">
+            <span><strong>Industry:</strong> Logistics & Shipping</span>
+            <span><strong>Challenge:</strong> Concerns about international transactions</span>
+            <span><strong>Solution:</strong> Vessel Trading Platform</span>
+          </div>
+        </div>
+        <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
       </div>
-      <div class="card">
-        <div class="thumb" style="background-image:url('/images/investment-hero.jpg');"></div>
+
+      <!-- INVESTMENT -->
+      <div class="card" id="business-investment">
+        <div class="thumb" style="background-image:url('images/investment.jpg');"></div>
         <h3>Investment</h3>
-        <p>AI-driven asset management engine (Aviscore) focusing on stability and growth through disciplined execution. Combining FX automation with ETF-based portfolio strategies.</p>
-        <div style="margin-top:auto;"><a class="btn" href="/en/services/investment.html">Learn More</a></div>
-      </div>
-      <div class="card">
-        <div class="thumb" style="background-image:url('/images/technology-hero.jpg');"></div>
-        <h3>Technology</h3>
-        <p>Implementation-first AI development including ADCS (Active Defense Cyber Security) for SMEs and municipalities worldwide. We integrate data infrastructure, evaluation, and safety.</p>
-        <div style="margin-top:auto;"><a class="btn" href="/en/services/technology.html">Learn More</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap" id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <div class="faq-q">How can I contact each business division?</div>
-      <div class="faq-a">Please use our <a href="/en/contact.html">contact form</a> and specify which division you're interested in (Trading, Investment, or Technology). We'll connect you with the appropriate team within 24 hours.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you accept equity investments?</div>
-      <div class="faq-a">We generally do not accept equity investments. Instead, we offer project-based participation schemes that align with specific business initiatives. Please contact us for details about current opportunities.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I see case studies or examples of ADCS deployments?</div>
-      <div class="faq-a">Yes! Visit our <a href="/en/services/technology.html">Technology page</a> to access sample security reports and learn more about our ADCS (Active Defense Cyber Security) solution.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What is the typical process for vessel trading transactions?</div>
-      <div class="faq-a">Our process includes: (1) Requirement consultation, (2) AI-matched inventory presentation, (3) Inspection arrangement, (4) Escrow/payment structure setup, (5) Registration support. The entire process typically takes 4-8 weeks depending on vessel type and location.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Which countries and regions do you operate in?</div>
-      <div class="faq-a">We operate globally with primary focus on Asia-Pacific, Middle East, and Europe. Our legal structure includes entities in Japan and Panama, with banking infrastructure in Estonia and Dubai.</div>
-    </div>
-  </section>
-
-  <section class="wrap bg-contact">
-    <h2>Get Started</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Partnerships & Business Inquiries</h3>
-        <p>Interested in our services or exploring partnership opportunities? Our team is ready to discuss how we can support your goals.</p>
-        <a class="cta" href="/en/contact.html">Contact Us</a>
-      </div>
-      <div class="card">
-        <h3>Request Documentation</h3>
-        <p>Get detailed information about our products and services including technical specifications, case studies, and pricing.</p>
-        <a class="btn" href="/en/contact.html">Request Materials</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <div class="footer-content">
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/en/about.html">About Us</a></li>
-            <li><a href="/en/contact.html">Contact</a></li>
-            <li><a href="#business">Our Business</a></li>
-          </ul>
+        <p>
+          Solid asset formation emphasizing stability and growth through the AI-driven asset management engine "Aviscore."<br>
+          Combining FX automated trading and ETF portfolio strategies, we respond flexibly to market fluctuations while minimizing risk
+        </p>
+        <div class="use-case-box">
+          <h4>Use Case: Startup Asset Management</h4>
+          <p>A rapidly growing SaaS company. The challenge was efficient management of surplus funds. Automated management by Aviscore achieves stable returns while allowing focus on core business</p>
+          <div class="use-case-details">
+            <span><strong>Industry:</strong> SaaS / Technology</span>
+            <span><strong>Challenge:</strong> Efficient management of surplus funds</span>
+            <span><strong>Solution:</strong> AI Asset Management</span>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="/en/services/vessel-trading.html">Vessel Trading</a></li>
-            <li><a href="/en/services/investment.html">Investment</a></li>
-            <li><a href="/en/services/technology.html">Technology (ADCS)</a></li>
-          </ul>
+        <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
+      </div>
+
+      <!-- SECURITY -->
+      <div class="card" id="business-security">
+        <div class="thumb" style="background-image:url('images/security.jpg');"></div>
+        <h3>Security</h3>
+        <p>
+          Active defense-type cybersecurity solution "ADCS" for SMEs and municipalities.<br>
+          OSINT analysis and AI-driven threat detection enable security diagnostics from an attacker's perspective.<br>
+          We provide a foundation that serves as a bridge to full SOC
+        </p>
+        <div class="use-case-box">
+          <h4>Use Case: Strengthening Mid-Size Company Security</h4>
+          <p>A manufacturing company with 50 employees. Within an aging infrastructure and limited budget, we visualize attack surfaces and establish incident response systems. Reports can also serve as explanatory materials for business partners</p>
+          <div class="use-case-details">
+            <span><strong>Industry:</strong> Manufacturing</span>
+            <span><strong>Challenge:</strong> Legacy system security</span>
+            <span><strong>Solution:</strong> ADCS Continuous Assessment</span>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="/en/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="/en/terms-of-service.html">Terms of Service</a></li>
-          </ul>
+        <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
+      </div>
+
+    </div>
+
+    <!-- AI & DEVELOPMENT (Full width bottom) -->
+    <div class="business-tech">
+      <div class="thumb" style="background-image:url('images/ai-development.jpg'); max-width:600px; margin:0 auto 20px; height:200px;"></div>
+      <h3>AI & Development</h3>
+      <p>
+        The technical foundation supporting all three business domains.<br>
+        Following an implementation-first philosophy, we develop AI systems ready for real-world operation from day one.<br>
+        Data pipelines, automation, and intelligent decision support accelerate the competitive edge of each business
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 4: TECHNOLOGY FOUNDATION
+======================================== -->
+<section id="technology-foundation" style="background:rgba(5,8,15,0.3);">
+  <div class="wrap">
+    <h2>Technology Foundation</h2>
+
+    <p style="color:var(--text-secondary); max-width:900px; margin-bottom:40px; font-size:1rem; line-height:1.75;">
+      All of Avisail's businesses are united by a single technical foundation.<br>
+      AI-driven analysis and automation, data infrastructure, security evaluation, and unified user experience.<br>
+      These combined elements generate implementation capabilities common to trading, investment, security, and development
+    </p>
+
+    <div class="grid-3">
+
+      <!-- DEVELOPMENT ENVIRONMENT -->
+      <div class="card">
+        <h3 class="mt-0 mb-2">Development Environment</h3>
+        <ul style="margin:0; padding:0 0 0 20px; color:var(--text-muted); line-height:1.9; font-size:0.95rem;">
+          <li><strong style="color:#fff;">AI/ML:</strong> Custom Optimized Models</li>
+          <li><strong style="color:#fff;">Backend:</strong> Python, Node.js, FastAPI</li>
+          <li><strong style="color:#fff;">Frontend:</strong> React, Next.js, TypeScript</li>
+          <li><strong style="color:#fff;">Infrastructure:</strong> AWS, GCP, Docker, CI/CD</li>
+          <li><strong style="color:#fff;">Security:</strong> OSINT API Integration, Threat Detection Systems</li>
+        </ul>
+      </div>
+
+      <!-- GLOBAL NETWORK -->
+      <div class="card">
+        <h3 class="mt-0 mb-2">Global Network</h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:0;">
+          Technical partnerships with experts worldwide enable 24/7 development and support.<br>
+          Collaborating with technology partners across Asia, the Middle East, and Europe, we deliver solutions tailored to each region's market characteristics.<br><br>
+          Optimal resource management allows us to propose cost-competitive packages
+        </p>
+      </div>
+
+      <!-- IN-HOUSE SECURITY -->
+      <div class="card">
+        <h3 class="mt-0 mb-2">In-House Security</h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:0;">
+          Through our proprietary diagnostic system operations and partnerships with experts, we protect customer information
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 5: PROVEN RESULTS (Compact)
+======================================== -->
+<section id="proven-results">
+  <div class="wrap">
+    <h2>Proven Results</h2>
+
+    <p style="color:var(--text-secondary); max-width:850px; margin-bottom:36px; font-size:1rem; line-height:1.75;">
+      Avisail's technology operates in real environments and accumulates proven results.<br>
+      Our credibility is demonstrated not by organizational scale, but by implementation capabilities and operational track record
+    </p>
+
+    <div class="stats-grid">
+
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">System Operation</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">Multilingual</div>
+        <div class="stat-label">All Languages</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Security Checks</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">Global</div>
+        <div class="stat-label">Asia · Middle East · Europe</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 6: WHY AVISAIL (Horizontal Cards)
+======================================== -->
+<section id="why-avisail" style="background:rgba(5,8,15,0.3);">
+  <div class="wrap">
+    <h2>Why Choose Avisail?</h2>
+
+    <div class="why-avisail-grid">
+
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <div class="why-content">
+          <h3>Implementation-First Philosophy</h3>
+          <p>
+            We deliver systems that actually work from day one, not just theories and plans.<br>
+            All solutions are built on technology we operate in-house.<br>
+            We deliver proven value directly to our customers
+          </p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Avisail Technologies — All rights reserved.</p>
+
+      <div class="why-card">
+        <div class="why-icon">🤖</div>
+        <div class="why-content">
+          <h3>AI-Driven Efficiency</h3>
+          <p>
+            Without relying on manual work, AI-driven automation achieves 24/7 operation.<br>
+            This enables us to provide enterprise-grade services at one-tenth the traditional cost.<br>
+            We achieve both high quality and speed with a small team
+          </p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🌏</div>
+        <div class="why-content">
+          <h3>Global Perspective, Local Response</h3>
+          <p>
+            Our business expansion across Asia, the Middle East, and Europe balances international vision with locally appropriate solutions.<br>
+            We support global growth through multilingual support and understanding of each country's business customs
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 7: CONTACT & FORM
+======================================== -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact Us</h2>
+
+    <p style="color:var(--text-secondary); max-width:850px; margin-bottom:48px; font-size:1rem; line-height:1.75;">
+      Feel free to contact us with questions, service inquiries, or partnership proposals.<br>
+      Our team will respond within 24 hours
+    </p>
+
+    <div class="card" style="max-width:900px; margin:0 auto;">
+        <h3 class="mt-0">Contact Form</h3>
+
+        <div style="margin-bottom:28px; display:flex; flex-direction:column; gap:14px; font-size:0.95rem; padding:16px; background:rgba(126,240,212,0.03); border-radius:12px; border:1px solid rgba(126,240,212,0.15);">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <span style="font-size:1.3rem;">📧</span>
+            <a href="mailto:contact@avisail.tech" style="color:var(--accent-teal);">contact@avisail.tech</a>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <span style="font-size:1.3rem;">🌐</span>
+            <span style="color:var(--text-muted);">Multilingual: 日本語 / English / Italiano</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <span style="font-size:1.3rem;">⏰</span>
+            <span style="color:var(--text-muted);">24-hour response</span>
+          </div>
+        </div>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Area of Interest *</label>
+            <select id="business" name="business" required>
+              <option value="">Please select</option>
+              <option value="trading">Trading (Vessel Sales)</option>
+              <option value="investment">Investment (Asset Management)</option>
+              <option value="security">Security (ADCS / Cybersecurity)</option>
+              <option value="ai-dev">AI & Development</option>
+              <option value="partnership">Partnership / Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Please describe your inquiry"></textarea>
+          </div>
+
+          <button type="submit" class="cta">Send Message</button>
+        </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     SECTION 8: FAQ (5 Questions)
+======================================== -->
+<section id="faq" style="background:rgba(5,8,15,0.3);">
+  <div class="wrap">
+    <h2>FAQ</h2>
+
+    <div style="max-width:900px; margin:0 auto;">
+
+      <div class="faq-item">
+        <div class="faq-q">Q1. What kind of company is Avisail Technologies?</div>
+        <div class="faq-a">
+          Avisail is a technology company operating in four domains: <strong>vessel trading, asset management, cybersecurity, and AI development</strong>, all based on AI technology.<br>
+          With an implementation-first approach unconstrained by industry conventions, we achieve both high speed and quality even with a small team
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q2. Can both corporations and individuals use your services?</div>
+        <div class="faq-a">
+          Yes.<br>
+          Availability varies by service, but <strong>both corporations and individuals can use our services</strong>.<br>
+          Vessel trading and cybersecurity primarily target corporations, while investment and some AI services are also available to individuals
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q3. Do you support global operations?</div>
+        <div class="faq-a">
+          Yes, we do.<br>
+          Avisail is designed for transactions across Asia, the Middle East, and Europe, enabling <strong>multilingual, multi-currency, and internationally compliant support</strong>.<br>
+          We provide support in multiple languages including Japanese, English, and Italian
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q4. How do you approach security and privacy?</div>
+        <div class="faq-a">
+          Data protection and privacy are our top priorities.<br>
+          We implement technical security measures including communication encryption, access management, and regular vulnerability assessments.<br>
+          For details, please refer to our <a href="ja/legal/privacy-policy.html">Privacy Policy</a> and <a href="ja/legal/security.html">Security Policy</a>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q5. Can we discuss partnerships or collaborations?</div>
+        <div class="faq-a">
+          Yes, we actively welcome such discussions.<br>
+          Please select "Partnership" in the contact form and reach out to us.<br>
+          We welcome various forms of collaboration, including technical partnerships, sales agencies, and joint development
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+<footer>
+  <div class="wrap">
+
+    <div class="footer-content">
+
+      <!-- COLUMN 1: BRAND -->
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+          <div class="logo" style="width:28px; height:28px;"></div>
+          <span style="font-size:1.1rem; font-weight:600; letter-spacing:0.08em; color:#fff;">AVISAIL</span>
+        </div>
+        <p class="footer-brand">
+          A next-generation technology company redefining trading, investment, and security through the power of AI and technological exploration
+        </p>
+      </div>
+
+      <!-- COLUMN 2: SERVICES -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#business-trading">Vessel Trading</a></li>
+          <li><a href="#business-investment">Asset Management</a></li>
+          <li><a href="#business-security">Security (ADCS)</a></li>
+          <li><a href="#business">AI & Development</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: COMPANY -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 4: LEGAL -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="ja/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="ja/legal/terms.html">Terms of Service</a></li>
+          <li><a href="ja/legal/cookies.html">Cookie Policy</a></li>
+          <li><a href="ja/legal/security.html">Security Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="footer-bottom">
+      <p style="margin:0;">© 2025 Avisail Technologies — All rights reserved.</p>
+      <div style="display:flex; gap:10px;">
+        <a href="index.html" style="color:#fff;">English</a>
+        <span style="color:#506080;">|</span>
+        <a href="index.jp">日本語</a>
       </div>
     </div>
-  </footer>
 
-</div>
+  </div>
+</footer>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-(function(){
-  var intro=document.getElementById('intro'), site=document.getElementById('site'), wrap=document.getElementById('vimeo-wrap'), btn=intro.querySelector('button');
-  var iframe=document.createElement('iframe');
-  iframe.src="https://player.vimeo.com/video/1110865623?autoplay=1&muted=1&controls=0&loop=0&background=1";
-  wrap.appendChild(iframe);
-  var player=new Vimeo.Player(iframe);
-  function reveal(){ intro.style.opacity='0'; intro.style.visibility='hidden'; site.style.opacity='1'; site.style.visibility='visible'; player.pause(); }
-  player.on('ended',reveal); btn.onclick=reveal;
-  setTimeout(function(){ if(site.style.visibility!=='visible') reveal(); }, 15000);
-})();
-</script>
 </body>
 </html>
