@@ -242,11 +242,22 @@
         }
 
         /* ADCS OVERVIEW */
-        .adcs-overview {
+        .adcs-top-row {
             display: grid;
-            grid-template-columns: minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .adcs-bottom-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .adcs-detail-btn {
+            text-align: center;
+            margin-top: 24px;
         }
 
         .adcs-content h3 {
@@ -531,7 +542,8 @@
                 font-size: 28px;
             }
 
-            .adcs-overview {
+            .adcs-top-row,
+            .adcs-bottom-row {
                 grid-template-columns: minmax(0,1fr);
             }
 
@@ -627,7 +639,8 @@
                 中小企業が最初に取り組むべきセキュリティ対策として最適です。
             </p>
 
-            <div class="adcs-overview">
+            <!-- 上段: ADCS説明 + サンプルレポート -->
+            <div class="adcs-top-row">
                 <div class="adcs-content">
                     <h3>ADCS Active Defense ＊ SOC Framework</h3>
                     <p>
@@ -657,24 +670,25 @@
                             <span>経営層向け1ページサマリー付き</span>
                         </div>
                     </div>
-
-                    <div style="background: radial-gradient(circle at 0 0, rgba(31,111,235,0.2), rgba(53,179,255,0.1)); border: 2px solid var(--accent); border-radius: 16px; padding: 24px; margin: 20px 0; box-shadow: 0 8px 24px rgba(53,179,255,0.25);">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-                            <span style="font-size: 28px;">📄</span>
-                            <h4 style="font-size: 17px; font-weight: 700; color: var(--accent); margin: 0;">まずはこちら！サンプルレポートをご確認ください</h4>
-                        </div>
-                        <p style="font-size: 14px; color: var(--text-main); margin-bottom: 18px; line-height: 1.6;">
-                            実際のADCS診断レポートのサンプルをご覧いただけます。どのような内容が提供されるかをご確認ください。
-                        </p>
-                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="adcs/reports/avisail-report-jp.html" style="flex: 1; min-width: 180px;"><button class="btn-primary" style="font-size: 14px; padding: 12px 24px; width: 100%;">📥 日本語版サンプル</button></a>
-                            <a href="adcs/reports/avisail-report-en.html" style="flex: 1; min-width: 180px;"><button class="btn-outline" style="font-size: 14px; padding: 11px 22px; width: 100%;">📥 English Sample</button></a>
-                        </div>
-                    </div>
-
-                    <a href="avisail-adcs-detail-jp.html"><button class="btn-primary" style="font-size:15px; padding:14px 28px; margin-top:8px;">📋 ADCS詳細・プラン比較を見る</button></a>
                 </div>
 
+                <div style="background: radial-gradient(circle at 0 0, rgba(31,111,235,0.2), rgba(53,179,255,0.1)); border: 2px solid var(--accent); border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(53,179,255,0.25); display: flex; flex-direction: column; justify-content: center;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+                        <span style="font-size: 28px;">📄</span>
+                        <h4 style="font-size: 17px; font-weight: 700; color: var(--accent); margin: 0;">まずはこちら！サンプルレポートをご確認ください</h4>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-main); margin-bottom: 18px; line-height: 1.6;">
+                        実際のADCS診断レポートのサンプルをご覧いただけます。どのような内容が提供されるかをご確認ください。
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="adcs/reports/avisail-report-jp.html" style="flex: 1; min-width: 180px;"><button class="btn-primary" style="font-size: 14px; padding: 12px 24px; width: 100%;">📥 日本語版サンプル</button></a>
+                        <a href="adcs/reports/avisail-report-en.html" style="flex: 1; min-width: 180px;"><button class="btn-outline" style="font-size: 14px; padding: 11px 22px; width: 100%;">📥 English Sample</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下段: プラン2つ + 詳細ボタン -->
+            <div class="adcs-bottom-row">
                 <div class="adcs-card">
                     <h4>💼 単発診断プラン</h4>
                     <div class="price-badge">¥150,000</div>
@@ -698,6 +712,11 @@
                     </p>
                     <a href="avisail-adcs-detail-jp.html"><button class="btn-primary" style="width:100%; padding:12px;">サブスク詳細を見る</button></a>
                 </div>
+            </div>
+
+            <!-- 詳細ボタン -->
+            <div class="adcs-detail-btn">
+                <a href="avisail-adcs-detail-jp.html"><button class="btn-primary" style="font-size:15px; padding:14px 32px;">📋 ADCS詳細・プラン比較を見る</button></a>
             </div>
         </section>
 
