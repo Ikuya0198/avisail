@@ -72,8 +72,8 @@
         }
 
         .logo-sub {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
             color: var(--text-main);
             letter-spacing: .16em;
         }
@@ -615,11 +615,7 @@
 
             <div class="hero-cta">
                 <a href="#contact"><button class="btn-primary">Book Free Consultation</button></a>
-                <div style="display:flex; gap:8px; align-items:center;">
-                    <span style="font-size:13px; color:var(--text-sub);">Sample Reports:</span>
-                    <a href="adcs/reports/avisail-report-jp.html"><button class="btn-outline">日本語</button></a>
-                    <a href="adcs/reports/avisail-report-en.html"><button class="btn-outline">English</button></a>
-                </div>
+                <a href="#adcs"><button class="btn-outline">Learn More About ADCS</button></a>
             </div>
         </div>
 
@@ -659,6 +655,20 @@
                         <div class="feature-item">
                             <span class="feature-dot"></span>
                             <span>Executive summary (1-page) included</span>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(31,111,235,0.15), rgba(53,179,255,0.15)); border: 2px solid var(--accent); border-radius: 16px; padding: 20px; margin: 20px 0;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <span style="font-size: 24px;">📄</span>
+                            <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin: 0;">Check Out Our Sample Reports First!</h4>
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 14px;">
+                            View actual ADCS assessment report samples to see what content we deliver.
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <a href="adcs/reports/avisail-report-en.html"><button class="btn-primary" style="font-size: 14px; padding: 10px 20px;">📥 English Sample</button></a>
+                            <a href="adcs/reports/avisail-report-jp.html"><button class="btn-outline" style="font-size: 14px; padding: 9px 18px;">📥 日本語版サンプル</button></a>
                         </div>
                     </div>
 
@@ -775,6 +785,62 @@
             </div>
         </section>
 
+        <!-- QUICK CONTACT / APPLICATION -->
+        <section id="apply" style="background: radial-gradient(circle at 0 0, #1a2650 0, #050816 55%, #020309 100%); border: 2px solid var(--accent); box-shadow: 0 20px 60px rgba(53,179,255,0.3);">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <h2 class="section-title" style="font-size: 24px; margin-bottom: 12px;">Get Started with Security Assessment Now</h2>
+                <p style="font-size: 14px; color: var(--text-sub);">
+                    Free consultation or service application completed with just one email.<br>
+                    We'll respond within 24 hours.
+                </p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto; background: rgba(15,23,42,0.6); padding: 28px; border-radius: 18px; border: 1px solid rgba(150,160,255,0.3);">
+                <div style="display: grid; gap: 20px;">
+                    <!-- Service Selection -->
+                    <div>
+                        <h4 style="font-size: 15px; margin-bottom: 12px; color: var(--accent);">💼 Choose Your Service</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">ADCS One-Time</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">¥150,000</div>
+                            </div>
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">ADCS Subscription</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">From ¥48,000/mo</div>
+                            </div>
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">Free Consultation</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">¥0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Application Button -->
+                    <div style="text-align: center;">
+                        <a href="mailto:info@avisail.com?subject=Security%20Service%20Application&body=【Desired Service】%0AExample: ADCS One-Time / ADCS Subscription / Free Consultation%0A%0A【Company Name】%0A%0A【Contact Person】%0A%0A【Company Size】%0AExample: 10, 50, 100 employees%0A%0A【Email Address】%0A%0A【Phone Number (Optional)】%0A%0A【Questions / Comments】%0A">
+                            <button class="btn-primary" style="font-size: 16px; padding: 16px 40px; width: 100%; max-width: 400px;">
+                                📧 Apply via Email (1 min)
+                            </button>
+                        </a>
+                        <p style="font-size: 11px; color: var(--text-sub); margin-top: 12px;">
+                            Click to open your email app. Fill in the details and send.
+                        </p>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div style="background: rgba(31,111,235,0.08); padding: 16px; border-radius: 12px; border-left: 3px solid var(--accent);">
+                        <div style="font-size: 13px; color: var(--text-sub); line-height: 1.8;">
+                            ✓ Free consultation: 30-min online meeting<br>
+                            ✓ Response within 24 hours of application<br>
+                            ✓ One-time assessment delivered in as fast as 2 weeks<br>
+                            ✓ Free quotes available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- COMPARISON -->
         <section id="comparison">
             <h2 class="section-title">Service Pricing Comparison</h2>
@@ -828,15 +894,15 @@
             <div class="trust-stats">
                 <div class="stat-card">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Assessments Completed</div>
+                    <div class="stat-label">Sites Scanned</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Customer Satisfaction</div>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Security Scanners Utilized</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">On-Time Delivery Rate</div>
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Expert Network Collaboration</div>
                 </div>
             </div>
 
@@ -938,8 +1004,48 @@
             </p>
         </section>
 
-        <footer>
-            © Avisail – Security Services for SMBs
+        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Legal Information -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 24px; font-size: 12px;">
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Operator Information</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            Operator: Avisail<br>
+                            Location: Tokyo, Japan (Details upon inquiry)<br>
+                            Email: info@avisail.com
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Service Delivery</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            Pricing: Listed on service pages<br>
+                            Payment: Bank transfer, Credit card<br>
+                            Delivery: Varies by service (from 2 weeks)
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Cancellation & Refund</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            Before service start: Full refund<br>
+                            After work begins: Case-by-case basis<br>
+                            Details explained upon application
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Summary -->
+                <div style="background: rgba(15,23,42,0.5); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 11px; color: var(--text-sub); line-height: 1.7;">
+                    <strong style="color: var(--text-main);">Privacy Policy:</strong>
+                    Personal information collected is used solely for service delivery and inquiry response. We do not disclose information to third parties (except as required by law).
+                    Data obtained during security assessments is securely deleted after report creation.
+                </div>
+
+                <!-- Copyright -->
+                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
+                    © 2024 Avisail – Security Services for SMBs
+                </div>
+            </div>
         </footer>
 
     </div>

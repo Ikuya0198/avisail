@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>Avisail｜会社紹介 ブローシャー</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        /* 印刷・PDF用最適化 */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #0f1b2d 100%);
+            color: #f5f7ff;
+            line-height: 1.6;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 背景パターン */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(53,179,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(31,111,235,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(126,240,212,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .brochure {
+            width: 100%;
+            height: 100%;
+            padding: 15mm;
+            display: flex;
+            flex-direction: column;
+            gap: 5mm;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            padding: 8mm 4mm;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(53,179,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(31,111,235,0.15) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(10,22,40,0.8), rgba(15,27,45,0.8));
+            border: 2px solid rgba(53,179,255,0.3);
+        }
+
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 3mm;
+        }
+
+        .logo-mark {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #35b3ff 0%, #1f6feb 100%);
+            box-shadow: 0 4px 16px rgba(53,179,255,0.5);
+        }
+
+        .logo-text {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        .company-tagline {
+            font-size: 13px;
+            color: #35b3ff;
+            font-weight: 600;
+            margin-bottom: 2mm;
+        }
+
+        .company-desc {
+            font-size: 11px;
+            color: #a7b3d3;
+            line-height: 1.8;
+        }
+
+        /* 事業紹介 */
+        .businesses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5mm;
+            flex: 1;
+        }
+
+        .business-card {
+            background: linear-gradient(145deg, rgba(11,16,32,0.8), rgba(6,8,22,0.6));
+            border: 2px solid rgba(82,96,159,0.7);
+            border-radius: 12px;
+            padding: 4mm;
+            display: flex;
+            flex-direction: column;
+            gap: 3mm;
+        }
+
+        .business-card.trade {
+            border-color: rgba(126,240,212,0.7);
+            background: linear-gradient(145deg, rgba(26,61,61,0.6), rgba(13,31,31,0.4));
+        }
+
+        .business-card.investment {
+            border-color: rgba(255,179,102,0.7);
+            background: linear-gradient(145deg, rgba(61,38,26,0.6), rgba(31,19,13,0.4));
+        }
+
+        .business-card.security {
+            border-color: rgba(126,179,255,0.7);
+            background: linear-gradient(145deg, rgba(26,38,61,0.6), rgba(13,19,31,0.4));
+        }
+
+        .business-icon {
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .business-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            padding-bottom: 2mm;
+            border-bottom: 2px solid rgba(150,160,255,0.3);
+        }
+
+        .business-card.trade .business-title {
+            color: #7ef0d4;
+            border-bottom-color: rgba(126,240,212,0.3);
+        }
+
+        .business-card.investment .business-title {
+            color: #ffb366;
+            border-bottom-color: rgba(255,179,102,0.3);
+        }
+
+        .business-card.security .business-title {
+            color: #7eb3ff;
+            border-bottom-color: rgba(126,179,255,0.3);
+        }
+
+        .business-desc {
+            font-size: 10px;
+            color: #a7b3d3;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .products-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #f5f7ff;
+            margin-top: 2mm;
+            margin-bottom: 2mm;
+            text-align: center;
+        }
+
+        .product-list {
+            font-size: 9px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5mm;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 3px;
+            line-height: 1.5;
+        }
+
+        .product-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #35b3ff;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* 技術基盤セクション */
+        .tech-foundation {
+            background: linear-gradient(135deg, rgba(31,111,235,0.2), rgba(53,179,255,0.15));
+            padding: 5mm;
+            border-radius: 12px;
+            border: 2px solid rgba(53,179,255,0.4);
+        }
+
+        .tech-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 3mm;
+            color: #35b3ff;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4mm;
+        }
+
+        .tech-item {
+            background: rgba(15,23,42,0.6);
+            padding: 3mm;
+            border-radius: 8px;
+            border: 1px solid rgba(150,160,255,0.3);
+            text-align: center;
+        }
+
+        .tech-icon {
+            font-size: 24px;
+            margin-bottom: 2mm;
+        }
+
+        .tech-item-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #f5f7ff;
+            margin-bottom: 2mm;
+        }
+
+        .tech-item-desc {
+            font-size: 9px;
+            color: #a7b3d3;
+            line-height: 1.6;
+        }
+
+        /* フッター */
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 4mm;
+            border-top: 2px solid rgba(150,160,255,0.3);
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #35b3ff;
+            margin-bottom: 2mm;
+        }
+
+        .contact-info {
+            font-size: 12px;
+            color: #f5f7ff;
+            font-weight: 600;
+        }
+
+        .contact-note {
+            margin-top: 2mm;
+            font-size: 9px;
+            color: #7ef0d4;
+        }
+
+        /* 印刷用スタイル */
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+
+            .brochure {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brochure">
+
+        <!-- ヘッダー -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-mark"></div>
+                <div class="logo-text">AVISAIL</div>
+            </div>
+            <div class="company-tagline">中小企業の成長を支える、実践的なテクノロジーパートナー</div>
+            <div class="company-desc">
+                貿易・投資・セキュリティの3事業を通じて、<br>
+                中小企業のDX推進と事業成長を加速させます
+            </div>
+        </div>
+
+        <!-- 事業紹介（3カラム） -->
+        <div class="businesses">
+
+            <!-- 貿易事業 -->
+            <div class="business-card trade">
+                <div class="business-icon">🌏</div>
+                <div class="business-title">貿易事業</div>
+                <div class="business-desc">
+                    グローバルな商流を活用し、<br>
+                    高品質な商品を適正価格で提供
+                </div>
+
+                <div class="products-title">主要商材</div>
+                <div class="product-list">
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>工業製品・部品の輸出入</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>IT機器・ハードウェア調達</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>食品・消費財の輸入販売</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>貿易実務代行サービス</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 投資事業 -->
+            <div class="business-card investment">
+                <div class="business-icon">📊</div>
+                <div class="business-title">投資事業</div>
+                <div class="business-desc">
+                    AI・量子技術を活用した<br>
+                    システマティックな投資戦略
+                </div>
+
+                <div class="products-title">提供サービス</div>
+                <div class="product-list">
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>自動取引システム開発</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>アルゴリズムトレーディング</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>リスク管理・分析ツール</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>投資戦略コンサルティング</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- セキュリティ事業 -->
+            <div class="business-card security">
+                <div class="business-icon">🛡️</div>
+                <div class="business-title">セキュリティ事業</div>
+                <div class="business-desc">
+                    年間予算50万円以下でも<br>
+                    本格的な診断が可能
+                </div>
+
+                <div class="products-title">主要サービス</div>
+                <div class="product-list">
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>ADCS診断（¥150,000〜）</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>フィッシングテスト</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>Webアプリケーション診断</span>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-dot"></span>
+                        <span>継続サポート（月額¥48,000〜）</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 共通技術基盤 -->
+        <div class="tech-foundation">
+            <div class="tech-title">全事業に共通する技術基盤：AI活用の技術開発</div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🤖</div>
+                    <div class="tech-item-title">AIによる自動化</div>
+                    <div class="tech-item-desc">
+                        機械学習・深層学習を活用し、<br>
+                        業務プロセスを効率化
+                    </div>
+                </div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">🌐</div>
+                    <div class="tech-item-title">グローバルネットワーク</div>
+                    <div class="tech-item-desc">
+                        各国の専門家と連携し、<br>
+                        最新技術と知見を活用
+                    </div>
+                </div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">💡</div>
+                    <div class="tech-item-title">コスト最適化</div>
+                    <div class="tech-item-desc">
+                        海外リソース活用により、<br>
+                        高品質を低価格で実現
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッター -->
+        <div class="footer">
+            <div class="contact-section">
+                <div class="contact-title">お問い合わせ</div>
+                <div class="contact-info">📧 info@avisail.com</div>
+                <div class="contact-note">
+                    ✓ 無料相談実施中 ｜ ✓ 24時間以内に返信 ｜ ✓ お見積もり無料
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

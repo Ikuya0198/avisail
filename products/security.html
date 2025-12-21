@@ -72,8 +72,8 @@
         }
 
         .logo-sub {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
             color: var(--text-main);
             letter-spacing: .16em;
         }
@@ -615,11 +615,7 @@
 
             <div class="hero-cta">
                 <a href="#contact"><button class="btn-primary">無料相談を予約する</button></a>
-                <div style="display:flex; gap:8px; align-items:center;">
-                    <span style="font-size:13px; color:var(--text-sub);">サンプルレポート:</span>
-                    <a href="adcs/reports/avisail-report-jp.html"><button class="btn-outline">日本語</button></a>
-                    <a href="adcs/reports/avisail-report-en.html"><button class="btn-outline">English</button></a>
-                </div>
+                <a href="#adcs"><button class="btn-outline">ADCS診断について詳しく</button></a>
             </div>
         </div>
 
@@ -659,6 +655,20 @@
                         <div class="feature-item">
                             <span class="feature-dot"></span>
                             <span>経営層向け1ページサマリー付き</span>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(31,111,235,0.15), rgba(53,179,255,0.15)); border: 2px solid var(--accent); border-radius: 16px; padding: 20px; margin: 20px 0;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <span style="font-size: 24px;">📄</span>
+                            <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin: 0;">まずはこちら！サンプルレポートをご確認ください</h4>
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 14px;">
+                            実際のADCS診断レポートのサンプルをご覧いただけます。どのような内容が提供されるかをご確認ください。
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <a href="adcs/reports/avisail-report-jp.html"><button class="btn-primary" style="font-size: 14px; padding: 10px 20px;">📥 日本語版サンプル</button></a>
+                            <a href="adcs/reports/avisail-report-en.html"><button class="btn-outline" style="font-size: 14px; padding: 9px 18px;">📥 English Sample</button></a>
                         </div>
                     </div>
 
@@ -790,6 +800,62 @@
             </div>
         </section>
 
+        <!-- QUICK CONTACT / APPLICATION -->
+        <section id="apply" style="background: radial-gradient(circle at 0 0, #1a2650 0, #050816 55%, #020309 100%); border: 2px solid var(--accent); box-shadow: 0 20px 60px rgba(53,179,255,0.3);">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <h2 class="section-title" style="font-size: 24px; margin-bottom: 12px;">今すぐセキュリティ診断を申し込む</h2>
+                <p style="font-size: 14px; color: var(--text-sub);">
+                    無料相談またはサービスのお申し込みは、メール1通で完了します。<br>
+                    24時間以内にご返信いたします。
+                </p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto; background: rgba(15,23,42,0.6); padding: 28px; border-radius: 18px; border: 1px solid rgba(150,160,255,0.3);">
+                <div style="display: grid; gap: 20px;">
+                    <!-- サービス選択 -->
+                    <div>
+                        <h4 style="font-size: 15px; margin-bottom: 12px; color: var(--accent);">💼 ご希望のサービスを選択</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">ADCS単発診断</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">¥150,000</div>
+                            </div>
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">ADCSサブスク</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">月額¥48,000〜</div>
+                            </div>
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">無料相談</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">¥0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- メール申し込みボタン -->
+                    <div style="text-align: center;">
+                        <a href="mailto:info@avisail.com?subject=セキュリティサービスお申し込み&body=【ご希望のサービス】%0A例：ADCS単発診断 / ADCSサブスク / 無料相談%0A%0A【会社名・団体名】%0A%0A【ご担当者名】%0A%0A【従業員規模】%0A例：10名、50名、100名%0A%0A【メールアドレス】%0A%0A【電話番号（任意）】%0A%0A【ご相談内容・ご質問】%0A">
+                            <button class="btn-primary" style="font-size: 16px; padding: 16px 40px; width: 100%; max-width: 400px;">
+                                📧 メールで申し込む（1分で完了）
+                            </button>
+                        </a>
+                        <p style="font-size: 11px; color: var(--text-sub); margin-top: 12px;">
+                            クリックするとメールアプリが開きます。必要事項をご記入の上、送信してください。
+                        </p>
+                    </div>
+
+                    <!-- 補足情報 -->
+                    <div style="background: rgba(31,111,235,0.08); padding: 16px; border-radius: 12px; border-left: 3px solid var(--accent);">
+                        <div style="font-size: 13px; color: var(--text-sub); line-height: 1.8;">
+                            ✓ 無料相談は30分のオンラインミーティング<br>
+                            ✓ お申し込み後24時間以内にご返信<br>
+                            ✓ 単発診断は最短2週間で納品可能<br>
+                            ✓ お見積もりは無料です
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- COMPARISON -->
         <section id="comparison">
             <h2 class="section-title">サービス価格比較</h2>
@@ -843,15 +909,15 @@
             <div class="trust-stats">
                 <div class="stat-card">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">診断実施企業数</div>
+                    <div class="stat-label">チェック済みサイト数</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">顧客満足度</div>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">駆使するセキュリティスキャナー</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">レポート納期遵守率</div>
+                    <div class="stat-number">グローバル</div>
+                    <div class="stat-label">各国の専門家と連携</div>
                 </div>
             </div>
 
@@ -953,8 +1019,48 @@
             </p>
         </section>
 
-        <footer>
-            © Avisail – Security Services for SMBs
+        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- 法的表示 -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 24px; font-size: 12px;">
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">運営者情報</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            運営者：Avisail<br>
+                            所在地：東京都（詳細はお問い合わせ時に開示）<br>
+                            Email: info@avisail.com
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">サービス提供</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            料金：各サービスページに記載<br>
+                            支払方法：銀行振込、クレジットカード<br>
+                            納期：サービスにより異なる（2週間〜）
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">キャンセル・返金</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            サービス開始前：全額返金<br>
+                            作業着手後：協議の上対応<br>
+                            詳細はお申し込み時にご説明します
+                        </div>
+                    </div>
+                </div>
+
+                <!-- プライバシーポリシー要約 -->
+                <div style="background: rgba(15,23,42,0.5); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 11px; color: var(--text-sub); line-height: 1.7;">
+                    <strong style="color: var(--text-main);">個人情報の取り扱い：</strong>
+                    お預かりした個人情報は、サービス提供・お問い合わせ対応の目的でのみ使用し、第三者への開示は行いません（法令に基づく場合を除く）。
+                    セキュリティ診断で取得した情報は、レポート作成後に安全に削除いたします。
+                </div>
+
+                <!-- コピーライト -->
+                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
+                    © 2024 Avisail – Security Services for SMBs
+                </div>
+            </div>
         </footer>
 
     </div>
