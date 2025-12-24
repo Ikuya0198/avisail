@@ -1,221 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Investment & Aviscore | Avisail Technologies</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--line:rgba(255,255,255,.08);--hero-bg:url('/images/investment-hero.jpg');}
-*{box-sizing:border-box;}
-html,body{margin:0;background:#0a0f1a;color:#e9f0ff;font-family:'Inter',sans-serif;line-height:1.7;}
-html{scroll-behavior:smooth;}
-a{color:#cfe2ff;text-decoration:none;transition:color 0.3s;}
-a:hover{color:#7ef0d4;}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
-header{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
-.brand{display:flex;align-items:center;gap:12px;font-weight:600;color:#fff;}
-.logo{width:32px;height:32px;border-radius:8px;background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4);}
-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center;font-size:0.95rem;}
-.menu-item{position:relative;padding:10px 0;}
-.dropdown{position:absolute;top:100%;left:-10px;min-width:200px;background:#0d1424;border:1px solid var(--line);border-radius:12px;padding:12px;display:none;flex-direction:column;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-.menu-item:hover .dropdown{display:flex;}
-.dropdown a{padding:6px 12px;border-radius:6px;color:#9fb0cc;}
-.dropdown a:hover{background:rgba(255,255,255,0.05);color:#fff;}
-.globe-icon{font-size:1.2rem;cursor:pointer;color:#9fb0cc;transition:color 0.3s;}
-.globe-icon:hover{color:#7ef0d4;}
-.page-hero{padding:140px 0 100px;text-align:center;background:linear-gradient(rgba(10,15,26,0.7),rgba(10,15,26,0.9)),var(--hero-bg) center/cover;}
-.page-hero h1{font-size:3.5rem;margin-bottom:24px;color:#fff;font-weight:700;}
-.page-hero .lead{color:#cfe2ff;max-width:800px;margin:0 auto 16px;font-size:1.2rem;}
-.muted{color:#9fb0cc;}
-section{padding:100px 0;border-bottom:1px solid var(--line);}
-h2{font-size:2rem;margin-bottom:40px;color:#fff;display:flex;align-items:center;gap:16px;}
-h2::before{content:'';width:4px;height:32px;background:linear-gradient(to bottom,#6aa6ff,#7ef0d4);display:block;}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-.card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:24px;padding:32px;backdrop-filter:blur(5px);transition:transform 0.3s,border-color 0.3s;height:100%;display:flex;flex-direction:column;}
-.card:hover{transform:translateY(-5px);border-color:rgba(106,166,255,0.3);}
-.card h3{color:#fff;margin-top:0;font-size:1.3rem;}
-.card p{color:#9fb0cc;margin-bottom:24px;flex-grow:1;}
-.btn{display:inline-block;padding:12px 28px;border-radius:50px;border:1px solid var(--line);background:rgba(255,255,255,0.05);color:#e9f0ff;font-size:0.95rem;transition:all 0.3s;}
-.btn:hover{border-color:rgba(106,166,255,0.5);transform:translateY(-2px);}
-.cta{display:inline-block;padding:12px 28px;border-radius:50px;background:linear-gradient(135deg,#6aa6ff,#7ef0d4);color:#06101a;font-weight:700;font-size:0.95rem;box-shadow:0 10px 20px rgba(106,166,255,.2);border:none;transition:all 0.3s;}
-.cta:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(106,166,255,.3);}
-.highlight-box{background:rgba(126,240,212,0.05);border:1px solid rgba(126,240,212,0.2);border-radius:16px;padding:40px;margin:40px 0;}
-footer{background:rgba(5,8,15,0.8);padding:60px 0 30px;border-top:1px solid var(--line);}
-.footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
-.footer-col h4{color:#fff;font-size:1.1rem;margin-bottom:20px;}
-.footer-col ul{list-style:none;padding:0;margin:0;}
-.footer-col ul li{margin-bottom:12px;}
-.footer-col a{color:#9fb0cc;font-size:0.9rem;}
-.footer-col a:hover{color:#7ef0d4;}
-.footer-bottom{border-top:1px solid var(--line);padding-top:30px;text-align:center;color:#9fb0cc;font-size:0.85rem;}
-@media(max-width:980px){.grid-3,.grid-2{grid-template-columns:1fr;}.footer-content{grid-template-columns:1fr;}nav ul{display:none;}.page-hero h1{font-size:2.5rem;}}
-</style>
+    <meta charset="UTF-8" />
+    <title>Avisail | Investment & Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Avisail Investment & Intelligence services. Algorithmic research, AI infrastructure risk assessment, critical materials supply chain analysis, and Aviscore real-time evaluation system.">
+
+    <style>
+        :root {
+            --bg-dark: #050816;
+            --bg-section: #0b1020;
+            --primary: #1f6feb;
+            --accent: #7ef0d4;
+            --accent-gold: #f0c674;
+            --accent-purple: #a78bfa;
+            --text-main: #f5f7ff;
+            --text-sub: #a7b3d3;
+            --border-soft: #222840;
+            --radius-lg: 18px;
+            --radius-xl: 26px;
+            --shadow-soft: 0 18px 40px rgba(0,0,0,0.55);
+            --max-width: 1080px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: radial-gradient(circle at top, #101936 0, #050816 55%, #020309 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .page {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 24px 18px 64px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .logo-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: radial-gradient(circle at 25% 0, #7ef0d4 0, #1f6feb 30%, #050816 80%);
+            box-shadow: 0 0 12px rgba(126,240,212,0.65);
+        }
+
+        .logo-sub {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: .16em;
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-sub);
+            align-items: center;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .lang-switcher, .nav-back {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.5);
+            background: rgba(15,23,42,0.8);
+            color: var(--text-main);
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher:hover, .nav-back:hover {
+            border-color: var(--accent);
+            background: rgba(15,23,42,0.95);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 40px 32px 36px;
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle at 0 0, #17213f 0, #050816 45%, #020309 100%);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(126,240,212,0.3);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(20,33,70,0.9);
+            color: var(--accent);
+            font-size: 11px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-label-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(126,240,212,0.9);
+        }
+
+        .hero-title {
+            font-size: 38px;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero-title span { color: var(--accent); }
+
+        .hero-sub {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 28px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#1f6feb,#7ef0d4);
+            border: none;
+            color: #050816;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(126,240,212,0.35);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(126,240,212,0.5);
+        }
+
+        .btn-gold {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#f0c674,#e8a84c);
+            border: none;
+            color: #050816;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(240,198,116,0.35);
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(240,198,116,0.5);
+        }
+
+        .btn-outline {
+            padding: 11px 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.7);
+            background: transparent;
+            color: var(--text-main);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(126,240,212,0.1);
+        }
+
+        /* SECTION BASE */
+        section {
+            margin-bottom: 40px;
+            padding: 24px 22px;
+            border-radius: 18px;
+            background: var(--bg-section);
+            border: 1px solid var(--border-soft);
+        }
+
+        .section-flagship {
+            background: radial-gradient(circle at 0 0, #1a2650 0, #0d1428 55%, #050816 100%);
+            border: 1px solid rgba(31,111,235,0.4);
+        }
+
+        .section-consumer {
+            background: radial-gradient(circle at 0 0, #1a3d3d 0, #0d1f1f 55%, #061010 100%);
+            border: 1px solid rgba(126,240,212,0.5);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 10px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .label-b2b {
+            background: rgba(31,111,235,0.2);
+            color: #6aa6ff;
+        }
+
+        .label-b2c {
+            background: rgba(126,240,212,0.2);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .section-sub {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 18px;
+        }
+
+        /* SERVICE GRID */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(82,96,159,0.7);
+            background: linear-gradient(145deg,#0b1020,#060816);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(126,240,212,0.2);
+        }
+
+        .service-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            padding-left: 16px;
+            font-size: 12px;
+            color: var(--text-main);
+        }
+
+        .service-card ul li {
+            margin-bottom: 4px;
+        }
+
+        .service-badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        .badge-research {
+            background: rgba(167,139,250,0.2);
+            color: var(--accent-purple);
+        }
+
+        .badge-intelligence {
+            background: rgba(31,111,235,0.2);
+            color: #6aa6ff;
+        }
+
+        .non-scope {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: rgba(255,100,100,0.08);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255,100,100,0.4);
+        }
+
+        .non-scope p {
+            font-size: 11px;
+            color: #ff9999;
+            margin: 0;
+        }
+
+        /* AVISCORE SECTION */
+        .aviscore-box {
+            background: radial-gradient(circle at 0 0, rgba(126,240,212,0.12), rgba(31,111,235,0.08));
+            border: 2px solid var(--accent);
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .aviscore-box h3 {
+            font-size: 20px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .aviscore-box p {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .aviscore-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .aviscore-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* TRY IT BOX */
+        .try-box {
+            background: linear-gradient(135deg, rgba(240,198,116,0.1), rgba(31,111,235,0.08));
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .try-box h4 {
+            font-size: 16px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .try-box p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .try-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .try-note {
+            font-size: 10px;
+            color: var(--text-sub);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(103,120,189,0.3);
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 24px;
+            font-size: 11px;
+            color: var(--text-sub);
+            text-align: center;
+        }
+
+        .disclaimer {
+            background: rgba(255,100,100,0.06);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 3px solid rgba(255,100,100,0.4);
+        }
+
+        .disclaimer p {
+            font-size: 11px;
+            color: #cc9999;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 840px) {
+            .hero { padding: 32px 24px; }
+            .hero-title { font-size: 28px; }
+            .hero-cta { flex-direction: column; align-items: stretch; }
+            .service-grid { grid-template-columns: minmax(0,1fr); }
+            .aviscore-features { grid-template-columns: minmax(0,1fr); }
+            header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            nav { font-size: 12px; flex-wrap: wrap; }
+        }
+    </style>
 </head>
+
 <body>
-<header>
-<div class="wrap nav">
-<div class="brand"><div class="logo"></div><span>Avisail Technologies</span></div>
-<nav>
-<ul>
-<li><a href="/index.html">Home</a></li>
-<li><a href="/en/about.html">About</a></li>
-<li class="menu-item"><span>Services ▾</span>
-<div class="dropdown">
-<a href="/en/services/vessel-trading.html">Vessel Trading</a>
-<a class="active" href="/en/services/investment.html">Investment</a>
-<a href="/products/security.html">Technology</a>
-</div>
-</li>
-<li><a href="/en/contact.html">Contact</a></li>
-<li class="menu-item"><span class="globe-icon">🌐 ▾</span>
-<div class="dropdown">
-<a href="/en/services/investment.html">English</a>
-<a href="/ja/services/investment.html">日本語</a>
-</div>
-</li>
-</ul>
-</nav>
-</div>
-</header>
+    <div class="page">
 
-<main class="page-hero">
-<div class="wrap">
-<h1>Investment & Aviscore</h1>
-<p class="lead">AI-driven asset management platform combining FX automation with ETF-based portfolio strategies for sustainable growth.</p>
-<p class="muted">High-yield, low-risk carry trade approach for sophisticated investors</p>
-</div>
-</main>
+        <!-- HEADER -->
+        <header>
+            <div>
+                <div class="logo">
+                    <div class="logo-mark"></div>
+                    <div>AVISAIL</div>
+                </div>
+                <div class="logo-sub">Investment & Intelligence</div>
+            </div>
 
-<section class="wrap">
-<h2>Aviscore: AI Investment Platform</h2>
-<div class="highlight-box">
-<h3 style="color:#7ef0d4;margin-top:0;font-size:1.5rem;">Intelligent Asset Scoring & Automated Execution</h3>
-<p>Aviscore is our proprietary AI-powered investment platform that evaluates market opportunities across multiple dimensions. Unlike traditional single-metric approaches, Aviscore combines technical analysis, risk assessment, and sentiment evaluation to generate comprehensive investment scores that drive disciplined execution strategies.</p>
-<div style="margin-top:32px;">
-<a href="/products/aviscore.html" class="cta">View Aviscore Platform Details</a>
-<a href="#strategy" class="btn" style="margin-left:16px;">Learn About Our Strategy</a>
-</div>
-</div>
+            <nav>
+                <a href="../../index.html" class="nav-back">← Home</a>
+                <a href="#flagship">Flagship Tech</a>
+                <a href="#aviscore">Aviscore</a>
+                <a href="#contact">Contact</a>
+                <a href="../../ja/services/investment.html" class="lang-switcher">日本語</a>
+            </nav>
+        </header>
 
-<div class="grid-2" style="margin-top:60px;">
-<div class="card">
-<h3>Multi-Factor Analysis</h3>
-<p><strong>Comprehensive Market Evaluation:</strong></p>
-<p>Technical indicators (momentum, trend strength, volatility), Risk metrics (VaR, Sharpe ratio, correlation analysis), Market sentiment (news analysis, social signals, institutional positioning), Macro factors (interest rates, economic indicators, geopolitical events)</p>
-</div>
-<div class="card">
-<h3>Automated Execution</h3>
-<p><strong>Disciplined Trading Framework:</strong></p>
-<p>Rules-based entry and exit signals, Dynamic position sizing based on risk tolerance, Automated stop-loss and profit-taking, Real-time portfolio rebalancing, Backtested strategies with continuous optimization</p>
-</div>
-<div class="card">
-<h3>Risk Management</h3>
-<p><strong>Conservative Capital Preservation:</strong></p>
-<p>Maximum drawdown limits (10-15% portfolio-wide), Diversification across asset classes and strategies, Volatility targeting for stable returns, Regular stress testing and scenario analysis, Capital allocation rules preventing concentration risk</p>
-</div>
-<div class="card">
-<h3>Transparency & Reporting</h3>
-<p><strong>Full Client Visibility:</strong></p>
-<p>Quarterly performance reports with attribution analysis, Real-time portfolio dashboard access, Detailed trade logs and rationale, Risk exposure monitoring, Monthly strategy updates and market commentary</p>
-</div>
-</div>
-</section>
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-label">
+                <span class="hero-label-dot"></span>
+                <span>Investment & Intelligence</span>
+            </div>
 
-<section class="wrap" id="strategy">
-<h2>Investment Strategy</h2>
-<p class="muted" style="max-width:800px;margin-bottom:40px;">Our core approach focuses on high-yield carry trades combined with strategic ETF allocation, designed for high-net-worth individuals seeking superior risk-adjusted returns.</p>
-<div class="grid-2">
-<div class="card">
-<h3>FX Carry Trade Automation</h3>
-<p><strong>Interest Rate Differential Capture:</strong> We systematically exploit interest rate differentials across currency pairs, using AI to identify optimal entry points and manage exposure dynamically.</p>
-<p><strong>Target Markets:</strong> Focus on high-yielding currencies (TRY, MXN, BRL, ZAR) against low-rate funding currencies (JPY, CHF, EUR), with continuous monitoring of central bank policy shifts.</p>
-<p><strong>Risk Controls:</strong> Automated position sizing based on volatility regimes, correlation monitoring to prevent concentration, and rapid reallocation during risk-off environments.</p>
-</div>
-<div class="card">
-<h3>ETF Portfolio Strategy</h3>
-<p><strong>Diversified Exposure:</strong> Strategic allocation across equity indices (S&P 500, NASDAQ, emerging markets), fixed income (government bonds, corporate bonds), commodities (gold, energy), and alternative assets.</p>
-<p><strong>Dynamic Rebalancing:</strong> Aviscore continuously evaluates ETF scores based on factor exposures, valuations, and momentum indicators to optimize portfolio composition.</p>
-<p><strong>Tax Efficiency:</strong> ETF structure provides cost-effective diversification with favorable tax treatment compared to individual securities or mutual funds.</p>
-</div>
-</div>
-</section>
+            <h1 class="hero-title">
+                <span>Visualizing Risk</span> Through Technology
+            </h1>
 
-<section class="wrap">
-<h2>Client Profile</h2>
-<div class="grid-2">
-<div class="card">
-<h3>High-Net-Worth Individuals</h3>
-<p>Our services target sophisticated investors with $500K+ investable assets seeking alternatives to traditional wealth management. Ideal clients value:</p>
-<p>• AI-driven decision making with transparent methodology<br>
-• Superior risk-adjusted returns through systematic approaches<br>
-• Flexible capital deployment without lock-up periods<br>
-• Direct communication with portfolio managers</p>
-</div>
-<div class="card">
-<h3>Performance Expectations</h3>
-<p><strong>Target Returns:</strong> 12-18% annualized returns through full market cycles, with quarterly performance evaluation and strategy adjustment.</p>
-<p><strong>Risk Parameters:</strong> Maximum 15% portfolio drawdown limit, volatility targeting of 10-12% annualized, and daily risk monitoring with circuit breakers.</p>
-<p><strong>Fees:</strong> Transparent fee structure with performance-based alignment. Management fee of 1.5% annually plus 20% performance fee above 10% hurdle rate.</p>
-</div>
-</div>
-</section>
+            <p class="hero-sub">
+                Avisail provides information infrastructure for evaluating the "soundness of preconditions"<br>
+                in investment and business decisions through algorithmic research, AI infrastructure risk assessment,<br>
+                and critical materials supply chain analysis.
+            </p>
 
-<section class="wrap">
-<h2>Why Aviscore</h2>
-<div class="grid-2">
-<div class="card">
-<h3>Proprietary Technology</h3>
-<p>Aviscore represents years of development combining machine learning, quantitative finance, and market microstructure expertise. Our platform continuously evolves through backtesting, live trading feedback, and integration of new data sources.</p>
-</div>
-<div class="card">
-<h3>Skin in the Game</h3>
-<p>Our principals invest personal capital alongside client funds using identical strategies. This alignment ensures we share both upside rewards and downside risks, incentivizing prudent risk management and long-term thinking.</p>
-</div>
-<div class="card">
-<h3>No Debt, Pure Alpha</h3>
-<p>Unlike leveraged hedge funds, we operate without external borrowing, focusing on generating alpha through superior stock selection and market timing rather than financial engineering. This conservative approach reduces systemic risk exposure.</p>
-</div>
-<div class="card">
-<h3>Implementation-First Development</h3>
-<p>Every Aviscore feature is tested in live markets with real capital before client deployment. This ensures robustness under actual trading conditions, not just theoretical backtests. We deploy internally first, then offer proven strategies to clients.</p>
-</div>
-</div>
-</section>
+            <div class="hero-cta">
+                <a href="#flagship"><button class="btn-primary">Flagship Technologies</button></a>
+                <a href="#aviscore"><button class="btn-outline">View Aviscore</button></a>
+            </div>
+        </div>
 
-<footer>
-<div class="wrap">
-<div class="footer-content">
-<div class="footer-col">
-<h4>Company</h4>
-<ul>
-<li><a href="/en/about.html">About Us</a></li>
-<li><a href="/en/contact.html">Contact</a></li>
-<li><a href="/#business">Our Business</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Services</h4>
-<ul>
-<li><a href="/en/services/vessel-trading.html">Vessel Trading</a></li>
-<li><a href="/en/services/investment.html">Investment (Aviscore)</a></li>
-<li><a href="/products/security.html">Technology (ADCS)</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Legal</h4>
-<ul>
-<li><a href="/en/privacy-policy.html">Privacy Policy</a></li>
-<li><a href="/en/terms-of-service.html">Terms of Service</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Avisail Technologies — All rights reserved.</p>
-</div>
-</div>
-</footer>
+        <!-- FLAGSHIP TECHNOLOGIES -->
+        <section id="flagship" class="section-flagship">
+            <div class="section-label label-b2b">B2B / Research & Development</div>
+            <h2 class="section-title">Flagship Technologies</h2>
+            <p class="section-sub">
+                Proprietary R&D using internal capital, and B2B risk intelligence services.<br>
+                We provide information infrastructure for assessing the "soundness of preconditions" in investment, business, and policy decisions.
+            </p>
+
+            <div class="service-grid">
+                <!-- Algorithmic Research -->
+                <div class="service-card">
+                    <span class="service-badge badge-research">R&D</span>
+                    <h3>Algorithmic Research & Internal Trading</h3>
+                    <p>
+                        Using only proprietary capital, we continuously conduct research, validation, and improvement of trading algorithms across multiple markets and asset classes.
+                    </p>
+                    <ul>
+                        <li>Market structure & volatility analysis</li>
+                        <li>Risk management model validation</li>
+                        <li>Portfolio-level behavior analysis</li>
+                        <li>Real-time data verification</li>
+                    </ul>
+                    <div class="non-scope">
+                        <p>* We do not accept external funds, provide investment advice, or make trading recommendations</p>
+                    </div>
+                </div>
+
+                <!-- AI Infrastructure Risk -->
+                <div class="service-card">
+                    <span class="service-badge badge-intelligence">Intelligence</span>
+                    <h3>AI Infrastructure Risk Intelligence</h3>
+                    <p>
+                        Evaluating AI data centers and GPU infrastructure as "critical infrastructure that must not fail." Multi-dimensional analysis of credit, operational, and cyber risks.
+                    </p>
+                    <ul>
+                        <li>Operator continuity & dependency analysis</li>
+                        <li>Power/cooling/network single points of failure</li>
+                        <li>Cyber risk & vulnerability assessment</li>
+                        <li>B2B reports & API access</li>
+                    </ul>
+                    <div class="non-scope">
+                        <p>* We do not provide investment recommendations, price predictions, or return forecasts</p>
+                    </div>
+                </div>
+
+                <!-- Critical Materials -->
+                <div class="service-card">
+                    <span class="service-badge badge-intelligence">Intelligence</span>
+                    <h3>Critical Materials Supply Chain Intelligence</h3>
+                    <p>
+                        For strategic resources including rare earths, we focus on "supply disruption and distortion risks" rather than price or short-term supply/demand.
+                    </p>
+                    <ul>
+                        <li>Country/region supply dependency analysis</li>
+                        <li>Refining process bottleneck assessment</li>
+                        <li>Geopolitical, regulatory & export restriction risks</li>
+                        <li>Environmental/ESG regulatory constraints</li>
+                    </ul>
+                    <div class="non-scope">
+                        <p>* We do not forecast resource prices or provide investment/trading recommendations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSUMER-FACING: AVISCORE -->
+        <section id="aviscore" class="section-consumer">
+            <div class="section-label label-b2c">Consumer-facing Services</div>
+            <h2 class="section-title">Aviscore</h2>
+            <p class="section-sub">
+                AI Real-time Evaluation System — Based on public information and OSINT regarding markets, assets, and infrastructure,<br>
+                we visualize "what is stable and what is becoming unstable right now."
+            </p>
+
+            <!-- Aviscore Main Box -->
+            <div class="aviscore-box">
+                <h3>What is Aviscore?</h3>
+                <p>
+                    Aviscore is a system that provides "decision-making materials," not "decisions themselves."<br>
+                    It evaluates market conditions, digital/physical infrastructure, and external risk factors surrounding businesses and assets in real-time, visualizing them as status scores.
+                </p>
+
+                <div class="aviscore-features">
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>Status scores (Stable / Caution / Unstable)</span>
+                    </div>
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>Real-time risk change detection</span>
+                    </div>
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>Time-series status transition display</span>
+                    </div>
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>Consumer-facing dashboard</span>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <a href="../../products/aviscore-en.html"><button class="btn-primary">View Aviscore Details</button></a>
+                    <a href="../../products/aviscore-customer-ui-en.html"><button class="btn-outline">Try Beta UI</button></a>
+                </div>
+
+                <p style="font-size: 11px; color: var(--text-sub); margin-top: 16px; text-align: center;">
+                    * We do not present trading decisions, forecast profits/returns, or recommend individual investment actions
+                </p>
+            </div>
+
+            <!-- Try It Box -->
+            <div class="try-box">
+                <h4>Want to Try It Yourself?</h4>
+                <p>
+                    For those who want to experience Aviscore's evaluation logic, we provide EAs (Expert Advisors) that run on the MT5 platform.<br>
+                    If you'd like to try automated trading, you can get started below.
+                </p>
+
+                <!-- XM Banner -->
+                <a href="https://www.xmtrading.com/referral?token=F95vy-ZAOarSOdPXyQdvFQ" target="_blank" rel="noopener" style="display: block; margin-bottom: 16px;">
+                    <div style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%); border: 2px solid #4ade80; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: all 0.3s; box-shadow: 0 8px 24px rgba(74,222,128,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(74,222,128,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(74,222,128,0.2)';">
+                        <div>
+                            <div style="font-size: 11px; color: #86efac; letter-spacing: 0.1em; margin-bottom: 4px;">RECOMMENDED BROKER</div>
+                            <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px;">XM Trading</div>
+                            <div style="font-size: 12px; color: #a7f3d0;">MT5 Compatible・Multilingual Support・Up to 1000x Leverage</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #22c55e, #16a34a); padding: 12px 24px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap;">
+                            Open Account →
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EA Banner (Placeholder) -->
+                <a href="#ea-purchase" style="display: block;">
+                    <div style="background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #1e3a5f 100%); border: 2px solid #60a5fa; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: all 0.3s; box-shadow: 0 8px 24px rgba(96,165,250,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(96,165,250,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(96,165,250,0.2)';">
+                        <div>
+                            <div style="font-size: 11px; color: #93c5fd; letter-spacing: 0.1em; margin-bottom: 4px;">TRADING TOOL</div>
+                            <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px;">Avisail EA</div>
+                            <div style="font-size: 12px; color: #bfdbfe;">Powered by Aviscore Logic・MT5 Compatible・Automated Trading</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 12px 24px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap;">
+                            Coming Soon
+                        </div>
+                    </div>
+                </a>
+
+                <p class="try-note">
+                    * The XM link is an affiliate link. We may receive referral compensation when you open an account.<br>
+                    * EAs are provided as reference tools and do not constitute our recommendation or guarantee of trading.<br>
+                    * FX and CFD trading involves risk, and you may lose your investment principal.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" style="text-align: center;">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-sub">
+                For service details, B2B reports & API access, or any other inquiries,<br>
+                please feel free to reach out.
+            </p>
+
+            <div class="cta-box">
+                <a href="mailto:info@avisail.com?subject=Investment%20%26%20Intelligence%20Inquiry">
+                    <button class="btn-primary">Contact via Email</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="disclaimer">
+                    <p>
+                        <strong>Important Notice:</strong>
+                        The information and services we provide are intended to offer reference information for investment decisions
+                        and do not constitute recommendations or solicitations to buy or sell specific financial products.
+                        Final investment decisions should be made at your own judgment and responsibility.
+                        FX and CFD trading involves risk, and you may lose your investment principal.
+                    </p>
+                </div>
+
+                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
+                    © 2025 Avisail – Investment & Intelligence
+                </div>
+            </div>
+        </footer>
+
+    </div>
 </body>
 </html>

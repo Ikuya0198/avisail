@@ -1,221 +1,720 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>投資運用 & Aviscore | Avisail Technologies</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-:root{--line:rgba(255,255,255,.08);--hero-bg:url('/images/investment-hero.jpg');}
-*{box-sizing:border-box;}
-html,body{margin:0;background:#0a0f1a;color:#e9f0ff;font-family:'Inter','Noto Sans JP',sans-serif;line-height:1.7;}
-html{scroll-behavior:smooth;}
-a{color:#cfe2ff;text-decoration:none;transition:color 0.3s;}
-a:hover{color:#7ef0d4;}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
-header{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
-.brand{display:flex;align-items:center;gap:12px;font-weight:600;color:#fff;}
-.logo{width:32px;height:32px;border-radius:8px;background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4);}
-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center;font-size:0.95rem;}
-.menu-item{position:relative;padding:10px 0;}
-.dropdown{position:absolute;top:100%;left:-10px;min-width:200px;background:#0d1424;border:1px solid var(--line);border-radius:12px;padding:12px;display:none;flex-direction:column;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-.menu-item:hover .dropdown{display:flex;}
-.dropdown a{padding:6px 12px;border-radius:6px;color:#9fb0cc;}
-.dropdown a:hover{background:rgba(255,255,255,0.05);color:#fff;}
-.globe-icon{font-size:1.2rem;cursor:pointer;color:#9fb0cc;transition:color 0.3s;}
-.globe-icon:hover{color:#7ef0d4;}
-.page-hero{padding:140px 0 100px;text-align:center;background:linear-gradient(rgba(10,15,26,0.7),rgba(10,15,26,0.9)),var(--hero-bg) center/cover;}
-.page-hero h1{font-size:3.5rem;margin-bottom:24px;color:#fff;font-weight:700;}
-.page-hero .lead{color:#cfe2ff;max-width:800px;margin:0 auto 16px;font-size:1.2rem;}
-.muted{color:#9fb0cc;}
-section{padding:100px 0;border-bottom:1px solid var(--line);}
-h2{font-size:2rem;margin-bottom:40px;color:#fff;display:flex;align-items:center;gap:16px;}
-h2::before{content:'';width:4px;height:32px;background:linear-gradient(to bottom,#6aa6ff,#7ef0d4);display:block;}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-.card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:24px;padding:32px;backdrop-filter:blur(5px);transition:transform 0.3s,border-color 0.3s;height:100%;display:flex;flex-direction:column;}
-.card:hover{transform:translateY(-5px);border-color:rgba(106,166,255,0.3);}
-.card h3{color:#fff;margin-top:0;font-size:1.3rem;}
-.card p{color:#9fb0cc;margin-bottom:24px;flex-grow:1;}
-.btn{display:inline-block;padding:12px 28px;border-radius:50px;border:1px solid var(--line);background:rgba(255,255,255,0.05);color:#e9f0ff;font-size:0.95rem;transition:all 0.3s;}
-.btn:hover{border-color:rgba(106,166,255,0.5);transform:translateY(-2px);}
-.cta{display:inline-block;padding:12px 28px;border-radius:50px;background:linear-gradient(135deg,#6aa6ff,#7ef0d4);color:#06101a;font-weight:700;font-size:0.95rem;box-shadow:0 10px 20px rgba(106,166,255,.2);border:none;transition:all 0.3s;}
-.cta:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(106,166,255,.3);}
-.highlight-box{background:rgba(126,240,212,0.05);border:1px solid rgba(126,240,212,0.2);border-radius:16px;padding:40px;margin:40px 0;}
-footer{background:rgba(5,8,15,0.8);padding:60px 0 30px;border-top:1px solid var(--line);}
-.footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
-.footer-col h4{color:#fff;font-size:1.1rem;margin-bottom:20px;}
-.footer-col ul{list-style:none;padding:0;margin:0;}
-.footer-col ul li{margin-bottom:12px;}
-.footer-col a{color:#9fb0cc;font-size:0.9rem;}
-.footer-col a:hover{color:#7ef0d4;}
-.footer-bottom{border-top:1px solid var(--line);padding-top:30px;text-align:center;color:#9fb0cc;font-size:0.85rem;}
-@media(max-width:980px){.grid-3,.grid-2{grid-template-columns:1fr;}.footer-content{grid-template-columns:1fr;}nav ul{display:none;}.page-hero h1{font-size:2.5rem;}}
-</style>
+    <meta charset="UTF-8" />
+    <title>Avisail｜Investment & Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Avisailの投資・インテリジェンス事業。アルゴリズム研究、AIインフラリスク評価、戦略資源サプライチェーン分析、およびAviscoreリアルタイム評価システムを提供します。">
+
+    <style>
+        :root {
+            --bg-dark: #050816;
+            --bg-section: #0b1020;
+            --primary: #1f6feb;
+            --accent: #7ef0d4;
+            --accent-gold: #f0c674;
+            --accent-purple: #a78bfa;
+            --text-main: #f5f7ff;
+            --text-sub: #a7b3d3;
+            --border-soft: #222840;
+            --radius-lg: 18px;
+            --radius-xl: 26px;
+            --shadow-soft: 0 18px 40px rgba(0,0,0,0.55);
+            --max-width: 1080px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: radial-gradient(circle at top, #101936 0, #050816 55%, #020309 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .page {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 24px 18px 64px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .logo-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: radial-gradient(circle at 25% 0, #7ef0d4 0, #1f6feb 30%, #050816 80%);
+            box-shadow: 0 0 12px rgba(126,240,212,0.65);
+        }
+
+        .logo-sub {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: .16em;
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-sub);
+            align-items: center;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .lang-switcher, .nav-back {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.5);
+            background: rgba(15,23,42,0.8);
+            color: var(--text-main);
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher:hover, .nav-back:hover {
+            border-color: var(--accent);
+            background: rgba(15,23,42,0.95);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 40px 32px 36px;
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle at 0 0, #17213f 0, #050816 45%, #020309 100%);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(126,240,212,0.3);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(20,33,70,0.9);
+            color: var(--accent);
+            font-size: 11px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-label-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(126,240,212,0.9);
+        }
+
+        .hero-title {
+            font-size: 38px;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero-title span { color: var(--accent); }
+
+        .hero-sub {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 28px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#1f6feb,#7ef0d4);
+            border: none;
+            color: #050816;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(126,240,212,0.35);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(126,240,212,0.5);
+        }
+
+        .btn-gold {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#f0c674,#e8a84c);
+            border: none;
+            color: #050816;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(240,198,116,0.35);
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(240,198,116,0.5);
+        }
+
+        .btn-outline {
+            padding: 11px 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.7);
+            background: transparent;
+            color: var(--text-main);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(126,240,212,0.1);
+        }
+
+        /* SECTION BASE */
+        section {
+            margin-bottom: 40px;
+            padding: 24px 22px;
+            border-radius: 18px;
+            background: var(--bg-section);
+            border: 1px solid var(--border-soft);
+        }
+
+        .section-flagship {
+            background: radial-gradient(circle at 0 0, #1a2650 0, #0d1428 55%, #050816 100%);
+            border: 1px solid rgba(31,111,235,0.4);
+        }
+
+        .section-consumer {
+            background: radial-gradient(circle at 0 0, #1a3d3d 0, #0d1f1f 55%, #061010 100%);
+            border: 1px solid rgba(126,240,212,0.5);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 10px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .label-b2b {
+            background: rgba(31,111,235,0.2);
+            color: #6aa6ff;
+        }
+
+        .label-b2c {
+            background: rgba(126,240,212,0.2);
+            color: var(--accent);
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .section-sub {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 18px;
+        }
+
+        /* SERVICE GRID */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(82,96,159,0.7);
+            background: linear-gradient(145deg,#0b1020,#060816);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(126,240,212,0.2);
+        }
+
+        .service-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .service-card h3 .en {
+            display: block;
+            font-size: 11px;
+            color: var(--text-sub);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            padding-left: 16px;
+            font-size: 12px;
+            color: var(--text-main);
+        }
+
+        .service-card ul li {
+            margin-bottom: 4px;
+        }
+
+        .service-badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        .badge-research {
+            background: rgba(167,139,250,0.2);
+            color: var(--accent-purple);
+        }
+
+        .badge-intelligence {
+            background: rgba(31,111,235,0.2);
+            color: #6aa6ff;
+        }
+
+        .non-scope {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: rgba(255,100,100,0.08);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255,100,100,0.4);
+        }
+
+        .non-scope p {
+            font-size: 11px;
+            color: #ff9999;
+            margin: 0;
+        }
+
+        /* AVISCORE SECTION */
+        .aviscore-box {
+            background: radial-gradient(circle at 0 0, rgba(126,240,212,0.12), rgba(31,111,235,0.08));
+            border: 2px solid var(--accent);
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .aviscore-box h3 {
+            font-size: 20px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .aviscore-box p {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .aviscore-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .aviscore-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* TRY IT BOX */
+        .try-box {
+            background: linear-gradient(135deg, rgba(240,198,116,0.1), rgba(31,111,235,0.08));
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .try-box h4 {
+            font-size: 16px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .try-box p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .try-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .try-note {
+            font-size: 10px;
+            color: var(--text-sub);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(103,120,189,0.3);
+        }
+
+        /* CTA BOX */
+        .cta-box {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 24px;
+            font-size: 11px;
+            color: var(--text-sub);
+            text-align: center;
+        }
+
+        .disclaimer {
+            background: rgba(255,100,100,0.06);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 3px solid rgba(255,100,100,0.4);
+        }
+
+        .disclaimer p {
+            font-size: 11px;
+            color: #cc9999;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 840px) {
+            .hero { padding: 32px 24px; }
+            .hero-title { font-size: 28px; }
+            .hero-cta { flex-direction: column; align-items: stretch; }
+            .service-grid { grid-template-columns: minmax(0,1fr); }
+            .aviscore-features { grid-template-columns: minmax(0,1fr); }
+            header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            nav { font-size: 12px; flex-wrap: wrap; }
+        }
+    </style>
 </head>
+
 <body>
-<header>
-<div class="wrap nav">
-<div class="brand"><div class="logo"></div><span>Avisail Technologies</span></div>
-<nav>
-<ul>
-<li><a href="/index.ja.html">ホーム</a></li>
-<li><a href="/ja/about.html">会社概要</a></li>
-<li class="menu-item"><span>サービス ▾</span>
-<div class="dropdown">
-<a href="/ja/services/vessel-trading.html">船舶売買</a>
-<a class="active" href="/ja/services/investment.html">投資運用</a>
-<a href="/products/security.html">テクノロジー</a>
-</div>
-</li>
-<li><a href="/ja/contact.html">お問い合わせ</a></li>
-<li class="menu-item"><span class="globe-icon">🌐 ▾</span>
-<div class="dropdown">
-<a href="/en/services/investment.html">English</a>
-<a href="/ja/services/investment.html">日本語</a>
-</div>
-</li>
-</ul>
-</nav>
-</div>
-</header>
+    <div class="page">
 
-<main class="page-hero">
-<div class="wrap">
-<h1>投資運用 & Aviscore</h1>
-<p class="lead">FX自動化とETFポートフォリオ戦略を組み合わせた、持続可能な成長のためのAI駆動型資産運用プラットフォーム。</p>
-<p class="muted">洗練された投資家向けの高利回り・低リスクキャリートレードアプローチ</p>
-</div>
-</main>
+        <!-- HEADER -->
+        <header>
+            <div>
+                <div class="logo">
+                    <div class="logo-mark"></div>
+                    <div>AVISAIL</div>
+                </div>
+                <div class="logo-sub">Investment & Intelligence</div>
+            </div>
 
-<section class="wrap">
-<h2>Aviscore: AI投資プラットフォーム</h2>
-<div class="highlight-box">
-<h3 style="color:#7ef0d4;margin-top:0;font-size:1.5rem;">インテリジェント資産スコアリング & 自動執行</h3>
-<p>Aviscoreは、複数の次元で市場機会を評価する当社独自のAI駆動型投資プラットフォームです。従来の単一指標アプローチとは異なり、Aviscoreはテクニカル分析、リスク評価、センチメント評価を組み合わせて、規律ある執行戦略を推進する包括的な投資スコアを生成します。</p>
-<div style="margin-top:32px;">
-<a href="/products/aviscore.html" class="cta">Aviscoreプラットフォーム詳細を見る</a>
-<a href="#strategy" class="btn" style="margin-left:16px;">戦略について</a>
-</div>
-</div>
+            <nav>
+                <a href="../../index.ja.html" class="nav-back">← ホームへ</a>
+                <a href="#flagship">Flagship Tech</a>
+                <a href="#aviscore">Aviscore</a>
+                <a href="#contact">お問い合わせ</a>
+                <a href="../../en/services/investment.html" class="lang-switcher">English</a>
+            </nav>
+        </header>
 
-<div class="grid-2" style="margin-top:60px;">
-<div class="card">
-<h3>多因子分析</h3>
-<p><strong>包括的市場評価：</strong></p>
-<p>テクニカル指標（モメンタム、トレンド強度、ボラティリティ）、リスク指標（VaR、シャープレシオ、相関分析）、市場センチメント（ニュース分析、ソーシャルシグナル、機関投資家ポジショニング）、マクロ要因（金利、経済指標、地政学的イベント）</p>
-</div>
-<div class="card">
-<h3>自動執行</h3>
-<p><strong>規律ある取引フレームワーク：</strong></p>
-<p>ルールベースのエントリー・エグジットシグナル、リスク許容度に基づく動的ポジションサイジング、自動ストップロス・利益確定、リアルタイムポートフォリオリバランス、継続的最適化を伴うバックテスト済み戦略</p>
-</div>
-<div class="card">
-<h3>リスク管理</h3>
-<p><strong>保守的資本保全：</strong></p>
-<p>最大ドローダウン制限（ポートフォリオ全体で10-15%）、資産クラスと戦略間の分散、安定リターンのためのボラティリティターゲティング、定期的ストレステストとシナリオ分析、集中リスクを防ぐ資本配分ルール</p>
-</div>
-<div class="card">
-<h3>透明性 & レポーティング</h3>
-<p><strong>完全なクライアント可視性：</strong></p>
-<p>アトリビューション分析を含む四半期パフォーマンスレポート、リアルタイムポートフォリオダッシュボードアクセス、詳細な取引ログと理由、リスクエクスポージャー監視、月次戦略更新と市場コメンタリー</p>
-</div>
-</div>
-</section>
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-label">
+                <span class="hero-label-dot"></span>
+                <span>Investment & Intelligence</span>
+            </div>
 
-<section class="wrap" id="strategy">
-<h2>投資戦略</h2>
-<p class="muted" style="max-width:800px;margin-bottom:40px;">当社のコアアプローチは、優れたリスク調整後リターンを求める富裕層向けに設計された、高利回りキャリートレードと戦略的ETF配分の組み合わせに焦点を当てています。</p>
-<div class="grid-2">
-<div class="card">
-<h3>FXキャリートレード自動化</h3>
-<p><strong>金利差キャプチャ：</strong> 通貨ペア間の金利差を体系的に活用し、AIを使用して最適なエントリーポイントを特定し、エクスポージャーを動的に管理します。</p>
-<p><strong>ターゲット市場：</strong> 高金利通貨（TRY、MXN、BRL、ZAR）と低金利調達通貨（JPY、CHF、EUR）に焦点を当て、中央銀行政策シフトの継続的監視を行います。</p>
-<p><strong>リスクコントロール：</strong> ボラティリティレジームに基づく自動ポジションサイジング、集中を防ぐ相関監視、リスクオフ環境での迅速な再配分。</p>
-</div>
-<div class="card">
-<h3>ETFポートフォリオ戦略</h3>
-<p><strong>分散エクスポージャー：</strong> 株式インデックス（S&P 500、NASDAQ、新興市場）、債券（国債、社債）、商品（金、エネルギー）、オルタナティブ資産への戦略的配分。</p>
-<p><strong>動的リバランス：</strong> Aviscoreはファクターエクスポージャー、バリュエーション、モメンタム指標に基づいてETFスコアを継続的に評価し、ポートフォリオ構成を最適化します。</p>
-<p><strong>税効率：</strong> ETF構造は、個別証券や投資信託と比較して、有利な税制措置を伴うコスト効率的な分散を提供します。</p>
-</div>
-</div>
-</section>
+            <h1 class="hero-title">
+                テクノロジーで、<span>リスクを可視化する</span>
+            </h1>
 
-<section class="wrap">
-<h2>クライアントプロファイル</h2>
-<div class="grid-2">
-<div class="card">
-<h3>富裕層個人</h3>
-<p>当社のサービスは、従来のウェルスマネジメントの代替を求める、投資可能資産50万ドル以上を持つ洗練された投資家をターゲットとしています。理想的なクライアントが重視するのは：</p>
-<p>• 透明な方法論を持つAI駆動型意思決定<br>
-• 体系的アプローチによる優れたリスク調整後リターン<br>
-• ロックアップ期間なしの柔軟な資本展開<br>
-• ポートフォリオマネージャーとの直接コミュニケーション</p>
-</div>
-<div class="card">
-<h3>パフォーマンス期待値</h3>
-<p><strong>目標リターン：</strong> フル市場サイクルを通じて年率12-18%のリターン、四半期ごとのパフォーマンス評価と戦略調整。</p>
-<p><strong>リスクパラメータ：</strong> ポートフォリオ最大15%ドローダウン制限、年率10-12%のボラティリティターゲティング、サーキットブレーカーを伴う日次リスク監視。</p>
-<p><strong>手数料：</strong> パフォーマンスベースのアライメントを伴う透明な手数料構造。年率1.5%の管理手数料に加え、10%ハードルレートを超える部分に20%のパフォーマンス手数料。</p>
-</div>
-</div>
-</section>
+            <p class="hero-sub">
+                Avisailは、アルゴリズム研究・AIインフラリスク評価・戦略資源サプライチェーン分析を通じて、<br>
+                投資・事業判断における「前提条件の健全性」を評価するための情報基盤を提供します。
+            </p>
 
-<section class="wrap">
-<h2>Aviscoreを選ぶ理由</h2>
-<div class="grid-2">
-<div class="card">
-<h3>独自技術</h3>
-<p>Aviscoreは、機械学習、クオンツファイナンス、マーケットマイクロストラクチャーの専門知識を組み合わせた数年間の開発の成果です。当社のプラットフォームは、バックテスト、ライブトレーディングフィードバック、新しいデータソースの統合を通じて継続的に進化します。</p>
-</div>
-<div class="card">
-<h3>スキン・イン・ザ・ゲーム</h3>
-<p>当社の経営陣は、同一の戦略を使用してクライアント資金と並んで個人資本を投資します。このアライメントにより、上昇報酬と下降リスクの両方を共有し、慎重なリスク管理と長期的思考を奨励します。</p>
-</div>
-<div class="card">
-<h3>無借金、純粋なアルファ</h3>
-<p>レバレッジドヘッジファンドとは異なり、当社は外部借入なしで運営し、金融工学ではなく優れた銘柄選択とマーケットタイミングによるアルファ創出に焦点を当てています。この保守的アプローチはシステミックリスクエクスポージャーを削減します。</p>
-</div>
-<div class="card">
-<h3>実装ファースト開発</h3>
-<p>すべてのAviscore機能は、クライアント展開前に実資本を使用してライブ市場でテストされます。これにより、理論的バックテストだけでなく、実際の取引条件下での堅牢性を保証します。当社は内部で最初に展開し、その後実証済みの戦略をクライアントに提供します。</p>
-</div>
-</div>
-</section>
+            <div class="hero-cta">
+                <a href="#flagship"><button class="btn-primary">Flagship Technologies</button></a>
+                <a href="#aviscore"><button class="btn-outline">Aviscore を見る</button></a>
+            </div>
+        </div>
 
-<footer>
-<div class="wrap">
-<div class="footer-content">
-<div class="footer-col">
-<h4>会社</h4>
-<ul>
-<li><a href="/ja/about.html">会社概要</a></li>
-<li><a href="/ja/contact.html">お問い合わせ</a></li>
-<li><a href="/ja/index.html#business">事業内容</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>サービス</h4>
-<ul>
-<li><a href="/ja/services/vessel-trading.html">船舶売買</a></li>
-<li><a href="/ja/services/investment.html">投資運用（Aviscore）</a></li>
-<li><a href="/products/security.html">テクノロジー（ADCS）</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>法務</h4>
-<ul>
-<li><a href="/ja/privacy-policy.html">プライバシーポリシー</a></li>
-<li><a href="/ja/terms-of-service.html">利用規約</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Avisail Technologies — All rights reserved.</p>
-</div>
-</div>
-</footer>
+        <!-- FLAGSHIP TECHNOLOGIES -->
+        <section id="flagship" class="section-flagship">
+            <div class="section-label label-b2b">B2B / Research & Development</div>
+            <h2 class="section-title">Flagship Technologies</h2>
+            <p class="section-sub">
+                自社資金による研究開発、およびB2B向けリスクインテリジェンスサービス。<br>
+                投資・事業・政策判断のための「前提条件の健全性」を評価する情報基盤を提供します。
+            </p>
+
+            <div class="service-grid">
+                <!-- Algorithmic Research -->
+                <div class="service-card">
+                    <span class="service-badge badge-research">R&D</span>
+                    <h3>
+                        アルゴリズム研究・内部取引検証
+                        <span class="en">Algorithmic Research & Internal Trading</span>
+                    </h3>
+                    <p>
+                        自社資金のみを用いて、複数市場・複数アセットにおける取引アルゴリズムの研究・検証・改善を継続的に行っています。
+                    </p>
+                    <ul>
+                        <li>市場構造・ボラティリティ特性の分析</li>
+                        <li>リスク管理モデルの検証</li>
+                        <li>ポートフォリオレベルの挙動分析</li>
+                        <li>リアルタイムデータを用いた検証</li>
+                    </ul>
+                    <div class="non-scope">
+                        <p>※ 外部資金の預託・運用、投資助言・売買判断の提供は行いません</p>
+                    </div>
+                </div>
+
+                <!-- AI Infrastructure Risk -->
+                <div class="service-card">
+                    <span class="service-badge badge-intelligence">Intelligence</span>
+                    <h3>
+                        AIインフラ リスク評価
+                        <span class="en">AI Infrastructure Risk Intelligence</span>
+                    </h3>
+                    <p>
+                        AIデータセンター・GPUインフラを「止まってはいけないインフラ」として評価・可視化。信用・稼働・サイバーリスクを多角的に分析します。
+                    </p>
+                    <ul>
+                        <li>運営主体の継続性・依存構造分析</li>
+                        <li>電力・冷却・回線の単一障害点評価</li>
+                        <li>サイバーリスク・脆弱性評価</li>
+                        <li>B2B向けレポート／API提供</li>
+                    </ul>
+                    <div class="non-scope">
+                        <p>※ 投資推奨・売買判断、価格予測・リターン予測は行いません</p>
+                    </div>
+                </div>
+
+                <!-- Critical Materials -->
+                <div class="service-card">
+                    <span class="service-badge badge-intelligence">Intelligence</span>
+                    <h3>
+                        戦略資源サプライチェーン評価
+                        <span class="en">Critical Materials Supply Chain Intelligence</span>
+                    </h3>
+                    <p>
+                        レアアース等の戦略資源について、価格や短期需給ではなく「供給が止まるリスク・歪むリスク」に焦点を当てて評価します。
+                    </p>
+                    <ul>
+                        <li>国・地域別供給依存度分析</li>
+                        <li>精製工程のボトルネック評価</li>
+                        <li>地政学・規制・輸出制限リスク</li>
+                        <li>環境・ESG規制による供給制約</li>
+                    </ul>
+                    <div class="non-scope">
+                        <p>※ 資源価格の予測、投資判断・売買推奨は行いません</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSUMER-FACING: AVISCORE -->
+        <section id="aviscore" class="section-consumer">
+            <div class="section-label label-b2c">Consumer-facing Services</div>
+            <h2 class="section-title">Aviscore</h2>
+            <p class="section-sub">
+                AIリアルタイム評価システム ― 市場・資産・インフラに関する公開情報およびOSINTを基に、<br>
+                「今、何が安定していて、何が不安定化しているのか」を可視化します。
+            </p>
+
+            <!-- Aviscore Main Box -->
+            <div class="aviscore-box">
+                <h3>Aviscore とは</h3>
+                <p>
+                    Aviscoreは、「判断材料」を提供するシステムであり、「判断そのもの」を行いません。<br>
+                    市場環境、デジタル／物理インフラ、事業・資産を取り巻く外部リスク要因をリアルタイムに評価し、状態スコアとして可視化します。
+                </p>
+
+                <div class="aviscore-features">
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>状態スコア（安定／注意／不安定）</span>
+                    </div>
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>リスク変化のリアルタイム検知</span>
+                    </div>
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>時系列による状態推移表示</span>
+                    </div>
+                    <div class="aviscore-feature">
+                        <span class="feature-dot"></span>
+                        <span>消費者向けダッシュボード</span>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <a href="../../products/aviscore.html"><button class="btn-primary">Aviscore 詳細を見る</button></a>
+                    <a href="../../products/aviscore-customer-ui.html"><button class="btn-outline">ベータ版 UI を試す</button></a>
+                </div>
+
+                <p style="font-size: 11px; color: var(--text-sub); margin-top: 16px; text-align: center;">
+                    ※ 売買判断の提示、利益・リターンの予測、個別の投資行動の推奨は行いません
+                </p>
+            </div>
+
+            <!-- Try It Box -->
+            <div class="try-box">
+                <h4>実際に試してみたい方へ</h4>
+                <p>
+                    Aviscoreの評価ロジックを体験したい方向けに、MT5プラットフォーム上で動作するEA（Expert Advisor）を提供しています。<br>
+                    自動取引を実際に試してみたい方は、以下からご利用いただけます。
+                </p>
+
+                <!-- XM Banner -->
+                <a href="https://www.xmtrading.com/referral?token=F95vy-ZAOarSOdPXyQdvFQ" target="_blank" rel="noopener" style="display: block; margin-bottom: 16px;">
+                    <div style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%); border: 2px solid #4ade80; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: all 0.3s; box-shadow: 0 8px 24px rgba(74,222,128,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(74,222,128,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(74,222,128,0.2)';">
+                        <div>
+                            <div style="font-size: 11px; color: #86efac; letter-spacing: 0.1em; margin-bottom: 4px;">RECOMMENDED BROKER</div>
+                            <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px;">XM Trading</div>
+                            <div style="font-size: 12px; color: #a7f3d0;">MT5対応・日本語サポート・最大レバレッジ1000倍</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #22c55e, #16a34a); padding: 12px 24px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap;">
+                            口座を開設する →
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EA Banner (Placeholder) -->
+                <a href="#ea-purchase" style="display: block;">
+                    <div style="background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #1e3a5f 100%); border: 2px solid #60a5fa; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: all 0.3s; box-shadow: 0 8px 24px rgba(96,165,250,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(96,165,250,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(96,165,250,0.2)';">
+                        <div>
+                            <div style="font-size: 11px; color: #93c5fd; letter-spacing: 0.1em; margin-bottom: 4px;">TRADING TOOL</div>
+                            <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px;">Avisail EA</div>
+                            <div style="font-size: 12px; color: #bfdbfe;">Aviscoreロジック搭載・MT5対応・自動取引</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 12px 24px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap;">
+                            Coming Soon
+                        </div>
+                    </div>
+                </a>
+
+                <p class="try-note">
+                    ※ XMリンクはアフィリエイトリンクです。口座開設により当社に紹介報酬が発生する場合があります。<br>
+                    ※ EAは参考ツールとして提供されるものであり、当社が取引を推奨・保証するものではありません。<br>
+                    ※ FX・CFD取引にはリスクが伴い、投資元本を失う可能性があります。
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" style="text-align: center;">
+            <h2 class="section-title">お問い合わせ</h2>
+            <p class="section-sub">
+                サービスの詳細、B2B向けレポート・API、その他ご質問など、<br>
+                お気軽にお問い合わせください。
+            </p>
+
+            <div class="cta-box">
+                <a href="mailto:info@avisail.com?subject=Investment%20%26%20Intelligence%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
+                    <button class="btn-primary">メールでお問い合わせ</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="disclaimer">
+                    <p>
+                        <strong>重要事項：</strong>
+                        当社が提供する情報・サービスは、投資判断の参考となる情報提供を目的としたものであり、
+                        特定の金融商品の売買を推奨・勧誘するものではありません。
+                        投資に関する最終決定は、ご自身の判断と責任において行ってください。
+                        FX・CFD取引にはリスクが伴い、投資元本を失う可能性があります。
+                    </p>
+                </div>
+
+                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
+                    © 2025 Avisail – Investment & Intelligence
+                </div>
+            </div>
+        </footer>
+
+    </div>
 </body>
 </html>
