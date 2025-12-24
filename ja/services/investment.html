@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>Avisail｜Investment & Intelligence</title>
+    <title>Avisail｜Investment Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Avisailの投資・インテリジェンス事業。アルゴリズム研究、AIインフラリスク評価、戦略資源サプライチェーン分析、およびAviscoreリアルタイム評価システムを提供します。">
 
@@ -120,7 +120,7 @@
 
         /* Hero */
         .hero {
-            padding: 40px 0 48px;
+            padding: 40px 0 32px;
             text-align: center;
         }
 
@@ -154,7 +154,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 28px;
         }
 
         .badge {
@@ -169,63 +168,6 @@
         .badge.highlight {
             border-color: var(--accent-cyan);
             color: var(--accent-cyan);
-        }
-
-        /* Quick Nav */
-        .quick-nav {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .quick-nav-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 24px;
-            border-radius: 12px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-soft);
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .quick-nav-item:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
-            text-decoration: none;
-        }
-
-        .quick-nav-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        .quick-nav-icon.b2b { background: rgba(56, 189, 248, 0.15); }
-        .quick-nav-icon.b2c { background: rgba(163, 230, 53, 0.15); }
-
-        .quick-nav-text {
-            text-align: left;
-        }
-
-        .quick-nav-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .quick-nav-desc {
-            font-size: 11px;
-            color: var(--text-muted);
         }
 
         /* Section */
@@ -276,105 +218,112 @@
             max-width: 700px;
         }
 
-        /* Service Cards */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+        /* Flagship Service Cards - Vertical */
+        .flagship-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             margin-top: 20px;
         }
 
-        .service-card {
+        .flagship-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 24px;
+            padding: 28px;
             border: 1px solid var(--border-soft);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: all 0.3s;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .flagship-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 24px rgba(56, 189, 248, 0.15), 0 14px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .flagship-left {
             display: flex;
             flex-direction: column;
         }
 
-        .service-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-4px);
-            box-shadow: 0 0 24px rgba(56, 189, 248, 0.2), 0 14px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .service-tag {
+        .flagship-tag {
             font-size: 10px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             margin-bottom: 10px;
         }
 
-        .service-tag.rd { color: var(--accent-purple); }
-        .service-tag.intel { color: var(--accent-cyan); }
+        .flagship-tag.rd { color: var(--accent-purple); }
+        .flagship-tag.intel { color: var(--accent-cyan); }
 
-        .service-card h3 {
-            font-size: 17px;
+        .flagship-card h3 {
+            font-size: 18px;
             font-weight: 600;
             margin-bottom: 4px;
         }
 
-        .service-card h3 .en {
+        .flagship-card h3 .en {
             display: block;
             font-size: 11px;
             font-weight: 400;
             color: var(--text-muted);
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
-        .service-problem {
-            font-size: 13px;
-            color: var(--accent-lime);
-            margin: 12px 0 8px;
-            padding: 10px 12px;
-            background: rgba(163, 230, 53, 0.08);
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-lime);
+        .flagship-target {
+            margin-top: 16px;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(163, 230, 53, 0.05));
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
-        .service-card p {
+        .flagship-target-label {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 6px;
+        }
+
+        .flagship-target-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .flagship-right p {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 12px;
-            flex-grow: 1;
+            margin-bottom: 16px;
+            line-height: 1.8;
         }
 
-        .service-card ul {
+        .flagship-right ul {
             list-style: none;
             font-size: 12px;
             color: var(--text-main);
             margin-bottom: 16px;
         }
 
-        .service-card ul li {
-            margin-bottom: 5px;
-            padding-left: 16px;
+        .flagship-right ul li {
+            margin-bottom: 6px;
+            padding-left: 18px;
             position: relative;
         }
 
-        .service-card ul li::before {
+        .flagship-right ul li::before {
             content: '\2192';
             position: absolute;
             left: 0;
             color: var(--accent-cyan);
         }
 
-        .service-target {
-            font-size: 11px;
-            color: var(--text-muted);
-            padding-top: 12px;
-            border-top: 1px dashed rgba(148, 163, 184, 0.3);
-        }
-
-        .service-target strong {
-            color: var(--text-main);
-        }
-
         .non-scope {
-            margin-top: 12px;
             padding: 10px 12px;
             background: rgba(251, 113, 133, 0.08);
             border-radius: 8px;
@@ -383,16 +332,16 @@
             color: var(--accent-pink);
         }
 
-        /* Aviscore Feature Card */
+        /* Aviscore Section */
         .aviscore-card {
             background:
-                radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 50%),
-                radial-gradient(circle at 100% 100%, rgba(163, 230, 53, 0.1), transparent 50%),
+                radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.15), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(163, 230, 53, 0.08), transparent 50%),
                 var(--card-bg);
             border: 2px solid var(--accent-cyan);
             border-radius: 20px;
             padding: 32px;
-            box-shadow: 0 0 32px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 32px rgba(56, 189, 248, 0.2);
             margin-top: 20px;
         }
 
@@ -400,7 +349,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .aviscore-logo {
@@ -431,27 +380,137 @@
             margin-top: 2px;
         }
 
+        /* Score Demo Panel */
+        .score-demo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .score-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-ring {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--accent-lime) 0deg 295deg,
+                rgba(148, 163, 184, 0.2) 295deg 360deg
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .score-ring::before {
+            content: '';
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: var(--card-bg);
+        }
+
+        .score-value {
+            position: relative;
+            z-index: 1;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent-lime);
+            text-shadow: 0 0 20px rgba(163, 230, 53, 0.5);
+        }
+
+        .score-label {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .score-status {
+            display: inline-block;
+            margin-top: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(163, 230, 53, 0.15);
+            color: var(--accent-lime);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .score-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .score-row-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .score-row-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .score-row-value.caution {
+            color: var(--accent-pink);
+        }
+
         .aviscore-desc {
             font-size: 14px;
             color: var(--text-muted);
             margin-bottom: 20px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .aviscore-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-bottom: 24px;
         }
 
         .aviscore-feature {
             font-size: 12px;
-            padding: 10px 14px;
+            padding: 12px 14px;
             background: rgba(15, 23, 42, 0.8);
             border-radius: 10px;
             border: 1px solid rgba(148, 163, 184, 0.3);
             color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .aviscore-feature::before {
+            content: '\2713';
+            color: var(--accent-lime);
+            font-weight: bold;
         }
 
         .aviscore-cta {
@@ -492,6 +551,108 @@
         .btn-secondary:hover {
             border-color: var(--accent-cyan);
             background: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Aviscore Target Box */
+        .aviscore-target-box {
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.1), rgba(56, 189, 248, 0.05));
+            border-radius: 12px;
+            border: 1px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .aviscore-target-box .aviscore-target-label {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-lime);
+            margin-bottom: 6px;
+        }
+
+        .aviscore-target-box .aviscore-target-text {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Aviscore Explanation */
+        .aviscore-explanation {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .aviscore-explanation h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .aviscore-explanation p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .score-legend {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .legend-score {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .legend-score.high {
+            background: rgba(163, 230, 53, 0.2);
+            color: var(--accent-lime);
+        }
+
+        .legend-score.mid {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .legend-score.low {
+            background: rgba(251, 113, 133, 0.2);
+            color: var(--accent-pink);
+        }
+
+        .legend-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Aviscore Disclaimer */
+        .aviscore-disclaimer {
+            margin: 20px 0;
+            padding: 12px 16px;
+            background: rgba(251, 113, 133, 0.06);
+            border-radius: 8px;
+            border-left: 3px solid rgba(251, 113, 133, 0.5);
+            font-size: 11px;
+            color: rgba(251, 113, 133, 0.9);
+            line-height: 1.6;
         }
 
         /* Contact */
@@ -551,14 +712,17 @@
                 flex-wrap: wrap;
                 gap: 10px;
             }
-            .service-grid {
+            .flagship-card {
                 grid-template-columns: 1fr;
+            }
+            .score-demo {
+                grid-template-columns: 1fr;
+            }
+            .score-circle {
+                margin-bottom: 16px;
             }
             .aviscore-features {
                 grid-template-columns: 1fr;
-            }
-            .quick-nav {
-                flex-direction: column;
             }
         }
     </style>
@@ -573,12 +737,12 @@
                 <div class="logo-mark">A</div>
                 <div>
                     <div class="logo-text-main">Avisail</div>
-                    <div class="logo-text-sub">Investment & Intelligence</div>
+                    <div class="logo-text-sub">Investment Services</div>
                 </div>
             </div>
             <nav class="nav">
                 <a href="../../index.ja.html" class="nav-back">&larr; ホームへ</a>
-                <a href="#flagship">Flagship</a>
+                <a href="#flagship">B2B</a>
                 <a href="#aviscore">Aviscore</a>
                 <a href="#contact">お問い合わせ</a>
                 <a href="../../en/services/investment.html" class="nav-lang">English</a>
@@ -587,13 +751,13 @@
 
         <!-- Hero -->
         <section class="hero">
-            <div class="hero-kicker">Investment & Intelligence Division</div>
+            <div class="hero-kicker">Investment Services</div>
             <h1 class="hero-title">
                 テクノロジーで、<span>意思決定の前提を可視化する</span>
             </h1>
             <p class="hero-subtitle">
-                投資・事業・政策判断における「前提条件の健全性」を評価するための情報基盤。<br>
-                アルゴリズム研究、AIインフラリスク評価、戦略資源サプライチェーン分析を通じて、<br>
+                投資・事業・政策判断における「前提条件の健全性」を評価するための情報基盤。
+                アルゴリズム研究、AIインフラリスク評価、戦略資源サプライチェーン分析を通じて、
                 判断の質を高めるインテリジェンスを提供します。
             </p>
             <div class="hero-badges">
@@ -604,117 +768,114 @@
             </div>
         </section>
 
-        <!-- Quick Navigation -->
-        <div class="quick-nav">
-            <a href="#flagship" class="quick-nav-item">
-                <div class="quick-nav-icon b2b">B</div>
-                <div class="quick-nav-text">
-                    <div class="quick-nav-title">Flagship Technologies</div>
-                    <div class="quick-nav-desc">B2B向けリスクインテリジェンス & R&D</div>
-                </div>
-            </a>
-            <a href="#aviscore" class="quick-nav-item">
-                <div class="quick-nav-icon b2c">C</div>
-                <div class="quick-nav-text">
-                    <div class="quick-nav-title">Aviscore</div>
-                    <div class="quick-nav-desc">AIコンセンサスマーケットスコアリング</div>
-                </div>
-            </a>
-        </div>
-
         <!-- Flagship Technologies -->
         <section class="section" id="flagship">
             <span class="section-label label-b2b">B2B / Research & Development</span>
             <div class="section-header">
                 <h2 class="section-title">Flagship Technologies</h2>
                 <p class="section-subtitle">
-                    自社資金による研究開発、およびB2B向けリスクインテリジェンスサービス。<br>
-                    「判断の前提」を評価する情報基盤として、事業者・投資家・政策立案者に提供します。
+                    自社資金による研究開発、およびB2B向けリスクインテリジェンスサービス。
+                    「判断の前提」を評価する情報基盤として提供します。
                 </p>
             </div>
 
-            <div class="service-grid">
+            <div class="flagship-list">
                 <!-- Algorithmic Research -->
-                <div class="service-card">
-                    <div class="service-tag rd">R&D / Internal</div>
-                    <h3>
-                        アルゴリズム研究・内部取引検証
-                        <span class="en">Algorithmic Research & Internal Trading</span>
-                    </h3>
-                    <div class="service-problem">
-                        解決する課題：市場構造の理解とリスク管理モデルの精度向上
+                <div class="flagship-card">
+                    <div class="flagship-left">
+                        <div class="flagship-tag rd">R&D / Internal</div>
+                        <h3>
+                            アルゴリズム研究・内部取引検証
+                            <span class="en">Algorithmic Research & Internal Trading</span>
+                        </h3>
+                        <div class="flagship-target">
+                            <div class="flagship-target-label">Position</div>
+                            <div class="flagship-target-text">
+                                自社研究開発のため非公開<br>
+                                （リスク評価技術の基盤として活用）
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        自社資金のみを用いて、複数市場・複数アセットにおける取引アルゴリズムの研究・検証・改善を継続的に行っています。
-                        本活動はR&D（研究開発）として位置づけられ、後述のリスク評価技術の精度向上に活用されます。
-                    </p>
-                    <ul>
-                        <li>市場構造・ボラティリティ特性の分析</li>
-                        <li>リスク管理モデルの検証</li>
-                        <li>ポートフォリオレベルの挙動分析</li>
-                        <li>リアルタイムデータを用いた検証</li>
-                    </ul>
-                    <div class="service-target">
-                        <strong>位置づけ：</strong>内部研究開発・非公開
-                    </div>
-                    <div class="non-scope">
-                        ※ 外部資金の預託・運用、投資助言・売買判断の提供は行いません
+                    <div class="flagship-right">
+                        <p>
+                            自社資金のみを用いて、複数市場・複数アセットにおける取引アルゴリズムの研究・検証・改善を継続的に行っています。
+                            本活動はR&D（研究開発）として位置づけられ、リスク評価技術の精度向上に活用されます。
+                        </p>
+                        <ul>
+                            <li>市場構造・ボラティリティ特性の分析</li>
+                            <li>リスク管理モデルの検証</li>
+                            <li>ポートフォリオレベルの挙動分析</li>
+                            <li>リアルタイムデータを用いた検証</li>
+                        </ul>
+                        <div class="non-scope">
+                            ※ 外部資金の預託・運用、投資助言・売買判断の提供は行いません
+                        </div>
                     </div>
                 </div>
 
                 <!-- AI Infrastructure Risk -->
-                <div class="service-card">
-                    <div class="service-tag intel">Intelligence / B2B</div>
-                    <h3>
-                        AIインフラ リスク評価
-                        <span class="en">AI Infrastructure Risk Intelligence</span>
-                    </h3>
-                    <div class="service-problem">
-                        解決する課題：AIインフラ投資における「止まるリスク」の可視化
+                <div class="flagship-card">
+                    <div class="flagship-left">
+                        <div class="flagship-tag intel">Intelligence / B2B</div>
+                        <h3>
+                            AIインフラ リスク評価
+                            <span class="en">AI Infrastructure Risk Intelligence</span>
+                        </h3>
+                        <div class="flagship-target">
+                            <div class="flagship-target-label">こんな方へ</div>
+                            <div class="flagship-target-text">
+                                AIインフラへの投資・導入を検討中の方<br>
+                                データセンターの信頼性を評価したい方
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        AIデータセンター・GPUインフラを「投資対象」ではなく「止まってはいけないインフラ」として評価。
-                        信用・稼働・サイバーリスクを多角的に分析し、投資・事業判断の前提を可視化します。
-                    </p>
-                    <ul>
-                        <li>運営主体の継続性・依存構造分析</li>
-                        <li>電力・冷却・回線の単一障害点評価</li>
-                        <li>サイバーリスク・脆弱性評価</li>
-                        <li>時系列リスク推移・アラート</li>
-                    </ul>
-                    <div class="service-target">
-                        <strong>想定顧客：</strong>インフラ投資家、AIサービス事業者、ファンド
-                    </div>
-                    <div class="non-scope">
-                        ※ 投資推奨・売買判断、価格予測・リターン予測は行いません
+                    <div class="flagship-right">
+                        <p>
+                            AIデータセンター・GPUインフラを「投資対象」ではなく「止まってはいけないインフラ」として評価。
+                            信用・稼働・サイバーリスクを多角的に分析し、投資・事業判断の前提を可視化します。
+                        </p>
+                        <ul>
+                            <li>運営主体の継続性・依存構造分析</li>
+                            <li>電力・冷却・回線の単一障害点評価</li>
+                            <li>サイバーリスク・脆弱性評価</li>
+                            <li>時系列リスク推移・アラート</li>
+                        </ul>
+                        <div class="non-scope">
+                            ※ 投資推奨・売買判断、価格予測・リターン予測は行いません
+                        </div>
                     </div>
                 </div>
 
                 <!-- Critical Materials -->
-                <div class="service-card">
-                    <div class="service-tag intel">Intelligence / B2B</div>
-                    <h3>
-                        戦略資源サプライチェーン評価
-                        <span class="en">Critical Materials Supply Chain Intelligence</span>
-                    </h3>
-                    <div class="service-problem">
-                        解決する課題：戦略資源の「供給が止まる・歪むリスク」の定量化
+                <div class="flagship-card">
+                    <div class="flagship-left">
+                        <div class="flagship-tag intel">Intelligence / B2B</div>
+                        <h3>
+                            戦略資源サプライチェーン評価
+                            <span class="en">Critical Materials Supply Chain Intelligence</span>
+                        </h3>
+                        <div class="flagship-target">
+                            <div class="flagship-target-label">こんな方へ</div>
+                            <div class="flagship-target-text">
+                                レアアース等の供給リスクを把握したい方<br>
+                                サプライチェーンの脆弱性を分析したい方
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        レアアース等の戦略資源について、価格や短期需給ではなく「供給が止まるリスク・歪むリスク」に焦点を当てて評価。
-                        地政学・規制・環境要因を含む多角的なリスク分析を提供します。
-                    </p>
-                    <ul>
-                        <li>国・地域別供給依存度分析</li>
-                        <li>精製工程のボトルネック評価</li>
-                        <li>地政学・規制・輸出制限リスク</li>
-                        <li>環境・ESG規制による供給制約</li>
-                    </ul>
-                    <div class="service-target">
-                        <strong>想定顧客：</strong>製造業、インフラ投資家、政策関連組織
-                    </div>
-                    <div class="non-scope">
-                        ※ 資源価格の予測、投資判断・売買推奨は行いません
+                    <div class="flagship-right">
+                        <p>
+                            レアアース等の戦略資源について、価格や短期需給ではなく「供給が止まるリスク・歪むリスク」に焦点を当てて評価。
+                            地政学・規制・環境要因を含む多角的なリスク分析を提供します。
+                        </p>
+                        <ul>
+                            <li>国・地域別供給依存度分析</li>
+                            <li>精製工程のボトルネック評価</li>
+                            <li>地政学・規制・輸出制限リスク</li>
+                            <li>環境・ESG規制による供給制約</li>
+                        </ul>
+                        <div class="non-scope">
+                            ※ 資源価格の予測、投資判断・売買推奨は行いません
+                        </div>
                     </div>
                 </div>
             </div>
@@ -722,12 +883,12 @@
 
         <!-- Aviscore -->
         <section class="section" id="aviscore">
-            <span class="section-label label-b2c">Consumer-facing Services</span>
+            <span class="section-label label-b2c">Consumer Services</span>
             <div class="section-header">
                 <h2 class="section-title">Aviscore</h2>
                 <p class="section-subtitle">
-                    AIリアルタイム評価システム ― 市場・資産・インフラに関する公開情報およびOSINTを基に、<br>
-                    「今、何が安定していて、何が不安定化しているのか」を可視化します。
+                    個人投資家向けのAIリアルタイム評価システム。
+                    「今、市場はどんな状態か」を週次でシンプルに把握できます。
                 </p>
             </div>
 
@@ -739,17 +900,79 @@
                         <span>AI Consensus Market Scoring</span>
                     </div>
                 </div>
-                <p class="aviscore-desc">
-                    Aviscoreは「判断材料」を提供するシステムであり、「判断そのもの」を行いません。<br>
-                    複数のAIペルソナが市場を評価し、コンセンサススコアとして可視化。<br>
-                    「来週どう動くか」をシンプルなラベルで提供します。
-                </p>
+
+                <div class="aviscore-target-box">
+                    <div class="aviscore-target-label">こんな方へ</div>
+                    <div class="aviscore-target-text">
+                        忙しくて毎日チャートを見る時間がない投資家の方。
+                        週1回のチェックで市場の温度感を把握したい方。
+                    </div>
+                </div>
+
+                <!-- Score Demo -->
+                <div class="score-demo">
+                    <div class="score-circle">
+                        <div class="score-ring">
+                            <div class="score-value">82</div>
+                        </div>
+                        <div class="score-label">今週のコンセンサススコア</div>
+                        <div class="score-status">安定 / Watch</div>
+                    </div>
+                    <div class="score-details">
+                        <div class="score-row">
+                            <span class="score-row-label">モメンタム</span>
+                            <span class="score-row-value">強気継続（上昇トレンド）</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-row-label">リスクレベル</span>
+                            <span class="score-row-value caution">高め：ポジション縮小検討</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-row-label">今後7日間の注目</span>
+                            <span class="score-row-value">CPI / FOMC / 主要決算</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-row-label">AIペルソナ</span>
+                            <span class="score-row-value">Alpha / Beta / Theta のコンセンサス</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aviscore-explanation">
+                    <h4>Aviscoreの仕組み</h4>
+                    <p>
+                        3つのAIペルソナ（マクロ経済・テクニカル分析・リスク管理）が、
+                        それぞれの視点から市場を評価。その意見を集約し、
+                        <strong>0〜100のスコア</strong>と<strong>シンプルなラベル</strong>で表示します。
+                    </p>
+                    <div class="score-legend">
+                        <div class="legend-item">
+                            <span class="legend-score high">80-100</span>
+                            <span class="legend-label">安定 / 強気継続</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-score mid">50-79</span>
+                            <span class="legend-label">注意 / 要ウォッチ</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-score low">0-49</span>
+                            <span class="legend-label">不安定 / リスク回避推奨</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="aviscore-features">
-                    <div class="aviscore-feature">コンセンサススコア（安定／注意／不安定）</div>
+                    <div class="aviscore-feature">週次コンセンサススコア配信</div>
                     <div class="aviscore-feature">今後7日間のリスク評価</div>
-                    <div class="aviscore-feature">AIペルソナによる多角評価</div>
+                    <div class="aviscore-feature">AIペルソナによる多角的評価</div>
                     <div class="aviscore-feature">アクションラベル付き</div>
                 </div>
+
+                <div class="aviscore-disclaimer">
+                    Aviscoreは「判断材料」を提供するシステムであり、投資判断そのものを行いません。
+                    特定の金融商品の売買を推奨・勧誘するものではありません。
+                </div>
+
                 <div class="aviscore-cta">
                     <a href="../../products/aviscore.html"><button class="btn-primary">Aviscore 詳細を見る</button></a>
                     <a href="../../products/aviscore-customer-ui.html"><button class="btn-secondary">サンプルUIを見る</button></a>
@@ -764,7 +987,7 @@
                 サービスの詳細、B2B向けレポート・API、事業提携のご相談など、<br>
                 お気軽にお問い合わせください。
             </p>
-            <a href="mailto:info@avisail.com?subject=Investment%20%26%20Intelligence%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
+            <a href="mailto:info@avisail.com?subject=Investment%20Services%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
                 <button class="btn-primary">メールでお問い合わせ</button>
             </a>
         </section>
@@ -778,7 +1001,7 @@
                 投資に関する最終決定は、ご自身の判断と責任において行ってください。
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Avisail – Investment & Intelligence
+                &copy; 2025 Avisail – Investment Services
             </div>
         </footer>
 

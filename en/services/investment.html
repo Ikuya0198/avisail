@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Avisail | Investment & Intelligence</title>
+    <title>Avisail | Investment Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Avisail Investment & Intelligence Division. Algorithmic research, AI infrastructure risk assessment, critical materials supply chain analysis, and Aviscore real-time evaluation system.">
 
@@ -276,97 +276,112 @@
             max-width: 700px;
         }
 
-        /* Service Cards */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+        /* Flagship Service Cards - Vertical */
+        .flagship-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             margin-top: 20px;
         }
 
-        .service-card {
+        .flagship-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 24px;
+            padding: 28px;
             border: 1px solid var(--border-soft);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: all 0.3s;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .flagship-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 24px rgba(56, 189, 248, 0.15), 0 14px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .flagship-left {
             display: flex;
             flex-direction: column;
         }
 
-        .service-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-4px);
-            box-shadow: 0 0 24px rgba(56, 189, 248, 0.2), 0 14px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .service-tag {
+        .flagship-tag {
             font-size: 10px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             margin-bottom: 10px;
         }
 
-        .service-tag.rd { color: var(--accent-purple); }
-        .service-tag.intel { color: var(--accent-cyan); }
+        .flagship-tag.rd { color: var(--accent-purple); }
+        .flagship-tag.intel { color: var(--accent-cyan); }
 
-        .service-card h3 {
-            font-size: 17px;
+        .flagship-card h3 {
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 4px;
         }
 
-        .service-problem {
-            font-size: 13px;
-            color: var(--accent-lime);
-            margin: 0 0 12px;
-            padding: 10px 12px;
-            background: rgba(163, 230, 53, 0.08);
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-lime);
+        .flagship-card h3 .en {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-top: 4px;
         }
 
-        .service-card p {
+        .flagship-target {
+            margin-top: 16px;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(163, 230, 53, 0.05));
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .flagship-target-label {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 6px;
+        }
+
+        .flagship-target-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .flagship-right p {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 12px;
-            flex-grow: 1;
+            margin-bottom: 16px;
+            line-height: 1.8;
         }
 
-        .service-card ul {
+        .flagship-right ul {
             list-style: none;
             font-size: 12px;
             color: var(--text-main);
             margin-bottom: 16px;
         }
 
-        .service-card ul li {
-            margin-bottom: 5px;
-            padding-left: 16px;
+        .flagship-right ul li {
+            margin-bottom: 6px;
+            padding-left: 18px;
             position: relative;
         }
 
-        .service-card ul li::before {
+        .flagship-right ul li::before {
             content: '\2192';
             position: absolute;
             left: 0;
             color: var(--accent-cyan);
         }
 
-        .service-target {
-            font-size: 11px;
-            color: var(--text-muted);
-            padding-top: 12px;
-            border-top: 1px dashed rgba(148, 163, 184, 0.3);
-        }
-
-        .service-target strong {
-            color: var(--text-main);
-        }
-
         .non-scope {
-            margin-top: 12px;
             padding: 10px 12px;
             background: rgba(251, 113, 133, 0.08);
             border-radius: 8px;
@@ -486,6 +501,209 @@
             background: rgba(56, 189, 248, 0.1);
         }
 
+        /* Aviscore Target Box */
+        .aviscore-target-box {
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.1), rgba(56, 189, 248, 0.05));
+            border-radius: 12px;
+            border: 1px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .aviscore-target-box .aviscore-target-label {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-lime);
+            margin-bottom: 6px;
+        }
+
+        .aviscore-target-box .aviscore-target-text {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Score Demo Panel */
+        .score-demo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .score-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-ring {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--accent-lime) 0deg 295deg,
+                rgba(148, 163, 184, 0.2) 295deg 360deg
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .score-ring::before {
+            content: '';
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: var(--card-bg);
+        }
+
+        .score-value {
+            position: relative;
+            z-index: 1;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent-lime);
+            text-shadow: 0 0 20px rgba(163, 230, 53, 0.5);
+        }
+
+        .score-label {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .score-status {
+            display: inline-block;
+            margin-top: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(163, 230, 53, 0.15);
+            color: var(--accent-lime);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .score-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .score-row-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .score-row-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .score-row-value.caution {
+            color: var(--accent-pink);
+        }
+
+        /* Aviscore Explanation */
+        .aviscore-explanation {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .aviscore-explanation h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .aviscore-explanation p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .score-legend {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .legend-score {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .legend-score.high {
+            background: rgba(163, 230, 53, 0.2);
+            color: var(--accent-lime);
+        }
+
+        .legend-score.mid {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .legend-score.low {
+            background: rgba(251, 113, 133, 0.2);
+            color: var(--accent-pink);
+        }
+
+        .legend-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Aviscore Disclaimer */
+        .aviscore-disclaimer {
+            margin: 20px 0;
+            padding: 12px 16px;
+            background: rgba(251, 113, 133, 0.06);
+            border-radius: 8px;
+            border-left: 3px solid rgba(251, 113, 133, 0.5);
+            font-size: 11px;
+            color: rgba(251, 113, 133, 0.9);
+            line-height: 1.6;
+        }
+
         /* Contact */
         .contact-section {
             text-align: center;
@@ -543,14 +761,17 @@
                 flex-wrap: wrap;
                 gap: 10px;
             }
-            .service-grid {
+            .flagship-card {
                 grid-template-columns: 1fr;
+            }
+            .score-demo {
+                grid-template-columns: 1fr;
+            }
+            .score-circle {
+                margin-bottom: 16px;
             }
             .aviscore-features {
                 grid-template-columns: 1fr;
-            }
-            .quick-nav {
-                flex-direction: column;
             }
         }
     </style>
@@ -565,7 +786,7 @@
                 <div class="logo-mark">A</div>
                 <div>
                     <div class="logo-text-main">Avisail</div>
-                    <div class="logo-text-sub">Investment & Intelligence</div>
+                    <div class="logo-text-sub">Investment Services</div>
                 </div>
             </div>
             <nav class="nav">
@@ -596,24 +817,6 @@
             </div>
         </section>
 
-        <!-- Quick Navigation -->
-        <div class="quick-nav">
-            <a href="#flagship" class="quick-nav-item">
-                <div class="quick-nav-icon b2b">B</div>
-                <div class="quick-nav-text">
-                    <div class="quick-nav-title">Flagship Technologies</div>
-                    <div class="quick-nav-desc">B2B Risk Intelligence & R&D</div>
-                </div>
-            </a>
-            <a href="#aviscore" class="quick-nav-item">
-                <div class="quick-nav-icon b2c">C</div>
-                <div class="quick-nav-text">
-                    <div class="quick-nav-title">Aviscore</div>
-                    <div class="quick-nav-desc">AI Consensus Market Scoring</div>
-                </div>
-            </a>
-        </div>
-
         <!-- Flagship Technologies -->
         <section class="section" id="flagship">
             <span class="section-label label-b2b">B2B / Research & Development</span>
@@ -625,84 +828,99 @@
                 </p>
             </div>
 
-            <div class="service-grid">
+            <div class="flagship-list">
                 <!-- Algorithmic Research -->
-                <div class="service-card">
-                    <div class="service-tag rd">R&D / Internal</div>
-                    <h3>Algorithmic Research & Internal Trading</h3>
-                    <div class="service-problem">
-                        Challenge: Improving market structure understanding and risk model accuracy
+                <div class="flagship-card">
+                    <div class="flagship-left">
+                        <div class="flagship-tag rd">R&D / Internal</div>
+                        <h3>Algorithmic Research & Internal Trading</h3>
+                        <div class="flagship-target">
+                            <div class="flagship-target-label">Position</div>
+                            <div class="flagship-target-text">
+                                Internal R&D - Non-public<br>
+                                (Foundation for risk assessment technologies)
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        Using only proprietary capital, we continuously conduct research, validation,
-                        and improvement of trading algorithms across multiple markets and asset classes.
-                        This activity is positioned as R&D and contributes to improving the accuracy of
-                        risk evaluation technologies.
-                    </p>
-                    <ul>
-                        <li>Market structure & volatility analysis</li>
-                        <li>Risk management model validation</li>
-                        <li>Portfolio-level behavior analysis</li>
-                        <li>Real-time data verification</li>
-                    </ul>
-                    <div class="service-target">
-                        <strong>Positioning:</strong> Internal R&D / Non-public
-                    </div>
-                    <div class="non-scope">
-                        * We do not accept external funds, provide investment advice, or make trading recommendations
+                    <div class="flagship-right">
+                        <p>
+                            Using only proprietary capital, we continuously conduct research, validation,
+                            and improvement of trading algorithms across multiple markets and asset classes.
+                            This activity is positioned as R&D and contributes to improving the accuracy of
+                            risk evaluation technologies.
+                        </p>
+                        <ul>
+                            <li>Market structure & volatility analysis</li>
+                            <li>Risk management model validation</li>
+                            <li>Portfolio-level behavior analysis</li>
+                            <li>Real-time data verification</li>
+                        </ul>
+                        <div class="non-scope">
+                            * We do not accept external funds, provide investment advice, or make trading recommendations
+                        </div>
                     </div>
                 </div>
 
                 <!-- AI Infrastructure Risk -->
-                <div class="service-card">
-                    <div class="service-tag intel">Intelligence / B2B</div>
-                    <h3>AI Infrastructure Risk Intelligence</h3>
-                    <div class="service-problem">
-                        Challenge: Visualizing "failure risks" in AI infrastructure investments
+                <div class="flagship-card">
+                    <div class="flagship-left">
+                        <div class="flagship-tag intel">Intelligence / B2B</div>
+                        <h3>AI Infrastructure Risk Intelligence</h3>
+                        <div class="flagship-target">
+                            <div class="flagship-target-label">Who This Is For</div>
+                            <div class="flagship-target-text">
+                                Those considering AI infrastructure investment or deployment.<br>
+                                Those evaluating data center reliability.
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        Evaluating AI data centers and GPU infrastructure not as "investment targets"
-                        but as "critical infrastructure that must not fail." Multi-dimensional analysis
-                        of credit, operational, and cyber risks to visualize preconditions for investment
-                        and business decisions.
-                    </p>
-                    <ul>
-                        <li>Operator continuity & dependency analysis</li>
-                        <li>Power/cooling/network single points of failure</li>
-                        <li>Cyber risk & vulnerability assessment</li>
-                        <li>Time-series risk tracking & alerts</li>
-                    </ul>
-                    <div class="service-target">
-                        <strong>Target Clients:</strong> Infrastructure investors, AI service providers, Funds
-                    </div>
-                    <div class="non-scope">
-                        * We do not provide investment recommendations, price predictions, or return forecasts
+                    <div class="flagship-right">
+                        <p>
+                            Evaluating AI data centers and GPU infrastructure not as "investment targets"
+                            but as "critical infrastructure that must not fail." Multi-dimensional analysis
+                            of credit, operational, and cyber risks to visualize preconditions for investment
+                            and business decisions.
+                        </p>
+                        <ul>
+                            <li>Operator continuity & dependency analysis</li>
+                            <li>Power/cooling/network single points of failure</li>
+                            <li>Cyber risk & vulnerability assessment</li>
+                            <li>Time-series risk tracking & alerts</li>
+                        </ul>
+                        <div class="non-scope">
+                            * We do not provide investment recommendations, price predictions, or return forecasts
+                        </div>
                     </div>
                 </div>
 
                 <!-- Critical Materials -->
-                <div class="service-card">
-                    <div class="service-tag intel">Intelligence / B2B</div>
-                    <h3>Critical Materials Supply Chain Intelligence</h3>
-                    <div class="service-problem">
-                        Challenge: Quantifying "supply disruption and distortion risks" for strategic resources
+                <div class="flagship-card">
+                    <div class="flagship-left">
+                        <div class="flagship-tag intel">Intelligence / B2B</div>
+                        <h3>Critical Materials Supply Chain Intelligence</h3>
+                        <div class="flagship-target">
+                            <div class="flagship-target-label">Who This Is For</div>
+                            <div class="flagship-target-text">
+                                Those assessing rare earth supply risks.<br>
+                                Those analyzing supply chain vulnerabilities.
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        For strategic resources including rare earths, we focus on "supply disruption
-                        and distortion risks" rather than price or short-term supply/demand.
-                        Multi-dimensional risk analysis including geopolitical, regulatory, and environmental factors.
-                    </p>
-                    <ul>
-                        <li>Country/region supply dependency analysis</li>
-                        <li>Refining process bottleneck assessment</li>
-                        <li>Geopolitical, regulatory & export restriction risks</li>
-                        <li>Environmental/ESG regulatory constraints</li>
-                    </ul>
-                    <div class="service-target">
-                        <strong>Target Clients:</strong> Manufacturing, Infrastructure investors, Policy organizations
-                    </div>
-                    <div class="non-scope">
-                        * We do not forecast resource prices or provide investment/trading recommendations
+                    <div class="flagship-right">
+                        <p>
+                            For strategic resources including rare earths, we focus on "supply disruption
+                            and distortion risks" rather than price or short-term supply/demand.
+                            Multi-dimensional risk analysis including geopolitical, regulatory, and environmental factors.
+                        </p>
+                        <ul>
+                            <li>Country/region supply dependency analysis</li>
+                            <li>Refining process bottleneck assessment</li>
+                            <li>Geopolitical, regulatory & export restriction risks</li>
+                            <li>Environmental/ESG regulatory constraints</li>
+                        </ul>
+                        <div class="non-scope">
+                            * We do not forecast resource prices or provide investment/trading recommendations
+                        </div>
                     </div>
                 </div>
             </div>
@@ -710,12 +928,12 @@
 
         <!-- Aviscore -->
         <section class="section" id="aviscore">
-            <span class="section-label label-b2c">Consumer-facing Services</span>
+            <span class="section-label label-b2c">Consumer Services</span>
             <div class="section-header">
                 <h2 class="section-title">Aviscore</h2>
                 <p class="section-subtitle">
-                    AI Real-time Evaluation System — Based on public information and OSINT regarding markets, assets, and infrastructure,
-                    we visualize "what is stable and what is becoming unstable right now."
+                    AI real-time evaluation system for individual investors.
+                    Understand "what's the market like right now" with a simple weekly check.
                 </p>
             </div>
 
@@ -727,17 +945,79 @@
                         <span>AI Consensus Market Scoring</span>
                     </div>
                 </div>
-                <p class="aviscore-desc">
-                    Aviscore provides "decision-making materials," not "decisions themselves."<br>
-                    Multiple AI personas evaluate markets and visualize results as consensus scores.<br>
-                    Simple labels for "how it might move this week."
-                </p>
+
+                <div class="aviscore-target-box">
+                    <div class="aviscore-target-label">Who This Is For</div>
+                    <div class="aviscore-target-text">
+                        Busy investors who don't have time to check charts daily.
+                        Those who want to grasp the market temperature with a weekly check.
+                    </div>
+                </div>
+
+                <!-- Score Demo -->
+                <div class="score-demo">
+                    <div class="score-circle">
+                        <div class="score-ring">
+                            <div class="score-value">82</div>
+                        </div>
+                        <div class="score-label">This Week's Consensus Score</div>
+                        <div class="score-status">Stable / Watch</div>
+                    </div>
+                    <div class="score-details">
+                        <div class="score-row">
+                            <span class="score-row-label">Momentum</span>
+                            <span class="score-row-value">Bullish continuation (uptrend)</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-row-label">Risk Level</span>
+                            <span class="score-row-value caution">Elevated: Consider reducing positions</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-row-label">Next 7 Days Focus</span>
+                            <span class="score-row-value">CPI / FOMC / Major Earnings</span>
+                        </div>
+                        <div class="score-row">
+                            <span class="score-row-label">AI Personas</span>
+                            <span class="score-row-value">Alpha / Beta / Theta Consensus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aviscore-explanation">
+                    <h4>How Aviscore Works</h4>
+                    <p>
+                        Three AI personas (Macro Economics, Technical Analysis, Risk Management)
+                        evaluate the market from their respective perspectives. Their opinions are aggregated
+                        and displayed as a <strong>0-100 score</strong> with <strong>simple labels</strong>.
+                    </p>
+                    <div class="score-legend">
+                        <div class="legend-item">
+                            <span class="legend-score high">80-100</span>
+                            <span class="legend-label">Stable / Bullish</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-score mid">50-79</span>
+                            <span class="legend-label">Caution / Watch</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-score low">0-49</span>
+                            <span class="legend-label">Unstable / Risk-off</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="aviscore-features">
-                    <div class="aviscore-feature">Consensus Score (Stable / Caution / Unstable)</div>
+                    <div class="aviscore-feature">Weekly Consensus Score Delivery</div>
                     <div class="aviscore-feature">Next 7 Days Risk Assessment</div>
                     <div class="aviscore-feature">Multi-perspective AI Persona Evaluation</div>
                     <div class="aviscore-feature">Action Labels Included</div>
                 </div>
+
+                <div class="aviscore-disclaimer">
+                    Aviscore provides "decision-making materials," not the decisions themselves.
+                    It does not constitute recommendations or solicitations to buy or sell specific financial products.
+                </div>
+
                 <div class="aviscore-cta">
                     <a href="../../products/aviscore-en.html"><button class="btn-primary">View Aviscore Details</button></a>
                     <a href="../../products/aviscore-customer-ui-en.html"><button class="btn-secondary">View Sample UI</button></a>
@@ -766,7 +1046,7 @@
                 Final investment decisions should be made at your own judgment and responsibility.
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Avisail – Investment & Intelligence
+                &copy; 2025 Avisail – Investment Services
             </div>
         </footer>
 
