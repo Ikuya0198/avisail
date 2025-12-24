@@ -7,467 +7,559 @@
     <meta name="description" content="Avisailの投資・インテリジェンス事業。アルゴリズム研究、AIインフラリスク評価、戦略資源サプライチェーン分析、およびAviscoreリアルタイム評価システムを提供します。">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
         :root {
-            --bg-dark: #050816;
-            --bg-section: #0b1020;
-            --primary: #1f6feb;
-            --accent: #7ef0d4;
-            --accent-gold: #f0c674;
+            --bg-deep: #020617;
+            --bg-main: #020617;
+            --bg-elevated: #020819;
+            --accent-cyan: #22d3ee;
+            --accent-lime: #a3e635;
+            --accent-pink: #fb7185;
             --accent-purple: #a78bfa;
-            --text-main: #f5f7ff;
-            --text-sub: #a7b3d3;
-            --border-soft: #222840;
-            --radius-lg: 18px;
-            --radius-xl: 26px;
-            --shadow-soft: 0 18px 40px rgba(0,0,0,0.55);
-            --max-width: 1080px;
+            --text-main: #e5e7eb;
+            --text-muted: #94a3b8;
+            --border-soft: #1e293b;
+            --border-strong: #38bdf8;
+            --card-bg: #020817;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-            background: radial-gradient(circle at top, #101936 0, #050816 55%, #020309 100%);
+            font-family: 'Inter', system-ui, sans-serif;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.2), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(190, 242, 100, 0.1), transparent 50%),
+                linear-gradient(135deg, #000000, #020617 55%, #020617);
             color: var(--text-main);
             line-height: 1.7;
         }
 
-        a { color: inherit; text-decoration: none; }
+        a { color: var(--accent-cyan); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         .page {
-            max-width: var(--max-width);
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 24px 18px 64px;
+            padding: 18px 18px 60px;
         }
 
-        header {
+        /* Header */
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 32px;
+            padding: 8px 4px 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            font-size: 13px;
         }
 
         .logo-mark {
-            width: 28px;
-            height: 28px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.16);
-            background: radial-gradient(circle at 25% 0, #7ef0d4 0, #1f6feb 30%, #050816 80%);
-            box-shadow: 0 0 12px rgba(126,240,212,0.65);
-        }
-
-        .logo-sub {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: .16em;
-        }
-
-        nav {
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.9), #020617);
             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 14px;
+            color: #020617;
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+        }
+
+        .logo-text-main {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .logo-text-sub {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
             gap: 16px;
             font-size: 13px;
-            color: var(--text-sub);
-            align-items: center;
         }
 
-        nav a:hover { color: var(--accent); }
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-        .lang-switcher, .nav-back {
+        .nav a:hover { color: var(--text-main); }
+
+        .nav-back, .nav-lang {
             padding: 6px 12px;
             border-radius: 999px;
-            border: 1px solid rgba(150,160,255,0.5);
-            background: rgba(15,23,42,0.8);
-            color: var(--text-main);
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: rgba(15, 23, 42, 0.8);
+            color: var(--text-muted);
             font-size: 12px;
             transition: all 0.3s;
         }
 
-        .lang-switcher:hover, .nav-back:hover {
-            border-color: var(--accent);
-            background: rgba(15,23,42,0.95);
+        .nav-back:hover, .nav-lang:hover {
+            border-color: var(--accent-cyan);
+            color: var(--text-main);
         }
 
-        /* HERO */
+        /* Hero */
         .hero {
-            padding: 40px 32px 36px;
-            border-radius: var(--radius-xl);
-            background: radial-gradient(circle at 0 0, #17213f 0, #050816 45%, #020309 100%);
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(126,240,212,0.3);
-            margin-bottom: 40px;
+            padding: 40px 0 48px;
             text-align: center;
         }
 
-        .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(20,33,70,0.9);
-            color: var(--accent);
+        .hero-kicker {
             font-size: 11px;
-            letter-spacing: .16em;
+            letter-spacing: 0.32em;
             text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .hero-label-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 10px rgba(126,240,212,0.9);
+            color: var(--text-muted);
+            margin-bottom: 12px;
         }
 
         .hero-title {
-            font-size: 38px;
-            line-height: 1.3;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: clamp(28px, 4vw, 42px);
+            line-height: 1.2;
             margin-bottom: 16px;
-            font-weight: 700;
         }
 
-        .hero-title span { color: var(--accent); }
+        .hero-title span { color: var(--accent-cyan); }
 
-        .hero-sub {
+        .hero-subtitle {
+            color: var(--text-muted);
             font-size: 15px;
-            color: var(--text-sub);
-            margin-bottom: 28px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 24px;
         }
 
-        .hero-cta {
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .badge {
+            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            color: var(--text-muted);
+        }
+
+        .badge.highlight {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        /* Quick Nav */
+        .quick-nav {
             display: flex;
             justify-content: center;
+            gap: 16px;
             flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn-primary {
-            padding: 12px 24px;
-            border-radius: 999px;
-            background: linear-gradient(135deg,#1f6feb,#7ef0d4);
-            border: none;
-            color: #050816;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(126,240,212,0.35);
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 40px rgba(126,240,212,0.5);
-        }
-
-        .btn-gold {
-            padding: 12px 24px;
-            border-radius: 999px;
-            background: linear-gradient(135deg,#f0c674,#e8a84c);
-            border: none;
-            color: #050816;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(240,198,116,0.35);
-            transition: all 0.3s;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 40px rgba(240,198,116,0.5);
-        }
-
-        .btn-outline {
-            padding: 11px 22px;
-            border-radius: 999px;
-            border: 1px solid rgba(150,160,255,0.7);
-            background: transparent;
-            color: var(--text-main);
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent);
-            background: rgba(126,240,212,0.1);
-        }
-
-        /* SECTION BASE */
-        section {
             margin-bottom: 40px;
-            padding: 24px 22px;
-            border-radius: 18px;
-            background: var(--bg-section);
+        }
+
+        .quick-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            background: var(--card-bg);
             border: 1px solid var(--border-soft);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
         }
 
-        .section-flagship {
-            background: radial-gradient(circle at 0 0, #1a2650 0, #0d1428 55%, #050816 100%);
-            border: 1px solid rgba(31,111,235,0.4);
+        .quick-nav-item:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+            text-decoration: none;
         }
 
-        .section-consumer {
-            background: radial-gradient(circle at 0 0, #1a3d3d 0, #0d1f1f 55%, #061010 100%);
-            border: 1px solid rgba(126,240,212,0.5);
+        .quick-nav-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .quick-nav-icon.b2b { background: rgba(56, 189, 248, 0.15); }
+        .quick-nav-icon.b2c { background: rgba(163, 230, 53, 0.15); }
+
+        .quick-nav-text {
+            text-align: left;
+        }
+
+        .quick-nav-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .quick-nav-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Section */
+        .section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(30, 41, 59, 0.8);
         }
 
         .section-label {
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
             padding: 4px 10px;
             border-radius: 999px;
-            font-size: 10px;
-            letter-spacing: .12em;
-            text-transform: uppercase;
             margin-bottom: 12px;
         }
 
         .label-b2b {
-            background: rgba(31,111,235,0.2);
-            color: #6aa6ff;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(56, 189, 248, 0.4);
         }
 
         .label-b2c {
-            background: rgba(126,240,212,0.2);
-            color: var(--accent);
+            background: rgba(163, 230, 53, 0.15);
+            color: var(--accent-lime);
+            border: 1px solid rgba(163, 230, 53, 0.4);
+        }
+
+        .section-header {
+            margin-bottom: 24px;
         }
 
         .section-title {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .section-sub {
-            font-size: 13px;
-            color: var(--text-sub);
-            margin-bottom: 18px;
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 700px;
         }
 
-        /* SERVICE GRID */
+        /* Service Cards */
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .service-card {
-            padding: 20px;
+            background: var(--card-bg);
             border-radius: 16px;
-            border: 1px solid rgba(82,96,159,0.7);
-            background: linear-gradient(145deg,#0b1020,#060816);
+            padding: 24px;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-cyan);
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(126,240,212,0.2);
+            box-shadow: 0 0 24px rgba(56, 189, 248, 0.2), 0 14px 40px rgba(0, 0, 0, 0.5);
         }
 
+        .service-tag {
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .service-tag.rd { color: var(--accent-purple); }
+        .service-tag.intel { color: var(--accent-cyan); }
+
         .service-card h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: var(--text-main);
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
         .service-card h3 .en {
             display: block;
             font-size: 11px;
-            color: var(--text-sub);
             font-weight: 400;
+            color: var(--text-muted);
             margin-top: 2px;
+        }
+
+        .service-problem {
+            font-size: 13px;
+            color: var(--accent-lime);
+            margin: 12px 0 8px;
+            padding: 10px 12px;
+            background: rgba(163, 230, 53, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-lime);
         }
 
         .service-card p {
             font-size: 13px;
-            color: var(--text-sub);
+            color: var(--text-muted);
             margin-bottom: 12px;
-            line-height: 1.7;
+            flex-grow: 1;
         }
 
         .service-card ul {
-            padding-left: 16px;
+            list-style: none;
             font-size: 12px;
             color: var(--text-main);
+            margin-bottom: 16px;
         }
 
         .service-card ul li {
-            margin-bottom: 4px;
+            margin-bottom: 5px;
+            padding-left: 16px;
+            position: relative;
         }
 
-        .service-badge {
-            display: inline-block;
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 999px;
-            margin-bottom: 10px;
+        .service-card ul li::before {
+            content: '\2192';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
         }
 
-        .badge-research {
-            background: rgba(167,139,250,0.2);
-            color: var(--accent-purple);
+        .service-target {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding-top: 12px;
+            border-top: 1px dashed rgba(148, 163, 184, 0.3);
         }
 
-        .badge-intelligence {
-            background: rgba(31,111,235,0.2);
-            color: #6aa6ff;
+        .service-target strong {
+            color: var(--text-main);
         }
 
         .non-scope {
             margin-top: 12px;
             padding: 10px 12px;
-            background: rgba(255,100,100,0.08);
+            background: rgba(251, 113, 133, 0.08);
             border-radius: 8px;
-            border-left: 3px solid rgba(255,100,100,0.4);
-        }
-
-        .non-scope p {
+            border-left: 3px solid var(--accent-pink);
             font-size: 11px;
-            color: #ff9999;
-            margin: 0;
+            color: var(--accent-pink);
         }
 
-        /* AVISCORE SECTION */
-        .aviscore-box {
-            background: radial-gradient(circle at 0 0, rgba(126,240,212,0.12), rgba(31,111,235,0.08));
-            border: 2px solid var(--accent);
-            border-radius: 18px;
-            padding: 28px;
-            margin-bottom: 24px;
+        /* Aviscore Feature Card */
+        .aviscore-card {
+            background:
+                radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(163, 230, 53, 0.1), transparent 50%),
+                var(--card-bg);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 0 32px rgba(56, 189, 248, 0.3);
+            margin-top: 20px;
         }
 
-        .aviscore-box h3 {
-            font-size: 20px;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-
-        .aviscore-box p {
-            font-size: 14px;
-            color: var(--text-main);
+        .aviscore-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
             margin-bottom: 16px;
-            line-height: 1.7;
+        }
+
+        .aviscore-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 20%, var(--accent-cyan), #020617);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 22px;
+            color: #020617;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+        }
+
+        .aviscore-title {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 22px;
+        }
+
+        .aviscore-title span {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .aviscore-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
 
         .aviscore-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .aviscore-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            font-size: 12px;
+            padding: 10px 14px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
             color: var(--text-main);
         }
 
-        .feature-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            flex-shrink: 0;
-        }
-
-        /* TRY IT BOX */
-        .try-box {
-            background: linear-gradient(135deg, rgba(240,198,116,0.1), rgba(31,111,235,0.08));
-            border: 1px solid var(--accent-gold);
-            border-radius: 16px;
-            padding: 24px;
-            margin-top: 24px;
-        }
-
-        .try-box h4 {
-            font-size: 16px;
-            color: var(--accent-gold);
-            margin-bottom: 12px;
+        .aviscore-cta {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .try-box p {
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-lime));
+            border-radius: 999px;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #020617;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 28px rgba(56, 189, 248, 0.8);
+        }
+
+        .btn-secondary {
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.8);
+            background: transparent;
+            color: var(--text-main);
             font-size: 13px;
-            color: var(--text-sub);
-            margin-bottom: 16px;
+            padding: 11px 22px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .try-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.1);
         }
 
-        .try-note {
-            font-size: 10px;
-            color: var(--text-sub);
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px dashed rgba(103,120,189,0.3);
-        }
-
-        /* CTA BOX */
-        .cta-box {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 24px;
-            font-size: 11px;
-            color: var(--text-sub);
+        /* Contact */
+        .contact-section {
             text-align: center;
+            margin-top: 48px;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-soft);
+        }
+
+        .contact-section h2 {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(30, 41, 59, 0.8);
         }
 
         .disclaimer {
-            background: rgba(255,100,100,0.06);
+            background: rgba(251, 113, 133, 0.06);
             padding: 16px;
             border-radius: 12px;
             margin-bottom: 20px;
-            border-left: 3px solid rgba(255,100,100,0.4);
-        }
-
-        .disclaimer p {
+            border-left: 3px solid rgba(251, 113, 133, 0.5);
             font-size: 11px;
-            color: #cc9999;
+            color: rgba(251, 113, 133, 0.9);
             line-height: 1.7;
-            margin: 0;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 840px) {
-            .hero { padding: 32px 24px; }
-            .hero-title { font-size: 28px; }
-            .hero-cta { flex-direction: column; align-items: stretch; }
-            .service-grid { grid-template-columns: minmax(0,1fr); }
-            .aviscore-features { grid-template-columns: minmax(0,1fr); }
-            header { flex-direction: column; align-items: flex-start; gap: 10px; }
-            nav { font-size: 12px; flex-wrap: wrap; }
+        .footer-bottom {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .nav {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .aviscore-features {
+                grid-template-columns: 1fr;
+            }
+            .quick-nav {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -475,66 +567,86 @@
 <body>
     <div class="page">
 
-        <!-- HEADER -->
-        <header>
-            <div>
-                <div class="logo">
-                    <div class="logo-mark"></div>
-                    <div>AVISAIL</div>
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-mark">A</div>
+                <div>
+                    <div class="logo-text-main">Avisail</div>
+                    <div class="logo-text-sub">Investment & Intelligence</div>
                 </div>
-                <div class="logo-sub">Investment & Intelligence</div>
             </div>
-
-            <nav>
-                <a href="../../index.ja.html" class="nav-back">← ホームへ</a>
-                <a href="#flagship">Flagship Tech</a>
+            <nav class="nav">
+                <a href="../../index.ja.html" class="nav-back">&larr; ホームへ</a>
+                <a href="#flagship">Flagship</a>
                 <a href="#aviscore">Aviscore</a>
                 <a href="#contact">お問い合わせ</a>
-                <a href="../../en/services/investment.html" class="lang-switcher">English</a>
+                <a href="../../en/services/investment.html" class="nav-lang">English</a>
             </nav>
         </header>
 
-        <!-- HERO -->
-        <div class="hero">
-            <div class="hero-label">
-                <span class="hero-label-dot"></span>
-                <span>Investment & Intelligence</span>
-            </div>
-
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-kicker">Investment & Intelligence Division</div>
             <h1 class="hero-title">
-                テクノロジーで、<span>リスクを可視化する</span>
+                テクノロジーで、<span>意思決定の前提を可視化する</span>
             </h1>
-
-            <p class="hero-sub">
-                Avisailは、アルゴリズム研究・AIインフラリスク評価・戦略資源サプライチェーン分析を通じて、<br>
-                投資・事業判断における「前提条件の健全性」を評価するための情報基盤を提供します。
+            <p class="hero-subtitle">
+                投資・事業・政策判断における「前提条件の健全性」を評価するための情報基盤。<br>
+                アルゴリズム研究、AIインフラリスク評価、戦略資源サプライチェーン分析を通じて、<br>
+                判断の質を高めるインテリジェンスを提供します。
             </p>
-
-            <div class="hero-cta">
-                <a href="#flagship"><button class="btn-primary">Flagship Technologies</button></a>
-                <a href="#aviscore"><button class="btn-outline">Aviscore を見る</button></a>
+            <div class="hero-badges">
+                <span class="badge">自社資金R&D</span>
+                <span class="badge">外部資金預託なし</span>
+                <span class="badge">投資助言非該当</span>
+                <span class="badge highlight">B2B Intelligence</span>
             </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <a href="#flagship" class="quick-nav-item">
+                <div class="quick-nav-icon b2b">B</div>
+                <div class="quick-nav-text">
+                    <div class="quick-nav-title">Flagship Technologies</div>
+                    <div class="quick-nav-desc">B2B向けリスクインテリジェンス & R&D</div>
+                </div>
+            </a>
+            <a href="#aviscore" class="quick-nav-item">
+                <div class="quick-nav-icon b2c">C</div>
+                <div class="quick-nav-text">
+                    <div class="quick-nav-title">Aviscore</div>
+                    <div class="quick-nav-desc">AIコンセンサスマーケットスコアリング</div>
+                </div>
+            </a>
         </div>
 
-        <!-- FLAGSHIP TECHNOLOGIES -->
-        <section id="flagship" class="section-flagship">
-            <div class="section-label label-b2b">B2B / Research & Development</div>
-            <h2 class="section-title">Flagship Technologies</h2>
-            <p class="section-sub">
-                自社資金による研究開発、およびB2B向けリスクインテリジェンスサービス。<br>
-                投資・事業・政策判断のための「前提条件の健全性」を評価する情報基盤を提供します。
-            </p>
+        <!-- Flagship Technologies -->
+        <section class="section" id="flagship">
+            <span class="section-label label-b2b">B2B / Research & Development</span>
+            <div class="section-header">
+                <h2 class="section-title">Flagship Technologies</h2>
+                <p class="section-subtitle">
+                    自社資金による研究開発、およびB2B向けリスクインテリジェンスサービス。<br>
+                    「判断の前提」を評価する情報基盤として、事業者・投資家・政策立案者に提供します。
+                </p>
+            </div>
 
             <div class="service-grid">
                 <!-- Algorithmic Research -->
                 <div class="service-card">
-                    <span class="service-badge badge-research">R&D</span>
+                    <div class="service-tag rd">R&D / Internal</div>
                     <h3>
                         アルゴリズム研究・内部取引検証
                         <span class="en">Algorithmic Research & Internal Trading</span>
                     </h3>
+                    <div class="service-problem">
+                        解決する課題：市場構造の理解とリスク管理モデルの精度向上
+                    </div>
                     <p>
                         自社資金のみを用いて、複数市場・複数アセットにおける取引アルゴリズムの研究・検証・改善を継続的に行っています。
+                        本活動はR&D（研究開発）として位置づけられ、後述のリスク評価技術の精度向上に活用されます。
                     </p>
                     <ul>
                         <li>市場構造・ボラティリティ特性の分析</li>
@@ -542,41 +654,55 @@
                         <li>ポートフォリオレベルの挙動分析</li>
                         <li>リアルタイムデータを用いた検証</li>
                     </ul>
+                    <div class="service-target">
+                        <strong>位置づけ：</strong>内部研究開発・非公開
+                    </div>
                     <div class="non-scope">
-                        <p>※ 外部資金の預託・運用、投資助言・売買判断の提供は行いません</p>
+                        ※ 外部資金の預託・運用、投資助言・売買判断の提供は行いません
                     </div>
                 </div>
 
                 <!-- AI Infrastructure Risk -->
                 <div class="service-card">
-                    <span class="service-badge badge-intelligence">Intelligence</span>
+                    <div class="service-tag intel">Intelligence / B2B</div>
                     <h3>
                         AIインフラ リスク評価
                         <span class="en">AI Infrastructure Risk Intelligence</span>
                     </h3>
+                    <div class="service-problem">
+                        解決する課題：AIインフラ投資における「止まるリスク」の可視化
+                    </div>
                     <p>
-                        AIデータセンター・GPUインフラを「止まってはいけないインフラ」として評価・可視化。信用・稼働・サイバーリスクを多角的に分析します。
+                        AIデータセンター・GPUインフラを「投資対象」ではなく「止まってはいけないインフラ」として評価。
+                        信用・稼働・サイバーリスクを多角的に分析し、投資・事業判断の前提を可視化します。
                     </p>
                     <ul>
                         <li>運営主体の継続性・依存構造分析</li>
                         <li>電力・冷却・回線の単一障害点評価</li>
                         <li>サイバーリスク・脆弱性評価</li>
-                        <li>B2B向けレポート／API提供</li>
+                        <li>時系列リスク推移・アラート</li>
                     </ul>
+                    <div class="service-target">
+                        <strong>想定顧客：</strong>インフラ投資家、AIサービス事業者、ファンド
+                    </div>
                     <div class="non-scope">
-                        <p>※ 投資推奨・売買判断、価格予測・リターン予測は行いません</p>
+                        ※ 投資推奨・売買判断、価格予測・リターン予測は行いません
                     </div>
                 </div>
 
                 <!-- Critical Materials -->
                 <div class="service-card">
-                    <span class="service-badge badge-intelligence">Intelligence</span>
+                    <div class="service-tag intel">Intelligence / B2B</div>
                     <h3>
                         戦略資源サプライチェーン評価
                         <span class="en">Critical Materials Supply Chain Intelligence</span>
                     </h3>
+                    <div class="service-problem">
+                        解決する課題：戦略資源の「供給が止まる・歪むリスク」の定量化
+                    </div>
                     <p>
-                        レアアース等の戦略資源について、価格や短期需給ではなく「供給が止まるリスク・歪むリスク」に焦点を当てて評価します。
+                        レアアース等の戦略資源について、価格や短期需給ではなく「供給が止まるリスク・歪むリスク」に焦点を当てて評価。
+                        地政学・規制・環境要因を含む多角的なリスク分析を提供します。
                     </p>
                     <ul>
                         <li>国・地域別供給依存度分析</li>
@@ -584,134 +710,75 @@
                         <li>地政学・規制・輸出制限リスク</li>
                         <li>環境・ESG規制による供給制約</li>
                     </ul>
+                    <div class="service-target">
+                        <strong>想定顧客：</strong>製造業、インフラ投資家、政策関連組織
+                    </div>
                     <div class="non-scope">
-                        <p>※ 資源価格の予測、投資判断・売買推奨は行いません</p>
+                        ※ 資源価格の予測、投資判断・売買推奨は行いません
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONSUMER-FACING: AVISCORE -->
-        <section id="aviscore" class="section-consumer">
-            <div class="section-label label-b2c">Consumer-facing Services</div>
-            <h2 class="section-title">Aviscore</h2>
-            <p class="section-sub">
-                AIリアルタイム評価システム ― 市場・資産・インフラに関する公開情報およびOSINTを基に、<br>
-                「今、何が安定していて、何が不安定化しているのか」を可視化します。
-            </p>
-
-            <!-- Aviscore Main Box -->
-            <div class="aviscore-box">
-                <h3>Aviscore とは</h3>
-                <p>
-                    Aviscoreは、「判断材料」を提供するシステムであり、「判断そのもの」を行いません。<br>
-                    市場環境、デジタル／物理インフラ、事業・資産を取り巻く外部リスク要因をリアルタイムに評価し、状態スコアとして可視化します。
+        <!-- Aviscore -->
+        <section class="section" id="aviscore">
+            <span class="section-label label-b2c">Consumer-facing Services</span>
+            <div class="section-header">
+                <h2 class="section-title">Aviscore</h2>
+                <p class="section-subtitle">
+                    AIリアルタイム評価システム ― 市場・資産・インフラに関する公開情報およびOSINTを基に、<br>
+                    「今、何が安定していて、何が不安定化しているのか」を可視化します。
                 </p>
+            </div>
 
+            <div class="aviscore-card">
+                <div class="aviscore-header">
+                    <div class="aviscore-logo">A</div>
+                    <div class="aviscore-title">
+                        Aviscore
+                        <span>AI Consensus Market Scoring</span>
+                    </div>
+                </div>
+                <p class="aviscore-desc">
+                    Aviscoreは「判断材料」を提供するシステムであり、「判断そのもの」を行いません。<br>
+                    複数のAIペルソナが市場を評価し、コンセンサススコアとして可視化。<br>
+                    「来週どう動くか」をシンプルなラベルで提供します。
+                </p>
                 <div class="aviscore-features">
-                    <div class="aviscore-feature">
-                        <span class="feature-dot"></span>
-                        <span>状態スコア（安定／注意／不安定）</span>
-                    </div>
-                    <div class="aviscore-feature">
-                        <span class="feature-dot"></span>
-                        <span>リスク変化のリアルタイム検知</span>
-                    </div>
-                    <div class="aviscore-feature">
-                        <span class="feature-dot"></span>
-                        <span>時系列による状態推移表示</span>
-                    </div>
-                    <div class="aviscore-feature">
-                        <span class="feature-dot"></span>
-                        <span>消費者向けダッシュボード</span>
-                    </div>
+                    <div class="aviscore-feature">コンセンサススコア（安定／注意／不安定）</div>
+                    <div class="aviscore-feature">今後7日間のリスク評価</div>
+                    <div class="aviscore-feature">AIペルソナによる多角評価</div>
+                    <div class="aviscore-feature">アクションラベル付き</div>
                 </div>
-
-                <div class="cta-box">
+                <div class="aviscore-cta">
                     <a href="../../products/aviscore.html"><button class="btn-primary">Aviscore 詳細を見る</button></a>
-                    <a href="../../products/aviscore-customer-ui.html"><button class="btn-outline">ベータ版 UI を試す</button></a>
+                    <a href="../../products/aviscore-customer-ui.html"><button class="btn-secondary">サンプルUIを見る</button></a>
                 </div>
-
-                <p style="font-size: 11px; color: var(--text-sub); margin-top: 16px; text-align: center;">
-                    ※ 売買判断の提示、利益・リターンの予測、個別の投資行動の推奨は行いません
-                </p>
-            </div>
-
-            <!-- Try It Box -->
-            <div class="try-box">
-                <h4>実際に試してみたい方へ</h4>
-                <p>
-                    Aviscoreの評価ロジックを体験したい方向けに、MT5プラットフォーム上で動作するEA（Expert Advisor）を提供しています。<br>
-                    自動取引を実際に試してみたい方は、以下からご利用いただけます。
-                </p>
-
-                <!-- XM Banner -->
-                <a href="https://www.xmtrading.com/referral?token=F95vy-ZAOarSOdPXyQdvFQ" target="_blank" rel="noopener" style="display: block; margin-bottom: 16px;">
-                    <div style="background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%); border: 2px solid #4ade80; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: all 0.3s; box-shadow: 0 8px 24px rgba(74,222,128,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(74,222,128,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(74,222,128,0.2)';">
-                        <div>
-                            <div style="font-size: 11px; color: #86efac; letter-spacing: 0.1em; margin-bottom: 4px;">RECOMMENDED BROKER</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px;">XM Trading</div>
-                            <div style="font-size: 12px; color: #a7f3d0;">MT5対応・日本語サポート・最大レバレッジ1000倍</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #22c55e, #16a34a); padding: 12px 24px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap;">
-                            口座を開設する →
-                        </div>
-                    </div>
-                </a>
-
-                <!-- EA Banner (Placeholder) -->
-                <a href="#ea-purchase" style="display: block;">
-                    <div style="background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #1e3a5f 100%); border: 2px solid #60a5fa; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: all 0.3s; box-shadow: 0 8px 24px rgba(96,165,250,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(96,165,250,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(96,165,250,0.2)';">
-                        <div>
-                            <div style="font-size: 11px; color: #93c5fd; letter-spacing: 0.1em; margin-bottom: 4px;">TRADING TOOL</div>
-                            <div style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px;">Avisail EA</div>
-                            <div style="font-size: 12px; color: #bfdbfe;">Aviscoreロジック搭載・MT5対応・自動取引</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 12px 24px; border-radius: 999px; color: #fff; font-weight: 600; font-size: 14px; white-space: nowrap;">
-                            Coming Soon
-                        </div>
-                    </div>
-                </a>
-
-                <p class="try-note">
-                    ※ XMリンクはアフィリエイトリンクです。口座開設により当社に紹介報酬が発生する場合があります。<br>
-                    ※ EAは参考ツールとして提供されるものであり、当社が取引を推奨・保証するものではありません。<br>
-                    ※ FX・CFD取引にはリスクが伴い、投資元本を失う可能性があります。
-                </p>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" style="text-align: center;">
-            <h2 class="section-title">お問い合わせ</h2>
-            <p class="section-sub">
-                サービスの詳細、B2B向けレポート・API、その他ご質問など、<br>
+        <!-- Contact -->
+        <section class="contact-section" id="contact">
+            <h2>お問い合わせ</h2>
+            <p>
+                サービスの詳細、B2B向けレポート・API、事業提携のご相談など、<br>
                 お気軽にお問い合わせください。
             </p>
-
-            <div class="cta-box">
-                <a href="mailto:info@avisail.com?subject=Investment%20%26%20Intelligence%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
-                    <button class="btn-primary">メールでお問い合わせ</button>
-                </a>
-            </div>
+            <a href="mailto:info@avisail.com?subject=Investment%20%26%20Intelligence%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
+                <button class="btn-primary">メールでお問い合わせ</button>
+            </a>
         </section>
 
-        <!-- FOOTER -->
-        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div class="disclaimer">
-                    <p>
-                        <strong>重要事項：</strong>
-                        当社が提供する情報・サービスは、投資判断の参考となる情報提供を目的としたものであり、
-                        特定の金融商品の売買を推奨・勧誘するものではありません。
-                        投資に関する最終決定は、ご自身の判断と責任において行ってください。
-                        FX・CFD取引にはリスクが伴い、投資元本を失う可能性があります。
-                    </p>
-                </div>
-
-                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
-                    © 2025 Avisail – Investment & Intelligence
-                </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="disclaimer">
+                <strong>重要事項：</strong>
+                当社が提供する情報・サービスは、投資判断の参考となる情報提供を目的としたものであり、
+                特定の金融商品の売買を推奨・勧誘するものではありません。
+                投資に関する最終決定は、ご自身の判断と責任において行ってください。
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Avisail – Investment & Intelligence
             </div>
         </footer>
 
