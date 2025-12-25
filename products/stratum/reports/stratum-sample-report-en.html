@@ -936,6 +936,10 @@
     </style>
 </head>
 <body>
+    <!-- Back Button -->
+    <a href="../../../en/services/investment.html#flagship" style="position: fixed; top: 20px; left: 20px; z-index: 9999; display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 8px; color: #10b981; font-size: 13px; font-weight: 500; text-decoration: none; backdrop-filter: blur(8px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.2s;">
+        <span style="font-size: 16px;">←</span> Back
+    </a>
     <!-- Action Buttons -->
     <div class="action-buttons no-print">
         <button class="action-btn secondary" onclick="toggleAllSections()">
@@ -1058,7 +1062,7 @@
             <!-- Security Stack -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">セキュリティスタック<span class="section-title-sub">Security Architecture Analysis</span></h2>
+                    <h2 class="section-title">Security Stack<span class="section-title-sub">Security Architecture Analysis</span></h2>
                 </div>
                 <div class="viz-row">
                     <div class="viz-container">
@@ -1077,22 +1081,22 @@
     </filter>
 </defs>
 <rect width="400" height="280" fill="url(#stack-bg)" rx="16"/>
-<text x="200" y="28" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="14" font-weight="600">セキュリティスタック</text>
+<text x="200" y="28" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="14" font-weight="600">Security Stack</text>
 <polygon points="60.0,110.0 220.0,110.0 240.0,155 220.0,200.0 60.0,200.0 40.0,155" fill="#ef4444" fill-opacity="0.24" stroke="#ef4444" stroke-width="2" filter="url(#glow)"/>
 <polygon points="77.6,119.9 202.4,119.9 218.0,155 202.4,190.1 77.6,190.1 62.0,155" fill="#dc2626" fill-opacity="0.21" stroke="#dc2626" stroke-width="2" filter="url(#glow)"/>
 <polygon points="95.2,129.8 184.8,129.8 196.0,155 184.8,180.2 95.2,180.2 84.0,155" fill="#eab308" fill-opacity="0.18" stroke="#eab308" stroke-width="2" filter="url(#glow)"/>
 <polygon points="112.8,139.7 167.2,139.7 174.0,155 167.2,170.3 112.8,170.3 106.0,155" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-width="2" filter="url(#glow)"/>
 <rect x="260" y="65" width="12" height="12" rx="3" fill="#ef4444"/>
-<text x="280" y="75" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">ネットワーク層</text>
+<text x="280" y="75" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">Network Layer</text>
 <text x="280" y="89" fill="#ef4444" font-family="Inter, sans-serif" font-size="10" font-weight="600">HIGH</text>
 <rect x="260" y="115" width="12" height="12" rx="3" fill="#dc2626"/>
-<text x="280" y="125" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">コンピュート層</text>
+<text x="280" y="125" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">Compute Layer</text>
 <text x="280" y="139" fill="#dc2626" font-family="Inter, sans-serif" font-size="10" font-weight="600">CRITICAL</text>
 <rect x="260" y="165" width="12" height="12" rx="3" fill="#eab308"/>
-<text x="280" y="175" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">アプリケーション層</text>
+<text x="280" y="175" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">Application Layer</text>
 <text x="280" y="189" fill="#eab308" font-family="Inter, sans-serif" font-size="10" font-weight="600">MODERATE</text>
 <rect x="260" y="215" width="12" height="12" rx="3" fill="#f97316"/>
-<text x="280" y="225" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">データ層</text>
+<text x="280" y="225" fill="#f8fafc" font-family="Inter, sans-serif" font-size="11" font-weight="500">Data Layer</text>
 <text x="280" y="239" fill="#f97316" font-family="Inter, sans-serif" font-size="10" font-weight="600">ELEVATED</text>
 </svg>
                     </div>
@@ -1105,24 +1109,24 @@
     </linearGradient>
 </defs>
 <rect width="320" height="280" fill="#0f172a" rx="12"/>
-<text x="160" y="28" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="13" font-weight="600">攻撃対象領域分析</text>
+<text x="160" y="28" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="13" font-weight="600">Attack Surface Analysis</text>
 <circle cx="160" cy="150" r="30" fill="none" stroke="#374151" stroke-width="1" stroke-dasharray="3,3"/>
 <circle cx="160" cy="150" r="60" fill="none" stroke="#374151" stroke-width="1" stroke-dasharray="3,3"/>
 <circle cx="160" cy="150" r="90" fill="none" stroke="#374151" stroke-width="1" stroke-dasharray="3,3"/>
 <line x1="160" y1="150" x2="160" y2="60" stroke="#374151" stroke-width="1"/>
-<text x="160" y="35" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">ポート露出</text>
+<text x="160" y="35" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">Port Exposure</text>
 <text x="160" y="47" text-anchor="middle" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">35%</text>
 <line x1="160" y1="150" x2="245.6" y2="122.2" stroke="#374151" stroke-width="1"/>
-<text x="268" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">管理IF</text>
+<text x="268" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">Admin IF</text>
 <text x="268" y="122" text-anchor="middle" fill="#f97316" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">50%</text>
 <line x1="160" y1="150" x2="212.9" y2="222.8" stroke="#374151" stroke-width="1"/>
-<text x="228" y="248" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">脆弱性</text>
+<text x="228" y="248" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">Vulnerabilities</text>
 <text x="228" y="260" text-anchor="middle" fill="#f97316" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">45%</text>
 <line x1="160" y1="150" x2="107.1" y2="222.8" stroke="#374151" stroke-width="1"/>
-<text x="92" y="248" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">サービス</text>
+<text x="92" y="248" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">Services</text>
 <text x="92" y="260" text-anchor="middle" fill="#f97316" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">60%</text>
 <line x1="160" y1="150" x2="74.4" y2="122.2" stroke="#374151" stroke-width="1"/>
-<text x="52" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">プロトコル</text>
+<text x="52" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="10" font-weight="500">Protocols</text>
 <text x="52" y="122" text-anchor="middle" fill="#10b981" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">21%</text>
 <polygon points="160,118.5 202.8,136.1 183.8,182.8 128.3,193.7 142,144.2" fill="url(#radar-fill)" stroke="#10b981" stroke-width="2"/>
 <circle cx="160" cy="118.5" r="4" fill="#10b981" stroke="#0f172a" stroke-width="2"/>
@@ -1136,7 +1140,7 @@
                 <div class="viz-container viz-full">
                     <svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
 <rect width="700" height="140" fill="#0f172a" rx="12"/>
-<text x="20" y="28" fill="#f8fafc" font-family="Inter, sans-serif" font-size="12" font-weight="600">露出サービス</text>
+<text x="20" y="28" fill="#f8fafc" font-family="Inter, sans-serif" font-size="12" font-weight="600">Exposed Services</text>
 <line x1="20" y1="70" x2="680" y2="70" stroke="#374151" stroke-width="2"/>
 <circle cx="40" cy="70" r="6" fill="#ef4444" stroke="#0f172a" stroke-width="2"/>
 <text x="40" y="95" text-anchor="middle" fill="#ef4444" font-family="JetBrains Mono, monospace" font-size="9" font-weight="500">22</text>
@@ -1170,62 +1174,62 @@
             <!-- Executive Summary -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">エグゼクティブサマリー<span class="section-title-sub">Executive Summary</span></h2>
+                    <h2 class="section-title">Executive Summary<span class="section-title-sub">Executive Summary</span></h2>
                 </div>
                 <div class="section-card">
 <div class="highlight-box warning">
-    <div class="highlight-box-title">セキュリティ態勢概要</div>
-    <p style="margin:0;">デモAIインフラストラクチャの包括的なセキュリティ評価を実施しました。総合リスクレベルは <span class="risk-badge critical">HIGH（重大）</span> と判定されました。これは業界平均を大幅に上回るリスク水準であり、早急な対応が必要です。</p>
+    <div class="highlight-box-title">Security Posture Overview</div>
+    <p style="margin:0;">We conducted a comprehensive security assessment of the Demo AI Infrastructure. The overall risk level has been determined as <span class="risk-badge critical">HIGH (Critical)</span> . This represents a risk level significantly above the industry average, requiring immediate action.</p>
 </div>
 
-<p>セキュリティ成熟度は <span class="risk-badge moderate">Initial</span> に位置しており、基本的なセキュリティ対策の実装が不十分です。NIST Cybersecurity Frameworkの観点から、特に「Protect」および「Detect」機能に重大なギャップが確認されました。</p>
+<p>Security maturity is positioned at <span class="risk-badge moderate">Initial</span> , indicating insufficient implementation of basic security measures. From the NIST Cybersecurity Framework perspective, significant gaps have been identified particularly in the "Protect" and "Detect" functions.</p>
 
 <div class="highlight-box">
-    <div class="highlight-box-title">主要な発見事項</div>
+    <div class="highlight-box-title">Key Findings</div>
     <div class="cve-card critical">
         <span class="cve-id">CVE-2024-1234</span>
         <div class="cve-details">
             <span class="cve-score critical">CVSS 9.8</span>
-            <span class="cve-desc">リモートコード実行 - エクスプロイト公開済み、24時間以内のパッチ適用必須</span>
+            <span class="cve-desc">Remote Code Execution - Exploit publicly available, patch required within 24 hours</span>
         </div>
     </div>
     <div class="cve-card high">
-        <span class="cve-id">GPU管理露出</span>
+        <span class="cve-id">GPU Management Exposed</span>
         <div class="cve-details">
             <span class="risk-badge critical">Critical</span>
-            <span class="cve-desc">NVIDIA DCGM（5555/tcp）がインターネットに公開、クリプトマイニング・データ窃取リスク</span>
+            <span class="cve-desc">NVIDIA DCGM (5555/tcp) exposed to internet, cryptomining and data theft risk</span>
         </div>
     </div>
     <div class="cve-card high">
-        <span class="cve-id">管理ポート露出</span>
+        <span class="cve-id">Admin Port Exposure</span>
         <div class="cve-details">
             <span class="risk-badge high">High</span>
-            <span class="cve-desc">SSH（22）/ RDP（3389）が公開、ブルートフォース攻撃のリスク</span>
+            <span class="cve-desc">SSH(22)/RDP(3389) exposed, brute force attack risk</span>
         </div>
     </div>
     <div class="cve-card medium">
-        <span class="cve-id">DB/TLS問題</span>
+        <span class="cve-id">DB/TLS Issues</span>
         <div class="cve-details">
             <span class="risk-badge elevated">Elevated</span>
-            <span class="cve-desc">PostgreSQL（5432）公開、TLS 1.1検出（PCI DSS非準拠）</span>
+            <span class="cve-desc">PostgreSQL(5432) exposed, TLS 1.1 detected (PCI DSS non-compliant)</span>
         </div>
     </div>
 </div>
 
-<p><strong>ビジネスインパクト評価</strong></p>
+<p><strong>Business Impact Assessment</strong></p>
 <table class="metrics-table">
-    <tr><td>財務的影響</td><td>約4.45億円（データ侵害時の平均コスト）</td></tr>
-    <tr><td>規制リスク</td><td>GDPR・個人情報保護法違反による制裁金</td></tr>
-    <tr><td>レピュテーション</td><td>モデル・データ漏洩による顧客信頼喪失</td></tr>
-    <tr><td>事業継続性</td><td>GPU管理侵害によるサービス停止</td></tr>
+    <tr><td>Financial Impact</td><td>Approx. $3M USD (average cost of data breach)</td></tr>
+    <tr><td>Regulatory Risk</td><td>Penalties for GDPR and privacy law violations</td></tr>
+    <tr><td>Reputation</td><td>Loss of customer trust due to model/data leakage</td></tr>
+    <tr><td>Business Continuity</td><td>Service disruption due to GPU management compromise</td></tr>
 </table>
 
-<p><strong>主要メトリクス</strong></p>
+<p><strong>Key Metrics</strong></p>
 <table class="metrics-table">
-    <tr><td>攻撃対象面スコア</td><td><span class="risk-badge high">78/100</span> 大幅な縮小が必要</td></tr>
-    <tr><td>露出サービス数</td><td>15（うち高リスク: 5）</td></tr>
-    <tr><td>脆弱性サマリー</td><td><span class="risk-badge critical">Critical 1</span> <span class="risk-badge high">High 1</span> <span class="risk-badge elevated">Medium 3</span></td></tr>
-    <tr><td>管理IF露出</td><td>3ポート（SSH、RDP、GPU-MGMT）</td></tr>
+    <tr><td>Attack Surface Score</td><td><span class="risk-badge high">78/100</span> Significant reduction required</td></tr>
+    <tr><td>Exposed Services Count</td><td>15 (high risk: 5)</td></tr>
+    <tr><td>Vulnerability Summary</td><td><span class="risk-badge critical">Critical 1</span> <span class="risk-badge high">High 1</span> <span class="risk-badge elevated">Medium 3</span></td></tr>
+    <tr><td>Admin IF Exposed</td><td>3 ports (SSH, RDP, GPU-MGMT)</td></tr>
 </table>
                 </div>
             </section>
@@ -1233,7 +1237,7 @@
             <!-- Compliance Mapping -->
             <section class="section" id="compliance">
                 <div class="section-header" onclick="toggleSection(this)">
-                    <h2 class="section-title">コンプライアンスマッピング<span class="section-title-sub">Compliance Framework Mapping</span></h2>
+                    <h2 class="section-title">Compliance Mapping<span class="section-title-sub">Compliance Framework Mapping</span></h2>
                 </div>
                 <div class="section-content">
                     <div class="section-card">
@@ -1281,24 +1285,24 @@
                                 </div>
                                 <div class="compliance-details">
                                     <div class="compliance-item">
-                                        <span>A.5 情報セキュリティ方針</span>
-                                        <span class="compliance-status pass">準拠</span>
+                                        <span>A.5 Information Security Policy</span>
+                                        <span class="compliance-status pass">Compliant</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>A.9 アクセス制御</span>
-                                        <span class="compliance-status fail">非準拠</span>
+                                        <span>A.9 Access Control</span>
+                                        <span class="compliance-status fail">Non-Compliant</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>A.12 運用セキュリティ</span>
-                                        <span class="compliance-status partial">部分</span>
+                                        <span>A.12 Operations Security</span>
+                                        <span class="compliance-status partial">Partial</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>A.13 通信セキュリティ</span>
-                                        <span class="compliance-status fail">非準拠</span>
+                                        <span>A.13 Communications Security</span>
+                                        <span class="compliance-status fail">Non-Compliant</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>A.18 適合性</span>
-                                        <span class="compliance-status partial">部分</span>
+                                        <span>A.18 Compliance</span>
+                                        <span class="compliance-status partial">Partial</span>
                                     </div>
                                 </div>
                             </div>
@@ -1313,35 +1317,35 @@
                                 </div>
                                 <div class="compliance-details">
                                     <div class="compliance-item">
-                                        <span>Req.1 ネットワーク</span>
-                                        <span class="compliance-status fail">非準拠</span>
+                                        <span>Req.1 Network</span>
+                                        <span class="compliance-status fail">Non-Compliant</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>Req.2 セキュア構成</span>
-                                        <span class="compliance-status fail">非準拠</span>
+                                        <span>Req.2 Secure Config</span>
+                                        <span class="compliance-status fail">Non-Compliant</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>Req.4 暗号化</span>
-                                        <span class="compliance-status fail">非準拠</span>
+                                        <span>Req.4 Encryption</span>
+                                        <span class="compliance-status fail">Non-Compliant</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>Req.6 脆弱性管理</span>
-                                        <span class="compliance-status partial">部分</span>
+                                        <span>Req.6 Vulnerability Management</span>
+                                        <span class="compliance-status partial">Partial</span>
                                     </div>
                                     <div class="compliance-item">
-                                        <span>Req.11 テスト</span>
-                                        <span class="compliance-status partial">部分</span>
+                                        <span>Req.11 Testing</span>
+                                        <span class="compliance-status partial">Partial</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="highlight-box warning" style="margin-top: 1.5rem;">
-                            <div class="highlight-box-title">主要なコンプライアンスギャップ</div>
+                            <div class="highlight-box-title">Key Compliance Gaps</div>
                             <ul style="margin: 0.5rem 0 0 1rem;">
-                                <li><strong>TLS 1.1使用:</strong> PCI DSS 4.0 要件4.2.1に違反（TLS 1.2以上必須）</li>
-                                <li><strong>管理ポート公開:</strong> NIST PR.AC-5、ISO A.9.1.2に違反</li>
-                                <li><strong>WAF未実装:</strong> PCI DSS 6.4要件、OWASP準拠に不足</li>
-                                <li><strong>ログ監視不足:</strong> NIST DE.CM、ISO A.12.4に違反</li>
+                                <li><strong>TLS 1.1 in use:</strong> Violates PCI DSS 4.0 Requirement 4.2.1 (TLS 1.2+ required)</li>
+                                <li><strong>Admin ports exposed:</strong> Violates NIST PR.AC-5, ISO A.9.1.2</li>
+                                <li><strong>WAF not implemented:</strong> Insufficient for PCI DSS 6.4, OWASP compliance</li>
+                                <li><strong>Insufficient log monitoring:</strong> Violates NIST DE.CM, ISO A.12.4</li>
                             </ul>
                         </div>
                     </div>
@@ -1351,58 +1355,58 @@
             <!-- Financial Impact Analysis -->
             <section class="section" id="financial">
                 <div class="section-header" onclick="toggleSection(this)">
-                    <h2 class="section-title">財務インパクト分析<span class="section-title-sub">Financial Impact Analysis</span></h2>
+                    <h2 class="section-title">Financial Impact Analysis<span class="section-title-sub">Financial Impact Analysis</span></h2>
                 </div>
                 <div class="section-content">
                     <div class="section-card">
                         <div class="finance-grid">
                             <div class="finance-card">
-                                <div class="finance-card-title">想定被害額（データ侵害時）</div>
+                                <div class="finance-card-title">Estimated Damage (Data Breach)</div>
                                 <div class="finance-amount negative">¥445,000,000</div>
-                                <div class="finance-detail">IBM Cost of Data Breach Report 2024 日本平均ベース</div>
+                                <div class="finance-detail">Based on IBM Cost of Data Breach Report 2024 Japan Average</div>
                                 <table class="metrics-table" style="margin-top: 1rem;">
-                                    <tr><td>検知・エスカレーション</td><td>¥89,000,000</td></tr>
-                                    <tr><td>通知コスト</td><td>¥15,000,000</td></tr>
-                                    <tr><td>侵害後対応</td><td>¥156,000,000</td></tr>
-                                    <tr><td>機会損失</td><td>¥185,000,000</td></tr>
+                                    <tr><td>Detection & Escalation</td><td>¥89,000,000</td></tr>
+                                    <tr><td>Notification Cost</td><td>¥15,000,000</td></tr>
+                                    <tr><td>Post-Breach Response</td><td>¥156,000,000</td></tr>
+                                    <tr><td>Lost Business</td><td>¥185,000,000</td></tr>
                                 </table>
                             </div>
                             <div class="finance-card">
-                                <div class="finance-card-title">規制制裁金リスク</div>
+                                <div class="finance-card-title">Regulatory Penalty Risk</div>
                                 <div class="finance-amount negative">¥120,000,000</div>
-                                <div class="finance-detail">GDPR・個人情報保護法違反の想定最大額</div>
+                                <div class="finance-detail">Estimated maximum for GDPR/Privacy Law violations</div>
                                 <table class="metrics-table" style="margin-top: 1rem;">
-                                    <tr><td>GDPR（対象の場合）</td><td>売上高4%または€20M</td></tr>
-                                    <tr><td>個人情報保護法</td><td>最大¥100,000,000</td></tr>
-                                    <tr><td>業界規制違反</td><td>¥20,000,000〜</td></tr>
+                                    <tr><td>GDPR (if applicable)</td><td>4% of revenue or €20M</td></tr>
+                                    <tr><td>Privacy Protection Law</td><td>Up to ¥100,000,000</td></tr>
+                                    <tr><td>Industry regulation violation</td><td>¥20,000,000+</td></tr>
                                 </table>
                             </div>
                             <div class="finance-card">
-                                <div class="finance-card-title">推奨対策実施コスト</div>
+                                <div class="finance-card-title">Recommended Remediation Cost</div>
                                 <div class="finance-amount">¥35,000,000</div>
-                                <div class="finance-detail">Tier 1-3 対策の概算総額</div>
+                                <div class="finance-detail">Estimated total for Tier 1-3 measures</div>
                                 <table class="metrics-table" style="margin-top: 1rem;">
-                                    <tr><td>Tier 1（緊急）</td><td>¥2,000,000</td></tr>
-                                    <tr><td>Tier 2（短期）</td><td>¥8,000,000</td></tr>
-                                    <tr><td>Tier 3（中期）</td><td>¥25,000,000</td></tr>
+                                    <tr><td>Tier 1 (Emergency)</td><td>¥2,000,000</td></tr>
+                                    <tr><td>Tier 2 (Short-term)</td><td>¥8,000,000</td></tr>
+                                    <tr><td>Tier 3 (Medium-term)</td><td>¥25,000,000</td></tr>
                                 </table>
                             </div>
                             <div class="finance-card">
-                                <div class="finance-card-title">投資対効果（ROI）</div>
+                                <div class="finance-card-title">Return on Investment (ROI)</div>
                                 <div class="finance-amount positive">1,171%</div>
-                                <div class="finance-detail">リスク低減額 ÷ 対策コスト</div>
+                                <div class="finance-detail">Risk reduction ÷ Remediation cost</div>
                                 <div class="roi-indicator">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
                                     <div>
                                         <div class="roi-value">¥410M</div>
-                                        <div style="font-size: 0.8rem; color: var(--text-muted);">リスク低減効果</div>
+                                        <div style="font-size: 0.8rem; color: var(--text-muted);">Risk Reduction Effect</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="highlight-box" style="margin-top: 1.5rem;">
-                            <div class="highlight-box-title">コスト削減ポイント</div>
-                            <p style="margin: 0;">早期対応により平均コストを<strong>30%削減</strong>可能。AI/ML環境では、モデル・データ窃取による競争優位喪失（定量化困難だが数億円規模）も考慮が必要です。</p>
+                            <div class="highlight-box-title">Cost Reduction Points</div>
+                            <p style="margin: 0;">Early response can reduce average costs by<strong>30%</strong>. In AI/ML environments, loss of competitive advantage from model/data theft (difficult to quantify but potentially hundreds of millions of yen) must also be considered.</p>
                         </div>
                     </div>
                 </div>
@@ -1411,14 +1415,14 @@
             <!-- Industry Benchmark -->
             <section class="section" id="benchmark">
                 <div class="section-header" onclick="toggleSection(this)">
-                    <h2 class="section-title">業界ベンチマーク比較<span class="section-title-sub">Industry Benchmark Comparison</span></h2>
+                    <h2 class="section-title">Industry Benchmark Comparison<span class="section-title-sub">Industry Benchmark Comparison</span></h2>
                 </div>
                 <div class="section-content">
                     <div class="section-card">
-                        <p>同業他社（テクノロジー・AI業界）との比較分析結果です。</p>
+                        <p>Comparison analysis results with industry peers (Technology/AI industry).</p>
                         <div class="benchmark-container">
                             <div class="benchmark-row">
-                                <div class="benchmark-label">攻撃対象面</div>
+                                <div class="benchmark-label">Attack Surface</div>
                                 <div class="benchmark-bar-container">
                                     <div class="benchmark-bar you" style="width: 78%;">78</div>
                                 </div>
@@ -1438,7 +1442,7 @@
                         </div>
                         <div class="benchmark-container">
                             <div class="benchmark-row">
-                                <div class="benchmark-label">脆弱性スコア</div>
+                                <div class="benchmark-label">Vulnerability Score</div>
                                 <div class="benchmark-bar-container">
                                     <div class="benchmark-bar you" style="width: 85%;">8.5</div>
                                 </div>
@@ -1458,7 +1462,7 @@
                         </div>
                         <div class="benchmark-container">
                             <div class="benchmark-row">
-                                <div class="benchmark-label">パッチ適用率</div>
+                                <div class="benchmark-label">Patch Coverage</div>
                                 <div class="benchmark-bar-container">
                                     <div class="benchmark-bar you" style="width: 45%;">45%</div>
                                 </div>
@@ -1479,24 +1483,24 @@
                         <div class="benchmark-legend">
                             <div class="benchmark-legend-item">
                                 <div class="benchmark-legend-dot" style="background: #ef4444;"></div>
-                                <span>御社</span>
+                                <span>Your Company</span>
                             </div>
                             <div class="benchmark-legend-item">
                                 <div class="benchmark-legend-dot" style="background: #3b82f6;"></div>
-                                <span>業界平均</span>
+                                <span>Industry Average</span>
                             </div>
                             <div class="benchmark-legend-item">
                                 <div class="benchmark-legend-dot" style="background: #10b981;"></div>
-                                <span>業界リーダー</span>
+                                <span>Industry Leader</span>
                             </div>
                         </div>
                         <div class="highlight-box warning" style="margin-top: 1.5rem;">
-                            <div class="highlight-box-title">業界比較サマリー</div>
+                            <div class="highlight-box-title">Industry Comparison Summary</div>
                             <table class="metrics-table">
-                                <tr><td>攻撃対象面</td><td>業界平均より <span style="color: #ef4444; font-weight: 700;">50%高リスク</span></td></tr>
-                                <tr><td>脆弱性スコア</td><td>業界平均より <span style="color: #ef4444; font-weight: 700;">47%高い</span></td></tr>
-                                <tr><td>パッチ適用率</td><td>業界平均より <span style="color: #ef4444; font-weight: 700;">27ポイント低い</span></td></tr>
-                                <tr><td>総合順位</td><td>下位 <span style="color: #ef4444; font-weight: 700;">15%</span> に位置</td></tr>
+                                <tr><td>Attack Surface</td><td>vs. industry average: <span style="color: #ef4444; font-weight: 700;">50% higher risk</span></td></tr>
+                                <tr><td>Vulnerability Score</td><td>vs. industry average: <span style="color: #ef4444; font-weight: 700;">47% higher</span></td></tr>
+                                <tr><td>Patch Coverage</td><td>vs. industry average: <span style="color: #ef4444; font-weight: 700;">27 points lower</span></td></tr>
+                                <tr><td>Overall Ranking</td><td>Bottom <span style="color: #ef4444; font-weight: 700;">15%</span> </td></tr>
                             </table>
                         </div>
                     </div>
@@ -1506,110 +1510,110 @@
             <!-- Attack Scenario (Kill Chain) -->
             <section class="section" id="killchain">
                 <div class="section-header" onclick="toggleSection(this)">
-                    <h2 class="section-title">攻撃シナリオ分析<span class="section-title-sub">Kill Chain Analysis</span></h2>
+                    <h2 class="section-title">Attack Scenario Analysis<span class="section-title-sub">Kill Chain Analysis</span></h2>
                 </div>
                 <div class="section-content">
                     <div class="section-card">
-                        <p>現在の脆弱性を悪用した場合の想定攻撃シナリオです。MITRE ATT&CK フレームワークに基づく分析。</p>
+                        <p>Hypothetical attack scenario exploiting current vulnerabilities. Analysis based on MITRE ATT&CK framework.</p>
 
                         <div class="killchain">
                             <div class="killchain-step">
                                 <div class="killchain-icon recon">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                                 </div>
-                                <div class="killchain-label">偵察</div>
-                                <div class="killchain-desc">Shodan検索</div>
+                                <div class="killchain-label">Recon</div>
+                                <div class="killchain-desc">Shodan Search</div>
                             </div>
                             <div class="killchain-step">
                                 <div class="killchain-icon weapon">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
                                 </div>
-                                <div class="killchain-label">武器化</div>
-                                <div class="killchain-desc">Exploit準備</div>
+                                <div class="killchain-label">Weaponize</div>
+                                <div class="killchain-desc">Exploit Prep</div>
                             </div>
                             <div class="killchain-step">
                                 <div class="killchain-icon delivery">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                                 </div>
-                                <div class="killchain-label">配送</div>
-                                <div class="killchain-desc">直接アクセス</div>
+                                <div class="killchain-label">Delivery</div>
+                                <div class="killchain-desc">Direct Access</div>
                             </div>
                             <div class="killchain-step">
                                 <div class="killchain-icon exploit">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                                 </div>
-                                <div class="killchain-label">悪用</div>
+                                <div class="killchain-label">Exploit</div>
                                 <div class="killchain-desc">CVE-2024-1234</div>
                             </div>
                             <div class="killchain-step">
                                 <div class="killchain-icon install">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
                                 </div>
-                                <div class="killchain-label">インストール</div>
-                                <div class="killchain-desc">バックドア設置</div>
+                                <div class="killchain-label">Install</div>
+                                <div class="killchain-desc">Backdoor</div>
                             </div>
                             <div class="killchain-step">
                                 <div class="killchain-icon c2">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
                                 </div>
-                                <div class="killchain-label">C2通信</div>
-                                <div class="killchain-desc">持続的アクセス</div>
+                                <div class="killchain-label">C2 Comm</div>
+                                <div class="killchain-desc">Persistence</div>
                             </div>
                             <div class="killchain-step">
                                 <div class="killchain-icon action">
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
                                 </div>
-                                <div class="killchain-label">目的達成</div>
-                                <div class="killchain-desc">データ窃取</div>
+                                <div class="killchain-label">Actions</div>
+                                <div class="killchain-desc">Data Theft</div>
                             </div>
                         </div>
 
                         <div class="attack-scenario">
-                            <div class="attack-scenario-title">想定攻撃シナリオ: GPU管理インターフェース経由のAIモデル窃取</div>
+                            <div class="attack-scenario-title">Attack Scenario: AI Model Theft via GPU Management Interface</div>
                             <div class="attack-step">
                                 <div class="attack-step-num">1</div>
                                 <div>
-                                    <strong>偵察フェーズ</strong><br>
-                                    <span style="color: var(--text-secondary);">攻撃者がShodanで「port:5555 NVIDIA」を検索し、公開されたGPU管理インターフェースを発見。IPアドレス203.0.113.42を特定。</span>
+                                    <strong>Reconnaissance Phase</strong><br>
+                                    <span style="color: var(--text-secondary);">Attacker searches Shodan for "port:5555 NVIDIA" and discovers exposed GPU management interface. Identifies IP 203.0.113.42.</span>
                                 </div>
                             </div>
                             <div class="attack-step">
                                 <div class="attack-step-num">2</div>
                                 <div>
-                                    <strong>初期アクセス（T1190）</strong><br>
-                                    <span style="color: var(--text-secondary);">CVE-2024-1234を利用してリモートコード実行。認証をバイパスしてGPUノードにシェルアクセスを取得。</span>
+                                    <strong>Initial Access (T1190)</strong><br>
+                                    <span style="color: var(--text-secondary);">Exploits CVE-2024-1234 for RCE. Bypasses authentication to gain shell access to GPU node.</span>
                                 </div>
                             </div>
                             <div class="attack-step">
                                 <div class="attack-step-num">3</div>
                                 <div>
-                                    <strong>横展開（T1021）</strong><br>
-                                    <span style="color: var(--text-secondary);">GPUノードから内部ネットワークをスキャン。SSH鍵を発見し、他のAIトレーニングサーバーへ横展開。</span>
+                                    <strong>Lateral Movement (T1021)</strong><br>
+                                    <span style="color: var(--text-secondary);">Scans internal network from GPU node. Discovers SSH keys and pivots to other AI training servers.</span>
                                 </div>
                             </div>
                             <div class="attack-step">
                                 <div class="attack-step-num">4</div>
                                 <div>
-                                    <strong>データ窃取（T1567）</strong><br>
-                                    <span style="color: var(--text-secondary);">トレーニング済みモデルパラメータ（数GB〜数百GB）を分割して外部にエクスフィルトレーション。クラウドストレージ経由で検出回避。</span>
+                                    <strong>Data Theft（T1567）</strong><br>
+                                    <span style="color: var(--text-secondary);">Exfiltrates trained model parameters (GB to hundreds of GB) in chunks. Evades detection via cloud storage.</span>
                                 </div>
                             </div>
                             <div class="attack-step">
                                 <div class="attack-step-num">5</div>
                                 <div>
-                                    <strong>持続化（T1053）</strong><br>
-                                    <span style="color: var(--text-secondary);">cronジョブでバックドアを設定。GPU使用率を監視し、低負荷時にクリプトマイニングを実行。</span>
+                                    <strong>Persistence (T1053)</strong><br>
+                                    <span style="color: var(--text-secondary);">Sets up backdoor via cron job. Monitors GPU usage and runs cryptomining during low-load periods.</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="highlight-box" style="margin-top: 1.5rem;">
-                            <div class="highlight-box-title">攻撃実現までの推定時間</div>
+                            <div class="highlight-box-title">Estimated Time to Compromise</div>
                             <table class="metrics-table">
-                                <tr><td>偵察〜初期アクセス</td><td><span style="color: #ef4444; font-weight: 700;">2-4時間</span></td></tr>
-                                <tr><td>横展開〜データ窃取</td><td><span style="color: #ef4444; font-weight: 700;">4-8時間</span></td></tr>
-                                <tr><td>総攻撃時間</td><td><span style="color: #dc2626; font-weight: 700;">6-12時間</span></td></tr>
-                                <tr><td>検知確率（現状）</td><td><span style="color: #dc2626; font-weight: 700;">15%以下</span></td></tr>
+                                <tr><td>Recon to Initial Access</td><td><span style="color: #ef4444; font-weight: 700;">2-4 hours</span></td></tr>
+                                <tr><td>Lateral Movement to Data Theft</td><td><span style="color: #ef4444; font-weight: 700;">4-8 hours</span></td></tr>
+                                <tr><td>Total Attack Time</td><td><span style="color: #dc2626; font-weight: 700;">6-12 hours</span></td></tr>
+                                <tr><td>Detection Probability (Current)</td><td><span style="color: #dc2626; font-weight: 700;">Under 15%</span></td></tr>
                             </table>
                         </div>
                     </div>
@@ -1619,7 +1623,7 @@
             <!-- Infrastructure Profile -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">インフラストラクチャプロファイル<span class="section-title-sub">Infrastructure Profile</span></h2>
+                    <h2 class="section-title">Infrastructure Profile<span class="section-title-sub">Infrastructure Profile</span></h2>
                 </div>
                 <div class="section-card">
                     <div class="profile-grid">
@@ -1628,7 +1632,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                             </div>
                             <div class="profile-content">
-                                <div class="profile-label">IPアドレス</div>
+                                <div class="profile-label">IP Address</div>
                                 <div class="profile-value">203.0.113.42</div>
                             </div>
                         </div>
@@ -1637,7 +1641,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
                             </div>
                             <div class="profile-content">
-                                <div class="profile-label">組織</div>
+                                <div class="profile-label">Organization</div>
                                 <div class="profile-value">Demo Corp</div>
                             </div>
                         </div>
@@ -1646,7 +1650,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
                             </div>
                             <div class="profile-content">
-                                <div class="profile-label">クラウドプロバイダー</div>
+                                <div class="profile-label">Cloud Provider</div>
                                 <div class="profile-value">AWS (ap-northeast-1)</div>
                             </div>
                         </div>
@@ -1655,7 +1659,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div class="profile-content">
-                                <div class="profile-label">所在地</div>
+                                <div class="profile-label">Location</div>
                                 <div class="profile-value">Tokyo, Japan</div>
                             </div>
                         </div>
@@ -1664,7 +1668,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                             </div>
                             <div class="profile-content">
-                                <div class="profile-label">オペレーティングシステム</div>
+                                <div class="profile-label">Operating System</div>
                                 <div class="profile-value">Ubuntu 22.04</div>
                             </div>
                         </div>
@@ -1680,53 +1684,53 @@
                     </div>
 
                     <div style="margin-top: 2rem;">
-                        <p><strong>1. ネットワークアーキテクチャ分析</strong></p>
-                        <p>AWSの東京リージョン（ap-northeast-1）でホストされており、以下の構成が確認されました：</p>
+                        <p><strong>1. Network Architecture Analysis</strong></p>
+                        <p>Hosted in AWS Tokyo region (ap-northeast-1), with the following configuration:</p>
                         <ul>
-                            <li><strong>露出サービス:</strong> 15サービス（HTTP/HTTPS、SSH、RDP、PostgreSQL、GPU管理等）</li>
-                            <li><strong>高リスクサービス:</strong> 5ポート（22、3389、5432、5555、8080）</li>
-                            <li><strong>CDN/WAF:</strong> CloudFront検出、AWS WAF未検出</li>
-                            <li><strong>ロードバランサー:</strong> ALB確認</li>
-                            <li><strong>ネットワークセグメンテーション:</strong> 不十分 - 管理サービスが直接公開</li>
+                            <li><strong>Exposed Services:</strong> 15 services (HTTP/HTTPS, SSH, RDP, PostgreSQL, GPU management, etc.)</li>
+                            <li><strong>High Risk Services:</strong> 5 ports (22, 3389, 5432, 5555, 8080)</li>
+                            <li><strong>CDN/WAF:</strong> CloudFront detected, AWS WAF not detected</li>
+                            <li><strong>Load Balancer:</strong> ALB confirmed</li>
+                            <li><strong>Network Segmentation:</strong> Insufficient - management services directly exposed</li>
                         </ul>
 
-                        <p><strong>2. サービス構成セキュリティ</strong></p>
+                        <p><strong>2. Service Configuration Security</strong></p>
                         <p><strong>TLS/SSL:</strong></p>
                         <ul>
-                            <li>TLS 1.1検出（非推奨）- PCI DSS 4.0非準拠</li>
-                            <li>TLS 1.2/1.3も併用</li>
-                            <li>一部弱い暗号スイート（3DES、RC4）が有効</li>
-                            <li>証明書: Let's Encrypt発行、有効期限まで45日</li>
+                            <li>TLS 1.1 detected (deprecated) - PCI DSS 4.0 non-compliant</li>
+                            <li>TLS 1.2/1.3 also in use</li>
+                            <li>Some weak cipher suites (3DES, RC4) enabled</li>
+                            <li>Certificate: Let's Encrypt issued, 45 days until expiration</li>
                         </ul>
-                        <p><strong>セキュリティヘッダー:</strong></p>
+                        <p><strong>Security Headers:</strong></p>
                         <ul>
-                            <li>Content-Security-Policy: 未設定</li>
-                            <li>X-Frame-Options: 未設定</li>
-                            <li>Strict-Transport-Security: 設定済み</li>
-                            <li>X-Content-Type-Options: 未設定</li>
-                        </ul>
-
-                        <p><strong>3. GPU/AIインフラストラクチャ詳細</strong></p>
-                        <ul>
-                            <li>GPU管理ポート: 5555/tcp（NVIDIA DCGM相当）が外部公開</li>
-                            <li>検出されたフレームワーク: TensorFlow Serving、Tritonの可能性</li>
-                            <li>推論エンドポイント: 8080/tcpで確認</li>
+                            <li>Content-Security-Policy: Not set</li>
+                            <li>X-Frame-Options: Not set</li>
+                            <li>Strict-Transport-Security: Set</li>
+                            <li>X-Content-Type-Options: Not set</li>
                         </ul>
 
-                        <p><strong>4. アーキテクチャの強み</strong></p>
+                        <p><strong>3. GPU/AI Infrastructure Details</strong></p>
                         <ul>
-                            <li>CloudFrontによる基本的なDDoS緩和</li>
-                            <li>HSTSヘッダーの実装</li>
-                            <li>ALBによる負荷分散</li>
+                            <li>GPU management port: 5555/tcp (NVIDIA DCGM equivalent) externally exposed</li>
+                            <li>Detected frameworks: Possibly TensorFlow Serving, Triton</li>
+                            <li>Inference endpoint: Confirmed on 8080/tcp</li>
                         </ul>
 
-                        <p><strong>5. アーキテクチャの弱点</strong></p>
+                        <p><strong>4. Architecture Strengths</strong></p>
                         <ul>
-                            <li style="color: #ef4444;">管理ポート（SSH、RDP、GPU-MGMT）の直接公開</li>
-                            <li style="color: #ef4444;">データベースポートの外部公開</li>
-                            <li style="color: #ef4444;">WAF未実装</li>
-                            <li style="color: #f97316;">単一AZ構成</li>
-                            <li style="color: #f97316;">セキュリティヘッダー不足</li>
+                            <li>Basic DDoS mitigation via CloudFront</li>
+                            <li>HSTS header implementation</li>
+                            <li>Load balancing via ALB</li>
+                        </ul>
+
+                        <p><strong>5. Architecture Weaknesses</strong></p>
+                        <ul>
+                            <li style="color: #ef4444;">Direct exposure of admin ports (SSH, RDP, GPU-MGMT)</li>
+                            <li style="color: #ef4444;">External exposure of database port</li>
+                            <li style="color: #ef4444;">WAF not implemented</li>
+                            <li style="color: #f97316;">Single AZ configuration</li>
+                            <li style="color: #f97316;">Insufficient security headers</li>
                         </ul>
                     </div>
                 </div>
@@ -1735,7 +1739,7 @@
             <!-- Attack Surface -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">攻撃対象領域分析<span class="section-title-sub">Attack Surface Analysis</span></h2>
+                    <h2 class="section-title">Attack Surface Analysis<span class="section-title-sub">Attack Surface Analysis</span></h2>
                 </div>
                 <div class="section-card">
                     <div class="port-list">
@@ -1750,14 +1754,14 @@
 
                     <div class="alert-box">
                         <div class="alert-title">GPU Management Exposed</div>
-                        <div class="alert-content">GPU管理インターフェース（ポート5555）がインターネットに公開されています。これはAI/MLワークロードに対する重大なセキュリティリスクです。攻撃者がGPUリソースを不正利用したり、モデルデータにアクセスする可能性があります。</div>
+                        <div class="alert-content">GPU management interface (port 5555) is exposed to the internet. This is a critical security risk for AI/ML workloads. Attackers could misuse GPU resources or access model data.</div>
                     </div>
 
-                    <p><strong>検出された脆弱性:</strong></p>
+                    <p><strong>Detected Vulnerabilities:</strong></p>
                     <ul>
-                        <li style="font-family: JetBrains Mono, monospace; color: #dc2626;">CVE-2024-1234 - Critical (CVSS 9.8) - リモートコード実行</li>
-                        <li style="font-family: JetBrains Mono, monospace; color: #ef4444;">CVE-2024-5678 - High (CVSS 7.5) - 認証バイパス</li>
-                        <li style="font-family: JetBrains Mono, monospace; color: #f97316;">CVE-2024-9012 - Medium (CVSS 5.4) - 情報漏洩</li>
+                        <li style="font-family: JetBrains Mono, monospace; color: #dc2626;">CVE-2024-1234 - Critical (CVSS 9.8) - Remote Code Execution</li>
+                        <li style="font-family: JetBrains Mono, monospace; color: #ef4444;">CVE-2024-5678 - High (CVSS 7.5) - Authentication Bypass</li>
+                        <li style="font-family: JetBrains Mono, monospace; color: #f97316;">CVE-2024-9012 - Medium (CVSS 5.4) - Information Disclosure</li>
                     </ul>
                 </div>
             </section>
@@ -1765,59 +1769,59 @@
             <!-- Risk Analysis -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">リスク分析<span class="section-title-sub">Risk Analysis</span></h2>
+                    <h2 class="section-title">Risk Analysis<span class="section-title-sub">Risk Analysis</span></h2>
                 </div>
                 <div class="section-card">
-<p><strong>1. 外部攻撃面分析（External Attack Surface）</strong></p>
-<p>15のサービスがインターネットに露出しており、そのうち5つが高リスクサービスです。MITRE ATT&CK T1133（External Remote Services）およびT1190（Exploit Public-Facing Application）が適用可能な状態です。</p>
+<p><strong>1. External Attack Surface Analysis</strong></p>
+<p>15 services are exposed to the internet, 5 of which are high-risk. MITRE ATT&CK T1133 (External Remote Services) and T1190 (Exploit Public-Facing Application) are applicable.</p>
 <ul>
-    <li><strong>発見:</strong> 管理サービス（SSH、RDP）およびGPU管理インターフェースがインターネットに直接公開</li>
-    <li><strong>リスクレベル:</strong> <span style="color: #dc2626; font-weight: 700;">CRITICAL</span></li>
-    <li><strong>可能性:</strong> 非常に高い - Shodan/Censysで即座に発見可能。自動化された攻撃ツールの標的</li>
-    <li><strong>影響:</strong> 初期侵入の足がかり。ラテラルムーブメントによる完全侵害の可能性</li>
-    <li><strong>証拠:</strong> ポートスキャンにより22/tcp、3389/tcp、5555/tcpの応答を確認</li>
+    <li><strong>Finding:</strong> Management services (SSH, RDP) and GPU management interface directly exposed to internet</li>
+    <li><strong>Risk Level:</strong> <span style="color: #dc2626; font-weight: 700;">CRITICAL</span></li>
+    <li><strong>Likelihood:</strong> Very High - Immediately discoverable via Shodan/Censys. Target for automated attack tools</li>
+    <li><strong>Impact:</strong> Foothold for initial access. Potential for complete compromise via lateral movement</li>
+    <li><strong>Evidence:</strong> Port scan confirmed responses on 22/tcp, 3389/tcp, 5555/tcp</li>
 </ul>
 
-<p><strong>2. 脆弱性評価（Vulnerability Assessment）</strong></p>
-<p>5件の既知CVEが検出され、うち1件がCritical（CVSS 9.8）です。エクスプロイトが公開されており、積極的な悪用が報告されています。</p>
+<p><strong>2. Vulnerability Assessment</strong></p>
+<p>5 known CVEs detected, 1 Critical (CVSS 9.8). Exploits are publicly available and active exploitation reported.</p>
 <ul>
-    <li><strong>発見:</strong> CVE-2024-1234 - リモートコード実行脆弱性</li>
-    <li><strong>リスクレベル:</strong> <span style="color: #dc2626; font-weight: 700;">CRITICAL</span></li>
-    <li><strong>可能性:</strong> エクスプロイト公開済み、野生での悪用確認</li>
-    <li><strong>影響:</strong> 認証なしでのリモートコード実行、完全なシステム侵害</li>
-    <li><strong>証拠:</strong> バージョンフィンガープリンティングにより脆弱なバージョンを確認</li>
+    <li><strong>Finding:</strong> CVE-2024-1234 - Remote Code ExecutionVulnerabilities</li>
+    <li><strong>Risk Level:</strong> <span style="color: #dc2626; font-weight: 700;">CRITICAL</span></li>
+    <li><strong>Likelihood:</strong> Exploit publicly available, exploitation in the wild confirmed</li>
+    <li><strong>Impact:</strong> Unauthenticated RCE, complete system compromise</li>
+    <li><strong>Evidence:</strong> Vulnerable version confirmed via version fingerprinting</li>
 </ul>
 
-<p><strong>3. インフラストラクチャ耐性（Infrastructure Resilience）</strong></p>
-<p>単一アベイラビリティゾーン構成が確認され、障害時の影響が大きくなります。</p>
+<p><strong>3. Infrastructure Resilience</strong></p>
+<p>Single availability zone configuration confirmed, increasing impact during failures.</p>
 <ul>
-    <li><strong>発見:</strong> 地理的分散なし、単一障害点（SPOF）の存在</li>
-    <li><strong>リスクレベル:</strong> <span style="color: #f97316; font-weight: 700;">ELEVATED</span></li>
-    <li><strong>可能性:</strong> データセンター障害、ネットワーク障害時にサービス停止</li>
-    <li><strong>影響:</strong> 事業継続性への重大な影響、SLA違反リスク</li>
+    <li><strong>Finding:</strong> No geographic distribution, single point of failure (SPOF) exists</li>
+    <li><strong>Risk Level:</strong> <span style="color: #f97316; font-weight: 700;">ELEVATED</span></li>
+    <li><strong>Likelihood:</strong> Service outage during datacenter or network failures</li>
+    <li><strong>Impact:</strong> Significant impact on business continuity, SLA violation risk</li>
 </ul>
 
-<p><strong>4. AI/ML固有のリスク</strong></p>
-<p>GPU管理インターフェース（NVIDIA DCGM相当）が外部に露出しており、AI/MLワークロード特有のリスクが存在します。</p>
+<p><strong>4. AI/ML-Specific Risks</strong></p>
+<p>GPU management interface (NVIDIA DCGM equivalent) is externally exposed, presenting AI/ML workload-specific risks.</p>
 <ul>
-    <li><strong>発見:</strong> ポート5555/tcpでGPU管理インターフェースが応答</li>
-    <li><strong>リスクレベル:</strong> <span style="color: #dc2626; font-weight: 700;">CRITICAL</span></li>
-    <li><strong>可能性:</strong> 認証バイパスまたはデフォルト資格情報による不正アクセス</li>
-    <li><strong>影響:</strong>
+    <li><strong>Finding:</strong> GPU management interface responding on port 5555/tcp</li>
+    <li><strong>Risk Level:</strong> <span style="color: #dc2626; font-weight: 700;">CRITICAL</span></li>
+    <li><strong>Likelihood:</strong> Unauthorized access via authentication bypass or default credentials</li>
+    <li><strong>Impact:</strong>
         <ul>
-            <li>GPUリソースの不正利用（クリプトマイニング）</li>
-            <li>トレーニングデータ・モデルパラメータの窃取</li>
-            <li>推論エンドポイントへの不正アクセス</li>
-            <li>サービス妨害（DoS）</li>
+            <li>GPU resource misuse (cryptomining)</li>
+            <li>Training data and model parameter theft</li>
+            <li>Unauthorized access to inference endpoints</li>
+            <li>Denial of Service (DoS)</li>
         </ul>
     </li>
 </ul>
 
-<p><strong>5. サプライチェーンリスク</strong></p>
+<p><strong>5. Supply Chain Risk</strong></p>
 <ul>
-    <li><strong>発見:</strong> NVIDIA GPUへの95%依存</li>
-    <li><strong>リスクレベル:</strong> <span style="color: #eab308; font-weight: 700;">MODERATE</span></li>
-    <li><strong>影響:</strong> 供給制約、輸出規制、価格変動リスク</li>
+    <li><strong>Finding:</strong> 95% dependency on NVIDIA GPUs</li>
+    <li><strong>Risk Level:</strong> <span style="color: #eab308; font-weight: 700;">MODERATE</span></li>
+    <li><strong>Impact:</strong> Supply constraints, export regulations, price volatility risk</li>
 </ul>
                 </div>
             </section>
@@ -1825,7 +1829,7 @@
             <!-- Alerts -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">検出アラート<span class="section-title-sub">Detected Security Alerts</span></h2>
+                    <h2 class="section-title">Detected Alerts<span class="section-title-sub">Detected Security Alerts</span></h2>
                 </div>
                 <div class="section-card">
                     <ul class="alert-list">
@@ -1833,49 +1837,49 @@
                             <span class="alert-indicator critical"></span>
                             <div>
                                 <span class="alert-text">GPU management interface publicly accessible (Port 5555)</span>
-                                <div class="alert-desc">NVIDIA DCGMインターフェースが外部公開。攻撃者によるGPUリソース不正利用やモデルデータ窃取のリスク。</div>
+                                <div class="alert-desc">NVIDIA DCGM interface externally exposed. Risk of GPU resource misuse and model data theft by attackers.</div>
                             </div>
                         </li>
                         <li class="alert-item alert-high">
                             <span class="alert-indicator high"></span>
                             <div>
                                 <span class="alert-text">SSH port 22 exposed to internet</span>
-                                <div class="alert-desc">SSHがインターネットに公開。自動化されたブルートフォース攻撃の標的となります。</div>
+                                <div class="alert-desc">SSH exposed to internet. Target for automated brute force attacks.</div>
                             </div>
                         </li>
                         <li class="alert-item alert-high">
                             <span class="alert-indicator high"></span>
                             <div>
                                 <span class="alert-text">RDP port 3389 exposed to internet</span>
-                                <div class="alert-desc">リモートデスクトップが外部公開。資格情報スタッフィング攻撃のリスクが高い。</div>
+                                <div class="alert-desc">Remote Desktop externally exposed. High risk of credential stuffing attacks.</div>
                             </div>
                         </li>
                         <li class="alert-item alert-elevated">
                             <span class="alert-indicator elevated"></span>
                             <div>
                                 <span class="alert-text">PostgreSQL database port (5432) publicly accessible</span>
-                                <div class="alert-desc">データベースポートが公開。SQLインジェクションや認証バイパスの攻撃ベクトル。</div>
+                                <div class="alert-desc">Database port exposed. Attack vector for SQL injection and authentication bypass.</div>
                             </div>
                         </li>
                         <li class="alert-item alert-elevated">
                             <span class="alert-indicator elevated"></span>
                             <div>
                                 <span class="alert-text">Outdated TLS 1.1 detected</span>
-                                <div class="alert-desc">非推奨の暗号化プロトコル使用。PCI DSS 4.0に非準拠。</div>
+                                <div class="alert-desc">Deprecated encryption protocol in use. PCI DSS 4.0 non-compliant.</div>
                             </div>
                         </li>
                         <li class="alert-item alert-info">
                             <span class="alert-indicator info"></span>
                             <div>
                                 <span class="alert-text">Single availability zone configuration</span>
-                                <div class="alert-desc">単一AZ構成により、障害時のサービス継続性リスク。</div>
+                                <div class="alert-desc">Single AZ configuration creates service continuity risk during failures.</div>
                             </div>
                         </li>
                         <li class="alert-item alert-info">
                             <span class="alert-indicator info"></span>
                             <div>
                                 <span class="alert-text">95% GPU vendor concentration (NVIDIA)</span>
-                                <div class="alert-desc">サプライチェーン集中リスク。供給制約や価格変動の影響を受けやすい。</div>
+                                <div class="alert-desc">Supply chain concentration risk. Susceptible to supply constraints and price volatility.</div>
                             </div>
                         </li>
                     </ul>
@@ -1885,13 +1889,13 @@
             <!-- Threat Intelligence -->
             <section class="section" id="threat-intel">
                 <div class="section-header" onclick="toggleSection(this)">
-                    <h2 class="section-title">脅威インテリジェンス<span class="section-title-sub">Threat Intelligence</span></h2>
+                    <h2 class="section-title">Threat Intelligence<span class="section-title-sub">Threat Intelligence</span></h2>
                 </div>
                 <div class="section-content">
                     <div class="section-card">
-                        <p>御社のインフラストラクチャを標的とする可能性が高い脅威アクターと、関連する最近の攻撃事例です。</p>
+                        <p>Threat actors likely to target your infrastructure and related recent attack cases.</p>
 
-                        <p style="margin-top: 1.5rem;"><strong>関連する脅威アクター</strong></p>
+                        <p style="margin-top: 1.5rem;"><strong>Relevant Threat Actors</strong></p>
                         <div class="threat-grid">
                             <div class="apt-card">
                                 <div class="apt-header">
@@ -1900,20 +1904,20 @@
                                     </div>
                                     <div>
                                         <div class="apt-name">APT41 (Double Dragon)</div>
-                                        <div class="apt-alias">別名: Winnti, Barium, Wicked Panda</div>
+                                        <div class="apt-alias">Aliases: Winnti, Barium, Wicked Panda</div>
                                     </div>
                                 </div>
                                 <div class="apt-tags">
-                                    <span class="apt-tag">中国</span>
-                                    <span class="apt-tag">テクノロジー</span>
-                                    <span class="apt-tag">IP窃取</span>
-                                    <span class="apt-tag">サプライチェーン</span>
+                                    <span class="apt-tag">China</span>
+                                    <span class="apt-tag">Technology</span>
+                                    <span class="apt-tag">IP Theft</span>
+                                    <span class="apt-tag">Supply Chain</span>
                                 </div>
                                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-                                    テクノロジー企業を主要ターゲットとし、知的財産の窃取を目的とする。AI/ML研究機関への攻撃実績あり。
+                                    Primarily targets technology companies for IP theft. Has track record of attacking AI/ML research institutions.
                                 </p>
                                 <div style="margin-top: 0.75rem;">
-                                    <span style="font-size: 0.75rem; color: var(--text-muted);">関連性スコア:</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Relevance Score:</span>
                                     <span class="risk-badge high" style="margin-left: 0.5rem;">HIGH</span>
                                 </div>
                             </div>
@@ -1924,20 +1928,20 @@
                                     </div>
                                     <div>
                                         <div class="apt-name">Lazarus Group</div>
-                                        <div class="apt-alias">別名: Hidden Cobra, Zinc</div>
+                                        <div class="apt-alias">Aliases: Hidden Cobra, Zinc</div>
                                     </div>
                                 </div>
                                 <div class="apt-tags">
-                                    <span class="apt-tag">北朝鮮</span>
-                                    <span class="apt-tag">金融</span>
-                                    <span class="apt-tag">暗号通貨</span>
-                                    <span class="apt-tag">ランサムウェア</span>
+                                    <span class="apt-tag">North Korea</span>
+                                    <span class="apt-tag">Financial</span>
+                                    <span class="apt-tag">Cryptocurrency</span>
+                                    <span class="apt-tag">Ransomware</span>
                                 </div>
                                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-                                    GPUリソースを狙ったクリプトジャッキング、ランサムウェア攻撃の実績。金銭目的の攻撃に注意。
+                                    Track record of cryptojacking targeting GPU resources and ransomware attacks. Watch for financially motivated attacks.
                                 </p>
                                 <div style="margin-top: 0.75rem;">
-                                    <span style="font-size: 0.75rem; color: var(--text-muted);">関連性スコア:</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Relevance Score:</span>
                                     <span class="risk-badge elevated" style="margin-left: 0.5rem;">ELEVATED</span>
                                 </div>
                             </div>
@@ -1948,20 +1952,20 @@
                                     </div>
                                     <div>
                                         <div class="apt-name">TeamTNT</div>
-                                        <div class="apt-alias">クラウド特化型脅威グループ</div>
+                                        <div class="apt-alias">Cloud-Specialized Threat Group</div>
                                     </div>
                                 </div>
                                 <div class="apt-tags">
-                                    <span class="apt-tag">クラウド</span>
-                                    <span class="apt-tag">コンテナ</span>
-                                    <span class="apt-tag">クリプトマイニング</span>
+                                    <span class="apt-tag">Cloud</span>
+                                    <span class="apt-tag">Container</span>
+                                    <span class="apt-tag">Cryptomining</span>
                                     <span class="apt-tag">AWS</span>
                                 </div>
                                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-                                    クラウド環境とコンテナを標的とし、GPUを悪用したクリプトマイニングを実行。AWS環境への攻撃に特化。
+                                    Targets cloud environments and containers, executes cryptomining abusing GPUs. Specializes in AWS environment attacks.
                                 </p>
                                 <div style="margin-top: 0.75rem;">
-                                    <span style="font-size: 0.75rem; color: var(--text-muted);">関連性スコア:</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Relevance Score:</span>
                                     <span class="risk-badge critical" style="margin-left: 0.5rem;">CRITICAL</span>
                                 </div>
                             </div>
@@ -1972,54 +1976,54 @@
                                     </div>
                                     <div>
                                         <div class="apt-name">FIN7</div>
-                                        <div class="apt-alias">別名: Carbanak, Navigator Group</div>
+                                        <div class="apt-alias">Aliases: Carbanak, Navigator Group</div>
                                     </div>
                                 </div>
                                 <div class="apt-tags">
-                                    <span class="apt-tag">東欧</span>
-                                    <span class="apt-tag">フィッシング</span>
+                                    <span class="apt-tag">Eastern Europe</span>
+                                    <span class="apt-tag">Phishing</span>
                                     <span class="apt-tag">RaaS</span>
-                                    <span class="apt-tag">データ窃取</span>
+                                    <span class="apt-tag">Data Theft</span>
                                 </div>
                                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-                                    高度なフィッシング攻撃とランサムウェア・アズ・ア・サービス。SSH/RDP露出環境を標的に。
+                                    Advanced phishing attacks and Ransomware-as-a-Service. Targets environments with exposed SSH/RDP.
                                 </p>
                                 <div style="margin-top: 0.75rem;">
-                                    <span style="font-size: 0.75rem; color: var(--text-muted);">関連性スコア:</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Relevance Score:</span>
                                     <span class="risk-badge high" style="margin-left: 0.5rem;">HIGH</span>
                                 </div>
                             </div>
                         </div>
 
-                        <p style="margin-top: 2rem;"><strong>最近の関連攻撃事例</strong></p>
+                        <p style="margin-top: 2rem;"><strong>Recent Related Attack Cases</strong></p>
                         <div class="recent-attack">
-                            <div class="attack-date">2024年12月 - 公開情報</div>
-                            <div class="attack-title">大手AIスタートアップ、GPUクラスタへの不正アクセスで$2M相当の計算資源を悪用される</div>
+                            <div class="attack-date">December 2024 - Public Information</div>
+                            <div class="attack-title">Major AI startup suffers unauthorized access to GPU cluster, $2M worth of compute resources exploited</div>
                             <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.5rem 0;">
-                                露出したNVIDIA DCGM管理インターフェース経由で侵入。3週間にわたりクリプトマイニングに悪用。
+                                Intrusion via exposed NVIDIA DCGM management interface. Exploited for cryptomining over 3 weeks.
                             </p>
-                            <span class="attack-impact">推定被害額: $2,000,000+</span>
+                            <span class="attack-impact">Estimated Damage: $2,000,000+</span>
                         </div>
                         <div class="recent-attack">
-                            <div class="attack-date">2024年11月 - セキュリティ研究報告</div>
-                            <div class="attack-title">TeamTNTによるAWS上のMLインフラを標的とした大規模攻撃キャンペーン</div>
+                            <div class="attack-date">November 2024 - Security Research Report</div>
+                            <div class="attack-title">Large-scale attack campaign by TeamTNT targeting ML infrastructure on AWS</div>
                             <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.5rem 0;">
-                                認証情報漏洩とポートスキャンを組み合わせた攻撃。日本を含むAPAC地域の50+組織が影響。
+                                Attack combining credential leakage and port scanning. 50+ organizations in APAC region including Japan affected.
                             </p>
-                            <span class="attack-impact">影響組織: 50+</span>
+                            <span class="attack-impact">Affected Organizations: 50+</span>
                         </div>
                         <div class="recent-attack">
-                            <div class="attack-date">2024年10月 - インシデントレポート</div>
-                            <div class="attack-title">製造業向けAI企業、トレーニングデータ窃取により競合他社にIP流出</div>
+                            <div class="attack-date">October 2024 - Incident Report</div>
+                            <div class="attack-title">Manufacturing AI company suffers training data theft, IP leaked to competitor</div>
                             <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.5rem 0;">
-                                SSH鍵の不適切な管理が原因。APT41との関連が疑われる。
+                                Caused by improper SSH key management. APT41 connection suspected.
                             </p>
-                            <span class="attack-impact">競争優位喪失</span>
+                            <span class="attack-impact">Loss of Competitive Advantage</span>
                         </div>
 
                         <div class="highlight-box warning" style="margin-top: 1.5rem;">
-                            <div class="highlight-box-title">御社環境への適用</div>
-                            <p style="margin: 0;">現在の脆弱性（GPU管理ポート露出、SSH/RDP公開）は、TeamTNTやLazarus Groupの攻撃パターンと完全に一致します。特にGPU管理インターフェースの露出は、クリプトマイニング攻撃の格好の標的となります。</p>
+                            <div class="highlight-box-title">Application to Your Environment</div>
+                            <p style="margin: 0;">Current vulnerabilities (GPU management port exposure, SSH/RDP public access) match TeamTNT and Lazarus Group attack patterns exactly. GPU management interface exposure is a prime target for cryptomining attacks.</p>
                         </div>
                     </div>
                 </div>
@@ -2028,61 +2032,61 @@
             <!-- Recommendations -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">推奨事項<span class="section-title-sub">Recommendations</span></h2>
+                    <h2 class="section-title">Recommendations<span class="section-title-sub">Recommendations</span></h2>
                 </div>
                 <div class="section-card">
 <div class="tier-card tier-1">
     <div class="tier-header">
         <span class="tier-label">Tier 1</span>
-        <span class="tier-title">CRITICAL - 即時対応（24-48時間）</span>
+        <span class="tier-title">CRITICAL - Immediate Action (24-48 hours)</span>
     </div>
     <ul>
-        <li><strong>CVE-2024-1234 緊急パッチ適用</strong> - CVSS 9.8、エクスプロイト公開済み
+        <li><strong>CVE-2024-1234 Emergency Patch</strong> - CVSS 9.8, exploit publicly available
             <pre>sudo apt update && sudo apt upgrade vulnerable-package</pre>
         </li>
-        <li><strong>GPU管理ポート（5555）遮断</strong> - 工数: 30分
+        <li><strong>Block GPU management port (5555)</strong> - Effort: 30 min
             <pre>aws ec2 revoke-security-group-ingress --port 5555 --cidr 0.0.0.0/0</pre>
         </li>
-        <li><strong>SSH/RDP をVPN経由に制限</strong> - Security Groupで0.0.0.0/0を削除</li>
+        <li><strong>Restrict SSH/RDP to VPN only</strong> - Remove 0.0.0.0/0 from Security Group</li>
     </ul>
 </div>
 
 <div class="tier-card tier-2">
     <div class="tier-header">
         <span class="tier-label">Tier 2</span>
-        <span class="tier-title">HIGH PRIORITY - 1-2週間</span>
+        <span class="tier-title">HIGH PRIORITY - 1-2 weeks</span>
     </div>
     <ul>
-        <li>TLS 1.0/1.1の無効化、TLS 1.3への完全移行</li>
-        <li>PostgreSQLポート（5432）の内部ネットワーク制限</li>
-        <li>AWS WAFの導入（OWASP Top 10ルールセット）</li>
-        <li>セキュリティヘッダーの実装（CSP、X-Frame-Options）</li>
+        <li>Disable TLS 1.0/1.1, complete migration to TLS 1.3</li>
+        <li>Restrict PostgreSQL port (5432) to internal network</li>
+        <li>Deploy AWS WAF (OWASP Top 10 ruleset)</li>
+        <li>Implement security headers (CSP, X-Frame-Options)</li>
     </ul>
 </div>
 
 <div class="tier-card tier-3">
     <div class="tier-header">
         <span class="tier-label">Tier 3</span>
-        <span class="tier-title">MEDIUM PRIORITY - 1-3ヶ月</span>
+        <span class="tier-title">MEDIUM PRIORITY - 1-3 months</span>
     </div>
     <ul>
-        <li>マルチAZ構成への移行</li>
-        <li>ネットワークセグメンテーションの実装（管理用VPC分離）</li>
-        <li>脆弱性スキャンの自動化（週次）</li>
-        <li>SIEM/ログ監視の導入</li>
+        <li>Migrate to Multi-AZ configuration</li>
+        <li>Implement network segmentation (management VPC isolation)</li>
+        <li>Automate vulnerability scanning (weekly)</li>
+        <li>Deploy SIEM/log monitoring</li>
     </ul>
 </div>
 
 <div class="tier-card tier-4">
     <div class="tier-header">
         <span class="tier-label">Tier 4</span>
-        <span class="tier-title">ENHANCEMENT - 継続的改善</span>
+        <span class="tier-title">ENHANCEMENT - Continuous Improvement</span>
     </div>
     <ul>
-        <li>ゼロトラストアーキテクチャへの移行検討</li>
-        <li>セキュリティ意識向上トレーニング</li>
-        <li>インシデント対応訓練（年2回）</li>
-        <li>ペネトレーションテスト（年1回）</li>
+        <li>Consider migration to Zero Trust Architecture</li>
+        <li>Security awareness training</li>
+        <li>Incident response exercises (twice yearly)</li>
+        <li>Penetration testing (yearly)</li>
     </ul>
 </div>
                 </div>
@@ -2091,85 +2095,85 @@
             <!-- First 24 Hours Action Plan -->
             <section class="section">
                 <div class="section-header">
-                    <h2 class="section-title">初動24時間アクションプラン<span class="section-title-sub">First 24 Hours Action Plan</span></h2>
+                    <h2 class="section-title">First 24 Hours Action Plan<span class="section-title-sub">First 24 Hours Action Plan</span></h2>
                 </div>
                 <div class="section-card">
 <div class="timeline">
     <div class="timeline-item">
         <div class="timeline-time">HOUR 0-2</div>
         <div class="timeline-content">
-            <div class="timeline-title">即時対応</div>
+            <div class="timeline-title">Immediate Response</div>
             <ul>
-                <li>CVE-2024-1234の影響範囲確認</li>
-                <li>GPU管理ポートへの不正アクセスログ確認</li>
-                <li>セキュリティチームリーダーへエスカレーション</li>
-                <li>証拠保全（Security Group設定エクスポート、ログスナップショット）</li>
+                <li>Confirm CVE-2024-1234 impact scope</li>
+                <li>Check GPU management port for unauthorized access logs</li>
+                <li>Escalate to security team leader</li>
+                <li>Evidence preservation (Security Group config export, log snapshots)</li>
             </ul>
         </div>
     </div>
     <div class="timeline-item">
         <div class="timeline-time">HOUR 2-6</div>
         <div class="timeline-content">
-            <div class="timeline-title">緊急対策</div>
+            <div class="timeline-title">Emergency Measures</div>
             <ul>
-                <li><strong>Quick Win:</strong> GPU管理ポート（5555）遮断</li>
-                <li><strong>Quick Win:</strong> SSH/RDPを0.0.0.0/0から削除、VPN CIDRのみ許可</li>
-                <li>外部からのポートスキャンで遮断確認</li>
+                <li><strong>Quick Win:</strong> Block GPU management port (5555)</li>
+                <li><strong>Quick Win:</strong> Remove SSH/RDP from 0.0.0.0/0, allow VPN CIDR only</li>
+                <li>Verify blocking via external port scan</li>
             </ul>
         </div>
     </div>
     <div class="timeline-item">
         <div class="timeline-time">HOUR 6-12</div>
         <div class="timeline-content">
-            <div class="timeline-title">詳細分析</div>
+            <div class="timeline-title">Detailed Analysis</div>
             <ul>
-                <li>CVE-2024-1234の技術的詳細確認</li>
-                <li>パッチ適用手順の策定</li>
-                <li>テスト環境でのパッチ検証</li>
-                <li>変更管理チケット作成</li>
+                <li>Confirm CVE-2024-1234 technical details</li>
+                <li>Develop patch application procedure</li>
+                <li>Verify patch in test environment</li>
+                <li>Create change management ticket</li>
             </ul>
         </div>
     </div>
     <div class="timeline-item">
         <div class="timeline-time">HOUR 12-18</div>
         <div class="timeline-content">
-            <div class="timeline-title">修復実施</div>
+            <div class="timeline-title">Remediation Execution</div>
             <ul>
-                <li>Critical CVEパッチの本番適用</li>
-                <li>TLS 1.1の無効化</li>
-                <li>PostgreSQLポートの制限</li>
+                <li>Apply Critical CVE patch to production</li>
+                <li>Disable TLS 1.1</li>
+                <li>Restrict PostgreSQL port</li>
             </ul>
         </div>
     </div>
     <div class="timeline-item">
         <div class="timeline-time">HOUR 18-24</div>
         <div class="timeline-content">
-            <div class="timeline-title">報告と計画</div>
+            <div class="timeline-title">Reporting and Planning</div>
             <ul>
-                <li>ステークホルダーへの完了報告</li>
-                <li>7日/30日/90日ロードマップ策定</li>
-                <li>lessons learnedの文書化</li>
+                <li>Report completion to stakeholders</li>
+                <li>Develop 7/30/90 day roadmap</li>
+                <li>Document lessons learned</li>
             </ul>
         </div>
     </div>
 </div>
 
 <div class="highlight-box" style="margin-top: 1.5rem;">
-    <div class="highlight-box-title">成功基準（24時間後）</div>
+    <div class="highlight-box-title">Success Criteria (After 24 hours)</div>
     <table class="metrics-table">
-        <tr><td>Critical CVEパッチ</td><td><span class="risk-badge low">適用完了</span></td></tr>
-        <tr><td>GPU管理ポート</td><td><span class="risk-badge low">外部遮断完了</span></td></tr>
-        <tr><td>SSH/RDPアクセス</td><td><span class="risk-badge low">制限完了</span></td></tr>
-        <tr><td>検証スキャン</td><td><span class="risk-badge low">完了</span></td></tr>
-        <tr><td>ステークホルダー報告</td><td><span class="risk-badge low">完了</span></td></tr>
+        <tr><td>Critical CVE Patch</td><td><span class="risk-badge low">Applied</span></td></tr>
+        <tr><td>GPU Management Port</td><td><span class="risk-badge low">Externally Blocked</span></td></tr>
+        <tr><td>SSH/RDP Access</td><td><span class="risk-badge low">Restricted</span></td></tr>
+        <tr><td>Verification Scan</td><td><span class="risk-badge low">Complete</span></td></tr>
+        <tr><td>Stakeholder Report</td><td><span class="risk-badge low">Complete</span></td></tr>
     </table>
 </div>
                 </div>
             </section>
 
             <div class="disclaimer">
-                <div class="disclaimer-title">免責事項</div>
-                <div class="disclaimer-text">本レポートは外部から取得可能な情報（OSINT）に基づいて作成されています。評価結果は参考情報であり、完全性を保証するものではありません。重要な意思決定を行う前に、専門家による追加評価を推奨します。</div>
+                <div class="disclaimer-title">Disclaimer</div>
+                <div class="disclaimer-text">This report is based on publicly available information (OSINT). Assessment results are for reference only and do not guarantee completeness. Additional expert evaluation is recommended before making critical decisions.</div>
             </div>
         </div>
     </main>
@@ -2227,10 +2231,10 @@
                 `;
                 notification.innerHTML = `
                     <div style="color: #10b981; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">
-                        PDF出力準備完了
+                        PDF Export Ready
                     </div>
                     <div style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">
-                        印刷ダイアログで「PDFとして保存」を選択してください
+                        Please select "Save as PDF" in the print dialog
                     </div>
                     <button onclick="this.parentElement.remove(); window.print();" style="
                         background: #10b981;
@@ -2240,7 +2244,7 @@
                         border-radius: 8px;
                         font-weight: 600;
                         cursor: pointer;
-                    ">印刷ダイアログを開く</button>
+                    ">Open Print Dialog</button>
                     <button onclick="this.parentElement.remove();" style="
                         background: transparent;
                         color: #94a3b8;
@@ -2249,7 +2253,7 @@
                         border-radius: 8px;
                         margin-left: 0.5rem;
                         cursor: pointer;
-                    ">キャンセル</button>
+                    ">Cancel</button>
                 `;
                 document.body.appendChild(notification);
             }, 100);
