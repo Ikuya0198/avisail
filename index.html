@@ -5,6 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Avisail Technologies - AI × Trading × Investment × Security</title>
 <meta name="description" content="Avisail Technologies is a next-generation technology company redefining trading, investment, and security through the power of AI and technological exploration">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<!-- Canonical & hreflang -->
+<link rel="canonical" href="https://avisail.com/index.html">
+<link rel="alternate" hreflang="en" href="https://avisail.com/index.html">
+<link rel="alternate" hreflang="ja" href="https://avisail.com/index.ja.html">
+<link rel="alternate" hreflang="x-default" href="https://avisail.com/index.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://avisail.com/">
+<meta property="og:title" content="Avisail Technologies - AI × Trading × Investment × Security">
+<meta property="og:description" content="Avisail Technologies is a next-generation technology company redefining trading, investment, and security through the power of AI and technological exploration">
+<meta property="og:image" content="https://avisail.com/images/hero-bg.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Avisail Technologies">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://avisail.com/">
+<meta name="twitter:title" content="Avisail Technologies - AI × Trading × Investment × Security">
+<meta name="twitter:description" content="Avisail Technologies is a next-generation technology company redefining trading, investment, and security through the power of AI and technological exploration">
+<meta name="twitter:image" content="https://avisail.com/images/hero-bg.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
@@ -1049,7 +1076,7 @@ footer{
             <span><strong>Solution:</strong> Vessel Trading Platform</span>
           </div>
         </div>
-        <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
+        <a href="en/services/vessel-trading.html" class="btn" style="margin-top:auto;">Learn More</a>
       </div>
 
       <!-- INVESTMENT -->
@@ -1069,7 +1096,7 @@ footer{
             <span><strong>Solution:</strong> AI Asset Management</span>
           </div>
         </div>
-        <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
+        <a href="en/services/investment.html" class="btn" style="margin-top:auto;">Learn More</a>
       </div>
 
       <!-- SECURITY -->
@@ -1090,7 +1117,7 @@ footer{
             <span><strong>Solution:</strong> ADCS Continuous Assessment</span>
           </div>
         </div>
-        <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
+        <a href="products/security-en.html" class="btn" style="margin-top:auto;">Learn More</a>
       </div>
 
     </div>
@@ -1271,7 +1298,7 @@ footer{
           </div>
         </div>
 
-        <form>
+        <form id="contact-form" action="https://formspree.io/f/mykzwlze" method="POST">
           <div class="form-group">
             <label for="name">Name *</label>
             <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -1300,7 +1327,8 @@ footer{
             <textarea id="message" name="message" placeholder="Please describe your inquiry"></textarea>
           </div>
 
-          <button type="submit" class="cta">Send Message</button>
+          <button type="submit" class="cta" id="submit-btn">Send Message</button>
+          <div id="form-status" style="margin-top:16px; display:none;"></div>
         </form>
     </div>
   </div>
@@ -1346,7 +1374,7 @@ footer{
         <div class="faq-a">
           Data protection and privacy are our top priorities.<br>
           We implement technical security measures including communication encryption, access management, and regular vulnerability assessments.<br>
-          For details, please refer to our <a href="ja/legal/privacy-policy.html">Privacy Policy</a> and <a href="ja/legal/security.html">Security Policy</a>
+          For details, please contact us
         </div>
       </div>
 
@@ -1403,14 +1431,11 @@ footer{
         </ul>
       </div>
 
-      <!-- COLUMN 4: LEGAL -->
+      <!-- COLUMN 4: CONTACT -->
       <div class="footer-col">
-        <h4>Legal</h4>
+        <h4>Contact</h4>
         <ul>
-          <li><a href="ja/legal/privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="ja/legal/terms.html">Terms of Service</a></li>
-          <li><a href="ja/legal/cookies.html">Cookie Policy</a></li>
-          <li><a href="ja/legal/security.html">Security Policy</a></li>
+          <li><a href="mailto:info@avisail.com">info@avisail.com</a></li>
         </ul>
       </div>
 
@@ -1543,6 +1568,50 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, 250);
   });
+
+  // Contact Form Submission
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const formStatus = document.getElementById('form-status');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formStatus.style.display = 'none';
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.style.display = 'block';
+          formStatus.style.color = 'var(--accent-teal)';
+          formStatus.textContent = 'Message sent successfully. We will contact you within 24 hours.';
+          contactForm.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (error) {
+        formStatus.style.display = 'block';
+        formStatus.style.color = '#ff6b6b';
+        formStatus.textContent = 'Failed to send. Please contact us directly at info@avisail.com';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  }
 });
 </script>
 
