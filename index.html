@@ -544,18 +544,6 @@ h3{
   transform:translateX(5px);
 }
 
-.why-icon{
-  width:48px;
-  height:48px;
-  min-width:48px;
-  background:var(--primary-gradient);
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.5rem;
-}
-
 .why-content h3{
   margin:0 0 8px 0;
   font-size:1.2rem;
@@ -877,13 +865,6 @@ footer{
     padding:20px;
   }
 
-  .why-icon{
-    width:40px;
-    height:40px;
-    min-width:40px;
-    font-size:1.3rem;
-  }
-
   .card{
     padding:20px;
   }
@@ -923,6 +904,334 @@ footer{
 
   .business-tech .thumb{
     height:160px;
+  }
+}
+
+/* ========== BUSINESS STRUCTURE (3 Pillars + Foundation) ========== */
+.business-structure{
+  margin-top:20px;
+}
+
+.structure-intro{
+  text-align:center;
+  margin-bottom:48px;
+}
+
+.structure-intro p{
+  font-size:1.2rem;
+  color:var(--text-secondary);
+  line-height:1.8;
+}
+
+.structure-intro strong{
+  color:var(--accent-teal);
+  font-weight:600;
+}
+
+.pillars-container{
+  margin-bottom:40px;
+}
+
+.pillars-label{
+  text-align:center;
+  font-family:'Inter', sans-serif;
+  font-size:0.75rem;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--accent-blue);
+  margin-bottom:24px;
+}
+
+.pillars-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+
+.pillar-card{
+  position:relative;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border:1px solid rgba(106,166,255,0.2);
+  border-radius:20px;
+  padding:32px 28px;
+  transition:all 0.3s;
+  overflow:hidden;
+}
+
+.pillar-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:var(--primary-gradient);
+}
+
+.pillar-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(126,240,212,0.4);
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.pillar-number{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-family:'Inter', sans-serif;
+  font-size:2.5rem;
+  font-weight:700;
+  color:rgba(106,166,255,0.1);
+  line-height:1;
+}
+
+.pillar-content h3{
+  font-size:1.3rem;
+  font-weight:700;
+  color:#fff;
+  margin:0 0 8px 0;
+  line-height:1.4;
+}
+
+.pillar-subtitle{
+  font-size:0.85rem;
+  color:var(--accent-teal);
+  margin:0 0 20px 0;
+  font-weight:500;
+}
+
+.pillar-features{
+  list-style:none;
+  padding:0;
+  margin:0 0 24px 0;
+}
+
+.pillar-features li{
+  font-size:0.9rem;
+  color:var(--text-muted);
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.pillar-features li:last-child{
+  border-bottom:none;
+}
+
+.pillar-features li::before{
+  content:'';
+  width:6px;
+  height:6px;
+  background:var(--accent-teal);
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+.pillar-actions{
+  display:flex;
+  gap:12px;
+  margin-top:auto;
+}
+
+.pillar-actions .cta,
+.pillar-actions .btn{
+  flex:1;
+  text-align:center;
+  padding:10px 16px;
+  font-size:0.85rem;
+}
+
+/* Foundation */
+.foundation-container{
+  margin-top:20px;
+}
+
+.support-arrows{
+  display:flex;
+  justify-content:center;
+  margin-bottom:16px;
+}
+
+.arrow-group{
+  display:flex;
+  gap:80px;
+  justify-content:center;
+}
+
+.support-arrow{
+  width:24px;
+  height:40px;
+}
+
+.foundation-card{
+  background:linear-gradient(135deg, rgba(126,240,212,0.06), rgba(106,166,255,0.04));
+  border:1px solid rgba(126,240,212,0.2);
+  border-radius:24px;
+  padding:40px;
+  text-align:center;
+}
+
+.foundation-content h3{
+  font-size:1.5rem;
+  font-weight:700;
+  color:#fff;
+  margin:0 0 8px 0;
+}
+
+.foundation-subtitle{
+  font-size:0.9rem;
+  color:var(--accent-teal);
+  margin:0 0 16px 0;
+  font-weight:500;
+}
+
+.foundation-desc{
+  font-size:0.95rem;
+  color:var(--text-muted);
+  line-height:1.8;
+  margin:0 0 20px 0;
+}
+
+.foundation-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+}
+
+.foundation-tags span{
+  font-size:0.75rem;
+  padding:6px 12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  color:var(--text-muted);
+}
+
+@media(max-width:980px){
+  .pillars-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .foundation-card{
+    padding:32px 24px;
+  }
+  .arrow-group{
+    gap:40px;
+  }
+}
+
+@media(max-width:640px){
+  .pillar-card{
+    padding:24px 20px;
+  }
+  .pillar-number{
+    font-size:2rem;
+  }
+  .pillar-actions{
+    flex-direction:column;
+  }
+  .arrow-group{
+    gap:24px;
+  }
+  .support-arrow{
+    width:20px;
+    height:32px;
+  }
+}
+
+/* ========== ABOUT VISUAL SECTION ========== */
+.about-visual-section{
+  padding:0;
+  border-bottom:none;
+}
+
+.about-visual-bg{
+  position:relative;
+  min-height:70vh;
+  background:
+    linear-gradient(135deg, rgba(10,15,26,0.85) 0%, rgba(5,8,15,0.9) 50%, rgba(10,15,26,0.85) 100%),
+    radial-gradient(ellipse at 20% 30%, rgba(106,166,255,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(126,240,212,0.12) 0%, transparent 50%),
+    url('images/hero-bg.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:80px 0;
+}
+
+.about-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:linear-gradient(180deg, rgba(5,8,15,0.3) 0%, transparent 30%, transparent 70%, rgba(5,8,15,0.5) 100%);
+  pointer-events:none;
+}
+
+.about-visual-content{
+  position:relative;
+  z-index:2;
+}
+
+.about-visual-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.about-visual-item{
+  text-align:left;
+}
+
+.about-visual-label{
+  font-family:'Inter', sans-serif;
+  font-size:0.75rem;
+  font-weight:600;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--accent-teal);
+  margin-bottom:12px;
+}
+
+.about-visual-title{
+  font-size:clamp(2rem, 4vw, 2.8rem);
+  font-weight:700;
+  color:#fff;
+  margin:0 0 24px 0;
+  text-shadow:0 2px 20px rgba(0,0,0,0.3);
+}
+
+.about-visual-text{
+  font-size:1rem;
+  line-height:1.9;
+  color:rgba(255,255,255,0.85);
+  margin-bottom:20px;
+  text-shadow:0 1px 10px rgba(0,0,0,0.2);
+}
+
+@media(max-width:980px){
+  .about-visual-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+  .about-visual-bg{
+    min-height:auto;
+    padding:60px 0;
+  }
+}
+
+@media(max-width:640px){
+  .about-visual-title{
+    font-size:1.8rem;
+  }
+  .about-visual-text{
+    font-size:0.95rem;
   }
 }
 
@@ -1012,125 +1321,166 @@ footer{
 </section>
 
 <!-- ========================================
-     SECTION 2: PASSION & PURPOSE
+     SECTION 2: PASSION & PURPOSE (Full-width visual design)
 ======================================== -->
-<section id="about">
-  <div class="wrap">
-    <h2>About Us</h2>
-    <div class="grid-2">
+<section id="about" class="about-visual-section">
+  <div class="about-visual-bg">
+    <div class="about-overlay"></div>
+    <div class="wrap about-visual-content">
+      <h2 style="color:#fff; border:none; margin-bottom:60px; text-align:center; justify-content:center;">
+        <span style="background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">About Us</span>
+      </h2>
 
-      <!-- PASSION -->
-      <div class="card">
-        <h3 style="margin-bottom:16px;">Passion</h3>
-        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.8; margin-bottom:0;">
-          We believe the concept of distance no longer exists in the world.<br>
-          Cultures and markets are neighbors, and new technologies constantly appear before us.<br><br>
-          When a giant ship (new technology) appears, we fearlessly move forward and guide technology toward practical, valuable applications.<br><br>
-          Courage is the spark of innovation.<br>
-          We are passionate about delivering that value to people
-        </p>
+      <div class="about-visual-grid">
+        <!-- PASSION -->
+        <div class="about-visual-item">
+          <div class="about-visual-label">Passion</div>
+          <h3 class="about-visual-title">Passion</h3>
+          <p class="about-visual-text">
+            We believe the concept of distance no longer exists in the world.<br>
+            Cultures and markets are neighbors, and new technologies constantly appear before us.
+          </p>
+          <p class="about-visual-text">
+            When a giant ship (new technology) appears, we fearlessly move forward and guide technology toward practical, valuable applications.
+          </p>
+          <p class="about-visual-text">
+            Courage is the spark of innovation.<br>
+            We are passionate about delivering that value to people.
+          </p>
+        </div>
+
+        <!-- PURPOSE -->
+        <div class="about-visual-item">
+          <div class="about-visual-label">Purpose</div>
+          <h3 class="about-visual-title">Purpose</h3>
+          <p class="about-visual-text">
+            We sincerely refine technology that contributes to human prosperity and expand new access created by transformation.
+          </p>
+          <p class="about-visual-text">
+            To never stop progressing, to continuously enhance technological value through implementation-based approaches, and to provide convenience—this is our purpose.
+          </p>
+        </div>
       </div>
-
-      <!-- PURPOSE -->
-      <div class="card card-highlight">
-        <h3 style="margin-bottom:16px;">Purpose</h3>
-        <p style="color:var(--text-primary); font-size:1rem; line-height:1.8; font-weight:400; margin-bottom:0;">
-          We sincerely refine technology that contributes to human prosperity and expand new access created by transformation.<br><br>
-          To never stop progressing, to continuously enhance technological value through implementation-based approaches, and to provide convenience—this is our purpose
-        </p>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- ========================================
-     SECTION 3: Our Business (3+1 Layout)
+     SECTION 3: Our Business (3 Pillars + Foundation)
 ======================================== -->
 <section id="business">
   <div class="wrap">
     <h2>Our Business</h2>
-    <p style="color:var(--text-secondary); max-width:850px; margin-bottom:48px; font-size:1rem; line-height:1.75;">
-      Avisail leverages AI technology across four business domains to revolutionize traditional methods.<br>
-      Each business operates independently yet is united by a common AI foundation
-    </p>
 
-    <!-- TOP 3 BUSINESSES -->
-    <div class="business-grid">
-
-      <!-- TRADING -->
-      <div class="card" id="business-trading">
-        <div class="thumb" style="background-image:url('images/vessel-trading.jpg');"></div>
-        <h3>Trading</h3>
-        <p>
-          A global vessel matching platform connecting Asia and the world.<br>
-          AI-driven inventory management and real-time market analysis enable swift matching of optimal vessels.<br>
-          Secure payment structures and escrow services eliminate concerns in international transactions
-        </p>
-        <div class="use-case-box">
-          <h4>Use Case: Ensuring Safe International Transactions</h4>
-          <p>Companies considering their first vessel purchase. Escrow services and transparent transaction processes eliminate concerns arising from language and cultural differences</p>
-          <div class="use-case-details">
-            <span><strong>Industry:</strong> Logistics & Shipping</span>
-            <span><strong>Challenge:</strong> Concerns about international transactions</span>
-            <span><strong>Solution:</strong> Vessel Trading Platform</span>
-          </div>
-        </div>
-        <a href="en/services/vessel-trading.html" class="btn" style="margin-top:auto;">Learn More</a>
+    <!-- Business Structure Visual -->
+    <div class="business-structure">
+      <div class="structure-intro">
+        <p>Avisail operates <strong>3 core businesses</strong>, all supported by <strong>AI & System Development</strong></p>
       </div>
 
-      <!-- INVESTMENT -->
-      <div class="card" id="business-investment">
-        <div class="thumb" style="background-image:url('images/investment.jpg');"></div>
-        <h3>Investment</h3>
-        <p>
-          Solid asset formation emphasizing stability and growth through the AI-driven asset management engine "Aviscore."<br>
-          Combining FX automated trading and ETF portfolio strategies, we respond flexibly to market fluctuations while minimizing risk
-        </p>
-        <div class="use-case-box">
-          <h4>Use Case: Startup Asset Management</h4>
-          <p>A rapidly growing SaaS company. The challenge was efficient management of surplus funds. Automated management by Aviscore achieves stable returns while allowing focus on core business</p>
-          <div class="use-case-details">
-            <span><strong>Industry:</strong> SaaS / Technology</span>
-            <span><strong>Challenge:</strong> Efficient management of surplus funds</span>
-            <span><strong>Solution:</strong> AI Asset Management</span>
+      <!-- 3 Pillars -->
+      <div class="pillars-container">
+        <div class="pillars-label">3 Core Business Pillars</div>
+        <div class="pillars-grid">
+
+          <!-- PILLAR 1: Marine Trading & Development -->
+          <div class="pillar-card" id="business-trading">
+            <div class="pillar-number">01</div>
+            <div class="pillar-content">
+              <h3>Marine Trading<br>and Development</h3>
+              <p class="pillar-subtitle">Vessel Trading & Edge Technology</p>
+              <ul class="pillar-features">
+                <li>International vessel sales (commercial & yachts)</li>
+                <li>AI-driven inventory matching</li>
+                <li>YOLO-based navigation support systems</li>
+                <li>Autonomous driving R&D</li>
+              </ul>
+              <div class="pillar-actions">
+                <a href="https://avisail-vessel-trading.vercel.app/" class="cta" target="_blank">Inventory</a>
+                <a href="en/services/vessel-trading.html" class="btn">Details</a>
+              </div>
+            </div>
           </div>
+
+          <!-- PILLAR 2: Investment & System Engineering -->
+          <div class="pillar-card" id="business-investment">
+            <div class="pillar-number">02</div>
+            <div class="pillar-content">
+              <h3>Investment and<br>System Engineering</h3>
+              <p class="pillar-subtitle">Investment & System Development</p>
+              <ul class="pillar-features">
+                <li>AI-driven asset management (Aviscore)</li>
+                <li>Market scoring</li>
+                <li>Risk intelligence (STRATUM/NEXUS)</li>
+                <li>Custom system development</li>
+              </ul>
+              <div class="pillar-actions">
+                <a href="products/aviscore.html" class="cta">Aviscore</a>
+                <a href="en/services/investment.html" class="btn">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 3: Security Development -->
+          <div class="pillar-card" id="business-security">
+            <div class="pillar-number">03</div>
+            <div class="pillar-content">
+              <h3>Security<br>Development</h3>
+              <p class="pillar-subtitle">Cybersecurity Business</p>
+              <ul class="pillar-features">
+                <li>Active Defense Cyber Security (ADCS)</li>
+                <li>OSINT analysis & threat detection</li>
+                <li>Attack surface visualization</li>
+                <li>Security reports</li>
+              </ul>
+              <div class="pillar-actions">
+                <a href="products/security.html" class="cta">ADCS</a>
+                <a href="products/security.html" class="btn">Details</a>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <a href="en/services/investment.html" class="btn" style="margin-top:auto;">Learn More</a>
       </div>
 
-      <!-- SECURITY -->
-      <div class="card" id="business-security">
-        <div class="thumb" style="background-image:url('images/security.jpg');"></div>
-        <h3>Security</h3>
-        <p>
-          Active defense-type cybersecurity solution "ADCS" for SMEs and municipalities.<br>
-          OSINT analysis and AI-driven threat detection enable security diagnostics from an attacker's perspective.<br>
-          We provide a foundation that serves as a bridge to full SOC
-        </p>
-        <div class="use-case-box">
-          <h4>Use Case: Strengthening Mid-Size Company Security</h4>
-          <p>A manufacturing company with 50 employees. Within an aging infrastructure and limited budget, we visualize attack surfaces and establish incident response systems. Reports can also serve as explanatory materials for business partners</p>
-          <div class="use-case-details">
-            <span><strong>Industry:</strong> Manufacturing</span>
-            <span><strong>Challenge:</strong> Legacy system security</span>
-            <span><strong>Solution:</strong> ADCS Continuous Assessment</span>
+      <!-- Foundation: AI & System Development -->
+      <div class="foundation-container">
+        <div class="support-arrows">
+          <div class="arrow-group">
+            <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
+              <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="arrowGrad" x1="12" y1="40" x2="12" y2="8"><stop offset="0%" stop-color="rgba(126,240,212,0.1)"/><stop offset="100%" stop-color="rgba(126,240,212,0.6)"/></linearGradient></defs>
+            </svg>
+            <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
+              <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="arrowGrad2" x1="12" y1="40" x2="12" y2="8"><stop offset="0%" stop-color="rgba(106,166,255,0.1)"/><stop offset="100%" stop-color="rgba(106,166,255,0.6)"/></linearGradient></defs>
+            </svg>
+            <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
+              <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="arrowGrad3" x1="12" y1="40" x2="12" y2="8"><stop offset="0%" stop-color="rgba(126,240,212,0.1)"/><stop offset="100%" stop-color="rgba(126,240,212,0.6)"/></linearGradient></defs>
+            </svg>
           </div>
         </div>
-        <a href="products/security-en.html" class="btn" style="margin-top:auto;">Learn More</a>
+        <div class="foundation-card">
+          <div class="foundation-content">
+            <h3>AI & System Development</h3>
+            <p class="foundation-subtitle">Technical Foundation Supporting All 3 Businesses</p>
+            <p class="foundation-desc">
+              Following an implementation-first philosophy, we develop AI systems ready for real-world operation from day one.<br>
+              Data pipelines, automation, and intelligent decision support accelerate the competitive edge of each business
+            </p>
+            <div class="foundation-tags">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>AWS/GCP</span>
+              <span>Machine Learning</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </div>
-
-    <!-- AI & DEVELOPMENT (Full width bottom) -->
-    <div class="business-tech">
-      <div class="thumb" style="background-image:url('images/ai-development.jpg'); max-width:600px; margin:0 auto 20px; height:200px;"></div>
-      <h3>AI & Development</h3>
-      <p>
-        The technical foundation supporting all three business domains.<br>
-        Following an implementation-first philosophy, we develop AI systems ready for real-world operation from day one.<br>
-        Data pipelines, automation, and intelligent decision support accelerate the competitive edge of each business
-      </p>
     </div>
   </div>
 </section>
@@ -1233,7 +1583,6 @@ footer{
     <div class="why-avisail-grid">
 
       <div class="why-card">
-        <div class="why-icon">⚡</div>
         <div class="why-content">
           <h3>Implementation-First Philosophy</h3>
           <p>
@@ -1245,7 +1594,6 @@ footer{
       </div>
 
       <div class="why-card">
-        <div class="why-icon">🤖</div>
         <div class="why-content">
           <h3>AI-Driven Efficiency</h3>
           <p>
@@ -1257,7 +1605,6 @@ footer{
       </div>
 
       <div class="why-card">
-        <div class="why-icon">🌏</div>
         <div class="why-content">
           <h3>Global Perspective, Local Response</h3>
           <p>
