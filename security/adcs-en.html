@@ -606,25 +606,8 @@
 <body>
     <div class="page">
 
-        <!-- HEADER -->
-        <header>
-            <div>
-                <div class="logo">
-                    <div class="logo-mark"></div>
-                    <div>AVISAIL</div>
-                </div>
-                <div class="logo-sub">Security Services</div>
-            </div>
-
-            <nav>
-                <a href="../index.html" class="nav-back">← Home</a>
-                <a href="#adcs">ADCS</a>
-                <a href="#services">All Services</a>
-                <a href="#comparison">Pricing</a>
-                <a href="#contact">Contact</a>
-                <a href="security.html" class="lang-switcher">🌐 日本語</a>
-            </nav>
-        </header>
+        <!-- Shared Header -->
+        <div id="site-header"></div>
 
         <!-- HERO -->
         <div class="hero">
@@ -1041,50 +1024,10 @@
             </p>
         </section>
 
-        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <!-- Legal Information -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 24px; font-size: 12px;">
-                    <div>
-                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Operator Information</h4>
-                        <div style="color: var(--text-sub); line-height: 1.8;">
-                            Operator: Avisail<br>
-                            Location: Tokyo, Japan (Details upon inquiry)<br>
-                            Email: info@avisail.com
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Service Delivery</h4>
-                        <div style="color: var(--text-sub); line-height: 1.8;">
-                            Pricing: Listed on service pages<br>
-                            Payment: Bank transfer, Credit card<br>
-                            Delivery: Varies by service (from 2 weeks)
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Cancellation & Refund</h4>
-                        <div style="color: var(--text-sub); line-height: 1.8;">
-                            Before service start: Full refund<br>
-                            After work begins: Case-by-case basis<br>
-                            Details explained upon application
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Privacy Policy Summary -->
-                <div style="background: rgba(15,23,42,0.5); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 11px; color: var(--text-sub); line-height: 1.7;">
-                    <strong style="color: var(--text-main);">Privacy Policy:</strong>
-                    Personal information collected is used solely for service delivery and inquiry response. We do not disclose information to third parties (except as required by law).
-                    Data obtained during security assessments is securely deleted after report creation.
-                </div>
-
-                <!-- Copyright -->
-                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
-                    © 2024 Avisail – Security Services for SMBs
-                </div>
-            </div>
-        </footer>
+        <!-- Shared Footer -->
+        <div id="site-footer"></div>
 
     </div>
+    <script src="../includes/components.js"></script>
 </body>
 </html>
