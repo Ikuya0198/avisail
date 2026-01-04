@@ -195,8 +195,25 @@
     });
   }
 
+  // Load shared CSS
+  function loadSharedStyles() {
+    const basePath = getBasePath();
+    const cssUrl = `${basePath}includes/shared-styles.css`;
+
+    // Check if already loaded
+    if (document.querySelector(`link[href="${cssUrl}"]`)) return;
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = cssUrl;
+    document.head.appendChild(link);
+  }
+
   // Main initialization
   async function init() {
+    // Load shared CSS first
+    loadSharedStyles();
+
     const lang = detectLanguage();
 
     // Load header
