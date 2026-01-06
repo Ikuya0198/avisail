@@ -1,1617 +1,409 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Avisail Technologies - 海事事業 × セキュリティ事業 × AI開発</title>
-<meta name="description" content="Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です">
-
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" href="favicon.png">
-
-<!-- Canonical & hreflang -->
-<link rel="canonical" href="https://avisail.com/index.ja.html">
-<link rel="alternate" hreflang="ja" href="https://avisail.com/index.ja.html">
-<link rel="alternate" hreflang="en" href="https://avisail.com/index.html">
-<link rel="alternate" hreflang="x-default" href="https://avisail.com/index.html">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://avisail.com/index.ja.html">
-<meta property="og:title" content="Avisail Technologies - 海事事業 × セキュリティ事業 × AI開発">
-<meta property="og:description" content="Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です">
-<meta property="og:image" content="https://avisail.com/images/hero-bg.jpg">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:site_name" content="Avisail Technologies">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://avisail.com/index.ja.html">
-<meta name="twitter:title" content="Avisail Technologies - 海事事業 × セキュリティ事業 × AI開発">
-<meta name="twitter:description" content="Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です">
-<meta name="twitter:image" content="https://avisail.com/images/hero-bg.jpg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --line: rgba(255,255,255,.08);
-  --primary-gradient: linear-gradient(135deg,#6aa6ff,#7ef0d4);
-  --accent-teal: #7ef0d4;
-  --accent-blue: #6aa6ff;
-  --bg-dark: #0a0f1a;
-  --bg-darker: #05080f;
-  --text-primary: #e9f0ff;
-  --text-secondary: #cfe2ff;
-  --text-muted: #9fb0cc;
-}
-
-*{ box-sizing: border-box; margin:0; padding:0; }
-
-html,body{
-  margin:0;
-  background:var(--bg-dark);
-  color:var(--text-primary);
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-  width:100%;
-}
-
-html{ scroll-behavior: smooth; }
-
-a{
-  color:var(--text-secondary);
-  text-decoration:none;
-  transition: color 0.3s;
-}
-a:hover{ color:var(--accent-teal); }
-
-.wrap{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
-  width:100%;
-}
-
-img{
-  max-width:100%;
-  height:auto;
-}
-
-/* ========== HEADER ========== */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:linear-gradient(to bottom, rgba(10,15,26,.95), rgba(10,15,26,.85));
-  border-bottom:1px solid var(--line);
-  backdrop-filter: blur(10px);
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:70px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:600;
-  letter-spacing:0.05em;
-  color:#fff;
-}
-
-.logo{
-  width:32px;
-  height:32px;
-  border-radius:8px;
-  background:conic-gradient(from 210deg,var(--accent-blue),var(--accent-teal));
-}
-
-nav ul{
-  display:flex;
-  gap:24px;
-  list-style:none;
-  align-items:center;
-  font-size:0.9rem;
-}
-
-.menu-item{
-  position:relative;
-  padding:10px 0;
-}
-
-.dropdown{
-  position:absolute;
-  top:100%;
-  left:-10px;
-  min-width:200px;
-  background:#0d1424;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:12px;
-  display:none;
-  flex-direction:column;
-  gap:8px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-.menu-item:hover .dropdown{ display:flex; }
-
-.dropdown a{
-  padding:6px 12px;
-  border-radius:6px;
-  color:var(--text-muted);
-  font-size:0.85rem;
-}
-
-.dropdown a:hover{
-  background:rgba(255,255,255,0.05);
-  color:#fff;
-}
-
-.lang-selector{
-  position:relative;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:8px 12px;
-  border-radius:8px;
-  transition:background 0.3s;
-}
-
-.lang-selector:hover{
-  background:rgba(255,255,255,0.05);
-}
-
-.lang-selector .globe-icon{
-  width:20px;
-  height:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.lang-dropdown{
-  position:absolute;
-  top:100%;
-  right:0;
-  min-width:140px;
-  background:#0d1424;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:8px;
-  display:none;
-  flex-direction:column;
-  gap:4px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  margin-top:8px;
-}
-
-.lang-selector:hover .lang-dropdown{ display:flex; }
-
-.lang-dropdown a{
-  padding:6px 12px;
-  border-radius:6px;
-  color:var(--text-muted);
-  font-size:0.85rem;
-}
-
-.lang-dropdown a:hover{
-  background:rgba(255,255,255,0.05);
-  color:#fff;
-}
-
-.mobile-menu-btn{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  padding:8px;
-  cursor:pointer;
-}
-
-.mobile-menu-btn span{
-  width:24px;
-  height:2px;
-  background:var(--accent-teal);
-  border-radius:2px;
-  transition:all 0.3s ease;
-}
-
-/* ========== BUTTONS ========== */
-.btn{
-  display:inline-block;
-  padding:10px 20px;
-  border-radius:50px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,0.05);
-  color:var(--text-primary);
-  font-size:0.9rem;
-  transition:all 0.3s;
-  cursor:pointer;
-}
-
-.btn:hover{
-  border-color:rgba(106,166,255,0.5);
-  transform:translateY(-2px);
-}
-
-.cta{
-  display:inline-block;
-  padding:12px 28px;
-  border-radius:50px;
-  background:var(--primary-gradient);
-  color:#06101a;
-  font-weight:700;
-  font-size:0.95rem;
-  box-shadow:0 10px 20px rgba(106,166,255,.2);
-  border:none;
-  transition:all 0.3s;
-  cursor:pointer;
-}
-
-.cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 15px 30px rgba(106,166,255,.3);
-}
-
-/* ========== HERO ========== */
-.hero{
-  position:relative;
-  overflow:hidden;
-  min-height: 85vh;
-  display:flex;
-  align-items:center;
-  background: radial-gradient(circle at center, rgba(106, 166, 255, 0.08) 0%, rgba(5, 8, 15, 0) 70%),
-              linear-gradient(180deg, rgba(5,8,15,0.3) 0%, rgba(5,8,15,1) 100%),
-              url('images/hero-bg.jpg') center/cover no-repeat;
-}
-
-.hero .wrap{
-  position:relative;
-  z-index:2;
-  width:100%;
-  padding-top:50px;
-  padding-bottom:60px;
-}
-
-.slogan{
-  font-family:'Inter';
-  letter-spacing:0.25em;
-  color:var(--accent-teal);
-  text-transform:uppercase;
-  margin-bottom:16px;
-  display:block;
-  font-size:0.8rem;
-  font-weight:600;
-}
-
-.hero h1{
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  background: linear-gradient(to right, #fff, var(--text-muted));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero h1 .gradient-text{
-  background:var(--primary-gradient);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  display:block;
-  margin-top:8px;
-}
-
-.lead{
-  font-size:1.05rem;
-  color:var(--text-secondary);
-  max-width:900px;
-  margin-bottom:20px;
-  line-height:1.75;
-}
-
-.hero-quote{
-  border-left:2px solid var(--accent-teal);
-  padding-left:16px;
-  margin-top:24px;
-  max-width:650px;
-  color:var(--text-muted);
-  font-size:0.95rem;
-  font-style:italic;
-}
-
-/* ========== SECTIONS ========== */
-section{
-  padding:70px 0;
-  border-bottom:1px solid var(--line);
-  position:relative;
-}
-
-h2{
-  font-size:1.8rem;
-  margin-bottom:32px;
-  display:flex;
-  align-items:center;
-  gap:16px;
-  color:#fff;
-}
-
-h2::before{
-  content:'';
-  width:4px;
-  height:28px;
-  background:var(--primary-gradient);
-  display:block;
-  border-radius:2px;
-}
-
-h3{
-  color:#fff;
-  font-size:1.3rem;
-}
-
-/* ========== CARDS ========== */
-.card{
-  background:rgba(255,255,255,0.02);
-  backdrop-filter:blur(10px);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:28px;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  transition:transform 0.3s, border-color 0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(106,166,255,0.3);
-}
-
-.card h3{
-  margin-top:0;
-  font-size:1.3rem;
-}
-
-.card p{
-  color:var(--text-muted);
-  margin-bottom:16px;
-  flex-grow:1;
-  line-height:1.75;
-}
-
-.card-highlight{
-  background:linear-gradient(135deg, rgba(126,240,212,0.08), rgba(106,166,255,0.04));
-  border:1px solid rgba(126,240,212,0.25);
-}
-
-/* ========== GRID LAYOUTS ========== */
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:28px;
-}
-
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-
-/* ========== THUMBNAILS ========== */
-.thumb{
-  width:100%;
-  height:160px;
-  border-radius:14px;
-  margin-bottom:18px;
-  background:#0e1424 center/cover no-repeat;
-  border:1px solid var(--line);
-}
-
-/* ========== BUSINESS SECTION 3+1 LAYOUT ========== */
-.business-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-bottom:24px;
-}
-
-.business-tech{
-  grid-column:1/-1;
-  background:linear-gradient(135deg, rgba(126,240,212,0.05), rgba(106,166,255,0.03));
-  border:1px solid rgba(126,240,212,0.15);
-  padding:32px;
-  border-radius:20px;
-  text-align:center;
-}
-
-.business-tech h3{
-  margin-bottom:12px;
-  font-size:1.4rem;
-}
-
-.business-tech p{
-  color:var(--text-muted);
-  line-height:1.75;
-  margin:0 auto;
-  max-width:900px;
-}
-
-/* ========== USE CASE BOX ========== */
-.use-case-box{
-  background:rgba(126,240,212,0.03);
-  border:1px solid rgba(126,240,212,0.15);
-  border-radius:12px;
-  padding:16px 20px;
-  margin-top:16px;
-}
-
-.use-case-box h4{
-  color:var(--accent-teal);
-  font-size:0.95rem;
-  margin-bottom:8px;
-  font-weight:600;
-}
-
-.use-case-box p{
-  color:var(--text-muted);
-  font-size:0.9rem;
-  line-height:1.7;
-  margin-bottom:12px;
-}
-
-.use-case-details{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  font-size:0.85rem;
-  color:var(--text-muted);
-}
-
-.use-case-details span{
-  display:block;
-}
-
-.use-case-details strong{
-  color:var(--text-secondary);
-}
-
-/* ========== STATS ========== */
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-top:32px;
-}
-
-.stat-item{
-  text-align:center;
-  padding:20px 16px;
-  background:rgba(255,255,255,0.02);
-  border:1px solid var(--line);
-  border-radius:14px;
-  transition:all 0.3s;
-}
-
-.stat-item:hover{
-  border-color:rgba(126,240,212,0.3);
-  transform:translateY(-3px);
-}
-
-.stat-number{
-  font-size:1.8rem;
-  font-weight:700;
-  color:var(--accent-teal);
-  margin-bottom:6px;
-}
-
-.stat-label{
-  color:var(--text-muted);
-  font-size:0.85rem;
-}
-
-/* ========== WHY AVISAIL (HORIZONTAL CARDS) ========== */
-.why-avisail-grid{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
-.why-card{
-  background:rgba(255,255,255,0.02);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:24px 28px;
-  transition:all 0.3s;
-}
-
-.why-card:hover{
-  border-color:rgba(106,166,255,0.3);
-  transform:translateX(5px);
-}
-
-.why-content h3{
-  margin:0 0 8px 0;
-  font-size:1.2rem;
-}
-
-.why-content p{
-  margin:0;
-  color:var(--text-muted);
-  line-height:1.7;
-  font-size:0.95rem;
-}
-
-/* ========== FAQ ========== */
-.faq-item{
-  border-bottom:1px solid var(--line);
-  padding:20px 0;
-}
-
-.faq-item:last-child{ border-bottom:none; }
-
-.faq-q{
-  font-size:1.05rem;
-  font-weight:600;
-  color:#fff;
-  margin-bottom:10px;
-}
-
-.faq-a{
-  color:var(--text-muted);
-  line-height:1.8;
-  font-size:0.95rem;
-}
-
-.faq-a strong{
-  color:var(--text-secondary);
-}
-
-/* ========== FORM ========== */
-.form-group{
-  margin-bottom:18px;
-}
-
-.form-group label{
-  display:block;
-  font-size:0.85rem;
-  color:var(--text-secondary);
-  margin-bottom:8px;
-  font-weight:500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-  width:100%;
-  padding:11px 15px;
-  border-radius:10px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  color:var(--text-primary);
-  font-family:inherit;
-  font-size:0.9rem;
-  transition:all 0.3s;
-  outline:none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-  border-color:var(--accent-blue);
-  background:rgba(255,255,255,0.06);
-}
-
-.form-group select{
-  cursor:pointer;
-}
-
-.form-group textarea{
-  resize:vertical;
-  min-height:110px;
-}
-
-/* ========== FOOTER ========== */
-footer{
-  background:var(--bg-darker);
-  padding:60px 0 30px;
-  border-top:1px solid var(--line);
-  margin-top:0;
-}
-
-.footer-content{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:40px;
-  margin-bottom:40px;
-}
-
-.footer-col h4{
-  color:#fff;
-  font-size:1rem;
-  margin-bottom:16px;
-}
-
-.footer-col ul{
-  list-style:none;
-}
-
-.footer-col ul li{
-  margin-bottom:10px;
-}
-
-.footer-col a{
-  color:var(--text-muted);
-  font-size:0.85rem;
-}
-
-.footer-col a:hover{
-  color:var(--accent-teal);
-}
-
-.footer-brand{
-  color:var(--text-muted);
-  line-height:1.7;
-  font-size:0.88rem;
-  margin-top:12px;
-}
-
-.footer-bottom{
-  border-top:1px solid var(--line);
-  padding-top:24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  color:var(--text-muted);
-  font-size:0.82rem;
-  flex-wrap:wrap;
-  gap:16px;
-}
-
-/* ========== RESPONSIVE ========== */
-@media(max-width:980px){
-  .grid-2,.grid-3{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .business-grid{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .stats-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-  }
-
-  .footer-content{
-    grid-template-columns:1fr;
-    gap:32px;
-  }
-
-  nav ul{
-    position:fixed;
-    top:70px;
-    left:0;
-    right:0;
-    width:100%;
-    background:rgba(13,20,36,0.98);
-    backdrop-filter:blur(20px);
-    flex-direction:column;
-    padding:20px;
-    gap:16px;
-    border-bottom:1px solid var(--line);
-    display:none;
-    transform:translateY(-10px);
-    opacity:0;
-    transition:all 0.3s ease;
-    max-height:calc(100vh - 70px);
-    overflow-y:auto;
-    z-index:100;
-  }
-
-  nav ul.mobile-menu-open{
-    display:flex;
-    transform:translateY(0);
-    opacity:1;
-  }
-
-  nav ul li{
-    width:100%;
-    text-align:center;
-  }
-
-  .dropdown{
-    position:static;
-    margin-top:10px;
-    width:100%;
-  }
-
-  .menu-item:hover .dropdown{
-    display:none;
-  }
-
-  .menu-item.menu-open .dropdown{
-    display:flex;
-  }
-
-  .lang-dropdown{
-    position:static;
-    margin-top:10px;
-  }
-
-  .lang-selector:hover .lang-dropdown{
-    display:none;
-  }
-
-  .lang-selector.menu-open .lang-dropdown{
-    display:flex;
-  }
-
-  .mobile-menu-btn{
-    display:flex;
-    z-index:101;
-  }
-
-  .mobile-menu-btn.active span:nth-child(1){
-    transform:rotate(45deg) translate(5px, 5px);
-  }
-
-  .mobile-menu-btn.active span:nth-child(2){
-    opacity:0;
-  }
-
-  .mobile-menu-btn.active span:nth-child(3){
-    transform:rotate(-45deg) translate(7px, -6px);
-  }
-
-  .hero h1{
-    font-size:2rem;
-    word-wrap:break-word;
-  }
-
-  .lead{
-    font-size:1rem;
-    word-wrap:break-word;
-  }
-
-  section{
-    padding:50px 0;
-  }
-
-  h2{
-    font-size:1.5rem;
-  }
-
-  .wrap{
-    padding:0 16px;
-  }
-
-  .card{
-    width:100%;
-  }
-
-  .thumb{
-    width:100%;
-    height:180px;
-  }
-}
-
-@media(max-width:640px){
-  .stats-grid{
-    grid-template-columns:1fr;
-    gap:12px;
-  }
-
-  .hero{
-    min-height:75vh;
-  }
-
-  .hero .wrap{
-    padding-top:30px;
-    padding-bottom:40px;
-  }
-
-  .hero h1{
-    font-size:1.75rem;
-    word-wrap:break-word;
-    overflow-wrap:break-word;
-  }
-
-  .slogan{
-    font-size:0.75rem;
-  }
-
-  .lead{
-    font-size:0.95rem;
-    word-wrap:break-word;
-  }
-
-  .hero-quote{
-    font-size:0.9rem;
-    word-wrap:break-word;
-  }
-
-  h2{
-    font-size:1.35rem;
-  }
-
-  h2::before{
-    width:3px;
-    height:24px;
-  }
-
-  h3{
-    font-size:1.15rem;
-  }
-
-  .why-card{
-    padding:20px;
-  }
-
-  .card{
-    padding:20px;
-  }
-
-  .btn, .cta{
-    width:100%;
-    text-align:center;
-    justify-content:center;
-    display:block;
-  }
-
-  .footer-bottom{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  section{
-    padding:40px 0;
-  }
-
-  .brand span{
-    font-size:0.9rem;
-  }
-
-  .logo{
-    width:28px;
-    height:28px;
-  }
-
-  .wrap{
-    padding:0 12px;
-  }
-
-  .thumb{
-    height:150px;
-  }
-
-  .business-tech .thumb{
-    height:160px;
-  }
-}
-
-/* ========== BUSINESS STRUCTURE (3 Pillars + Foundation) ========== */
-.business-structure{
-  margin-top:20px;
-}
-
-.structure-intro{
-  text-align:center;
-  margin-bottom:48px;
-}
-
-.structure-intro p{
-  font-size:1.2rem;
-  color:var(--text-secondary);
-  line-height:1.8;
-}
-
-.structure-intro strong{
-  color:var(--accent-teal);
-  font-weight:600;
-}
-
-.pillars-container{
-  margin-bottom:40px;
-}
-
-.pillars-label{
-  text-align:center;
-  font-family:'Inter', sans-serif;
-  font-size:0.75rem;
-  font-weight:600;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--accent-blue);
-  margin-bottom:24px;
-}
-
-.pillars-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:24px;
-}
-
-.pillar-card{
-  position:relative;
-  background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  border:1px solid rgba(106,166,255,0.2);
-  border-radius:20px;
-  padding:32px 28px;
-  transition:all 0.3s;
-  overflow:hidden;
-}
-
-.pillar-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:3px;
-  background:var(--primary-gradient);
-}
-
-.pillar-card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(126,240,212,0.4);
-  box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-
-.pillar-number{
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-family:'Inter', sans-serif;
-  font-size:2.5rem;
-  font-weight:700;
-  color:rgba(106,166,255,0.1);
-  line-height:1;
-}
-
-.pillar-icon{
-  width:64px;
-  height:64px;
-  background:linear-gradient(135deg, rgba(106,166,255,0.15), rgba(126,240,212,0.1));
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:20px;
-  color:var(--accent-teal);
-}
-
-.pillar-content h3{
-  font-size:1.3rem;
-  font-weight:700;
-  color:#fff;
-  margin:0 0 8px 0;
-  line-height:1.4;
-}
-
-.pillar-subtitle{
-  font-size:0.85rem;
-  color:var(--accent-teal);
-  margin:0 0 20px 0;
-  font-weight:500;
-}
-
-.pillar-features{
-  list-style:none;
-  padding:0;
-  margin:0 0 24px 0;
-}
-
-.pillar-features li{
-  font-size:0.9rem;
-  color:var(--text-muted);
-  padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.pillar-features li:last-child{
-  border-bottom:none;
-}
-
-.pillar-features li::before{
-  content:'';
-  width:6px;
-  height:6px;
-  background:var(--accent-teal);
-  border-radius:50%;
-  flex-shrink:0;
-}
-
-.pillar-actions{
-  display:flex;
-  gap:12px;
-  margin-top:auto;
-}
-
-.pillar-actions .cta,
-.pillar-actions .btn{
-  flex:1;
-  text-align:center;
-  padding:10px 16px;
-  font-size:0.85rem;
-}
-
-/* Foundation */
-.foundation-container{
-  margin-top:20px;
-}
-
-.support-arrows{
-  display:flex;
-  justify-content:center;
-  margin-bottom:16px;
-}
-
-.arrow-group{
-  display:flex;
-  gap:80px;
-  justify-content:center;
-}
-
-.support-arrow{
-  width:24px;
-  height:40px;
-}
-
-.foundation-card{
-  background:linear-gradient(135deg, rgba(126,240,212,0.06), rgba(106,166,255,0.04));
-  border:1px solid rgba(126,240,212,0.2);
-  border-radius:24px;
-  padding:40px;
-  text-align:center;
-}
-
-.foundation-content h3{
-  font-size:1.5rem;
-  font-weight:700;
-  color:#fff;
-  margin:0 0 8px 0;
-}
-
-.foundation-subtitle{
-  font-size:0.9rem;
-  color:var(--accent-teal);
-  margin:0 0 16px 0;
-  font-weight:500;
-}
-
-.foundation-desc{
-  font-size:0.95rem;
-  color:var(--text-muted);
-  line-height:1.8;
-  margin:0 0 20px 0;
-}
-
-.foundation-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.foundation-tags span{
-  font-size:0.75rem;
-  padding:6px 12px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
-  color:var(--text-muted);
-}
-
-@media(max-width:980px){
-  .pillars-grid{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-  .foundation-card{
-    padding:32px 24px;
-  }
-  .arrow-group{
-    gap:40px;
-  }
-}
-
-@media(max-width:640px){
-  .pillar-card{
-    padding:24px 20px;
-  }
-  .pillar-number{
-    font-size:2rem;
-  }
-  .pillar-actions{
-    flex-direction:column;
-  }
-  .arrow-group{
-    gap:24px;
-  }
-  .support-arrow{
-    width:20px;
-    height:32px;
-  }
-}
-
-/* ========== ABOUT VISUAL SECTION ========== */
-.about-visual-section{
-  padding:0;
-  border-bottom:none;
-}
-
-.about-visual-bg{
-  position:relative;
-  min-height:70vh;
-  background:
-    linear-gradient(135deg, rgba(10,15,26,0.85) 0%, rgba(5,8,15,0.9) 50%, rgba(10,15,26,0.85) 100%),
-    radial-gradient(ellipse at 20% 30%, rgba(106,166,255,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(126,240,212,0.12) 0%, transparent 50%),
-    url('images/hero-bg.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  padding:80px 0;
-}
-
-.about-overlay{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background:linear-gradient(180deg, rgba(5,8,15,0.3) 0%, transparent 30%, transparent 70%, rgba(5,8,15,0.5) 100%);
-  pointer-events:none;
-}
-
-.about-visual-content{
-  position:relative;
-  z-index:2;
-}
-
-.about-visual-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  max-width:1100px;
-  margin:0 auto;
-}
-
-.about-visual-item{
-  text-align:left;
-}
-
-.about-visual-label{
-  font-family:'Inter', sans-serif;
-  font-size:0.75rem;
-  font-weight:600;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-  color:var(--accent-teal);
-  margin-bottom:12px;
-}
-
-.about-visual-title{
-  font-size:clamp(2rem, 4vw, 2.8rem);
-  font-weight:700;
-  color:#fff;
-  margin:0 0 24px 0;
-  text-shadow:0 2px 20px rgba(0,0,0,0.3);
-}
-
-.about-visual-text{
-  font-size:1rem;
-  line-height:1.9;
-  color:rgba(255,255,255,0.85);
-  margin-bottom:20px;
-  text-shadow:0 1px 10px rgba(0,0,0,0.2);
-}
-
-.about-visual-highlight{
-  font-size:1.05rem;
-  line-height:1.9;
-  color:#fff;
-  font-weight:500;
-  padding:20px 24px;
-  background:linear-gradient(135deg, rgba(126,240,212,0.12), rgba(106,166,255,0.08));
-  border-left:3px solid var(--accent-teal);
-  border-radius:0 12px 12px 0;
-  margin:24px 0 0 0;
-  text-shadow:0 1px 10px rgba(0,0,0,0.2);
-}
-
-@media(max-width:980px){
-  .about-visual-grid{
-    grid-template-columns:1fr;
-    gap:50px;
-  }
-  .about-visual-bg{
-    min-height:auto;
-    padding:60px 0;
-  }
-}
-
-@media(max-width:640px){
-  .about-visual-title{
-    font-size:1.8rem;
-  }
-  .about-visual-text,
-  .about-visual-highlight{
-    font-size:0.95rem;
-  }
-  .about-visual-highlight{
-    padding:16px 20px;
-  }
-}
-
-/* ========== UTILITY CLASSES ========== */
-.text-center{ text-align:center; }
-.mb-0{ margin-bottom:0; }
-.mb-1{ margin-bottom:8px; }
-.mb-2{ margin-bottom:16px; }
-.mb-3{ margin-bottom:24px; }
-.mb-4{ margin-bottom:32px; }
-.mt-0{ margin-top:0; }
-.mt-1{ margin-top:8px; }
-.mt-2{ margin-top:16px; }
-.mt-3{ margin-top:24px; }
-.mt-4{ margin-top:32px; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avisail Technologies - 海事事業 × セキュリティ事業 × AI開発</title>
+  <meta name="description" content="Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://avisail.com/index.ja.html">
+  <link rel="alternate" hreflang="ja" href="https://avisail.com/index.ja.html">
+  <link rel="alternate" hreflang="en" href="https://avisail.com/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://avisail.com/index.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avisail.com/index.ja.html">
+  <meta property="og:title" content="Avisail Technologies - 海事事業 × セキュリティ事業 × AI開発">
+  <meta property="og:description" content="Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です">
+  <meta property="og:image" content="https://avisail.com/images/hero-bg.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Avisail Technologies">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://avisail.com/index.ja.html">
+  <meta name="twitter:title" content="Avisail Technologies - 海事事業 × セキュリティ事業 × AI開発">
+  <meta name="twitter:description" content="Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です">
+  <meta name="twitter:image" content="https://avisail.com/images/hero-bg.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Shared Header -->
-<div id="site-header"></div>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
-<!-- ========================================
+  <!-- ========================================
      SECTION 1: HERO
 ======================================== -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <span class="slogan">DRIVEN BY DISCOVERY.</span>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="slogan">Navigating the Future. DRIVEN BY DISCOVERY.</span>
 
-    <p class="hero-quote">
-      船は進歩の象徴。私たちは最先端技術を積み、まだ見ぬ地平へと航海します
-    </p>
+      <p class="hero-quote">
+        船は「進歩の象徴」。私たちは最先端技術を積み、まだ見ぬ地平へと航海します。
+      </p>
 
-    <h1>
-      Navigating the Future.
-      <span class="gradient-text">海事事業 × セキュリティ事業 × AI開発</span>
-    </h1>
+      <h1>
+        Navigating the Future.
+        <span class="gradient-text">海事事業 × セキュリティ事業 × AI開発</span>
+      </h1>
 
-    <p class="lead">
-      Avisail Technologiesは、AIと技術探究の力で海事事業・セキュリティ事業を再定義する次世代テクノロジー企業です。<br>
-      AIによる自動化・分析・意思決定支援が、国際船舶取引からサイバーセキュリティまで、あらゆるビジネス領域を支えます
-    </p>
+      <p class="lead">
+        Avisail Technologies は、AIと技術探究の力で貿易・投資・技術開発を再定義する次世代のテクノロジー商社です。<br>
+        AIによる自動化・分析・意思決定支援が、国際的な船舶取引からサイバーセキュリティまで、あらゆるビジネス領域をエンパワーメントします。
+      </p>
 
-    <div style="margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;">
-      <a href="#business" class="cta">事業領域を見る</a>
-      <a href="#contact" class="btn">お問い合わせ</a>
+      <div style="margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="#business" class="cta">事業内容を見る</a>
+        <a href="#contact" class="btn">お問い合わせ</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================
+  <!-- ========================================
      SECTION 2: PASSION & PURPOSE (Full-width visual design)
 ======================================== -->
-<section id="about" class="about-visual-section">
-  <div class="about-visual-bg">
-    <div class="about-overlay"></div>
-    <div class="wrap about-visual-content">
-      <h2 style="color:#fff; border:none; margin-bottom:60px; text-align:center; justify-content:center;">
-        <span style="background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">About Us</span>
-      </h2>
+  <section id="about" class="about-visual-section">
+    <div class="about-visual-bg">
+      <div class="about-overlay"></div>
+      <div class="wrap about-visual-content">
+        <h2 style="color:#fff; border:none; margin-bottom:60px; text-align:center; justify-content:center;">
+          <span
+            style="background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">About
+            Us</span>
+        </h2>
 
-      <div class="about-visual-grid">
-        <!-- PASSION -->
-        <div class="about-visual-item">
-          <div class="about-visual-label">Passion</div>
-          <h3 class="about-visual-title">情熱</h3>
-          <p class="about-visual-text">
-            世界に距離の概念は、もはや存在しないと考えます<br>
-            文化も市場も隣り合い、新たな技術は常に目の前に現れます
-          </p>
-          <p class="about-visual-text">
-            目前に巨大な船（新たな技術）が現れたとき、私たちは恐れず前に進み、テクノロジーを実際に価値ある使い方へと導きます
-          </p>
-          <p class="about-visual-text">
-            勇気はイノベーションの火種です<br>
-            その価値を人々に届けることに、私たちは情熱を注ぎます
-          </p>
-        </div>
-
-        <!-- PURPOSE -->
-        <div class="about-visual-item">
-          <div class="about-visual-label">Purpose</div>
-          <h3 class="about-visual-title">存在意義</h3>
-          <p class="about-visual-text">
-            人の豊かさにつながる技術を誠実に磨き、変革が生む新しいアクセスを広げます
-          </p>
-          <p class="about-visual-text">
-            進歩を止めず、実装ベースでの技術価値を高め続け利便性を提供すること、それが私たちの存在意義です
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     SECTION 3: 事業領域 (3 Pillars + Foundation)
-======================================== -->
-<section id="business">
-  <div class="wrap">
-    <h2>事業領域（Our Business）</h2>
-
-    <!-- Business Structure Visual -->
-    <div class="business-structure">
-      <div class="structure-intro">
-        <p><strong>海事事業</strong>と<strong>セキュリティ事業</strong>を両輪に、その交点で<strong>海事セキュリティ</strong>を展開。<br><strong>AI・システム開発</strong>がすべてを支えています</p>
-      </div>
-
-      <!-- 3 Pillars -->
-      <div class="pillars-container">
-        <div class="pillars-label">3 Core Business Pillars</div>
-        <div class="pillars-grid">
-
-          <!-- PILLAR 1: Maritime Business -->
-          <div class="pillar-card" id="business-maritime">
-            <div class="pillar-number">01</div>
-            <div class="pillar-content">
-              <h3>Maritime<br>Business</h3>
-              <p class="pillar-subtitle">海事事業</p>
-              <ul class="pillar-features">
-                <li>国際船舶売買（商用船・ヨット）</li>
-                <li>AI駆動型在庫マッチング</li>
-                <li>海事向けシステム開発</li>
-                <li>航行支援・自動運転技術R&D</li>
-              </ul>
-              <div class="pillar-actions">
-                <a href="https://avisail-vessel-trading.vercel.app/" class="cta" target="_blank">船舶在庫</a>
-                <a href="maritime/vessel-trading.html" class="btn">詳細</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- PILLAR 2: Maritime Security (Bridge) -->
-          <div class="pillar-card" id="business-maritime-security" style="background:linear-gradient(180deg, rgba(126,240,212,0.05) 0%, rgba(106,166,255,0.03) 100%); border-color:rgba(126,240,212,0.3);">
-            <div class="pillar-number">02</div>
-            <div class="pillar-content">
-              <h3>Maritime<br>Security</h3>
-              <p class="pillar-subtitle">海事セキュリティ事業</p>
-              <ul class="pillar-features">
-                <li>船舶・港湾サイバーセキュリティ</li>
-                <li>海事OSINT・脅威インテリジェンス</li>
-                <li>AIS/衛星データ分析</li>
-                <li>海事リスク評価レポート</li>
-              </ul>
-              <div class="pillar-actions">
-                <a href="maritime/maritime-security.html" class="cta">詳細</a>
-                <a href="security/adcs.html" class="btn">ADCS</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- PILLAR 3: Security Business -->
-          <div class="pillar-card" id="business-security">
-            <div class="pillar-number">03</div>
-            <div class="pillar-content">
-              <h3>Security<br>Business</h3>
-              <p class="pillar-subtitle">セキュリティ事業</p>
-              <ul class="pillar-features">
-                <li>ADCS：アクティブディフェンス診断</li>
-                <li>STRATUM：OSINT脅威インテリジェンス</li>
-                <li>NEXUS：攻撃面可視化・リスク分析</li>
-                <li>カスタムセキュリティレポート</li>
-              </ul>
-              <div class="pillar-actions">
-                <a href="security/adcs.html" class="cta">ADCS</a>
-                <a href="security/stratum.html" class="btn">STRATUM</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Foundation: AI & System Development -->
-      <div class="foundation-container">
-        <div class="support-arrows">
-          <div class="arrow-group">
-            <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
-              <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <defs><linearGradient id="arrowGrad" x1="12" y1="40" x2="12" y2="8"><stop offset="0%" stop-color="rgba(126,240,212,0.1)"/><stop offset="100%" stop-color="rgba(126,240,212,0.6)"/></linearGradient></defs>
-            </svg>
-            <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
-              <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <defs><linearGradient id="arrowGrad2" x1="12" y1="40" x2="12" y2="8"><stop offset="0%" stop-color="rgba(106,166,255,0.1)"/><stop offset="100%" stop-color="rgba(106,166,255,0.6)"/></linearGradient></defs>
-            </svg>
-            <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
-              <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <defs><linearGradient id="arrowGrad3" x1="12" y1="40" x2="12" y2="8"><stop offset="0%" stop-color="rgba(126,240,212,0.1)"/><stop offset="100%" stop-color="rgba(126,240,212,0.6)"/></linearGradient></defs>
-            </svg>
-          </div>
-        </div>
-        <div class="foundation-card">
-          <div class="foundation-content">
-            <h3>AI & System Development</h3>
-            <p class="foundation-subtitle">3つの事業を支える技術基盤</p>
-            <p class="foundation-desc">
-              実装ファーストの哲学のもと、初日から実運用可能なAIシステムを開発。<br>
-              データパイプライン、自動化、インテリジェントな意思決定支援により、各事業の競争力を加速します
+        <div class="about-visual-grid">
+          <!-- PASSION -->
+          <div class="about-visual-item">
+            <div class="about-visual-label">Passion</div>
+            <h3 class="about-visual-title">Passion</h3>
+            <p class="about-visual-text">
+              私達は世界に距離の概念は、もはや存在しないと考えています。<br>
+              文化も市場も隣り合い、新たな技術は常に目の前に現れます。
             </p>
-            <div class="foundation-tags">
-              <span>Python</span>
-              <span>FastAPI</span>
-              <span>React</span>
-              <span>Next.js</span>
-              <span>AWS/GCP</span>
-              <span>Machine Learning</span>
-            </div>
+            <p class="about-visual-text">
+              進歩の象徴である船〈新技術〉が現れたとき、私たちは恐れず舵をとり帆をあげて、テクノロジーを実際に価値ある使い方へと導く存在でありたいと考えています。
+            </p>
+            <p class="about-visual-text">
+              勇気はイノベーションの火種です。<br>
+              その価値を人々に届けることに、私たちは情熱を注ぎます。
+            </p>
+          </div>
+
+          <!-- PURPOSE -->
+          <div class="about-visual-item">
+            <div class="about-visual-label">Purpose</div>
+            <h3 class="about-visual-title">Purpose</h3>
+            <p class="about-visual-text">
+              人の豊かさにつながる技術を誠実に探求し磨き、変革が生む新しいイノベーションを広げます。
+            </p>
+            <p class="about-visual-text">
+              進歩を止めず、実装ベースでの技術価値を高め続け利便性を提供すること、それが私たちの存在意義です。
+            </p>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================
+  <!-- ========================================
+     SECTION 3: Our Business (3 Pillars + Foundation)
+======================================== -->
+  <section id="business">
+    <div class="wrap">
+      <h2>Our Business</h2>
+
+      <!-- Business Structure Visual -->
+      <div class="business-structure">
+        <div class="structure-intro">
+          <p>
+            <strong>海事事業</strong>と<strong>セキュリティ事業</strong>を双璧とし、交点に<strong>海事セキュリティ</strong>を展開<br>そのすべてを支える<strong>AIシステム開発</strong>
+          </p>
+        </div>
+
+        <!-- 3 Pillars -->
+        <div class="pillars-container">
+          <div class="pillars-label">3 Core Business Pillars</div>
+          <div class="pillars-grid">
+
+            <!-- PILLAR 1: Maritime Business -->
+            <div class="pillar-card" id="business-maritime">
+              <div class="pillar-number">01</div>
+              <div class="pillar-content">
+                <h3>Maritime<br>Business</h3>
+                <p class="pillar-subtitle">海事事業</p>
+                <ul class="pillar-features">
+                  <li>国際船舶売買（商船・ヨット）</li>
+                  <li>AIによる在庫マッチング</li>
+                  <li>海事システム開発</li>
+                  <li>航行支援・自動化における研究開発</li>
+                </ul>
+                <div class="pillar-actions">
+                  <a href="https://avisail-vessel-trading.vercel.app/" class="cta" target="_blank">在庫一覧</a>
+                  <a href="maritime/vessel-trading-ja.html" class="btn">詳細</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PILLAR 2: Maritime Security (Bridge) -->
+            <div class="pillar-card" id="business-maritime-security"
+              style="background:linear-gradient(180deg, rgba(126,240,212,0.05) 0%, rgba(106,166,255,0.03) 100%); border-color:rgba(126,240,212,0.3);">
+              <div class="pillar-number">02</div>
+              <div class="pillar-content">
+                <h3>Maritime<br>Security</h3>
+                <p class="pillar-subtitle">海事セキュリティ事業</p>
+                <ul class="pillar-features">
+                  <li>船舶・港湾のサイバーセキュリティ</li>
+                  <li>海事OSINT・脅威インテリジェンス</li>
+                  <li>AIS/衛星データ解析</li>
+                  <li>海事リスク評価レポート</li>
+                </ul>
+                <div class="pillar-actions">
+                  <a href="maritime/maritime-security-ja.html" class="cta">詳細</a>
+                  <a href="security/adcs-ja.html" class="btn">ADCS</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PILLAR 3: Security Business -->
+            <div class="pillar-card" id="business-security">
+              <div class="pillar-number">03</div>
+              <div class="pillar-content">
+                <h3>Security<br>Business</h3>
+                <p class="pillar-subtitle">サイバーセキュリティ事業</p>
+                <ul class="pillar-features">
+                  <li>ADCS: 能動的防衛サイバーセキュリティ</li>
+                  <li>STRATUM: OSINT脅威インテリジェンス</li>
+                  <li>NEXUS: 攻撃対象領域の可視化</li>
+                  <li>専用セキュリティレポート作成</li>
+                </ul>
+                <div class="pillar-actions">
+                  <a href="security/adcs-ja.html" class="cta">ADCS</a>
+                  <a href="security/stratum-ja.html" class="btn">STRATUM</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Foundation: AI & System Development -->
+        <div class="foundation-container">
+          <div class="support-arrows">
+            <div class="arrow-group">
+              <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
+                <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="arrowGrad" x1="12" y1="40" x2="12" y2="8">
+                    <stop offset="0%" stop-color="rgba(126,240,212,0.1)" />
+                    <stop offset="100%" stop-color="rgba(126,240,212,0.6)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
+                <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad2)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="arrowGrad2" x1="12" y1="40" x2="12" y2="8">
+                    <stop offset="0%" stop-color="rgba(106,166,255,0.1)" />
+                    <stop offset="100%" stop-color="rgba(106,166,255,0.6)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <svg class="support-arrow" viewBox="0 0 24 40" fill="none">
+                <path d="M12 40V8M12 8L4 16M12 8L20 16" stroke="url(#arrowGrad3)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="arrowGrad3" x1="12" y1="40" x2="12" y2="8">
+                    <stop offset="0%" stop-color="rgba(126,240,212,0.1)" />
+                    <stop offset="100%" stop-color="rgba(126,240,212,0.6)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div class="foundation-card">
+            <div class="foundation-content">
+              <h3>AI & System Development</h3>
+              <p class="foundation-subtitle">全3事業を支える技術基盤</p>
+              <p class="foundation-desc">
+                「まず動くものを作る」という実装主義のもと、初日から実運用可能なAIシステムを構築。<br>
+                データパイプライン、自動化、インテリジェントな意思決定支援が各事業の競争力を加速させます。
+              </p>
+              <div class="foundation-tags">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>React</span>
+                <span>Next.js</span>
+                <span>AWS/GCP</span>
+                <span>Machine Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
      SECTION 4: TECHNOLOGY FOUNDATION
 ======================================== -->
-<section id="technology-foundation" style="background:rgba(5,8,15,0.3);">
-  <div class="wrap">
-    <h2>技術基盤（Technology Foundation）</h2>
+  <section id="technology-foundation">
+    <div class="wrap">
+      <h2>Technology Foundation</h2>
 
-    <p style="color:var(--text-secondary); max-width:900px; margin-bottom:40px; font-size:1rem; line-height:1.75;">
-      Avisailのすべての事業は、ひとつの技術基盤によって結びついています。<br>
-      AIによる解析・自動化、データインフラ、セキュリティ評価、ユーザー体験の統合。<br>
-      これらが組み合わさることで、海事・セキュリティ・開発に共通する実装力を生み出しています
-    </p>
+      <p style="color:var(--text-secondary); max-width:900px; margin-bottom:40px; font-size:1rem; line-height:1.75;">
+        Avisailの事業はすべて、単一の技術的基盤によって統合されています。<br>
+        AIによる分析・自動化、データインフラ、セキュリティ評価、そして統一されたユーザー体験。<br>
+        これらを組み合わせることで、海事・セキュリティ・開発に共通する実装力を生み出しています。
+      </p>
 
-    <div class="grid-3">
+      <div class="grid-3">
 
-      <!-- DEVELOPMENT ENVIRONMENT -->
-      <div class="card">
-        <h3 class="mt-0 mb-2">開発環境</h3>
-        <ul style="margin:0; padding:0 0 0 20px; color:var(--text-muted); line-height:1.9; font-size:0.95rem;">
-          <li><strong style="color:#fff;">AI/ML:</strong> 自社最適モデル</li>
-          <li><strong style="color:#fff;">Backend:</strong> Python、Node.js、FastAPI</li>
-          <li><strong style="color:#fff;">Frontend:</strong> React、Next.js、TypeScript</li>
-          <li><strong style="color:#fff;">Infrastructure:</strong> AWS、GCP、Docker、CI/CD</li>
-          <li><strong style="color:#fff;">Security:</strong> OSINT API統合、脅威検知システム</li>
-        </ul>
+        <!-- DEVELOPMENT ENVIRONMENT -->
+        <div class="card">
+          <h3 class="mt-0 mb-2">Development Environment</h3>
+          <ul style="margin:0; padding:0 0 0 20px; color:var(--text-muted); line-height:1.9; font-size:0.95rem;">
+            <li><strong style="color:#fff;">AI/ML:</strong> 独自最適化モデル</li>
+            <li><strong style="color:#fff;">Backend:</strong> Python, Node.js, FastAPI</li>
+            <li><strong style="color:#fff;">Frontend:</strong> React, Next.js, TypeScript</li>
+            <li><strong style="color:#fff;">Infrastructure:</strong> AWS, GCP, Docker, CI/CD</li>
+            <li><strong style="color:#fff;">Security:</strong> OSINT API連携, 脅威検知システム</li>
+          </ul>
+        </div>
+
+        <!-- GLOBAL NETWORK -->
+        <div class="card">
+          <h3 class="mt-0 mb-2">Global Network</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:0;">
+            世界中の専門家と技術提携し、24時間の開発・サポート体制を実現。<br>
+            アジア・中東・欧州のテクノロジーパートナーと連携し、各国の商習慣に合わせたソリューションを提供。<br><br>
+            リソース管理の最適化により、コスト競争力のあるパッケージを提案します。
+          </p>
+        </div>
+
+        <!-- IN-HOUSE SECURITY -->
+        <div class="card">
+          <h3 class="mt-0 mb-2">In-House Security</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:0;">
+            自社開発の診断システム運用と、専門家との連携により顧客情報を保護。<br>
+            全てのプロジェクトに対し、開発段階からセキュリティを組み込む「Security by Design」を徹底しています。
+          </p>
+        </div>
+
       </div>
-
-      <!-- GLOBAL NETWORK -->
-      <div class="card">
-        <h3 class="mt-0 mb-2">グローバルネットワーク</h3>
-        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:0;">
-          世界中の専門家との技術提携により、24時間体制での開発とサポートを実現。<br>
-          アジア・中東・欧州の技術パートナーと連携し、各地域の市場特性に応じたソリューションを提供します。<br><br>
-          また最適なリソース運用により、コスト競争性のあるパッケージをご提案します
-        </p>
-      </div>
-
-      <!-- IN-HOUSE SECURITY -->
-      <div class="card">
-        <h3 class="mt-0 mb-2">自社セキュリティ</h3>
-        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; margin-bottom:0;">
-          自社開発の診断システム運用並びに専門家との提携により、お客さまの情報を保護いたします
-        </p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================
+  <!-- ========================================
      SECTION 5: PROVEN RESULTS (Compact)
 ======================================== -->
-<section id="proven-results">
-  <div class="wrap">
-    <h2>実績と信頼性（Proven Results）</h2>
+  <section id="proven-results">
+    <div class="wrap">
+      <h2>Proven Results</h2>
 
-    <p style="color:var(--text-secondary); max-width:850px; margin-bottom:36px; font-size:1rem; line-height:1.75;">
-      Avisailの技術は、実環境で稼働し、実績を積み重ねています。<br>
-      組織の規模ではなく、技術の実装力と稼働実績が私たちの信頼性を証明します
-    </p>
+      <p style="color:var(--text-secondary); max-width:850px; margin-bottom:36px; font-size:1rem; line-height:1.75;">
+        Avisailの技術は、実際の環境で稼働し実績を積み重ねています。<br>
+        組織の規模ではなく、実装力と運用実績こそが信頼の証です。
+      </p>
 
-    <div class="stats-grid">
+      <div class="stats-grid">
 
-      <div class="stat-item">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">システム稼働</div>
-      </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">システム稼働</div>
+        </div>
 
-      <div class="stat-item">
-        <div class="stat-number">多言語</div>
-        <div class="stat-label">全言語対応</div>
-      </div>
+        <div class="stat-item">
+          <div class="stat-number">Multilingual</div>
+          <div class="stat-label">全言語対応</div>
+        </div>
 
-      <div class="stat-item">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">セキュリティチェック</div>
-      </div>
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">セキュリティチェック</div>
+        </div>
 
-      <div class="stat-item">
-        <div class="stat-number">Global</div>
-        <div class="stat-label">アジア・中東・欧州</div>
+        <div class="stat-item">
+          <div class="stat-number">Global</div>
+          <div class="stat-label">アジア・中東・欧州</div>
+        </div>
+
       </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- ========================================
+  <!-- ========================================
      SECTION 6: WHY AVISAIL (Horizontal Cards)
 ======================================== -->
-<section id="why-avisail" style="background:rgba(5,8,15,0.3);">
-  <div class="wrap">
-    <h2>選ばれる理由（Why Choose Avisail?）</h2>
+  <section id="why-avisail" style="background:rgba(5,8,15,0.3);">
+    <div class="wrap">
+      <h2>Why Choose Avisail?</h2>
 
-    <div class="why-avisail-grid">
+      <div class="why-avisail-grid">
 
-      <div class="why-card">
-        <div class="why-content">
-          <h3>実装ファースト哲学</h3>
-          <p>
-            理論や計画だけでなく、実際に動くシステムを初日から提供します。<br>
-            全てのソリューションは、自社で実運用している技術をベースに構築。<br>
-            実証済みの価値を、そのままお客様に届けます
-          </p>
+        <div class="why-card">
+          <div class="why-content">
+            <h3>Implementation-First Philosophy（実装主義）</h3>
+            <p>
+              机上の空論ではなく「初日から実際に動くシステム」を提供します。<br>
+              すべてのソリューションは、私たちが自社事業で運用し、効果を実証した技術をベースに構築されています。<br>
+              確かな価値を、ダイレクトにお客様へ届けます。
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="why-card">
-        <div class="why-content">
-          <h3>AI駆動の効率性</h3>
-          <p>
-            人手に頼らず、AIによる自動化で24/7稼働を実現。<br>
-            これにより、従来の10分の1のコストで、エンタープライズグレードのサービスを提供できます。<br>
-            少人数でも高い品質と速度を両立します
-          </p>
+        <div class="why-card">
+          <div class="why-content">
+            <h3>AI-Driven Efficiency</h3>
+            <p>
+              人手に頼らず、AI駆動の自動化によって、24時間365日の稼働を実現。<br>
+              これにより、従来の大手企業の1/10のコストでエンタープライズ級のサービスを提供可能です。<br>
+              少人数で高品質とスピードを両立しています。
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="why-card">
-        <div class="why-content">
-          <h3>グローバル視点、ローカル対応</h3>
-          <p>
-            アジア・中東・欧州にまたがる事業展開により、国際的な視野と現地に即したソリューションを両立。<br>
-            多言語対応と各国の商習慣への理解で、グローバルな成長を支援します
-          </p>
+        <div class="why-card">
+          <div class="why-content">
+            <h3>Global Perspective, Local Response</h3>
+            <p>
+              アジア・中東・欧州への事業展開により、国際的な視座と、現地に即した対応を両立。<br>
+              多言語サポートや各国の商習慣への理解を通じて、お客様のグローバルな成長を支えます。
+            </p>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================
+  <!-- ========================================
      SECTION 7: CONTACT
 ======================================== -->
-<section id="contact">
-  <div class="wrap">
-    <h2>お問い合わせ（Contact Us）</h2>
+  <section id="contact">
+    <div class="wrap">
+      <h2>お問い合わせ（Contact Us）</h2>
 
-    <div class="card" style="max-width:800px; margin:0 auto; text-align:center; padding:48px;">
+      <div class="card" style="max-width:800px; margin:0 auto; text-align:center; padding:48px;">
         <h3 class="mt-0" style="font-size:1.5rem; margin-bottom:20px;">サービスに関するご相談</h3>
 
         <p style="color:var(--text-secondary); font-size:1rem; line-height:1.8; margin-bottom:32px;">
@@ -1623,7 +415,8 @@ footer{
           <a href="ja/contact.html" class="cta" style="padding:16px 48px; font-size:1rem;">お問い合わせフォームへ</a>
         </div>
 
-        <div style="display:flex; justify-content:center; gap:32px; flex-wrap:wrap; padding:20px; background:rgba(126,240,212,0.03); border-radius:12px; border:1px solid rgba(126,240,212,0.15);">
+        <div
+          style="display:flex; justify-content:center; gap:32px; flex-wrap:wrap; padding:20px; background:rgba(126,240,212,0.03); border-radius:12px; border:1px solid rgba(126,240,212,0.15);">
           <div style="text-align:center;">
             <span style="color:var(--accent-teal); font-size:0.9rem; font-weight:600;">メール</span>
             <p style="color:var(--text-muted); font-size:0.85rem; margin:4px 0 0;">info@avisail.com</p>
@@ -1637,72 +430,73 @@ footer{
             <p style="color:var(--text-muted); font-size:0.85rem; margin:4px 0 0;">1営業日以内</p>
           </div>
         </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ========================================
+  <!-- ========================================
      SECTION 8: FAQ (5 Questions)
 ======================================== -->
-<section id="faq" style="background:rgba(5,8,15,0.3);">
-  <div class="wrap">
-    <h2>よくある質問（FAQ）</h2>
+  <section id="faq" style="background:rgba(5,8,15,0.3);">
+    <div class="wrap">
+      <h2>よくある質問（FAQ）</h2>
 
-    <div style="max-width:900px; margin:0 auto;">
+      <div style="max-width:900px; margin:0 auto;">
 
-      <div class="faq-item">
-        <div class="faq-q">Q1. Avisail Technologiesはどのような会社ですか？</div>
-        <div class="faq-a">
-          Avisailは、AI技術を基盤に<strong>海事事業・セキュリティ事業・AI開発</strong>の3領域を展開するテクノロジー企業です。<br>
-          業界の慣習に縛られない実装ファーストのアプローチで、少人数でも高いスピードと品質を両立します
+        <div class="faq-item">
+          <div class="faq-q">Q1. Avisail Technologiesはどのような会社ですか？</div>
+          <div class="faq-a">
+            Avisailは、AI技術を基盤に<strong>海事事業・セキュリティ事業・AI開発</strong>の3領域を展開するテクノロジー企業です。<br>
+            業界の慣習に縛られない実装ファーストのアプローチで、少人数でも高いスピードと品質を両立します
+          </div>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-q">Q2. 法人・個人どちらでも利用できますか？</div>
-        <div class="faq-a">
-          はい。<br>
-          事業により異なりますが、<strong>法人・個人ともにご利用いただけます</strong>。<br>
-          船舶売買・サイバーセキュリティは主に法人向け、一部システム開発サービスは個人にも対応しています
+        <div class="faq-item">
+          <div class="faq-q">Q2. 法人・個人どちらでも利用できますか？</div>
+          <div class="faq-a">
+            はい。<br>
+            事業により異なりますが、<strong>法人・個人ともにご利用いただけます</strong>。<br>
+            船舶売買・サイバーセキュリティは主に法人向け、一部システム開発サービスは個人にも対応しています
+          </div>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-q">Q3. グローバル対応は可能ですか？</div>
-        <div class="faq-a">
-          はい、可能です。<br>
-          Avisailはアジア・中東・欧州との取引を前提に設計されているため、<strong>多言語・多通貨・国際法務を考慮した対応</strong>が可能です。<br>
-          日本語・英語・イタリア語を含む多言語でのサポートを提供しています
+        <div class="faq-item">
+          <div class="faq-q">Q3. グローバル対応は可能ですか？</div>
+          <div class="faq-a">
+            はい、可能です。<br>
+            Avisailはアジア・中東・欧州との取引を前提に設計されているため、<strong>多言語・多通貨・国際法務を考慮した対応</strong>が可能です。<br>
+            日本語・英語・イタリア語を含む多言語でのサポートを提供しています
+          </div>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-q">Q4. セキュリティやプライバシーへの配慮は？</div>
-        <div class="faq-a">
-          データ保護とプライバシーを最優先事項としています。<br>
-          通信の暗号化、アクセス管理、定期的な脆弱性診断などの技術的安全対策を実施。<br>
-          詳細はお問い合わせください
+        <div class="faq-item">
+          <div class="faq-q">Q4. セキュリティやプライバシーへの配慮は？</div>
+          <div class="faq-a">
+            データ保護とプライバシーを最優先事項としています。<br>
+            通信の暗号化、アクセス管理、定期的な脆弱性診断などの技術的安全対策を実施。<br>
+            詳細はお問い合わせください
+          </div>
         </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-q">Q5. パートナーシップや協業の相談は可能ですか？</div>
-        <div class="faq-a">
-          はい、積極的に検討しております。<br>
-          お問い合わせフォームより「パートナーシップ」を選択してご連絡ください。<br>
-          技術提携、販売代理店、共同開発など、様々な形態での協業を歓迎します
+        <div class="faq-item">
+          <div class="faq-q">Q5. パートナーシップや協業の相談は可能ですか？</div>
+          <div class="faq-a">
+            はい、積極的に検討しております。<br>
+            お問い合わせフォームより「パートナーシップ」を選択してご連絡ください。<br>
+            技術提携、販売代理店、共同開発など、様々な形態での協業を歓迎します
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Shared Footer -->
-<div id="site-footer"></div>
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
 
-<!-- Shared Components Loader -->
-<script src="includes/components.js"></script>
+  <!-- Shared Components Loader -->
+  <script src="includes/components.js"></script>
 
 </body>
+
 </html>
