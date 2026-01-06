@@ -81,11 +81,11 @@
     <div class="about-visual-bg">
       <div class="about-overlay"></div>
       <div class="wrap about-visual-content">
-        <h2 style="color:#fff; border:none; margin-bottom:60px; text-align:center; justify-content:center;">
-          <span
-            style="background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">About
-            Us</span>
-        </h2>
+        <div style="text-align:center; width:100%;">
+          <div class="about-title-container">
+            <h2 class="gradient-title-text">About Us</h2>
+          </div>
+        </div>
 
         <div class="about-visual-grid">
           <!-- PASSION -->
@@ -132,6 +132,27 @@
       <h2>事業・技術 (Business & Technology)</h2>
 
       <div class="integrated-structure">
+        <!-- Background Arrow -->
+        <div class="background-flow-arrow">
+          <svg viewBox="0 0 400 800" fill="none">
+            <path d="M200 0V800" stroke="url(#paint0_linear)" stroke-width="100" stroke-opacity="0.05"
+              stroke-linecap="round" />
+            <path d="M200 800L50 650" stroke="url(#paint1_linear)" stroke-width="100" stroke-opacity="0.05"
+              stroke-linecap="round" />
+            <path d="M200 800L350 650" stroke="url(#paint1_linear)" stroke-width="100" stroke-opacity="0.05"
+              stroke-linecap="round" />
+            <defs>
+              <linearGradient id="paint0_linear" x1="200" y1="0" x2="200" y2="800" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6AA6FF" />
+                <stop offset="1" stop-color="#7EF0D4" />
+              </linearGradient>
+              <linearGradient id="paint1_linear" x1="200" y1="800" x2="200" y2="650" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7EF0D4" />
+                <stop offset="1" stop-color="#7EF0D4" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
 
         <!-- LAYER 1: Core Business Pillars -->
         <div class="structure-intro-text">
@@ -178,20 +199,6 @@
           </div>
         </div>
 
-        <!-- FLOW ARROW 1 -->
-        <div class="vertical-flow-arrow">
-          <svg width="40" height="60" viewBox="0 0 40 60" fill="none">
-            <path d="M20 0V60M20 60L10 50M20 60L30 50" stroke="url(#flowGrad1)" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <defs>
-              <linearGradient id="flowGrad1" x1="20" y1="0" x2="20" y2="60">
-                <stop offset="0%" stop-color="rgba(106,166,255,0.1)" />
-                <stop offset="100%" stop-color="rgba(126,240,212,0.8)" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-
         <!-- LAYER 2: Technology Foundation -->
         <div class="tech-foundation-integrated-card">
           <div class="tech-header">
@@ -218,20 +225,6 @@
               <p class="tech-desc">自社開発の診断システムと専門家連携により顧客情報を保護。開発初日から「Security by Design」を徹底。</p>
             </div>
           </div>
-        </div>
-
-        <!-- FLOW ARROW 2 -->
-        <div class="vertical-flow-arrow">
-          <svg width="40" height="60" viewBox="0 0 40 60" fill="none">
-            <path d="M20 0V60M20 60L10 50M20 60L30 50" stroke="url(#flowGrad2)" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <defs>
-              <linearGradient id="flowGrad2" x1="20" y1="0" x2="20" y2="60">
-                <stop offset="0%" stop-color="rgba(126,240,212,0.8)" />
-                <stop offset="100%" stop-color="rgba(106,166,255,0.8)" />
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
 
         <!-- LAYER 3: Maritime Security (The Outcome) -->
