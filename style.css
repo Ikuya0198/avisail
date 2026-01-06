@@ -1151,6 +1151,139 @@ footer {
   margin-top: 32px;
 }
 
+/* ========== INTEGRATED BUSINESS & TECH LAYOUT ========== */
+.integrated-structure {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.structure-intro-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.structure-intro-text p {
+  color: var(--accent-teal);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Vertical Flow Arrow */
+.vertical-flow-arrow {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  height: 60px;
+}
+
+.vertical-flow-arrow svg {
+  animation: flowPulse 2s infinite ease-in-out;
+}
+
+@keyframes flowPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+/* Tech Foundation Integrated Card */
+.tech-foundation-integrated-card {
+  background: rgba(13, 20, 36, 0.6);
+  border: 1px solid rgba(106, 166, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(106, 166, 255, 0.05);
+}
+
+.tech-foundation-integrated-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(106, 166, 255, 0.8), transparent);
+}
+
+.tech-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tech-header h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+  background: linear-gradient(90deg, #fff, #a5c9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.tech-content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.tech-col h4 {
+  color: var(--accent-teal);
+  font-size: 1.1rem;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid rgba(126, 240, 212, 0.2);
+  padding-bottom: 10px;
+}
+
+.tech-list-compact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-list-compact li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.tech-list-compact strong {
+  display: block;
+  color: #efefef;
+  font-size: 0.85rem;
+}
+
+.tech-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Maritime Security Layout */
+.maritime-security-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 980px) {
 
