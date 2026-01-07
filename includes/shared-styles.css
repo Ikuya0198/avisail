@@ -71,7 +71,7 @@ header .menu-item {
   padding: 10px 0;
 }
 
-header .menu-item > a {
+header .menu-item>a {
   cursor: pointer;
 }
 
@@ -192,7 +192,7 @@ header .mobile-menu-btn.active span:nth-child(3) {
    FOOTER STYLES
    ============================================ */
 footer {
-  background: rgba(5, 8, 15, 0.95);
+  /* background removed to allow style.css to control it */
   padding: 60px 0 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -306,19 +306,19 @@ footer .footer-bottom a:hover {
     padding: 0;
   }
 
-  header .menu-item > a {
+  header .menu-item>a {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  header .menu-item > a::after {
+  header .menu-item>a::after {
     content: '▾';
     margin-left: 8px;
     transition: transform 0.3s;
   }
 
-  header .menu-item.menu-open > a::after {
+  header .menu-item.menu-open>a::after {
     transform: rotate(180deg);
   }
 
