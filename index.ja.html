@@ -518,7 +518,7 @@
             y: Math.random() * height,
             vx: 0,
             vy: 0,
-            maxSpeed: Math.random() * 2 + 0.5, // Varied speed
+            maxSpeed: Math.random() * 0.8 + 0.2, // Slower speed
             size: Math.random() > 0.9 ? 1.5 : 0.8, // Occasional larger particles
             color: Math.random() > 0.5 ? '#6AA6FF' : '#7EF0D4' // Blue / Teal
           });
@@ -526,7 +526,7 @@
       }
 
       function update() {
-        zOff += 0.002; // Slow time evolution
+        zOff += 0.0005; // Slower time evolution
 
         particles.forEach(p => {
           // Calculate flow angle based on position using pseudo-noise (sine/cos)
@@ -534,8 +534,8 @@
           const angle = (Math.cos(p.x * 0.002 + zOff) + Math.sin(p.y * 0.002 + zOff)) * Math.PI;
 
           // Add velocity vector based on angle
-          p.vx += Math.cos(angle) * 0.1;
-          p.vy += Math.sin(angle) * 0.1;
+          p.vx += Math.cos(angle) * 0.02; // Reduced acceleration
+          p.vy += Math.sin(angle) * 0.02;
 
           // Limit speed
           const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
