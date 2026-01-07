@@ -45,6 +45,7 @@
 </head>
 
 <body>
+  <div class="noise-overlay"></div>
 
   <!-- Shared Header -->
   <div id="site-header"></div>
@@ -197,7 +198,8 @@
         </div>
 
         <!-- LAYER 2: Technology Foundation -->
-        <div class="tech-foundation-integrated-card">
+        <div class="tech-foundation-integrated-card reveal-hidden">
+          <canvas id="tech-particles"></canvas>
           <div class="tech-header">
             <h3>AI & System Development</h3>
             <p>Technical Foundation Supporting All Businesses</p>
@@ -281,6 +283,38 @@
               <a href="https://avisail-vessel-trading.vercel.app/" class="cta" target="_blank" style="width:100%">View
                 Inventory</a>
             </div>
+          </div>
+        </div>
+
+        <!-- Trust & Compliance Bar -->
+        <div class="trust-bar reveal-hidden">
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+            </svg>
+            NIST SP 800-171
+          </div>
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+            ISO/IEC 27001
+          </div>
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24">
+              <path
+                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+            </svg>
+            AES-256 Encryption
+          </div>
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+            </svg>
+            GDPR Compliant
           </div>
         </div>
 
@@ -482,6 +516,104 @@
   <!-- Shared Components Loader -->
   <script src="includes/components.js"></script>
 
+  <script>
+    // 1. Initial Fade In
+    document.addEventListener("DOMContentLoaded", function () {
+      // Add .reveal-hidden to key elements proactively
+      const targets = document.querySelectorAll('.card, .pillar-card, .tech-col, .product-card, .stat-item, h2, .structure-intro-text, .about-title-container');
+      targets.forEach(el => el.classList.add('reveal-hidden'));
+
+      // 2. Scroll Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-active');
+
+            // Trigger Counter if it's a stat item
+            if (entry.target.classList.contains('stat-item')) {
+              // Simple simulation of counting
+              const num = entry.target.querySelector('.stat-number');
+              if (num && !num.dataset.counted) {
+                num.dataset.counted = true;
+                num.style.transform = 'scale(1.2)';
+                setTimeout(() => num.style.transform = 'scale(1)', 300);
+              }
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+      targets.forEach(el => observer.observe(el));
+    });
+
+    // 3. Tech Particles
+    (function () {
+      const canvas = document.getElementById('tech-particles');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+
+      const particles = [];
+      const particleCount = 40;
+
+      function resize() {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.5;
+          this.vy = (Math.random() - 0.5) * 0.5;
+          this.size = Math.random() * 2 + 1;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+          ctx.fillStyle = 'rgba(126, 240, 212, 0.3)';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach((p, i) => {
+          p.update();
+          p.draw();
+          // Connect particles
+          particles.forEach((p2, j) => {
+            if (i === j) return;
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 100) {
+              ctx.strokeStyle = `rgba(106, 166, 255, ${0.1 - dist / 1000})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          });
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
 </body>
 
 </html>
