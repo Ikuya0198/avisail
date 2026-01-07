@@ -1,239 +1,278 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Marine Trading and Development | Avisail Technologies</title>
-<meta name="description" content="Avisail Technologies - 船舶貿易とエッジ技術開発事業。国際船舶売買、AI駆動型在庫マッチング、航行支援システム開発を提供します。">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-:root{--line:rgba(255,255,255,.08);--hero-bg:url('/images/vessel-trading-hero.jpg');}
-*{box-sizing:border-box;}
-html,body{margin:0;background:#0a0f1a;color:#e9f0ff;font-family:'Inter','Noto Sans JP',sans-serif;line-height:1.7;}
-html{scroll-behavior:smooth;}
-a{color:#cfe2ff;text-decoration:none;transition:color 0.3s;}
-a:hover{color:#7ef0d4;}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
-header{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
-.brand{display:flex;align-items:center;gap:12px;font-weight:600;color:#fff;}
-.logo{width:32px;height:32px;border-radius:8px;background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4);}
-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center;font-size:0.95rem;}
-.menu-item{position:relative;padding:10px 0;}
-.dropdown{position:absolute;top:100%;left:-10px;min-width:200px;background:#0d1424;border:1px solid var(--line);border-radius:12px;padding:12px;display:none;flex-direction:column;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-.menu-item:hover .dropdown{display:flex;}
-.dropdown a{padding:6px 12px;border-radius:6px;color:#9fb0cc;}
-.dropdown a:hover{background:rgba(255,255,255,0.05);color:#fff;}
-.globe-icon{font-size:1.2rem;cursor:pointer;color:#9fb0cc;transition:color 0.3s;}
-.globe-icon:hover{color:#7ef0d4;}
-.page-hero{padding:140px 0 100px;text-align:center;background:linear-gradient(rgba(10,15,26,0.7),rgba(10,15,26,0.9)),var(--hero-bg) center/cover;}
-.page-hero h1{font-size:3.5rem;margin-bottom:24px;color:#fff;font-weight:700;}
-.page-hero .lead{color:#cfe2ff;max-width:800px;margin:0 auto 16px;font-size:1.2rem;}
-.muted{color:#9fb0cc;}
-section{padding:100px 0;border-bottom:1px solid var(--line);}
-h2{font-size:2rem;margin-bottom:40px;color:#fff;display:flex;align-items:center;gap:16px;}
-h2::before{content:'';width:4px;height:32px;background:linear-gradient(to bottom,#6aa6ff,#7ef0d4);display:block;}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-.card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:24px;padding:32px;backdrop-filter:blur(5px);transition:transform 0.3s,border-color 0.3s;height:100%;display:flex;flex-direction:column;}
-.card:hover{transform:translateY(-5px);border-color:rgba(106,166,255,0.3);}
-.card h3{color:#fff;margin-top:0;font-size:1.3rem;}
-.card p{color:#9fb0cc;margin-bottom:24px;flex-grow:1;}
-.btn{display:inline-block;padding:12px 28px;border-radius:50px;border:1px solid var(--line);background:rgba(255,255,255,0.05);color:#e9f0ff;font-size:0.95rem;transition:all 0.3s;}
-.btn:hover{border-color:rgba(106,166,255,0.5);transform:translateY(-2px);}
-.cta{display:inline-block;padding:12px 28px;border-radius:50px;background:linear-gradient(135deg,#6aa6ff,#7ef0d4);color:#06101a;font-weight:700;font-size:0.95rem;box-shadow:0 10px 20px rgba(106,166,255,.2);border:none;transition:all 0.3s;}
-.cta:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(106,166,255,.3);}
-.highlight-box{background:rgba(126,240,212,0.05);border:1px solid rgba(126,240,212,0.2);border-radius:16px;padding:40px;margin:40px 0;}
-footer{background:rgba(5,8,15,0.8);padding:60px 0 30px;border-top:1px solid var(--line);}
-.footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
-.footer-col h4{color:#fff;font-size:1.1rem;margin-bottom:20px;}
-.footer-col ul{list-style:none;padding:0;margin:0;}
-.footer-col ul li{margin-bottom:12px;}
-.footer-col a{color:#9fb0cc;font-size:0.9rem;}
-.footer-col a:hover{color:#7ef0d4;}
-.footer-bottom{border-top:1px solid var(--line);padding-top:30px;text-align:center;color:#9fb0cc;font-size:0.85rem;}
-@media(max-width:980px){.grid-3,.grid-2{grid-template-columns:1fr;}.footer-content{grid-template-columns:1fr;}nav ul{display:none;}.page-hero h1{font-size:2.5rem;}}
-</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>船舶売買・調達 | Avisail Technologies</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Page Specific Overrides */
+        .page-hero {
+            padding: 160px 0 100px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, rgba(126, 240, 212, 0.05) 0%, transparent 50%),
+                var(--bg-dark);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-visual {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .platform-preview {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .platform-preview:hover {
+            transform: rotateY(0) rotateX(0) scale(1.02);
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(126, 240, 212, 0.05), rgba(106, 166, 255, 0.05));
+            border: 1px solid rgba(126, 240, 212, 0.2);
+            border-radius: 24px;
+            padding: 60px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(126, 240, 212, 0.5), transparent);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .platform-preview {
+                transform: none;
+                margin-top: 40px;
+            }
+
+            .highlight-box {
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<!-- Shared Header -->
-<div id="site-header"></div>
+    <!-- Shared Header -->
+    <div id="site-header"></div>
 
-<main class="page-hero">
-<div class="wrap">
-<h1>Marine Trading<br>and Development</h1>
-<p class="lead">船舶貿易とエッジ技術開発事業</p>
-<p class="muted">国際船舶売買からAI航行支援システム開発まで、海洋産業の未来を切り拓きます</p>
-</div>
-</main>
+    <!-- Hero Section -->
+    <main class="page-hero">
+        <div class="wrap hero-grid">
+            <div class="hero-content">
+                <div class="accent-label"
+                    style="margin-bottom: 16px; display: inline-block; padding: 6px 16px; background: rgba(126,240,212,0.1); border-radius: 20px; color: var(--accent-cyan); font-size: 0.85rem; border: 1px solid rgba(126,240,212,0.2);">
+                    Maritime Business</div>
+                <h1 class="gradient-title-text" style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 24px;">
+                    日本の<span class="gradient-text">中古船</span>を<br>
+                    世界へ
+                </h1>
+                <p class="lead"
+                    style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 32px; max-width: 500px;">
+                    検査・輸送・書類手続きまで全てワンストップ。AI駆動型インベントリ管理により、日本品質の船舶を世界中のバイヤーへ安心してお届けします。
+                </p>
+                <div class="cta-group">
+                    <a href="https://avisail-vessel-trading.vercel.app" class="btn-glow" target="_blank">船舶を探す</a>
+                    <a href="#service-process" class="btn-outline" style="margin-left: 16px;">サービスの仕組み</a>
+                </div>
+            </div>
 
-<section class="wrap">
-<h2>AI駆動型船舶ソーシング</h2>
-<div class="highlight-box">
-<h3 style="color:#7ef0d4;margin-top:0;font-size:1.5rem;">インテリジェント在庫管理システム</h3>
-<p>当社独自のAIプラットフォームは、日本、韓国、東欧の船舶市場を継続的に監視し、リアルタイムの在庫更新と買い手と売り手のインテリジェントマッチングを提供します。静的リストに依存する従来のブローカーとは異なり、当社のシステムは複数のソースからデータを動的に集約し、最適なマッチを即座に表示します。</p>
-<div style="margin-top:32px;">
-<a href="https://avisail-vessel-trading.vercel.app" class="cta" target="_blank">在庫を見る</a>
-<a href="/products/avisail-trading-jp.html" class="btn" style="margin-left:16px;">売買プラットフォーム詳細</a>
-<a href="#vessel-types" class="btn" style="margin-left:16px;">船舶タイプを見る</a>
-</div>
-</div>
+            <div class="hero-visual">
+                <img src="../images/platform-hero-jp.png" alt="Avisail Trading Platform" class="platform-preview">
+                <div
+                    style="position: absolute; bottom: -20px; left: -20px; background: rgba(10,15,26,0.9); border: 1px solid var(--accent-cyan); padding: 20px; border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">掲載船舶数</div>
+                    <div style="font-size: 1.8rem; font-weight: 700; color: #fff;">350+</div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<div class="grid-2" style="margin-top:60px;">
-<div class="card">
-<h3>自動市場スキャン</h3>
-<p><strong>リアルタイムデータ集約：</strong></p>
-<p>アジアと欧州の造船所、ブローカー、船隊運営者からの日次更新。船舶仕様、価格、在庫状況の自動解析。AIによるリスト分類と標準化。海事データベースと船級協会との統合。</p>
-</div>
-<div class="card">
-<h3>インテリジェントマッチング</h3>
-<p><strong>買い手・売り手最適化：</strong></p>
-<p>機械学習アルゴリズムが買い手要件と在庫をマッチング。価格トレンドと市場タイミングの予測分析。クライアント基準に合致する新規船舶の自動アラート。多基準フィルタリング（船種、船齢、旗国、価格帯、納期）。</p>
-</div>
-<div class="card">
-<h3>デューデリジェンス自動化</h3>
-<p><strong>リスク評価ツール：</strong></p>
-<p>売り手と船舶の自動バックグラウンドチェック。過去の所有権とインシデント追跡。船級協会証明書検証。旗国コンプライアンス監視。AIによる潜在的問題のレッドフラグ検出。</p>
-</div>
-<div class="card">
-<h3>取引管理</h3>
-<p><strong>エンドツーエンド プロセスサポート：</strong></p>
-<p>デジタル文書管理と契約管理。問い合わせから納品までのマイルストーン追跡。マルチパーティコミュニケーションプラットフォーム。法律・金融サービスプロバイダーとの統合。</p>
-</div>
-</div>
-</section>
+    <!-- Feature Section: AI Core -->
+    <section class="wrap">
+        <div class="highlight-box">
+            <div class="grid-2" style="align-items: center; gap: 60px;">
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 24px; color: #fff;">インテリジェント<br><span
+                            style="color: var(--accent-cyan);">在庫管理システム</span></h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 32px;">
+                        Avisail独自のAIプラットフォームは、日本・韓国・東欧の船舶市場を常時監視しています。静的なリストに依存する従来のブローカーとは異なり、複数のデータを動的に集約し、最適なマッチングを瞬時に実現します。
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0; color: #fff;">
+                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--accent-cyan);">✓</span> リアルタイム在庫更新
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--accent-cyan);">✓</span> デューデリジェンスの自動化
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                            <span style="color: var(--accent-cyan);">✓</span> 予測価格分析
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-visual">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">サポート対応</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">取引国</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">7</div>
+                            <div class="stat-label">船種カテゴリ</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">提携ソース</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="wrap" id="vessel-types">
-<h2>船舶専門分野</h2>
-<p class="muted" style="max-width:800px;margin-bottom:40px;">アジア、中東、新興国の地域市場にサービスを提供する3つの高需要船舶カテゴリーに特化しています。</p>
-<div class="grid-3">
-<div class="card">
-<h3>コースター（500-5000 DWT）</h3>
-<p><strong>地域貨物輸送：</strong> 沿岸および島嶼間貿易ルートに最適な近海輸送船。</p>
-<p><strong>主要市場：</strong> フィリピン、インドネシア、中東、西アフリカ</p>
-<p><strong>一般的用途：</strong> 一般貨物、バルク商品、地域サプライチェーン</p>
-<p><strong>調達地域：</strong> 日本（老朽船隊置換）、韓国（新造船）、東欧（改修船）</p>
-</div>
-<div class="card">
-<h3>タグボート（1000-5000 HP）</h3>
-<p><strong>港湾・沖合作業：</strong> 港湾作業、曳航、沖合支援に不可欠。</p>
-<p><strong>主要市場：</strong> UAE、オマーン、サウジアラビア、シンガポール、フィリピン</p>
-<p><strong>一般的用途：</strong> 船舶補助、バージ曳航、沖合プラットフォーム支援</p>
-<p><strong>調達地域：</strong> 日本（高品質中古）、韓国（最新建造）、オランダ（専門沖合タグ）</p>
-</div>
-<div class="card">
-<h3>揚陸艇（LCT/LCM）</h3>
-<p><strong>浅水域物流：</strong> 港湾インフラのない遠隔地向け専門船。</p>
-<p><strong>主要市場：</strong> フィリピン、インドネシア、太平洋諸島、ミャンマー</p>
-<p><strong>一般的用途：</strong> 建設資材、重機、災害救援、島嶼供給</p>
-<p><strong>調達地域：</strong> 日本（政府余剰）、韓国（商業建造）、シンガポール（元軍用転換）</p>
-</div>
-</div>
-</section>
+    <!-- Vessel Types -->
+    <section class="wrap" id="vessel-types">
+        <h2 class="section-title center-text">取扱船種</h2>
+        <p class="section-subtitle center-text" style="margin-bottom: 60px;">世界的な貿易需要に応える、需要の高い船種に特化しています。</p>
 
-<section class="wrap">
-<h2>革新的な決済構造</h2>
-<p class="muted" style="max-width:800px;margin-bottom:40px;">買い手リスクを軽減し、取引完了を加速するよう設計された柔軟な資金調達オプションを提供します。</p>
-<div class="grid-2">
-<div class="card">
-<h3>エスクローベース取引</h3>
-<p><strong>安全なマイルストーン支払い：</strong> 中立第三者エスクローエージェント（法律事務所、銀行）が資金を保有し、事前定義されたマイルストーンに基づいて解放：契約締結時の初期デポジット、調査完了時の検査支払い、引渡しと所有権登録時の残高移転。</p>
-<p><strong>リスク軽減：</strong> 売り手のデフォルトまたは虚偽表示から買い手を保護。契約義務の履行時に売り手が支払いを受けることを保証。クロスボーダー取引のカウンターパーティーリスクを削減。</p>
-</div>
-<div class="card">
-<h3>ETF担保資金調達</h3>
-<p><strong>革新的担保構造：</strong> 買い手は従来の銀行ローンの代わりにETFポートフォリオを担保として提供。流動性担保による船舶金融と比較して低金利。企業の信用枠やバランスシートレバレッジへの影響なし。</p>
-<p><strong>プロセス：</strong> クライアントは当社投資部門でETFポートフォリオを維持。ポートフォリオ価値が船舶購入を裏付け（通常70-80% LTV）。船舶キャッシュフローに連動した柔軟な返済構造。</p>
-</div>
-</div>
-</section>
+        <div class="grid-3">
+            <div class="glass-card">
+                <h3 class="card-title">コースター (近海船)</h3>
+                <p class="muted-text">500 - 5,000 DWT</p>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0;"></div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    沿岸貿易や島嶼間の輸送に最適な近海船。主にメンテナンスが行き届いた日本船主からの代替船を調達します。
+                </p>
+            </div>
 
-<section class="wrap">
-<h2>サービスプロセス</h2>
-<div class="grid-2">
-<div class="card">
-<h3>発見・マッチング（1-2週間）</h3>
-<p>• 要件理解のための初期クライアント相談<br>
-• AIシステムがすべてのソース市場で在庫を検索<br>
-• 仕様、写真、価格を含むショートリスト提示<br>
-• 予備的な財務構造の議論</p>
-</div>
-<div class="card">
-<h3>検査・交渉（2-4週間）</h3>
-<p>• 独立海事調査員の契約<br>
-• 物理的検査と状態評価<br>
-• 調査結果に基づく価格交渉<br>
-• 契約書作成と法的レビュー</p>
-</div>
-<div class="card">
-<h3>取引実行（4-8週間）</h3>
-<p>• エスクロー口座設定と初期デポジット<br>
-• 書類準備（売渡証書、移転書類）<br>
-• 旗国登録と船級協会移転<br>
-• 最終支払いと所有権引渡し</p>
-</div>
-<div class="card">
-<h3>納品後サポート</h3>
-<p>• 旗国登録支援<br>
-• 保険配置と更新<br>
-• 乗組員採用調整（必要に応じて）<br>
-• 継続的な市場インテリジェンスと船隊拡大コンサルティング</p>
-</div>
-</div>
-</section>
+            <div class="glass-card">
+                <h3 class="card-title">タグボート</h3>
+                <p class="muted-text">1,000 - 5,000 HP</p>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0;"></div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    港湾作業やオフショア支援に不可欠な作業船。高い信頼性を誇る日本製エンジン搭載船を中心に取り扱います。
+                </p>
+            </div>
 
-<section class="wrap" id="edge-development">
-<h2>Marine Edge開発</h2>
-<p class="muted" style="max-width:800px;margin-bottom:40px;">YOLOベースの画像解析技術を活用した船舶航行支援システムおよび自動運転技術の研究開発に取り組んでいます。</p>
-<div class="grid-2">
-<div class="card">
-<h3>リアルタイム物体検知</h3>
-<p><strong>YOLOv8による高速画像解析：</strong></p>
-<p>カメラ映像からリアルタイムで他船、障害物、浮遊物を検出。夜間・悪天候時の視認性向上支援。衝突リスクの早期警告システム。AIS情報との統合による包括的な状況認識。</p>
-</div>
-<div class="card">
-<h3>航路最適化</h3>
-<p><strong>AIによる航路提案：</strong></p>
-<p>気象データ、潮流情報、交通密度を考慮した最適航路の計算。燃料消費の最小化と安全性の最大化を両立。リアルタイムの航路変更提案。</p>
-</div>
-<div class="card">
-<h3>自動運転技術研究</h3>
-<p><strong>次世代船舶制御：</strong></p>
-<p>離着岸支援システムの開発。自動操舵による長距離航行の負担軽減。複数センサー統合による冗長性確保。段階的な自動化レベルの実装。</p>
-</div>
-<div class="card">
-<h3>エッジコンピューティング</h3>
-<p><strong>船上処理による低遅延：</strong></p>
-<p>衛星通信に依存しないローカル処理。NVIDIA Jetsonなどのエッジデバイス活用。リアルタイム性が求められる判断の即時実行。クラウドとの選択的データ同期。</p>
-</div>
-</div>
-</section>
+            <div class="glass-card">
+                <h3 class="card-title">揚陸艇 (LCT / LCM)</h3>
+                <p class="muted-text">LCT / LCM</p>
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0;"></div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    港湾設備のない浅瀬での物流や島嶼部への物資輸送に特化。新興国インフラ開発の現場で重宝されています。
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section class="wrap">
-<h2>Avisailを選ぶ理由</h2>
-<div class="grid-2">
-<div class="card">
-<h3>テクノロジー駆動型効率</h3>
-<p>従来の船舶ブローカリッジは個人的ネットワークと手動検索に依存し、適切なマッチを見つけるのに数ヶ月かかることがよくあります。当社のAIプラットフォームは検索時間を数週間から数日に短縮し、包括的な市場カバレッジと即座のマッチング通知を提供します。</p>
-</div>
-<div class="card">
-<h3>金融イノベーション</h3>
-<p>当社のETF担保資金調達オプションは海事業界でユニークであり、投資ポートフォリオを持つ買い手に従来の船舶金融の代替を提供します。この構造は、銀行融資よりも迅速な承認、低コスト、柔軟性を提供します。</p>
-</div>
-<div class="card">
-<h3>クロスドメイン専門知識</h3>
-<p>純粋なブローカーとは異なり、当社は船舶売買と投資管理、セキュリティを組み合わせています。クライアントは統合サービスの恩恵を受けます：売買プラットフォームアクセス、投資ポートフォリオ管理、安全な決済構造のすべてが一箇所で。</p>
-</div>
-<div class="card">
-<h3>地域市場知識</h3>
-<p>アジア太平洋および中東海事市場の深い理解、規制環境、港湾インフラ、現地買い手の嗜好を含む。当社の事業地域全体の造船所、ブローカー、旗国管理局との強力な関係。</p>
-</div>
-</div>
-</section>
+    <!-- Service Process -->
+    <section class="wrap" id="service-process" style="background: rgba(10,15,26,0.3);">
+        <h2 class="section-title">取引プロセス</h2>
+        <div class="grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px;">
 
-<!-- Shared Footer -->
-<div id="site-footer"></div>
-<script src="../includes/components.js"></script>
+            <div class="glass-card" style="border-top: 3px solid var(--accent-blue);">
+                <div style="font-size: 3rem; color: rgba(106,166,255,0.2); font-weight: 700;">01</div>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;">マッチング</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">AIがクライアントの用件と世界中の在庫を照合し、最適な船舶を提案します。</p>
+            </div>
+
+            <div class="glass-card" style="border-top: 3px solid var(--accent-cyan);">
+                <div style="font-size: 3rem; color: rgba(126,240,212,0.2); font-weight: 700;">02</div>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;">船体検査</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">独立した専門サーベイヤーが現地で物理検査を行い、品質と状態を保証します。</p>
+            </div>
+
+            <div class="glass-card" style="border-top: 3px solid var(--accent-blue);">
+                <div style="font-size: 3rem; color: rgba(106,166,255,0.2); font-weight: 700;">03</div>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;">契約・決済</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">安全なエスクロー決済、売買契約手続き、船籍抹消・登録をサポートします。</p>
+            </div>
+
+            <div class="glass-card" style="border-top: 3px solid var(--accent-cyan);">
+                <div style="font-size: 3rem; color: rgba(126,240,212,0.2); font-weight: 700;">04</div>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 12px;">引渡し・輸送</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">目的地への安全な回航手配と、引渡し後の運用・保険までサポートします。</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div id="site-footer"></div>
+    <script src="../includes/components.js"></script>
 </body>
+
 </html>
