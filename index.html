@@ -527,22 +527,6 @@
       let width, height;
       let particles = [];
 
-      // Submarine Easter Egg
-      const subImg = new Image();
-      subImg.src = 'images/submarine.png';
-      let subX = -300;
-      let subY = window.innerHeight * 0.7;
-      let subSpeed = 0.2;
-
-      function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-        // Update subY on resize
-        subY = height * 0.7;
-        initParticles();
-      }
-      window.addEventListener('resize', resize);
-
       function initParticles() {
         particles = [];
         const count = Math.floor(width * height / 10000); // Density
@@ -571,29 +555,10 @@
           if (p.y < -20) p.y = height + 20;
           if (p.y > height + 20) p.y = -20;
         });
-
-        // Update Submarine
-        subX += subSpeed;
-        if (subX > width + 300) subX = -300;
       }
 
       function draw() {
         ctx.clearRect(0, 0, width, height);
-
-        // Draw Submarine
-        if (subImg.complete) {
-          ctx.save();
-          ctx.globalCompositeOperation = 'screen';
-          ctx.globalAlpha = 0.15; // Very subtle
-
-          const floatY = Math.sin(Date.now() * 0.001) * 15;
-          const aspect = subImg.width / subImg.height;
-          const drawW = 250;
-          const drawH = drawW / aspect;
-
-          ctx.drawImage(subImg, subX, subY + floatY, drawW, drawH);
-          ctx.restore();
-        }
 
         particles.forEach(p => {
           // Subtle pulsation
