@@ -1180,6 +1180,7 @@ footer {
 .gradient-title-text {
   background: var(--primary-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
   margin: 0;
@@ -1286,6 +1287,7 @@ footer {
   margin-bottom: 12px;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1336,15 +1338,20 @@ footer {
   }
 }
 
-/* Tech Foundation Integrated Card */
+/* Tech Foundation Integrated Card (Consolidated) */
 .tech-foundation-integrated-card {
-  background: rgba(13, 20, 36, 0.6);
+  background: rgba(13, 20, 36, 0.85);
+  /* Increased opacity for readability */
   border: 1px solid rgba(106, 166, 255, 0.3);
   border-radius: 20px;
   padding: 40px;
   position: relative;
+  z-index: 2;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 30px rgba(106, 166, 255, 0.05);
+  margin-bottom: 30px;
+  overflow: hidden;
+  /* Ensure particles stay inside */
 }
 
 .tech-foundation-integrated-card::before {
@@ -1355,11 +1362,15 @@ footer {
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(106, 166, 255, 0.8), transparent);
+  z-index: 3;
 }
 
 .tech-header {
   text-align: center;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 3;
+  /* Above particles */
 }
 
 .tech-header h3 {
@@ -1368,7 +1379,10 @@ footer {
   margin: 0 0 10px 0;
   background: linear-gradient(90deg, #fff, #a5c9ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Fix lint */
 }
 
 .tech-header p {
@@ -1380,6 +1394,9 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  position: relative;
+  z-index: 3;
+  /* Above particles */
 }
 
 .tech-col h4 {
