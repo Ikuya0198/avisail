@@ -141,7 +141,8 @@ header .lang-dropdown {
   margin-top: 8px;
 }
 
-header .lang-selector:hover .lang-dropdown {
+header .lang-selector:hover .lang-dropdown,
+header .lang-selector.menu-open .lang-dropdown {
   display: flex;
 }
 
@@ -156,6 +157,30 @@ header .lang-dropdown a {
 header .lang-dropdown a:hover {
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
+}
+
+/* Login Button */
+header .login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: rgba(126, 240, 212, 0.1);
+  border: 1px solid #7ef0d4;
+  border-radius: 6px;
+  color: #7ef0d4 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+  /* Spacing from lang selector */
+}
+
+header .login-btn:hover {
+  background: #7ef0d4;
+  color: #05080f !important;
+  box-shadow: 0 0 15px rgba(126, 240, 212, 0.4);
 }
 
 /* Mobile Menu Button */

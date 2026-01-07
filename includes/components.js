@@ -171,14 +171,23 @@
       }
     });
 
-    // Toggle language dropdown on mobile
+    // Toggle language dropdown (Desktop & Mobile)
     const langSelector = document.querySelector('.lang-selector');
     if (langSelector) {
       langSelector.addEventListener('click', function(e) {
-        if (window.innerWidth <= 980) {
+        // Prevent default only if clicking the selector itself to toggle
+        // If clicking a link inside, let it navigate
+        if (!e.target.closest('a')) {
           e.preventDefault();
           e.stopPropagation();
           this.classList.toggle('menu-open');
+        }
+      });
+      
+      // Close on mouse leave for desktop (improves hover feel)
+      langSelector.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 980) {
+          this.classList.remove('menu-open');
         }
       });
     }
