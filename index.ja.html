@@ -464,9 +464,12 @@
   <script>
     // 1. Initial Fade In & Observer
     document.addEventListener("DOMContentLoaded", function () {
-      // Add .reveal-hidden to key elements proactively
-      const targets = document.querySelectorAll('.card, .pillar-card, .tech-col, .product-card, .stat-item, h2, .structure-intro-text, .about-title-container');
-      targets.forEach(el => el.classList.add('reveal-hidden'));
+      // Add .reveal-hidden to key elements proactively - DISABLED per user request for visibility
+      // const targets = document.querySelectorAll('.card, .pillar-card, .tech-col, .product-card, .stat-item, h2, .structure-intro-text, .about-title-container');
+      // targets.forEach(el => el.classList.add('reveal-hidden'));
+      const targets = []; // Empty targets prevents observer from hiding things, but we need observer for stats.
+      // We need to re-select stats items specifically for the counter.
+      const statItems = document.querySelectorAll('.stat-item');
 
       // 2. Scroll Observer & Counter
       const observer = new IntersectionObserver((entries) => {
@@ -501,7 +504,7 @@
         });
       }, { threshold: 0.2, rootMargin: "0px 0px -20% 0px" });
 
-      targets.forEach(el => observer.observe(el));
+      statItems.forEach(el => observer.observe(el));
     });
 
     // 3. Tech Particles (Responsive Fix)
