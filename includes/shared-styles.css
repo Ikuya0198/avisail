@@ -148,7 +148,8 @@ header .lang-current::after {
 
 header .lang-dropdown {
   position: absolute;
-  top: 120%;
+  top: 100%;
+  /* Reduced from 120% to fix gap */
   right: 0;
   min-width: 160px;
   background: #0d1424;
@@ -161,6 +162,16 @@ header .lang-dropdown {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin-top: 8px;
   z-index: 1005;
+}
+
+/* Invisible bridge to prevent dropdown from closing when moving mouse */
+header .lang-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
 }
 
 header .lang-selector:hover .lang-dropdown,
