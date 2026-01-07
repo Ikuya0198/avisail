@@ -45,6 +45,7 @@
 </head>
 
 <body>
+  <canvas id="global-bg"></canvas>
   <div class="noise-overlay"></div>
 
   <!-- Shared Header -->
@@ -199,7 +200,7 @@
 
         <!-- LAYER 2: Technology Foundation -->
         <div class="tech-foundation-integrated-card reveal-hidden">
-          <canvas id="tech-particles"></canvas>
+
           <div class="tech-header">
             <h3>AI & System Development</h3>
             <p>Technical Foundation Supporting All Businesses</p>
@@ -487,21 +488,11 @@
   <script src="includes/components.js"></script>
 
   <script>
-    // 1. Initial Fade In
     document.addEventListener("DOMContentLoaded", function () {
-      // Add .reveal-hidden to key elements proactively - DISABLED per user request for visibility
-      // const targets = document.querySelectorAll('.card, .pillar-card, .tech-col, .product-card, .stat-item, h2, .structure-intro-text, .about-title-container');
-      // targets.forEach(el => el.classList.add('reveal-hidden'));
-      const targets = [];
-      const statItems = document.querySelectorAll('.stat-item');
-
-      // 2. Scroll Observer
+      // Stats Counter (Keep Only This)
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-active');
-
-            // Trigger Counter if it's a stat item
             if (entry.target.classList.contains('stat-item')) {
               const countEl = entry.target.querySelector('.count-up');
               if (countEl && !countEl.dataset.counted) {
@@ -511,7 +502,6 @@
                 const duration = 1500;
                 const step = 20;
                 const increment = target / (duration / step);
-
                 const timer = setInterval(() => {
                   current += increment;
                   if (current >= target) {
@@ -526,84 +516,106 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.2, rootMargin: "0px 0px -20% 0px" });
-
-      statItems.forEach(el => observer.observe(el));
+      }, { threshold: 0.5 });
+      document.querySelectorAll('.stat-item').forEach(el => observer.observe(el));
     });
 
-    // 3. Tech Particles
+    // Global Background Animation (Antigravity Style)
     (function () {
-      const canvas = document.getElementById('tech-particles');
+      const canvas = document.getElementById('global-bg');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let width, height;
-
-      const particles = [];
-      const particleCount = 45;
+      let stars = [];
+      let shootingStars = [];
 
       function resize() {
-        const parent = canvas.parentElement;
-        if (parent) {
-          width = canvas.width = parent.offsetWidth;
-          height = canvas.height = parent.offsetHeight;
-        } else {
-          width = canvas.width = window.innerWidth;
-          height = canvas.height = 400;
-        }
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initStars();
       }
       window.addEventListener('resize', resize);
-      resize();
 
-      class Particle {
-        constructor() {
-          this.init();
-        }
-        init() {
-          this.x = Math.random() * width;
-          this.y = Math.random() * height;
-          this.vx = (Math.random() - 0.5) * 0.6;
-          this.vy = (Math.random() - 0.5) * 0.6;
-          this.size = Math.random() * 2.5 + 1;
-        }
-        update() {
-          this.x += this.vx;
-          this.y += this.vy;
-          if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.init();
-        }
-        draw() {
-          ctx.fillStyle = 'rgba(126, 240, 212, 0.5)';
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      for (let i = 0; i < particleCount; i++) particles.push(new Particle());
-
-      function animate() {
-        ctx.clearRect(0, 0, width, height);
-        particles.forEach((p, i) => {
-          p.update();
-          p.draw();
-          // Connect particles
-          particles.forEach((p2, j) => {
-            if (i === j) return;
-            const dx = p.x - p2.x;
-            const dy = p.y - p2.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-              ctx.strokeStyle = `rgba(106, 166, 255, ${0.2 - dist / 1000})`;
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.stroke();
-            }
+      function initStars() {
+        stars = [];
+        const count = Math.floor(width * height / 12000);
+        for (let i = 0; i < count; i++) {
+          stars.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            size: Math.random() * 1.5,
+            alpha: Math.random() * 0.5 + 0.1,
+            pulsate: Math.random() * 0.02
           });
-        });
-        requestAnimationFrame(animate);
+        }
       }
-      animate();
+
+      function update() {
+        // Shooting Star Logic
+        if (Math.random() < 0.01 && shootingStars.length < 3) {
+          shootingStars.push(createShootingStar());
+        }
+        shootingStars.forEach((s, index) => {
+          s.x += s.vx;
+          s.y += s.vy;
+          s.len -= s.speed * 0.05;
+          if (s.x > width + 100 || s.y > height + 100 || s.len <= 0) {
+            shootingStars.splice(index, 1);
+          }
+        });
+      }
+
+      function createShootingStar() {
+        const angle = 45 * Math.PI / 180;
+        const speed = Math.random() * 15 + 10;
+        return {
+          x: Math.random() * width * 0.8,
+          y: Math.random() * height * 0.5 - 200,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          len: Math.random() * 150 + 50,
+          speed: speed,
+          size: Math.random() * 2 + 1
+        };
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Stars
+        ctx.fillStyle = '#fff';
+        stars.forEach(s => {
+          s.alpha += s.pulsate;
+          if (s.alpha > 0.6 || s.alpha < 0.1) s.pulsate *= -1;
+          ctx.globalAlpha = s.alpha;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // Shooting Stars
+        ctx.globalAlpha = 1;
+        shootingStars.forEach(s => {
+          const grad = ctx.createLinearGradient(s.x, s.y, s.x - s.len, s.y - s.len);
+          grad.addColorStop(0, 'rgba(255,255,255,1)');
+          grad.addColorStop(1, 'rgba(255,255,255,0)');
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = s.size;
+          ctx.lineCap = 'round';
+          ctx.beginPath();
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(s.x - s.len * Math.cos(45 * Math.PI / 180), s.y - s.len * Math.sin(45 * Math.PI / 180));
+          ctx.stroke();
+        });
+
+        requestAnimationFrame(function () {
+          update();
+          draw();
+        });
+      }
+
+      resize();
+      draw();
     })();
   </script>
 </body>
