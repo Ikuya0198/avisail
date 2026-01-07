@@ -3,7 +3,7 @@
  * Loads header and footer dynamically based on page language
  */
 
-(function() {
+(function () {
   'use strict';
 
   // Detect language from HTML lang attribute or filename
@@ -54,9 +54,13 @@
       jaPage = path;
       enPage = path.replace('.ja.html', '.html');
     } else if (filename.includes('-en.html')) {
-      // something-en.html -> something.html
+      // vessel-trading-en.html -> vessel-trading-jp.html
       enPage = path;
-      jaPage = path.replace('-en.html', '.html');
+      jaPage = path.replace('-en.html', '-jp.html');
+    } else if (filename.includes('-jp.html')) {
+      // vessel-trading-jp.html -> vessel-trading-en.html
+      jaPage = path;
+      enPage = path.replace('-jp.html', '-en.html');
     } else if (dir.includes('/en/')) {
       // /en/about.html -> /ja/about.html
       enPage = path;
@@ -105,7 +109,7 @@
 
     if (!mobileMenuBtn || !navMenu) return;
 
-    mobileMenuBtn.addEventListener('click', function(e) {
+    mobileMenuBtn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
 
@@ -133,7 +137,7 @@
     }
 
     // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       if (window.innerWidth <= 980) {
         const isClickInsideMenu = navMenu.contains(e.target);
         const isClickOnMenuBtn = mobileMenuBtn.contains(e.target);
@@ -145,7 +149,7 @@
 
     // Close menu when clicking nav links
     navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         const parentMenuItem = this.closest('.menu-item');
         const isDropdownToggle = parentMenuItem && parentMenuItem.querySelector('.dropdown');
         if (!isDropdownToggle || !this.closest('.menu-item > a')) {
@@ -158,7 +162,7 @@
     document.querySelectorAll('.menu-item').forEach(item => {
       const link = item.querySelector(':scope > a');
       if (link && item.querySelector('.dropdown')) {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
           if (window.innerWidth <= 980) {
             e.preventDefault();
             e.stopPropagation();
@@ -174,7 +178,7 @@
     // Toggle language dropdown (Desktop & Mobile)
     const langSelector = document.querySelector('.lang-selector');
     if (langSelector) {
-      langSelector.addEventListener('click', function(e) {
+      langSelector.addEventListener('click', function (e) {
         // Prevent default only if clicking the selector itself to toggle
         // If clicking a link inside, let it navigate
         if (!e.target.closest('a')) {
@@ -183,9 +187,9 @@
           this.classList.toggle('menu-open');
         }
       });
-      
+
       // Close on mouse leave for desktop (improves hover feel)
-      langSelector.addEventListener('mouseleave', function() {
+      langSelector.addEventListener('mouseleave', function () {
         if (window.innerWidth > 980) {
           this.classList.remove('menu-open');
         }
@@ -194,9 +198,9 @@
 
     // Handle window resize
     let resizeTimer;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
+      resizeTimer = setTimeout(function () {
         if (window.innerWidth > 980) {
           closeMobileMenu();
         }
