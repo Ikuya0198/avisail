@@ -11,23 +11,6 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<style>
-.cta-green{background:linear-gradient(135deg,#10b981,#7ef0d4);box-shadow:0 10px 20px rgba(16,185,129,.2);color:#06101a;}
-.cta-green:hover{box-shadow:0 15px 30px rgba(16,185,129,.3);color:#06101a;}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(135deg,#10b981,#7ef0d4);}
-.service-icon{width:60px;height:60px;background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(126,240,212,0.1));border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#7ef0d4;font-size:1.5rem;}
-.adcs-hero{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(126,240,212,0.04));border:1px solid rgba(126,240,212,0.25);border-radius:20px;padding:40px;margin-bottom:40px;}
-.adcs-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(126,240,212,0.12);border:1px solid rgba(126,240,212,0.25);border-radius:20px;color:#7ef0d4;font-size:0.8rem;font-weight:600;margin-bottom:16px;}
-.price-card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:20px;padding:32px;transition:all 0.3s;height:100%;}
-.price-card:hover{transform:translateY(-5px);border-color:rgba(126,240,212,0.4);}
-.price-card.featured{border:2px solid rgba(126,240,212,0.5);background:rgba(126,240,212,0.03);}
-.price-number{font-size:2.5rem;font-weight:700;color:var(--accent-teal);margin:16px 0;}
-.price-period{font-size:0.9rem;color:var(--text-muted);}
-.feature-check{color:#10b981;margin-right:8px;}
-@media(max-width:980px){
-  .grid-2,.grid-3{grid-template-columns:1fr;}
-}
-</style>
 </head>
 <body>
 
@@ -35,19 +18,34 @@
 <div id="site-header"></div>
 
 <!-- Hero Section -->
-<section class="hero" style="min-height:65vh;">
+<section class="page-hero">
 <div class="wrap">
-<div class="adcs-badge">
+<div class="hero-badge">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
 </svg>
-セキュリティサービス
+中小企業向けセキュリティサービス
 </div>
-<h1><span>実践的なセキュリティソリューション</span><br>中小企業のための</h1>
+<h1><span>実践的なセキュリティソリューション</span> 中小企業のための</h1>
 <p class="lead">Avisailは年間予算50万円以下の中小企業・自治体向けに、手頃な価格で高品質なセキュリティ診断を提供します。AIとグローバルな専門知識を活用し、単発診断から継続的なセキュリティサポートまで選択可能です。</p>
 <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
-<a href="#contact" class="cta cta-green">無料相談を予約</a>
+<a href="#contact" class="cta">無料相談を予約</a>
 <a href="#adcs" class="btn">ADCSについて詳しく</a>
+</div>
+
+<div class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-number">50+</div>
+<div class="hero-stat-label">スキャンしたサイト</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-number">¥15万〜</div>
+<div class="hero-stat-label">開始価格</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-number">最短2週間</div>
+<div class="hero-stat-label">納品期間</div>
+</div>
 </div>
 </div>
 </section>
@@ -56,78 +54,88 @@
 <section id="adcs">
 <div class="wrap">
 <h2>おすすめ：ADCSセキュリティ診断</h2>
-<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;">Active Defenseの原則に基づき、攻撃者の視点からセキュリティ態勢を可視化します。中小企業の最初のセキュリティ施策として最適です。</p>
+<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;max-width:800px;">Active Defenseの原則に基づき、攻撃者の視点からセキュリティ態勢を可視化します。中小企業の最初のセキュリティ施策として最適です。</p>
 
-<div class="adcs-hero">
-<h3 style="font-size:1.8rem;margin-bottom:16px;color:#7ef0d4;">ADCS Active Defense × SOC Framework</h3>
-<p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;margin-bottom:24px;">
+<div class="card" style="padding:48px;background:linear-gradient(135deg,rgba(16,185,129,0.05),rgba(126,240,212,0.02));border:1px solid rgba(126,240,212,0.2);">
+<h3 style="font-size:2rem;margin-bottom:16px;background:linear-gradient(135deg,#10b981,#7ef0d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ADCS Active Defense × SOC Framework</h3>
+<p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.9;margin-bottom:32px;">
 ADCSは組織の「Attack Surface（攻撃対象領域）」を攻撃者の視点から可視化し、具体的な改善アクションを提供します。
 </p>
 
 <div class="grid-2" style="gap:32px;">
 <div>
-<h4 style="margin-bottom:16px;">主な機能</h4>
+<h4 style="margin-bottom:20px;color:#fff;font-size:1.2rem;">主な機能</h4>
 <ul style="list-style:none;padding:0;margin:0;">
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:10px;">
-<span class="feature-check">✓</span>
-<span>公開サーバー・ポート・サービスの棚卸し</span>
+<li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="flex-shrink:0;margin-top:2px;">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span style="color:var(--text-secondary);">公開サーバー・ポート・サービスの棚卸し</span>
 </li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:10px;">
-<span class="feature-check">✓</span>
-<span>OSINT（公開情報インテリジェンス）活用</span>
+<li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="flex-shrink:0;margin-top:2px;">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span style="color:var(--text-secondary);">OSINT（公開情報インテリジェンス）活用</span>
 </li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:10px;">
-<span class="feature-check">✓</span>
-<span>攻撃シナリオと防御戦略</span>
+<li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="flex-shrink:0;margin-top:2px;">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span style="color:var(--text-secondary);">攻撃シナリオと防御戦略</span>
 </li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:10px;">
-<span class="feature-check">✓</span>
-<span>インシデント対応ガイドライン作成</span>
+<li style="padding:14px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="flex-shrink:0;margin-top:2px;">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span style="color:var(--text-secondary);">インシデント対応ガイドライン作成</span>
 </li>
-<li style="padding:10px 0;display:flex;align-items:center;gap:10px;">
-<span class="feature-check">✓</span>
-<span>エグゼクティブサマリー（1ページ）付き</span>
+<li style="padding:14px 0;display:flex;align-items:flex-start;gap:12px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" style="flex-shrink:0;margin-top:2px;">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span style="color:var(--text-secondary);">エグゼクティブサマリー（1ページ）付き</span>
 </li>
 </ul>
 </div>
 
-<div class="card" style="background:linear-gradient(135deg,rgba(106,166,255,0.1),rgba(126,240,212,0.05));border:2px solid var(--accent-teal);padding:28px;text-align:center;">
-<h4 style="font-size:1.2rem;margin-bottom:16px;">📄 サンプルレポートをチェック！</h4>
-<p style="color:var(--text-secondary);margin-bottom:20px;">実際のADCS診断レポートのサンプルを見て、どのような内容を提供しているかご確認ください。</p>
+<div class="card" style="background:linear-gradient(135deg,rgba(106,166,255,0.08),rgba(126,240,212,0.04));border:2px solid var(--accent-teal);padding:32px;text-align:center;">
+<h4 style="font-size:1.3rem;margin-bottom:16px;color:#fff;">📄 サンプルレポート公開中</h4>
+<p style="color:var(--text-secondary);margin-bottom:24px;line-height:1.7;">実際のADCS診断レポートのサンプルを見て、どのような内容を提供しているかご確認ください。</p>
 <div style="display:flex;gap:12px;flex-direction:column;">
-<a href="adcs/reports/avisail-report-jp.html" class="cta cta-sm">📥 日本語サンプル</a>
-<a href="adcs/reports/avisail-report-en.html" class="btn">📥 English Sample</a>
+<a href="adcs/reports/avisail-report-jp.html" class="cta cta-sm" style="width:100%;text-align:center;">📥 日本語サンプル</a>
+<a href="adcs/reports/avisail-report-en.html" class="btn" style="width:100%;text-align:center;">📥 English Sample</a>
 </div>
 </div>
 </div>
 </div>
 
 <!-- ADCS Plans -->
-<div class="grid-2" style="margin-top:40px;gap:28px;">
-<div class="price-card">
-<h4 style="font-size:1.3rem;margin-bottom:8px;">💼 単発診断</h4>
-<div class="price-number">¥150,000</div>
-<p class="price-period">最短2週間でセキュリティ態勢を可視化</p>
-<p style="color:var(--text-muted);margin:20px 0;line-height:1.8;">
+<div class="grid-2" style="margin-top:48px;gap:28px;">
+<div class="card">
+<h4 style="font-size:1.4rem;margin-bottom:16px;color:#fff;">💼 単発診断</h4>
+<div style="font-size:2.8rem;font-weight:700;color:var(--accent-teal);margin:16px 0;">¥150,000</div>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:24px;">最短2週間でセキュリティ態勢を可視化</p>
+<p style="color:var(--text-secondary);margin-bottom:24px;line-height:1.8;">
 現在の攻撃対象領域とインシデント対応準備状況を棚卸ししたい方に最適。Attack Surface & OSINTレポート、Active Defenseリスク評価、インシデント対応ガイドライン（草案）を含みます。
 </p>
-<a href="#contact" class="btn" style="width:100%;text-align:center;display:block;margin-top:auto;">今すぐ申し込む</a>
+<a href="#contact" class="btn" style="width:100%;text-align:center;display:block;">今すぐ申し込む</a>
 </div>
 
-<div class="price-card featured">
-<div style="display:inline-block;font-size:0.75rem;padding:4px 12px;background:rgba(126,240,212,0.15);border:1px solid rgba(126,240,212,0.3);border-radius:20px;color:#7ef0d4;margin-bottom:12px;font-weight:600;">⭐ おすすめ</div>
-<h4 style="font-size:1.3rem;margin-bottom:8px;">🔄 サブスクリプションプラン</h4>
-<div class="price-number">¥48,000〜<span style="font-size:1rem;color:var(--text-muted);"> / 月</span></div>
-<p class="price-period">毎月異なる価値を提供する継続的改善プログラム</p>
-<p style="color:var(--text-muted);margin:20px 0;line-height:1.8;">
+<div class="card" style="border:2px solid var(--accent-teal);background:linear-gradient(135deg,rgba(126,240,212,0.05),rgba(16,185,129,0.02));">
+<div style="display:inline-block;font-size:0.75rem;padding:5px 14px;background:linear-gradient(135deg,#10b981,#7ef0d4);color:#06101a;border-radius:20px;margin-bottom:12px;font-weight:700;">⭐ おすすめ</div>
+<h4 style="font-size:1.4rem;margin-bottom:16px;color:#fff;">🔄 サブスクリプションプラン</h4>
+<div style="font-size:2.8rem;font-weight:700;color:var(--accent-teal);margin:16px 0;">¥48,000〜<span style="font-size:1.2rem;color:var(--text-muted);font-weight:400;"> / 月</span></div>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:24px;">毎月異なる価値を提供する継続的改善プログラム</p>
+<p style="color:var(--text-secondary);margin-bottom:24px;line-height:1.8;">
 単発診断を超えて、毎月異なるセキュリティサービス（フィッシングテスト、ポリシー策定、従業員トレーニングなど）を受けられます。年間で最大50%の節約が可能。
 </p>
-<a href="avisail-adcs-detail-ja.html" class="cta cta-green" style="width:100%;text-align:center;display:block;margin-top:auto;">サブスクリプション詳細を見る</a>
+<a href="avisail-adcs-detail-ja.html" class="cta" style="width:100%;text-align:center;display:block;background:linear-gradient(135deg,#10b981,#7ef0d4);">サブスクリプション詳細を見る</a>
 </div>
 </div>
 
-<div style="text-align:center;margin-top:32px;">
-<a href="avisail-adcs-detail-ja.html" class="cta" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#06101a;">📋 ADCS詳細とプラン比較を見る</a>
+<div style="text-align:center;margin-top:40px;">
+<a href="avisail-adcs-detail-ja.html" class="btn" style="padding:14px 32px;font-size:1rem;">📋 ADCS詳細とプラン比較を見る</a>
 </div>
 
 </div>
@@ -137,85 +145,77 @@ ADCSは組織の「Attack Surface（攻撃対象領域）」を攻撃者の視�
 <section id="services">
 <div class="wrap">
 <h2>その他のセキュリティサービス</h2>
-<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;">ADCS以外にも、高度なセキュリティテストを提供しています。複雑な診断については、信頼できる海外企業と提携し、日本語レポートとサポートを提供します。</p>
+<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;max-width:800px;">ADCS以外にも、高度なセキュリティテストを提供しています。複雑な診断については、信頼できる海外企業と提携し、日本語レポートとサポートを提供します。</p>
 
 <div class="grid-2">
 
 <div class="card">
-<div class="service-icon">
-<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<div style="width:64px;height:64px;background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(126,240,212,0.1));border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7ef0d4" stroke-width="1.5">
 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
 </svg>
 </div>
-<h3>フィッシングシミュレーション</h3>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-<span style="font-size:1.5rem;font-weight:700;color:var(--accent-teal);">¥80,000</span>
-</div>
-<p style="color:var(--text-muted);margin-bottom:16px;">従業員のセキュリティ意識を測定。リアルなフィッシングメール訓練を実施し、詳細な結果レポートを提供します。</p>
-<ul style="list-style:none;padding:0;font-size:0.9rem;color:var(--text-muted);">
-<li style="padding:6px 0;">• リアルなフィッシングメールキャンペーン</li>
-<li style="padding:6px 0;">• クリック率のトラッキング</li>
-<li style="padding:6px 0;">• 認証情報入力分析</li>
-<li style="padding:6px 0;">• 部門別比較レポート</li>
+<h3 style="font-size:1.4rem;margin-bottom:12px;">フィッシングシミュレーション</h3>
+<div style="font-size:1.8rem;font-weight:700;color:var(--accent-teal);margin-bottom:16px;">¥80,000</div>
+<p style="color:var(--text-secondary);margin-bottom:20px;line-height:1.8;">従業員のセキュリティ意識を測定。リアルなフィッシングメール訓練を実施し、詳細な結果レポートを提供します。</p>
+<ul style="list-style:none;padding:0;font-size:0.95rem;color:var(--text-muted);">
+<li style="padding:8px 0;">• リアルなフィッシングメールキャンペーン</li>
+<li style="padding:8px 0;">• クリック率のトラッキング</li>
+<li style="padding:8px 0;">• 認証情報入力分析</li>
+<li style="padding:8px 0;">• 部門別比較レポート</li>
 </ul>
 </div>
 
 <div class="card">
-<div class="service-icon">
-<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<div style="width:64px;height:64px;background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(126,240,212,0.1));border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7ef0d4" stroke-width="1.5">
 <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
 </svg>
 </div>
-<h3>Webアプリケーション診断</h3>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-<span style="font-size:1.5rem;font-weight:700;color:var(--accent-teal);">¥500,000〜</span>
-</div>
-<p style="color:var(--text-muted);margin-bottom:16px;">WebアプリとAPIの包括的なテスト。OWASP Top 10と一般的な脆弱性パターンを評価します。</p>
-<ul style="list-style:none;padding:0;font-size:0.9rem;color:var(--text-muted);">
-<li style="padding:6px 0;">• OWASP Top 10脆弱性評価</li>
-<li style="padding:6px 0;">• 認証・認可テスト</li>
-<li style="padding:6px 0;">• SQLインジェクション・XSS検出</li>
-<li style="padding:6px 0;">• ビジネスロジック欠陥分析</li>
+<h3 style="font-size:1.4rem;margin-bottom:12px;">Webアプリケーション診断</h3>
+<div style="font-size:1.8rem;font-weight:700;color:var(--accent-teal);margin-bottom:16px;">¥500,000〜</div>
+<p style="color:var(--text-secondary);margin-bottom:20px;line-height:1.8;">WebアプリとAPIの包括的なテスト。OWASP Top 10と一般的な脆弱性パターンを評価します。</p>
+<ul style="list-style:none;padding:0;font-size:0.95rem;color:var(--text-muted);">
+<li style="padding:8px 0;">• OWASP Top 10脆弱性評価</li>
+<li style="padding:8px 0;">• 認証・認可テスト</li>
+<li style="padding:8px 0;">• SQLインジェクション・XSS検出</li>
+<li style="padding:8px 0;">• ビジネスロジック欠陥分析</li>
 </ul>
-<span style="display:inline-block;font-size:0.7rem;padding:4px 10px;background:rgba(106,166,255,0.1);border:1px solid rgba(106,166,255,0.2);border-radius:15px;color:var(--accent-blue);margin-top:12px;">パートナー協力</span>
+<span style="display:inline-block;font-size:0.75rem;padding:4px 12px;background:rgba(106,166,255,0.1);border:1px solid rgba(106,166,255,0.25);border-radius:20px;color:var(--accent-blue);margin-top:16px;">パートナー協力</span>
 </div>
 
 <div class="card">
-<div class="service-icon">
-<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<div style="width:64px;height:64px;background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(126,240,212,0.1));border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7ef0d4" stroke-width="1.5">
 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
 </svg>
 </div>
-<h3>ペネトレーションテスト</h3>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-<span style="font-size:1.5rem;font-weight:700;color:var(--accent-teal);">¥800,000〜</span>
-</div>
-<p style="color:var(--text-muted);margin-bottom:16px;">セキュリティ専門家による本格的な攻撃シミュレーション。インフラとアプリケーションのテストを組み合わせた包括的な評価です。</p>
-<ul style="list-style:none;padding:0;font-size:0.9rem;color:var(--text-muted);">
-<li style="padding:6px 0;">• 多段階攻撃シミュレーション</li>
-<li style="padding:6px 0;">• 内部ネットワーク横展開</li>
-<li style="padding:6px 0;">• 特権昇格テスト</li>
-<li style="padding:6px 0;">• 侵害後シナリオ分析</li>
+<h3 style="font-size:1.4rem;margin-bottom:12px;">ペネトレーションテスト</h3>
+<div style="font-size:1.8rem;font-weight:700;color:var(--accent-teal);margin-bottom:16px;">¥800,000〜</div>
+<p style="color:var(--text-secondary);margin-bottom:20px;line-height:1.8;">セキュリティ専門家による本格的な攻撃シミュレーション。インフラとアプリケーションのテストを組み合わせた包括的な評価です。</p>
+<ul style="list-style:none;padding:0;font-size:0.95rem;color:var(--text-muted);">
+<li style="padding:8px 0;">• 多段階攻撃シミュレーション</li>
+<li style="padding:8px 0;">• 内部ネットワーク横展開</li>
+<li style="padding:8px 0;">• 特権昇格テスト</li>
+<li style="padding:8px 0;">• 侵害後シナリオ分析</li>
 </ul>
-<span style="display:inline-block;font-size:0.7rem;padding:4px 10px;background:rgba(106,166,255,0.1);border:1px solid rgba(106,166,255,0.2);border-radius:15px;color:var(--accent-blue);margin-top:12px;">パートナー協力</span>
+<span style="display:inline-block;font-size:0.75rem;padding:4px 12px;background:rgba(106,166,255,0.1);border:1px solid rgba(106,166,255,0.25);border-radius:20px;color:var(--accent-blue);margin-top:16px;">パートナー協力</span>
 </div>
 
 <div class="card">
-<div class="service-icon">
-<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<div style="width:64px;height:64px;background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(126,240,212,0.1));border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7ef0d4" stroke-width="1.5">
 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
 </svg>
 </div>
-<h3>脆弱性スキャン</h3>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-<span style="font-size:1.5rem;font-weight:700;color:var(--accent-teal);">¥300,000〜</span>
-</div>
-<p style="color:var(--text-muted);margin-bottom:16px;">サーバーとネットワークデバイスの既知の脆弱性をスキャン。CVEベースの評価と優先順位付けを行います。</p>
-<ul style="list-style:none;padding:0;font-size:0.9rem;color:var(--text-muted);">
-<li style="padding:6px 0;">• OS・ミドルウェア脆弱性スキャン</li>
-<li style="padding:6px 0;">• パッチ状況検証</li>
-<li style="padding:6px 0;">• 不要なポート・サービス露出チェック</li>
-<li style="padding:6px 0;">• 優先順位付き改善推奨事項</li>
+<h3 style="font-size:1.4rem;margin-bottom:12px;">脆弱性スキャン</h3>
+<div style="font-size:1.8rem;font-weight:700;color:var(--accent-teal);margin-bottom:16px;">¥300,000〜</div>
+<p style="color:var(--text-secondary);margin-bottom:20px;line-height:1.8;">サーバーとネットワークデバイスの既知の脆弱性をスキャン。CVEベースの評価と優先順位付けを行います。</p>
+<ul style="list-style:none;padding:0;font-size:0.95rem;color:var(--text-muted);">
+<li style="padding:8px 0;">• OS・ミドルウェア脆弱性スキャン</li>
+<li style="padding:8px 0;">• パッチ状況検証</li>
+<li style="padding:8px 0;">• 不要なポート・サービス露出チェック</li>
+<li style="padding:8px 0;">• 優先順位付き改善推奨事項</li>
 </ul>
 </div>
 
@@ -227,43 +227,43 @@ ADCSは組織の「Attack Surface（攻撃対象領域）」を攻撃者の視�
 <section id="comparison">
 <div class="wrap">
 <h2>サービス価格比較</h2>
-<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;">一般的なセキュリティ企業と比較して、Avisailは中小企業にアクセス可能な価格を提供しています。AIと海外パートナーを活用することで、品質を維持しながらコストを削減しています。</p>
+<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;max-width:800px;">一般的なセキュリティ企業と比較して、Avisailは中小企業にアクセス可能な価格を提供しています。AIと海外パートナーを活用することで、品質を維持しながらコストを削減しています。</p>
 
-<div class="card" style="padding:40px;">
-<h3 style="text-align:center;margin-bottom:32px;">💰 価格比較：Avisail vs 一般的なセキュリティ企業</h3>
+<div class="card" style="padding:48px;">
+<h3 style="text-align:center;margin-bottom:40px;font-size:1.6rem;">💰 Avisail vs 一般的なセキュリティ企業</h3>
 <div style="overflow-x:auto;">
 <table style="width:100%;border-collapse:collapse;">
 <thead>
-<tr style="border-bottom:2px solid var(--line);">
-<th style="text-align:left;padding:16px 12px;color:var(--text-primary);">サービス</th>
-<th style="text-align:right;padding:16px 12px;color:var(--text-primary);">一般的な価格</th>
-<th style="text-align:right;padding:16px 12px;color:var(--accent-teal);">Avisail価格</th>
+<tr style="border-bottom:2px solid rgba(126,240,212,0.3);">
+<th style="text-align:left;padding:20px 16px;color:#fff;font-size:1.05rem;">サービス</th>
+<th style="text-align:right;padding:20px 16px;color:#fff;font-size:1.05rem;">一般的な価格</th>
+<th style="text-align:right;padding:20px 16px;color:var(--accent-teal);font-size:1.05rem;">Avisail価格</th>
 </tr>
 </thead>
 <tbody>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-<td style="padding:16px 12px;color:var(--text-secondary);">セキュリティ診断（基本）</td>
-<td style="padding:16px 12px;text-align:right;color:var(--text-muted);">¥300,000〜500,000</td>
-<td style="padding:16px 12px;text-align:right;color:var(--accent-teal);font-weight:700;">¥150,000</td>
+<tr style="border-bottom:1px solid var(--line);">
+<td style="padding:20px 16px;color:var(--text-secondary);font-size:1rem;">セキュリティ診断（基本）</td>
+<td style="padding:20px 16px;text-align:right;color:var(--text-muted);font-size:1rem;">¥300,000〜500,000</td>
+<td style="padding:20px 16px;text-align:right;color:var(--accent-teal);font-weight:700;font-size:1.1rem;">¥150,000</td>
 </tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-<td style="padding:16px 12px;color:var(--text-secondary);">フィッシングシミュレーション</td>
-<td style="padding:16px 12px;text-align:right;color:var(--text-muted);">¥150,000〜250,000</td>
-<td style="padding:16px 12px;text-align:right;color:var(--accent-teal);font-weight:700;">¥80,000</td>
+<tr style="border-bottom:1px solid var(--line);">
+<td style="padding:20px 16px;color:var(--text-secondary);font-size:1rem;">フィッシングシミュレーション</td>
+<td style="padding:20px 16px;text-align:right;color:var(--text-muted);font-size:1rem;">¥150,000〜250,000</td>
+<td style="padding:20px 16px;text-align:right;color:var(--accent-teal);font-weight:700;font-size:1.1rem;">¥80,000</td>
 </tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-<td style="padding:16px 12px;color:var(--text-secondary);">Webアプリケーション診断</td>
-<td style="padding:16px 12px;text-align:right;color:var(--text-muted);">¥800,000〜1,500,000</td>
-<td style="padding:16px 12px;text-align:right;color:var(--accent-teal);font-weight:700;">¥500,000〜</td>
+<tr style="border-bottom:1px solid var(--line);">
+<td style="padding:20px 16px;color:var(--text-secondary);font-size:1rem;">Webアプリケーション診断</td>
+<td style="padding:20px 16px;text-align:right;color:var(--text-muted);font-size:1rem;">¥800,000〜1,500,000</td>
+<td style="padding:20px 16px;text-align:right;color:var(--accent-teal);font-weight:700;font-size:1.1rem;">¥500,000〜</td>
 </tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-<td style="padding:16px 12px;color:var(--text-secondary);">ペネトレーションテスト</td>
-<td style="padding:16px 12px;text-align:right;color:var(--text-muted);">¥1,500,000〜3,000,000</td>
-<td style="padding:16px 12px;text-align:right;color:var(--accent-teal);font-weight:700;">¥800,000〜</td>
+<tr style="border-bottom:1px solid var(--line);">
+<td style="padding:20px 16px;color:var(--text-secondary);font-size:1rem;">ペネトレーションテスト</td>
+<td style="padding:20px 16px;text-align:right;color:var(--text-muted);font-size:1rem;">¥1,500,000〜3,000,000</td>
+<td style="padding:20px 16px;text-align:right;color:var(--accent-teal);font-weight:700;font-size:1.1rem;">¥800,000〜</td>
 </tr>
 <tr>
-<td colspan="3" style="padding:20px 12px;text-align:center;color:var(--accent-teal);font-weight:700;font-size:1.1rem;">
-Avisailは平均して<span style="color:#7ef0d4;">40-50%のコスト削減</span>を実現
+<td colspan="3" style="padding:28px 16px;text-align:center;font-weight:700;font-size:1.2rem;">
+<span style="color:var(--text-primary);">Avisailは平均して</span><span style="background:linear-gradient(135deg,#10b981,#7ef0d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">40-50%のコスト削減</span><span style="color:var(--text-primary);">を実現</span>
 </td>
 </tr>
 </tbody>
@@ -278,41 +278,41 @@ Avisailは平均して<span style="color:#7ef0d4;">40-50%のコスト削減</spa
 <section>
 <div class="wrap">
 <h2>Avisailを選ぶ理由</h2>
-<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;">Avisailのセキュリティサービスは、多数の中小企業や自治体から信頼されています。</p>
+<p style="color:var(--text-muted);font-size:1.05rem;margin-bottom:40px;max-width:800px;">Avisailのセキュリティサービスは、多数の中小企業や自治体から信頼されています。</p>
 
 <div class="grid-3" style="margin-bottom:48px;">
-<div class="card" style="text-align:center;">
-<div style="font-size:3rem;font-weight:700;color:var(--accent-teal);margin-bottom:12px;">50+</div>
-<p style="color:var(--text-muted);margin:0;">スキャンしたサイト</p>
+<div class="card" style="text-align:center;padding:40px;">
+<div style="font-size:3.5rem;font-weight:700;background:linear-gradient(135deg,#10b981,#7ef0d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;">50+</div>
+<p style="color:var(--text-secondary);margin:0;font-size:1.05rem;">スキャンしたサイト</p>
 </div>
-<div class="card" style="text-align:center;">
-<div style="font-size:3rem;font-weight:700;color:var(--accent-teal);margin-bottom:12px;">20+</div>
-<p style="color:var(--text-muted);margin:0;">活用するセキュリティスキャナー</p>
+<div class="card" style="text-align:center;padding:40px;">
+<div style="font-size:3.5rem;font-weight:700;background:linear-gradient(135deg,#10b981,#7ef0d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;">20+</div>
+<p style="color:var(--text-secondary);margin:0;font-size:1.05rem;">活用するスキャナー</p>
 </div>
-<div class="card" style="text-align:center;">
-<div style="font-size:2.5rem;font-weight:700;color:var(--accent-teal);margin-bottom:12px;">グローバル</div>
-<p style="color:var(--text-muted);margin:0;">専門家ネットワーク連携</p>
+<div class="card" style="text-align:center;padding:40px;">
+<div style="font-size:3rem;font-weight:700;background:linear-gradient(135deg,#10b981,#7ef0d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;">グローバル</div>
+<p style="color:var(--text-secondary);margin:0;font-size:1.05rem;">専門家ネットワーク</p>
 </div>
 </div>
 
-<h3 style="margin-bottom:24px;">お客様の声</h3>
+<h3 style="margin-bottom:28px;font-size:1.6rem;">お客様の声</h3>
 <div class="grid-2">
-<div class="card">
-<p style="color:var(--text-secondary);font-style:italic;margin-bottom:16px;line-height:1.8;">
+<div class="card" style="padding:36px;">
+<p style="color:var(--text-secondary);font-style:italic;margin-bottom:20px;line-height:1.9;font-size:1.05rem;">
 「大手セキュリティ企業の見積もりは予算を大幅に超えていましたが、Avisailは同等のサービスを半額以下で提供してくれました。レポートも明確で、経営層への説明に非常に役立ちました。」
 </p>
-<div style="color:var(--text-muted);font-size:0.9rem;">
-<strong>ITマネージャーA様</strong><br>
-<span style="color:#7ef0d4;">製造業（従業員50名）</span>
+<div style="color:var(--text-muted);">
+<strong style="color:#fff;">ITマネージャーA様</strong><br>
+<span style="color:var(--accent-teal);">製造業（従業員50名）</span>
 </div>
 </div>
-<div class="card">
-<p style="color:var(--text-secondary);font-style:italic;margin-bottom:16px;line-height:1.8;">
+<div class="card" style="padding:36px;">
+<p style="color:var(--text-secondary);font-style:italic;margin-bottom:20px;line-height:1.9;font-size:1.05rem;">
 「毎月異なるサービスを提供するサブスクリプションプランが素晴らしいです。単発診断ではなく、セキュリティレベルが継続的に向上していることを実感できます。」
 </p>
-<div style="color:var(--text-muted);font-size:0.9rem;">
-<strong>情報システム部長B様</strong><br>
-<span style="color:#7ef0d4;">SaaS企業（従業員30名）</span>
+<div style="color:var(--text-muted);">
+<strong style="color:#fff;">情報システム部長B様</strong><br>
+<span style="color:var(--accent-teal);">SaaS企業（従業員30名）</span>
 </div>
 </div>
 </div>
@@ -325,35 +325,35 @@ Avisailは平均して<span style="color:#7ef0d4;">40-50%のコスト削減</spa
 <div class="wrap">
 <h2>よくある質問</h2>
 
-<div style="max-width:800px;">
-<div style="padding:24px 0;border-bottom:1px solid var(--line);">
-<h4 style="font-size:1.1rem;margin-bottom:12px;color:var(--text-primary);">Q. 診断にはどのくらいの時間がかかりますか？</h4>
-<p style="color:var(--text-muted);margin:0;">A. ADCS単発診断の場合、発注から2週間以内にレポートを納品します。総合的なペネトレーションテストは約3〜4週間かかります。</p>
+<div style="max-width:900px;">
+<div class="card" style="padding:28px;margin-bottom:20px;">
+<h4 style="font-size:1.15rem;margin-bottom:14px;color:#fff;">Q. 診断にはどのくらいの時間がかかりますか？</h4>
+<p style="color:var(--text-secondary);margin:0;line-height:1.8;">A. ADCS単発診断の場合、発注から2週間以内にレポートを納品します。総合的なペネトレーションテストは約3〜4週間かかります。</p>
 </div>
 
-<div style="padding:24px 0;border-bottom:1px solid var(--line);">
-<h4 style="font-size:1.1rem;margin-bottom:12px;color:var(--text-primary);">Q. リモートで診断を実施できますか？</h4>
-<p style="color:var(--text-muted);margin:0;">A. はい、可能です。ADCSは完全にリモートで実施できます。必要に応じてオンサイト訪問が必要な場合は、別途ご相談ください。</p>
+<div class="card" style="padding:28px;margin-bottom:20px;">
+<h4 style="font-size:1.15rem;margin-bottom:14px;color:#fff;">Q. リモートで診断を実施できますか？</h4>
+<p style="color:var(--text-secondary);margin:0;line-height:1.8;">A. はい、可能です。ADCSは完全にリモートで実施できます。必要に応じてオンサイト訪問が必要な場合は、別途ご相談ください。</p>
 </div>
 
-<div style="padding:24px 0;border-bottom:1px solid var(--line);">
-<h4 style="font-size:1.1rem;margin-bottom:12px;color:var(--text-primary);">Q. 支払い方法は何がありますか？</h4>
-<p style="color:var(--text-muted);margin:0;">A. 銀行振込とクレジットカード決済（Stripe経由）に対応しています。サブスクリプションプランは月払いまたは年払いを選択できます。</p>
+<div class="card" style="padding:28px;margin-bottom:20px;">
+<h4 style="font-size:1.15rem;margin-bottom:14px;color:#fff;">Q. 支払い方法は何がありますか？</h4>
+<p style="color:var(--text-secondary);margin:0;line-height:1.8;">A. 銀行振込とクレジットカード決済（Stripe経由）に対応しています。サブスクリプションプランは月払いまたは年払いを選択できます。</p>
 </div>
 
-<div style="padding:24px 0;border-bottom:1px solid var(--line);">
-<h4 style="font-size:1.1rem;margin-bottom:12px;color:var(--text-primary);">Q. レポートは日本語ですか？</h4>
-<p style="color:var(--text-muted);margin:0;">A. はい、標準で日本語レポートを提供しています。英語レポートも追加費用なしで提供可能です。</p>
+<div class="card" style="padding:28px;margin-bottom:20px;">
+<h4 style="font-size:1.15rem;margin-bottom:14px;color:#fff;">Q. レポートは日本語ですか？</h4>
+<p style="color:var(--text-secondary);margin:0;line-height:1.8;">A. はい、標準で日本語レポートを提供しています。英語レポートも追加費用なしで提供可能です。</p>
 </div>
 
-<div style="padding:24px 0;border-bottom:1px solid var(--line);">
-<h4 style="font-size:1.1rem;margin-bottom:12px;color:var(--text-primary);">Q. 小規模企業でも対応できますか？</h4>
-<p style="color:var(--text-muted);margin:0;">A. もちろんです。Avisailは特に中小企業や小規模組織向けに設計されています。従業員10名未満のお客様も多数いらっしゃいます。</p>
+<div class="card" style="padding:28px;margin-bottom:20px;">
+<h4 style="font-size:1.15rem;margin-bottom:14px;color:#fff;">Q. 小規模企業でも対応できますか？</h4>
+<p style="color:var(--text-secondary);margin:0;line-height:1.8;">A. もちろんです。Avisailは特に中小企業や小規模組織向けに設計されています。従業員10名未満のお客様も多数いらっしゃいます。</p>
 </div>
 
-<div style="padding:24px 0;">
-<h4 style="font-size:1.1rem;margin-bottom:12px;color:var(--text-primary);">Q. 診断後のサポートはありますか？</h4>
-<p style="color:var(--text-muted);margin:0;">A. レポート納品後、30日間の無料メールサポートを提供しています。継続的なサポートが必要な場合は、サブスクリプションプランをご検討ください。</p>
+<div class="card" style="padding:28px;">
+<h4 style="font-size:1.15rem;margin-bottom:14px;color:#fff;">Q. 診断後のサポートはありますか？</h4>
+<p style="color:var(--text-secondary);margin:0;line-height:1.8;">A. レポート納品後、30日間の無料メールサポートを提供しています。継続的なサポートが必要な場合は、サブスクリプションプランをご検討ください。</p>
 </div>
 </div>
 
@@ -363,18 +363,18 @@ Avisailは平均して<span style="color:#7ef0d4;">40-50%のコスト削減</spa
 <!-- CTA Section -->
 <section id="contact" style="border-bottom:none;">
 <div class="wrap">
-<div class="card" style="background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(126,240,212,0.04));border:2px solid rgba(126,240,212,0.3);padding:60px 40px;text-align:center;">
-<h2 style="margin-bottom:20px;display:block;">無料相談から始めませんか？</h2>
-<p style="color:var(--text-secondary);max-width:700px;margin:0 auto 32px;font-size:1.05rem;line-height:1.8;">
+<div class="card" style="background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(126,240,212,0.04));border:2px solid rgba(126,240,212,0.4);padding:64px 48px;text-align:center;">
+<h2 style="margin-bottom:24px;display:block;font-size:2.2rem;">無料相談から始めませんか</h2>
+<p style="color:var(--text-secondary);max-width:750px;margin:0 auto 36px;font-size:1.1rem;line-height:1.9;">
 「どのサービスが適しているか分からない」「予算内で何ができるか知りたい」<br>
 そのようなお問い合わせには、30分間の無料オンライン相談を提供しています。<br><br>
 現状をお聞きして、最適なセキュリティ対策をご提案いたします。
 </p>
-<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-<a href="mailto:info@avisail.com?subject=セキュリティサービスに関するお問い合わせ" class="cta cta-green">無料相談を予約</a>
-<a href="avisail-adcs-detail-ja.html" class="btn">ADCS詳細とサブスクリプションプランを見る</a>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+<a href="mailto:info@avisail.com?subject=セキュリティサービスに関するお問い合わせ" class="cta" style="background:linear-gradient(135deg,#10b981,#7ef0d4);padding:14px 36px;font-size:1.05rem;">無料相談を予約</a>
+<a href="avisail-adcs-detail-ja.html" class="btn" style="padding:14px 36px;font-size:1.05rem;">ADCS詳細を見る</a>
 </div>
-<p style="margin-top:24px;font-size:0.85rem;color:var(--text-muted);">
+<p style="margin-top:28px;font-size:0.9rem;color:var(--text-muted);">
 メールには「企業名 / ご担当者名 / 従業員数 / お問い合わせ内容」をご記入ください。<br>
 2営業日以内に返信いたします。
 </p>
