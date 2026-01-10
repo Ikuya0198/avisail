@@ -243,8 +243,11 @@
       footerContainer.innerHTML = footerHtml;
     }
 
-    // Initialize mobile menu after header is loaded
-    initMobileMenu();
+    // Initialize mobile menu after header is loaded and DOM is updated
+    // Use requestAnimationFrame to ensure DOM is fully rendered
+    requestAnimationFrame(() => {
+      initMobileMenu();
+    });
   }
 
   // Run when DOM is ready
