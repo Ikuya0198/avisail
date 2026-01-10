@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>Avisail | Security Assessment Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../includes/shared-styles.css">
     <meta name="description" content="Avisail's Security Assessment Services. From ADCS assessments for SMBs to comprehensive penetration testing and continuous security support. Comprehensive security solutions tailored to your needs.">
 
     <style>
@@ -43,83 +45,6 @@
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 24px 18px 64px;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 32px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            font-size: 13px;
-        }
-
-        .logo-mark {
-            width: 28px;
-            height: 28px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.16);
-            background: radial-gradient(circle at 25% 0, #35b3ff 0, #1f6feb 30%, #050816 80%);
-            box-shadow: 0 0 12px rgba(53,179,255,0.65);
-        }
-
-        .logo-sub {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: .16em;
-        }
-
-        nav {
-            display: flex;
-            gap: 16px;
-            font-size: 13px;
-            color: var(--text-sub);
-            align-items: center;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        .lang-switcher {
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(150,160,255,0.5);
-            background: rgba(15,23,42,0.8);
-            color: var(--text-main);
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .lang-switcher:hover {
-            border-color: var(--accent);
-            background: rgba(15,23,42,0.95);
-        }
-
-        .nav-back {
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(150,160,255,0.5);
-            background: rgba(15,23,42,0.8);
-            color: var(--text-main);
-            font-size: 12px;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .nav-back:hover {
-            border-color: var(--accent);
-            background: rgba(15,23,42,0.95);
         }
 
         /* HERO */
@@ -588,44 +513,15 @@
             .testimonials {
                 grid-template-columns: minmax(0,1fr);
             }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            nav {
-                font-size: 12px;
-                flex-wrap: wrap;
-            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Shared Header -->
+    <div id="site-header"></div>
+
     <div class="page">
-
-        <!-- HEADER -->
-        <header>
-            <div>
-                <div class="logo">
-                    <div class="logo-mark"></div>
-                    <div>AVISAIL</div>
-                </div>
-                <div class="logo-sub">Security Services</div>
-            </div>
-
-            <nav>
-                <a href="../index.html" class="nav-back">← Home</a>
-                <a href="#adcs">ADCS</a>
-                <a href="#services">All Services</a>
-                <a href="#comparison">Pricing</a>
-                <a href="#contact">Contact</a>
-                <a href="security.html" class="lang-switcher">🌐 日本語</a>
-            </nav>
-        </header>
-
         <!-- HERO -->
         <div class="hero">
             <div class="hero-label">
@@ -1086,5 +982,7 @@
         </footer>
 
     </div>
+
+    <script src="../includes/components.js"></script>
 </body>
 </html>
