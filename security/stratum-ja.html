@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <title>Stratum | AI Infrastructure Risk Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
 
     :root {
       --bg-deep: #030712;
@@ -30,14 +30,14 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
       background:
         radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.15), transparent 50%),
         radial-gradient(circle at 100% 100%, rgba(52, 211, 153, 0.08), transparent 50%),
         linear-gradient(135deg, #000000, #030712 55%, #030712);
       color: var(--text-main);
       min-height: 100vh;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     a {
@@ -104,7 +104,7 @@
 
     .logo-text-sub {
       font-size: 9px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
@@ -169,9 +169,10 @@
     }
 
     .hero-title {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.2;
+      font-family: 'Noto Sans JP', system-ui, sans-serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      line-height: 1.3;
       margin-bottom: 14px;
     }
 
@@ -184,7 +185,7 @@
     .hero-subtitle {
       color: var(--text-muted);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.9;
       max-width: 34rem;
       margin-bottom: 16px;
     }
@@ -377,22 +378,22 @@
 
     .section-kicker {
       font-size: 11px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--accent-emerald);
       margin-bottom: 6px;
     }
 
     .section-title {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
       font-size: 22px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 6px;
     }
 
     .section-subtitle {
       font-size: 13px;
       color: var(--text-muted);
+      line-height: 1.8;
     }
 
     /* Features */
@@ -438,7 +439,7 @@
     .feature-body {
       font-size: 12px;
       color: var(--text-muted);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     /* Sample Reports */
@@ -522,7 +523,7 @@
     .use-case-body {
       font-size: 12px;
       color: var(--text-muted);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     /* Footer */
@@ -571,10 +572,11 @@
       <div class="hero-content">
         <div class="hero-kicker">AI Infrastructure Risk Assessment</div>
         <h1 class="hero-title">
-          Evaluate AI Infrastructure as<br><span>Critical Infrastructure</span>
+          AIインフラを<span>「止まってはいけないインフラ」</span><br>として評価
         </h1>
         <p class="hero-subtitle">
-          Stratum evaluates AI data centers and GPU infrastructure not as "investment targets" but as "critical infrastructure that must not fail." Multi-dimensional analysis of credit, operational, and cyber risks to support investment decisions from an operational continuity perspective.
+          Stratumは、AIデータセンター・GPUインフラを「投資対象」ではなく「重要インフラ」として評価。
+          信用リスク、運用リスク、サイバーリスクを多角的に分析し、運用継続性の観点から投資判断を支援します。
         </p>
         <div class="hero-badges">
           <span class="badge">Multi-dimensional Analysis</span>
@@ -582,8 +584,8 @@
           <span class="badge">Time-series Tracking</span>
         </div>
         <div class="hero-actions">
-          <a href="../en/contact.html" class="btn-primary">Contact Us</a>
-          <a href="#samples" class="btn-secondary">View Sample Reports</a>
+          <a href="../ja/contact.html" class="btn-primary">お問い合わせ</a>
+          <a href="#samples" class="btn-secondary">サンプルレポートを見る</a>
         </div>
       </div>
       <div class="hero-panel">
@@ -645,39 +647,39 @@
     <section class="section">
       <div class="section-header">
         <div class="section-kicker">Features</div>
-        <h2 class="section-title">Multi-dimensional Risk Assessment Framework</h2>
-        <p class="section-subtitle">Evaluate AI infrastructure operational continuity from three perspectives</p>
+        <h2 class="section-title">多角的リスク評価フレームワーク</h2>
+        <p class="section-subtitle">AIインフラの運用継続性を3つの視点から評価</p>
       </div>
       <div class="columns-3">
         <div class="feature-card">
           <div class="feature-icon">1</div>
-          <h3 class="feature-title">Credit Risk Analysis</h3>
-          <p class="feature-body">Evaluates operator financial health, customer concentration, and contract continuity. Quantifies how operator viability impacts investment value.</p>
+          <h3 class="feature-title">信用リスク分析</h3>
+          <p class="feature-body">事業者の財務健全性、顧客集中度、契約継続性を評価。事業者の継続性が投資価値に与える影響を定量化します。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">2</div>
-          <h3 class="feature-title">Operational Risk Analysis</h3>
-          <p class="feature-body">Identifies and evaluates single points of failure including power supply redundancy, cooling system reliability, and network connectivity stability.</p>
+          <h3 class="feature-title">運用リスク分析</h3>
+          <p class="feature-body">電力供給の冗長性、冷却システムの信頼性、ネットワーク接続の安定性など、単一障害点を特定・評価します。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">3</div>
-          <h3 class="feature-title">Cyber Risk Analysis</h3>
-          <p class="feature-body">Evaluates security posture, vulnerability management, and incident response capabilities. Analyzes operational disruption risk from cyber attacks.</p>
+          <h3 class="feature-title">サイバーリスク分析</h3>
+          <p class="feature-body">セキュリティ態勢、脆弱性管理、インシデント対応能力を評価。サイバー攻撃による運用停止リスクを分析します。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">+</div>
-          <h3 class="feature-title">Dependency Mapping</h3>
-          <p class="feature-body">Visualizes external dependencies including power utilities, cooling system vendors, and network providers.</p>
+          <h3 class="feature-title">依存関係マッピング</h3>
+          <p class="feature-body">電力会社、冷却システムベンダー、ネットワークプロバイダーなど、外部依存関係を可視化します。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">+</div>
-          <h3 class="feature-title">Time-series Risk Tracking</h3>
-          <p class="feature-body">Tracks risk indicator changes over time to identify trends. Provides early warning signals for emerging risks.</p>
+          <h3 class="feature-title">時系列リスク追跡</h3>
+          <p class="feature-body">リスク指標の時系列変化を追跡し、リスクの増減トレンドを把握。早期警戒シグナルを提供します。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">+</div>
-          <h3 class="feature-title">Actionable Recommendations</h3>
-          <p class="feature-body">Based on assessment results, proposes risk mitigation measures and additional due diligence items with clear prioritization.</p>
+          <h3 class="feature-title">推奨アクション</h3>
+          <p class="feature-body">評価結果に基づき、リスク軽減策や追加デューデリジェンス項目を優先度付きで提案します。</p>
         </div>
       </div>
     </section>
@@ -686,22 +688,22 @@
     <section class="section" id="samples">
       <div class="section-header">
         <div class="section-kicker">Sample Reports</div>
-        <h2 class="section-title">Sample Reports</h2>
-        <p class="section-subtitle">View samples of reports generated by Stratum</p>
+        <h2 class="section-title">サンプルレポート</h2>
+        <p class="section-subtitle">Stratumが生成するレポートのサンプルをご覧いただけます</p>
       </div>
       <div class="sample-grid">
+        <a href="stratum/reports/stratum-sample-report-ja.html" class="sample-card">
+          <div class="sample-icon">JP</div>
+          <div class="sample-info">
+            <div class="sample-title">日本語版サンプルレポート</div>
+            <div class="sample-desc">Demo AI Infrastructure社に関するリスク評価レポート（日本語）</div>
+          </div>
+        </a>
         <a href="stratum/reports/stratum-sample-report-en.html" class="sample-card">
           <div class="sample-icon">EN</div>
           <div class="sample-info">
             <div class="sample-title">English Sample Report</div>
             <div class="sample-desc">Risk Assessment Report for Demo AI Infrastructure</div>
-          </div>
-        </a>
-        <a href="stratum/reports/stratum-sample-report-ja.html" class="sample-card">
-          <div class="sample-icon">JP</div>
-          <div class="sample-info">
-            <div class="sample-title">Japanese Sample Report</div>
-            <div class="sample-desc">Risk Assessment Report for Demo AI Infrastructure (Japanese)</div>
           </div>
         </a>
       </div>
@@ -711,25 +713,25 @@
     <section class="section">
       <div class="section-header">
         <div class="section-kicker">Use Cases</div>
-        <h2 class="section-title">Use Cases</h2>
-        <p class="section-subtitle">Stratum can be utilized in the following scenarios</p>
+        <h2 class="section-title">活用シーン</h2>
+        <p class="section-subtitle">Stratumは以下のような場面で活用いただけます</p>
       </div>
       <div class="use-case-grid">
         <div class="use-case-card">
-          <h3 class="use-case-title">AI Data Center Investment Evaluation</h3>
-          <p class="use-case-body">When considering investment in AI data centers, evaluate risks from an operational continuity perspective. Use as supplementary material for investment decisions.</p>
+          <h3 class="use-case-title">AIデータセンター投資評価</h3>
+          <p class="use-case-body">AIデータセンターへの投資を検討する際、運用継続性の観点からリスクを評価。投資判断の補助材料として活用いただけます。</p>
         </div>
         <div class="use-case-card">
-          <h3 class="use-case-title">GPU Infrastructure Vendor Assessment</h3>
-          <p class="use-case-body">When selecting GPU compute resource providers, compare and evaluate supplier operational reliability.</p>
+          <h3 class="use-case-title">GPUインフラ調達先評価</h3>
+          <p class="use-case-body">GPU計算リソースの調達先を選定する際、サプライヤーの運用信頼性を比較評価できます。</p>
         </div>
         <div class="use-case-card">
-          <h3 class="use-case-title">Portfolio Risk Management</h3>
-          <p class="use-case-body">Continuously monitor risks of existing investments. Track risk changes over time and use for early warning detection.</p>
+          <h3 class="use-case-title">ポートフォリオリスク管理</h3>
+          <p class="use-case-body">既存投資先のリスクを継続的にモニタリング。時系列でリスクの変化を追跡し、早期警戒に活用できます。</p>
         </div>
         <div class="use-case-card">
-          <h3 class="use-case-title">Due Diligence Support</h3>
-          <p class="use-case-body">Support technical and operational risk evaluation in M&A and large-scale investment due diligence.</p>
+          <h3 class="use-case-title">デューデリジェンス支援</h3>
+          <p class="use-case-body">M&Aや大型投資のデューデリジェンスにおいて、技術・運用リスクの評価を支援します。</p>
         </div>
       </div>
     </section>

@@ -1,1081 +1,1090 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>ADCS - Active Defense Cyber Security | Avisail Technologies</title>
-<meta name="description" content="ADCS（アクティブディフェンス）は中小企業向けのプロアクティブなセキュリティ診断サービスです。OSINTを活用し、攻撃者視点で組織のセキュリティを可視化します。">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="canonical" href="https://avisail.com/security/adcs.html">
-<link rel="alternate" hreflang="ja" href="https://avisail.com/security/adcs.html">
-<link rel="alternate" hreflang="en" href="https://avisail.com/security/adcs-en.html">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://avisail.com/security/adcs.html">
-<meta property="og:title" content="ADCS - Active Defense Cyber Security | Avisail Technologies">
-<meta property="og:description" content="ADCS（アクティブディフェンス）は中小企業向けのプロアクティブなセキュリティ診断サービスです。">
-<meta property="og:locale" content="ja_JP">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --line: rgba(255,255,255,.08);
-  --primary-gradient: linear-gradient(135deg,#fb7185,#f43f5e);
-  --accent-teal: #7ef0d4;
-  --accent-blue: #6aa6ff;
-  --accent-red: #fb7185;
-  --bg-dark: #0a0f1a;
-  --bg-darker: #05080f;
-  --text-primary: #e9f0ff;
-  --text-secondary: #cfe2ff;
-  --text-muted: #9fb0cc;
-}
-
-*{ box-sizing: border-box; margin:0; padding:0; }
-
-html,body{
-  margin:0;
-  background:var(--bg-dark);
-  color:var(--text-primary);
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-  width:100%;
-}
-
-html{ scroll-behavior: smooth; }
-
-a{
-  color:var(--text-secondary);
-  text-decoration:none;
-  transition: color 0.3s;
-}
-a:hover{ color:var(--accent-red); }
-
-.wrap{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
-  width:100%;
-}
-
-img{
-  max-width:100%;
-  height:auto;
-}
-
-/* ========== BUTTONS ========== */
-.btn{
-  display:inline-block;
-  padding:10px 20px;
-  border-radius:50px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,0.05);
-  color:var(--text-primary);
-  font-size:0.9rem;
-  transition:all 0.3s;
-  cursor:pointer;
-}
-
-.btn:hover{
-  border-color:rgba(251,113,133,0.5);
-  transform:translateY(-2px);
-  color:var(--text-primary);
-}
-
-.cta{
-  display:inline-block;
-  padding:12px 28px;
-  border-radius:50px;
-  background:var(--primary-gradient);
-  color:#06101a;
-  font-weight:700;
-  font-size:0.95rem;
-  box-shadow:0 10px 20px rgba(251,113,133,.2);
-  border:none;
-  transition:all 0.3s;
-  cursor:pointer;
-}
-
-.cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 15px 30px rgba(251,113,133,.3);
-  color:#06101a;
-}
-
-/* ========== HERO ========== */
-.hero{
-  position:relative;
-  overflow:hidden;
-  min-height: 85vh;
-  display:flex;
-  align-items:center;
-  background: radial-gradient(circle at 30% 30%, rgba(251, 113, 133, 0.12) 0%, transparent 50%),
-              radial-gradient(circle at 70% 70%, rgba(244, 63, 94, 0.08) 0%, transparent 50%),
-              linear-gradient(180deg, rgba(5,8,15,0.3) 0%, rgba(5,8,15,1) 100%);
-}
-
-.hero .wrap{
-  position:relative;
-  z-index:2;
-  width:100%;
-  padding-top:50px;
-  padding-bottom:60px;
-}
-
-.slogan{
-  font-family:'Inter';
-  letter-spacing:0.25em;
-  color:var(--accent-red);
-  text-transform:uppercase;
-  margin-bottom:16px;
-  display:block;
-  font-size:0.8rem;
-  font-weight:600;
-}
-
-.hero h1{
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  background: linear-gradient(to right, #fff, var(--text-muted));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero h1 .gradient-text{
-  background:var(--primary-gradient);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  display:block;
-  margin-top:8px;
-}
-
-.lead{
-  font-size:1.05rem;
-  color:var(--text-secondary);
-  max-width:900px;
-  margin-bottom:20px;
-  line-height:1.75;
-}
-
-.hero-quote{
-  border-left:2px solid var(--accent-red);
-  padding-left:16px;
-  margin-top:24px;
-  max-width:650px;
-  color:var(--text-muted);
-  font-size:0.95rem;
-  font-style:italic;
-}
-
-/* ========== SECTIONS ========== */
-section{
-  padding:70px 0;
-  border-bottom:1px solid var(--line);
-  position:relative;
-}
-
-h2{
-  font-size:1.8rem;
-  margin-bottom:32px;
-  display:flex;
-  align-items:center;
-  gap:16px;
-  color:#fff;
-}
-
-h2::before{
-  content:'';
-  width:4px;
-  height:28px;
-  background:var(--primary-gradient);
-  display:block;
-  border-radius:2px;
-}
-
-h3{
-  color:#fff;
-  font-size:1.3rem;
-}
-
-/* ========== CARDS ========== */
-.card{
-  background:rgba(255,255,255,0.02);
-  backdrop-filter:blur(10px);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:28px;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  transition:transform 0.3s, border-color 0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(251,113,133,0.3);
-}
-
-.card h3{
-  margin-top:0;
-  font-size:1.3rem;
-}
-
-.card p{
-  color:var(--text-muted);
-  margin-bottom:16px;
-  flex-grow:1;
-  line-height:1.75;
-}
-
-/* ========== GRID LAYOUTS ========== */
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:28px;
-}
-
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-
-/* ========== STATS ========== */
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-top:32px;
-}
-
-.stat-item{
-  text-align:center;
-  padding:20px 16px;
-  background:rgba(255,255,255,0.02);
-  border:1px solid var(--line);
-  border-radius:14px;
-  transition:all 0.3s;
-}
-
-.stat-item:hover{
-  border-color:rgba(251,113,133,0.3);
-  transform:translateY(-3px);
-}
-
-.stat-number{
-  font-size:1.8rem;
-  font-weight:700;
-  background:var(--primary-gradient);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  margin-bottom:6px;
-}
-
-.stat-label{
-  color:var(--text-muted);
-  font-size:0.85rem;
-}
-
-/* ========== PILLARS ========== */
-.pillars-container{
-  margin-bottom:40px;
-}
-
-.pillars-label{
-  text-align:center;
-  font-family:'Inter', sans-serif;
-  font-size:0.75rem;
-  font-weight:600;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--accent-red);
-  margin-bottom:24px;
-}
-
-.pillars-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:24px;
-}
-
-.pillar-card{
-  position:relative;
-  background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  border:1px solid rgba(251,113,133,0.2);
-  border-radius:20px;
-  padding:32px 28px;
-  transition:all 0.3s;
-  overflow:hidden;
-}
-
-.pillar-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:3px;
-  background:var(--primary-gradient);
-}
-
-.pillar-card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(251,113,133,0.4);
-  box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-
-.pillar-number{
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-family:'Inter', sans-serif;
-  font-size:2.5rem;
-  font-weight:700;
-  color:rgba(251,113,133,0.1);
-  line-height:1;
-}
-
-.pillar-icon{
-  width:64px;
-  height:64px;
-  background:linear-gradient(135deg, rgba(251,113,133,0.15), rgba(244,63,94,0.1));
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:20px;
-  color:var(--accent-red);
-}
-
-.pillar-content h3{
-  font-size:1.3rem;
-  font-weight:700;
-  color:#fff;
-  margin:0 0 8px 0;
-  line-height:1.4;
-}
-
-.pillar-subtitle{
-  font-size:0.85rem;
-  color:var(--accent-red);
-  margin:0 0 20px 0;
-  font-weight:500;
-}
-
-.pillar-features{
-  list-style:none;
-  padding:0;
-  margin:0 0 24px 0;
-}
-
-.pillar-features li{
-  font-size:0.9rem;
-  color:var(--text-muted);
-  padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.pillar-features li:last-child{
-  border-bottom:none;
-}
-
-.pillar-features li::before{
-  content:'';
-  width:6px;
-  height:6px;
-  background:var(--accent-red);
-  border-radius:50%;
-  flex-shrink:0;
-}
-
-/* ========== PROCESS ========== */
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-top:40px;
-}
-
-.process-step{
-  position:relative;
-  padding:28px 24px;
-  background:rgba(255,255,255,0.02);
-  border:1px solid var(--line);
-  border-radius:16px;
-  text-align:center;
-  transition:all 0.3s;
-}
-
-.process-step:hover{
-  border-color:rgba(251,113,133,0.3);
-  transform:translateY(-5px);
-}
-
-.step-number{
-  width:48px;
-  height:48px;
-  background:var(--primary-gradient);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 16px;
-  font-weight:700;
-  color:#06101a;
-  font-size:1.2rem;
-}
-
-.process-step h4{
-  color:#fff;
-  font-size:1rem;
-  margin-bottom:10px;
-}
-
-.process-step p{
-  color:var(--text-muted);
-  font-size:0.9rem;
-  margin:0;
-  line-height:1.7;
-}
-
-/* ========== WHY CARDS ========== */
-.why-avisail-grid{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
-.why-card{
-  background:rgba(255,255,255,0.02);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:24px 28px;
-  transition:all 0.3s;
-}
-
-.why-card:hover{
-  border-color:rgba(251,113,133,0.3);
-  transform:translateX(5px);
-}
-
-.why-content h3{
-  margin:0 0 8px 0;
-  font-size:1.2rem;
-}
-
-.why-content p{
-  margin:0;
-  color:var(--text-muted);
-  line-height:1.7;
-  font-size:0.95rem;
-}
-
-/* ========== HIGHLIGHT BOX ========== */
-.highlight-box{
-  background:linear-gradient(135deg, rgba(251,113,133,0.08), rgba(244,63,94,0.04));
-  border:1px solid rgba(251,113,133,0.25);
-  border-radius:24px;
-  padding:48px;
-  margin-bottom:48px;
-  text-align:center;
-}
-
-.highlight-box h3{
-  font-size:2rem;
-  margin-bottom:8px;
-  background:var(--primary-gradient);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.highlight-subtitle{
-  font-size:1rem;
-  color:var(--accent-red);
-  margin-bottom:24px;
-  font-weight:500;
-}
-
-.highlight-box > p{
-  color:var(--text-secondary);
-  font-size:1.05rem;
-  line-height:1.9;
-  max-width:900px;
-  margin:0 auto 32px;
-}
-
-/* ========== DISCLAIMER ========== */
-.disclaimer{
-  background:rgba(251,191,36,0.08);
-  border:1px solid rgba(251,191,36,0.2);
-  border-left:3px solid rgba(251,191,36,0.6);
-  border-radius:0 12px 12px 0;
-  padding:20px 24px;
-  margin-top:40px;
-}
-
-.disclaimer h4{
-  color:#fbbf24;
-  font-size:0.95rem;
-  margin-bottom:8px;
-  font-weight:600;
-}
-
-.disclaimer p{
-  color:rgba(251,191,36,0.9);
-  font-size:0.9rem;
-  line-height:1.8;
-  margin:0;
-}
-
-/* ========== CONTACT CARD ========== */
-.contact-card{
-  background:linear-gradient(135deg, rgba(251,113,133,0.06), rgba(244,63,94,0.04));
-  border:1px solid rgba(251,113,133,0.2);
-  border-radius:24px;
-  padding:48px;
-  text-align:center;
-  max-width:800px;
-  margin:0 auto;
-}
-
-.contact-card h3{
-  font-size:1.6rem;
-  margin-bottom:16px;
-}
-
-.contact-card > p{
-  color:var(--text-secondary);
-  font-size:1.05rem;
-  line-height:1.8;
-  margin-bottom:32px;
-}
-
-.contact-info{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-bottom:32px;
-  padding:20px;
-  background:rgba(0,0,0,0.2);
-  border-radius:12px;
-}
-
-.contact-info a{
-  color:var(--accent-red);
-  font-size:1.1rem;
-}
-
-.contact-info span{
-  color:var(--text-muted);
-  font-size:0.9rem;
-}
-
-/* ========== FAQ ========== */
-.faq-item{
-  border-bottom:1px solid var(--line);
-  padding:20px 0;
-}
-
-.faq-item:last-child{ border-bottom:none; }
-
-.faq-q{
-  font-size:1.05rem;
-  font-weight:600;
-  color:#fff;
-  margin-bottom:10px;
-}
-
-.faq-a{
-  color:var(--text-muted);
-  line-height:1.8;
-  font-size:0.95rem;
-}
-
-.faq-a strong{
-  color:var(--text-secondary);
-}
-
-/* ========== UTILITY ========== */
-.mt-0{ margin-top:0; }
-.mt-2{ margin-top:16px; }
-.mt-3{ margin-top:24px; }
-.mb-0{ margin-bottom:0; }
-.mb-2{ margin-bottom:16px; }
-.mb-3{ margin-bottom:24px; }
-
-/* ========== RESPONSIVE ========== */
-@media(max-width:980px){
-  .grid-2,.grid-3{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .pillars-grid{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .stats-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-  }
-
-  .process-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-  }
-
-  .hero h1{
-    font-size:2rem;
-    word-wrap:break-word;
-  }
-
-  .lead{
-    font-size:1rem;
-    word-wrap:break-word;
-  }
-
-  section{
-    padding:50px 0;
-  }
-
-  h2{
-    font-size:1.5rem;
-  }
-
-  .wrap{
-    padding:0 16px;
-  }
-}
-
-@media(max-width:640px){
-  .stats-grid, .process-grid{
-    grid-template-columns:1fr;
-    gap:12px;
-  }
-
-  .hero{
-    min-height:75vh;
-  }
-
-  .hero .wrap{
-    padding-top:30px;
-    padding-bottom:40px;
-  }
-
-  .hero h1{
-    font-size:1.75rem;
-  }
-
-  .slogan{
-    font-size:0.75rem;
-  }
-
-  .lead{
-    font-size:0.95rem;
-  }
-
-  .hero-quote{
-    font-size:0.9rem;
-  }
-
-  h2{
-    font-size:1.35rem;
-  }
-
-  h2::before{
-    width:3px;
-    height:24px;
-  }
-
-  h3{
-    font-size:1.15rem;
-  }
-
-  .pillar-card{
-    padding:24px 20px;
-  }
-
-  .pillar-number{
-    font-size:2rem;
-  }
-
-  .why-card{
-    padding:20px;
-  }
-
-  .card{
-    padding:20px;
-  }
-
-  .highlight-box, .contact-card{
-    padding:32px 24px;
-  }
-
-  .btn, .cta{
-    width:100%;
-    text-align:center;
-    display:block;
-  }
-
-  section{
-    padding:40px 0;
-  }
-
-  .wrap{
-    padding:0 12px;
-  }
-}
-</style>
+    <meta charset="UTF-8" />
+    <title>Avisail | Security Assessment Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Avisail's Security Assessment Services. From ADCS assessments for SMBs to comprehensive penetration testing and continuous security support. Comprehensive security solutions tailored to your needs.">
+
+    <style>
+        :root {
+            --bg-dark: #050816;
+            --bg-section: #0b1020;
+            --primary: #1f6feb;
+            --accent: #35b3ff;
+            --text-main: #f5f7ff;
+            --text-sub: #a7b3d3;
+            --border-soft: #222840;
+            --radius-lg: 18px;
+            --radius-xl: 26px;
+            --shadow-soft: 0 18px 40px rgba(0,0,0,0.55);
+            --max-width: 1080px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: radial-gradient(circle at top, #101936 0, #050816 55%, #020309 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 24px 18px 64px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .logo-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: radial-gradient(circle at 25% 0, #35b3ff 0, #1f6feb 30%, #050816 80%);
+            box-shadow: 0 0 12px rgba(53,179,255,0.65);
+        }
+
+        .logo-sub {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: .16em;
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-sub);
+            align-items: center;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .lang-switcher {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.5);
+            background: rgba(15,23,42,0.8);
+            color: var(--text-main);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher:hover {
+            border-color: var(--accent);
+            background: rgba(15,23,42,0.95);
+        }
+
+        .nav-back {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.5);
+            background: rgba(15,23,42,0.8);
+            color: var(--text-main);
+            font-size: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .nav-back:hover {
+            border-color: var(--accent);
+            background: rgba(15,23,42,0.95);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 40px 32px 36px;
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle at 0 0, #17213f 0, #050816 45%, #020309 100%);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(111,140,255,0.2);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(20,33,70,0.9);
+            color: var(--accent);
+            font-size: 11px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-label-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(53,179,255,0.9);
+        }
+
+        .hero-title {
+            font-size: 42px;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-sub {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 28px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#1f6feb,#35b3ff);
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(36,104,242,0.55);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(36,104,242,0.7);
+        }
+
+        .btn-orange {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#ff6b35,#ff9a76);
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255,107,53,0.55);
+            transition: all 0.3s;
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(255,107,53,0.7);
+        }
+
+        .btn-outline {
+            padding: 11px 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(150,160,255,0.7);
+            background: transparent;
+            color: var(--text-main);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(31,111,235,0.1);
+        }
+
+        /* SECTION BASE */
+        section {
+            margin-bottom: 40px;
+            padding: 24px 22px;
+            border-radius: 18px;
+            background: var(--bg-section);
+            border: 1px solid var(--border-soft);
+        }
+
+        #adcs {
+            background: radial-gradient(circle at 0 0, #1a3d3d 0, #0d1f1f 55%, #061010 100%);
+            border: 1px solid rgba(126,240,212,0.5);
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .section-sub {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 18px;
+        }
+
+        /* ADCS OVERVIEW */
+        .adcs-top-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .adcs-bottom-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .adcs-detail-btn {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .adcs-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .adcs-content p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+        }
+
+        .adcs-features {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-main);
+        }
+
+        .feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .adcs-card {
+            padding: 18px 18px 16px;
+            border-radius: 18px;
+            background: radial-gradient(circle at 0 0, #1a2650 0, #050816 55%, #020309 100%);
+            border: 1px solid rgba(99,123,255,0.5);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .adcs-card h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .adcs-card p {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+        }
+
+        .price-badge {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .price-note {
+            font-size: 11px;
+            color: var(--text-sub);
+        }
+
+        /* SERVICE GRID */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 18px 18px 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(82,96,159,0.7);
+            background: linear-gradient(145deg,#0b1020,#060816);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(36,104,242,0.4);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .service-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .service-card p {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+        }
+
+        .service-card ul {
+            padding-left: 16px;
+            font-size: 12px;
+            color: var(--text-main);
+        }
+
+        .service-card ul li {
+            margin-bottom: 4px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(31,111,235,0.2);
+            color: var(--accent);
+            margin-top: 8px;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-table {
+            background: linear-gradient(145deg,#0b1020,#060816);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(82,96,159,0.7);
+        }
+
+        .comparison-table h3 {
+            font-size: 16px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(103,120,189,0.4);
+            font-size: 13px;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--accent);
+        }
+
+        .table-header {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .table-cell {
+            color: var(--text-sub);
+        }
+
+        /* TRUST SECTION */
+        .trust-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 24px;
+            border-radius: 16px;
+            background: linear-gradient(145deg,#0b1020,#060816);
+            border: 1px solid rgba(82,96,159,0.7);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            padding: 20px;
+            border-radius: 16px;
+            background: linear-gradient(145deg,#0b1020,#060816);
+            border: 1px solid rgba(82,96,159,0.7);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 13px;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .testimonial-company {
+            font-size: 11px;
+            color: #7ef0d4;
+        }
+
+        /* FAQ */
+        .faq-item {
+            padding: 16px 0;
+            border-bottom: 1px dashed rgba(103,120,189,0.4);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .faq-a {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta-final {
+            text-align: center;
+        }
+
+        .cta-final p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 14px;
+        }
+
+        footer {
+            margin-top: 24px;
+            font-size: 11px;
+            color: var(--text-sub);
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 840px) {
+            .hero {
+                padding: 32px 24px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .adcs-top-row,
+            .adcs-bottom-row {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .service-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .table-row {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .trust-stats {
+                grid-template-columns: minmax(0,1fr);
+                gap: 16px;
+            }
+
+            .testimonials {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            nav {
+                font-size: 12px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div class="page">
 
-<!-- Shared Header -->
-<div id="site-header"></div>
+        <!-- HEADER -->
+        <header>
+            <div>
+                <div class="logo">
+                    <div class="logo-mark"></div>
+                    <div>AVISAIL</div>
+                </div>
+                <div class="logo-sub">Security Services</div>
+            </div>
 
-<!-- ========================================
-     HERO SECTION
-======================================== -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <span class="slogan">ACTIVE DEFENSE CYBER SECURITY</span>
+            <nav>
+                <a href="../index.html" class="nav-back">← Home</a>
+                <a href="#adcs">ADCS</a>
+                <a href="#services">All Services</a>
+                <a href="#comparison">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="security.html" class="lang-switcher">🌐 日本語</a>
+            </nav>
+        </header>
 
-    <p class="hero-quote">
-      高額なセキュリティ製品に投資する前に、まず自社の外部露出を把握することが第一歩です
-    </p>
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-label">
+                <span class="hero-label-dot"></span>
+                <span>Security Services</span>
+            </div>
 
-    <h1>
-      Proactive Security.
-      <span class="gradient-text">ADCS - 攻撃者視点のセキュリティ診断</span>
-    </h1>
+            <h1 class="hero-title">
+                <span>Practical Security Solutions</span><br>for Small & Medium Businesses
+            </h1>
 
-    <p class="lead">
-      ADCSは中小企業向けのプロアクティブなセキュリティ診断サービスです。<br>
-      OSINT（オープンソースインテリジェンス）を活用し、攻撃者の視点から組織のセキュリティ状況を可視化します
-    </p>
+            <p class="hero-sub">
+                Avisail provides affordable, high-quality security assessments for SMBs and local governments<br>
+                with annual budgets under ¥500,000. Leveraging AI and global expertise,<br>
+                choose from one-time assessments to continuous security support.
+            </p>
 
-    <div style="margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;">
-      <a href="../ja/contact.html?service=adcs" class="cta">無料相談を申し込む</a>
-      <a href="#services" class="btn">サービス内容を見る</a>
+            <div class="hero-cta">
+                <a href="#contact"><button class="btn-primary">Book Free Consultation</button></a>
+                <a href="#adcs"><button class="btn-outline">Learn More About ADCS</button></a>
+            </div>
+        </div>
+
+        <!-- ADCS OVERVIEW -->
+        <section id="adcs">
+            <h2 class="section-title">Recommended: ADCS Security Assessment</h2>
+            <p class="section-sub">
+                Based on Active Defense principles, visualizes your security posture from an attacker's perspective.<br>
+                Ideal as the first security initiative for SMBs.
+            </p>
+
+            <!-- Top row: ADCS description + Sample reports -->
+            <div class="adcs-top-row">
+                <div class="adcs-content">
+                    <h3>ADCS Active Defense ＊ SOC Framework</h3>
+                    <p>
+                        ADCS visualizes your organization's "Attack Surface" from an attacker's viewpoint
+                        and provides concrete action items for improvement.
+                    </p>
+
+                    <div class="adcs-features">
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>
+                            <span>Inventory of public servers, ports, and services</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>
+                            <span>OSINT (Open Source Intelligence) utilization</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>
+                            <span>Attack scenarios and defense strategies</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>
+                            <span>Incident response guidelines creation</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-dot"></span>
+                            <span>Executive summary (1-page) included</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: radial-gradient(circle at 0 0, rgba(31,111,235,0.2), rgba(53,179,255,0.1)); border: 2px solid var(--accent); border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(53,179,255,0.25); display: flex; flex-direction: column; justify-content: center;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+                        <span style="font-size: 28px;">📄</span>
+                        <h4 style="font-size: 17px; font-weight: 700; color: var(--accent); margin: 0;">Check Out Our Sample Reports First!</h4>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-main); margin-bottom: 18px; line-height: 1.6;">
+                        View actual ADCS assessment report samples to see what content we deliver.
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="adcs/reports/avisail-report-en.html" style="flex: 1; min-width: 180px;"><button class="btn-primary" style="font-size: 14px; padding: 12px 24px; width: 100%;">📥 English Sample</button></a>
+                        <a href="adcs/reports/avisail-report-jp.html" style="flex: 1; min-width: 180px;"><button class="btn-outline" style="font-size: 14px; padding: 11px 22px; width: 100%;">📥 日本語版サンプル</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom row: Two plans -->
+            <div class="adcs-bottom-row">
+                <div class="adcs-card">
+                    <h4>💼 One-Time Assessment</h4>
+                    <div class="price-badge">¥150,000</div>
+                    <p class="price-note">Visualize your security posture in as fast as 2 weeks</p>
+                    <p style="font-size:11px;">
+                        Perfect for those who want to inventory their current attack surface and incident response readiness.
+                        Includes Attack Surface & OSINT report, Active Defense risk assessment,
+                        and Incident Response Guidelines (draft).
+                    </p>
+                    <a href="#contact"><button class="btn-outline" style="width:100%; padding:12px;">Apply Now</button></a>
+                </div>
+
+                <div class="adcs-card" style="border-color: var(--accent); box-shadow: 0 8px 24px rgba(53,179,255,0.3);">
+                    <div style="display:inline-block; font-size:10px; padding:3px 8px; border-radius:999px; background:rgba(53,179,255,0.2); color:var(--accent); margin-bottom:8px;">⭐ Recommended</div>
+                    <h4>🔄 Subscription Plan</h4>
+                    <div class="price-badge">From ¥48,000 / month</div>
+                    <p class="price-note">Continuous improvement program with different value each month</p>
+                    <p style="font-size:11px;">
+                        Beyond one-time assessment, receive different security services each month including phishing tests, policy development, employee training, and more.
+                        Save up to 50% annually.
+                    </p>
+                    <a href="avisail-adcs-detail-en.html"><button class="btn-primary" style="width:100%; padding:12px;">View Subscription Details</button></a>
+                </div>
+            </div>
+
+            <!-- Details button -->
+            <div class="adcs-detail-btn">
+                <a href="avisail-adcs-detail-en.html"><button class="btn-orange" style="font-size:15px; padding:14px 32px;">📋 View ADCS Details & Plan Comparison</button></a>
+            </div>
+        </section>
+
+        <!-- OTHER SERVICES -->
+        <section id="services">
+            <h2 class="section-title">Additional Security Services</h2>
+            <p class="section-sub">
+                Beyond ADCS, we offer advanced security testing.<br>
+                For complex assessments, we partner with trusted overseas firms to deliver Japanese-language reports and support.
+            </p>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Phishing Simulation</h3>
+                        <div class="service-price">¥80,000</div>
+                    </div>
+                    <p>Measure employee security awareness. Conduct realistic phishing email training and provide detailed results reporting.</p>
+                    <ul>
+                        <li>Realistic phishing email campaigns</li>
+                        <li>Click-through rate tracking</li>
+                        <li>Credential entry analysis</li>
+                        <li>Department-level comparison reports</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Web Application Testing</h3>
+                        <div class="service-price">¥500,000~</div>
+                    </div>
+                    <p>Comprehensive testing for web apps and APIs. Assess OWASP Top 10 and common vulnerability patterns.</p>
+                    <ul>
+                        <li>OWASP Top 10 vulnerability assessment</li>
+                        <li>Authentication & authorization testing</li>
+                        <li>SQL injection & XSS detection</li>
+                        <li>Business logic flaw analysis</li>
+                    </ul>
+                    <span class="service-tag">Partner collaboration</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Penetration Testing</h3>
+                        <div class="service-price">¥800,000~</div>
+                    </div>
+                    <p>Full-scale attack simulation by security experts. Combines infrastructure and application testing for comprehensive assessment.</p>
+                    <ul>
+                        <li>Multi-stage attack simulation</li>
+                        <li>Internal network lateral movement</li>
+                        <li>Privilege escalation testing</li>
+                        <li>Post-exploitation scenario analysis</li>
+                    </ul>
+                    <span class="service-tag">Partner collaboration</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Vulnerability Scanning (Infrastructure)</h3>
+                        <div class="service-price">¥300,000~</div>
+                    </div>
+                    <p>Scan servers and network devices for known vulnerabilities. CVE-based assessment and prioritization.</p>
+                    <ul>
+                        <li>OS & middleware vulnerability scanning</li>
+                        <li>Patch status verification</li>
+                        <li>Unnecessary port/service exposure checks</li>
+                        <li>Prioritized remediation recommendations</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>SOC Implementation Consulting</h3>
+                        <div class="service-price">Contact us</div>
+                    </div>
+                    <p>Support organizations considering full SOC (Security Operations Center) deployment, from requirements definition to vendor selection.</p>
+                    <ul>
+                        <li>Current security posture assessment</li>
+                        <li>SOC requirements definition & RFP creation</li>
+                        <li>Vendor selection & comparison support</li>
+                        <li>Post-deployment operational design</li>
+                    </ul>
+                    <span class="service-tag">SOC partner referrals available</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK CONTACT / APPLICATION -->
+        <section id="apply" style="background: radial-gradient(circle at 0 0, #1a2650 0, #050816 55%, #020309 100%); border: 2px solid var(--accent); box-shadow: 0 20px 60px rgba(53,179,255,0.3);">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <h2 class="section-title" style="font-size: 24px; margin-bottom: 12px;">Get Started with Security Assessment Now</h2>
+                <p style="font-size: 14px; color: var(--text-sub);">
+                    Free consultation or service application completed with just one email.<br>
+                    We'll respond within 24 hours.
+                </p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto; background: rgba(15,23,42,0.6); padding: 28px; border-radius: 18px; border: 1px solid rgba(150,160,255,0.3);">
+                <div style="display: grid; gap: 20px;">
+                    <!-- Service Selection -->
+                    <div>
+                        <h4 style="font-size: 15px; margin-bottom: 12px; color: var(--accent);">💼 Choose Your Service</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">ADCS One-Time</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">¥150,000</div>
+                            </div>
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">ADCS Subscription</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">From ¥48,000/mo</div>
+                            </div>
+                            <div style="padding: 12px; border-radius: 12px; border: 2px solid rgba(150,160,255,0.4); background: rgba(31,111,235,0.1); text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(150,160,255,0.4)'">
+                                <div style="font-size: 13px; font-weight: 600;">Free Consultation</div>
+                                <div style="font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 4px;">¥0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Application Button -->
+                    <div style="text-align: center;">
+                        <a href="mailto:info@avisail.com?subject=Security%20Service%20Application&body=【Desired Service】%0AExample: ADCS One-Time / ADCS Subscription / Free Consultation%0A%0A【Company Name】%0A%0A【Contact Person】%0A%0A【Company Size】%0AExample: 10, 50, 100 employees%0A%0A【Email Address】%0A%0A【Phone Number (Optional)】%0A%0A【Questions / Comments】%0A">
+                            <button class="btn-primary" style="font-size: 16px; padding: 16px 40px; width: 100%; max-width: 400px;">
+                                📧 Apply via Email (1 min)
+                            </button>
+                        </a>
+                        <p style="font-size: 11px; color: var(--text-sub); margin-top: 12px;">
+                            Click to open your email app. Fill in the details and send.
+                        </p>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div style="background: rgba(31,111,235,0.08); padding: 16px; border-radius: 12px; border-left: 3px solid var(--accent);">
+                        <div style="font-size: 13px; color: var(--text-sub); line-height: 1.8;">
+                            ✓ Free consultation: 30-min online meeting<br>
+                            ✓ Response within 24 hours of application<br>
+                            ✓ One-time assessment delivered in as fast as 2 weeks<br>
+                            ✓ Free quotes available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARISON -->
+        <section id="comparison">
+            <h2 class="section-title">Service Pricing Comparison</h2>
+            <p class="section-sub">
+                Compared to typical security firms, Avisail offers pricing accessible to SMBs.<br>
+                By leveraging AI and overseas partners, we reduce costs while maintaining quality.
+            </p>
+
+            <div class="comparison-table">
+                <h3>💰 Price Comparison: Avisail vs. Typical Security Firms</h3>
+                <div class="table-row table-header">
+                    <div>Service</div>
+                    <div>Typical Price</div>
+                    <div>Avisail Price</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Security Assessment (Basic)</div>
+                    <div class="table-cell">¥300,000~500,000</div>
+                    <div class="table-cell">¥150,000</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Phishing Simulation</div>
+                    <div class="table-cell">¥150,000~250,000</div>
+                    <div class="table-cell">¥80,000</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Web Application Testing</div>
+                    <div class="table-cell">¥800,000~1,500,000</div>
+                    <div class="table-cell">¥500,000~</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">Penetration Testing</div>
+                    <div class="table-cell">¥1,500,000~3,000,000</div>
+                    <div class="table-cell">¥800,000~</div>
+                </div>
+                <div class="table-row">
+                    <div>Avisail delivers <span style="color: var(--accent);">40-50% cost savings</span> on average</div>
+                    <div>-</div>
+                    <div>-</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST & CREDIBILITY -->
+        <section>
+            <h2 class="section-title">Why Choose Avisail</h2>
+            <p class="section-sub">
+                Avisail's security services are trusted by numerous SMBs and local governments.
+            </p>
+
+            <div class="trust-stats">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Sites Scanned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Security Scanners Utilized</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Expert Network Collaboration</div>
+                </div>
+            </div>
+
+            <h3 style="font-size:18px; margin-bottom:16px; color:var(--text-main);">Customer Testimonials</h3>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Major security firms quoted prices well over our budget, but Avisail delivered equivalent services at less than half the cost.
+                        The reports were clear and extremely helpful for executive presentations."
+                    </p>
+                    <div class="testimonial-author">IT Manager A</div>
+                    <div class="testimonial-company">Manufacturing (50 employees)</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "The subscription plan delivering different services each month is excellent.
+                        Rather than a one-time assessment, we can feel our security level continuously improving."
+                    </p>
+                    <div class="testimonial-author">Information Systems Director B</div>
+                    <div class="testimonial-company">SaaS Company (30 employees)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. How long does an assessment take?</div>
+                <div class="faq-a">
+                    A. For ADCS one-time assessments, we deliver reports within 2 weeks from order.
+                    Comprehensive penetration testing takes approximately 3-4 weeks.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. Can assessments be conducted remotely?</div>
+                <div class="faq-a">
+                    A. Yes, possible. ADCS can be conducted entirely remotely.
+                    For on-site visits if needed, please contact us separately.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. What payment methods are available?</div>
+                <div class="faq-a">
+                    A. We accept bank transfer and credit card payments (via Stripe).
+                    Subscription plans offer monthly or annual payment options.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. Are reports in Japanese?</div>
+                <div class="faq-a">
+                    A. Yes, we provide Japanese reports as standard. English reports are also available at no additional cost.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. Can you work with small businesses?</div>
+                <div class="faq-a">
+                    A. Absolutely. Avisail is specifically designed for SMBs and small organizations.
+                    Many of our clients have fewer than 10 employees.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Q. Is post-assessment support available?</div>
+                <div class="faq-a">
+                    A. After report delivery, we provide 30 days of free email support.
+                    For continuous support needs, please consider our subscription plan.
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT / CTA -->
+        <section id="contact" class="cta-final">
+            <h2 class="section-title">Start with a Free Consultation?</h2>
+
+            <p>
+                "Not sure which service is right for you?" "Want to know what's possible within budget?"<br>
+                We offer 30-minute free online consultations for such inquiries.<br><br>
+                We'll listen to your current situation and propose the best security measures.
+            </p>
+
+            <div class="hero-cta" style="margin-top: 20px;">
+                <a href="mailto:info@avisail.com?subject=Inquiry%20about%20Security%20Services">
+                    <button class="btn-primary">Book Free Consultation</button>
+                </a>
+                <a href="avisail-adcs-detail-en.html">
+                    <button class="btn-outline">View ADCS Details & Value Subscription Plans</button>
+                </a>
+            </div>
+
+            <p style="margin-top:16px;font-size:11px;color:var(--text-sub);">
+                Please include "Company Name / Contact Person / Employee Count / Inquiry Details" in your email.<br>
+                We'll respond within 2 business days.
+            </p>
+        </section>
+
+        <footer style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- Legal Information -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 24px; font-size: 12px;">
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Operator Information</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            Operator: Avisail<br>
+                            Location: Tokyo, Japan (Details upon inquiry)<br>
+                            Email: info@avisail.com
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Service Delivery</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            Pricing: Listed on service pages<br>
+                            Payment: Bank transfer, Credit card<br>
+                            Delivery: Varies by service (from 2 weeks)
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Cancellation & Refund</h4>
+                        <div style="color: var(--text-sub); line-height: 1.8;">
+                            Before service start: Full refund<br>
+                            After work begins: Case-by-case basis<br>
+                            Details explained upon application
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Summary -->
+                <div style="background: rgba(15,23,42,0.5); padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 11px; color: var(--text-sub); line-height: 1.7;">
+                    <strong style="color: var(--text-main);">Privacy Policy:</strong>
+                    Personal information collected is used solely for service delivery and inquiry response. We do not disclose information to third parties (except as required by law).
+                    Data obtained during security assessments is securely deleted after report creation.
+                </div>
+
+                <!-- Copyright -->
+                <div style="text-align: center; padding-top: 16px; border-top: 1px solid rgba(103,120,189,0.2);">
+                    © 2024 Avisail – Security Services for SMBs
+                </div>
+            </div>
+        </footer>
+
     </div>
-  </div>
-</section>
-
-<!-- ========================================
-     ADCS OVERVIEW
-======================================== -->
-<section id="about">
-  <div class="wrap">
-    <div class="highlight-box">
-      <h3>ADCS</h3>
-      <p class="highlight-subtitle">Active Defense Cyber Security</p>
-      <p>
-        外部から見た組織の攻撃面を可視化するセキュリティ診断サービスです。<br>
-        従来の防御的アプローチを超え、攻撃者の視点から組織を評価し<br>
-        本当に効果的なセキュリティ対策を支援します
-      </p>
-      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-        <a href="../ja/contact.html?service=adcs" class="cta">診断を依頼する</a>
-        <a href="#process" class="btn">診断プロセスを見る</a>
-      </div>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">チェック項目</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">24h</div>
-        <div class="stat-label">初期レポート</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">非侵入型</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">定期</div>
-        <div class="stat-label">継続モニタリング</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     SERVICES
-======================================== -->
-<section id="services" style="background:rgba(5,8,15,0.3);">
-  <div class="wrap">
-    <h2>サービス内容（Our Services）</h2>
-
-    <div class="pillars-container">
-      <div class="pillars-label">4 Core Capabilities</div>
-      <div class="pillars-grid">
-
-        <!-- OSINT Analysis -->
-        <div class="pillar-card">
-          <div class="pillar-number">01</div>
-          <div class="pillar-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-            </svg>
-          </div>
-          <div class="pillar-content">
-            <h3>OSINT分析</h3>
-            <p class="pillar-subtitle">Open Source Intelligence</p>
-            <ul class="pillar-features">
-              <li>ドメイン・サブドメイン列挙</li>
-              <li>メール・認証情報漏洩チェック</li>
-              <li>使用技術スタックの特定</li>
-              <li>ソーシャルエンジニアリングリスク評価</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Attack Surface -->
-        <div class="pillar-card">
-          <div class="pillar-number">02</div>
-          <div class="pillar-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <div class="pillar-content">
-            <h3>攻撃面マッピング</h3>
-            <p class="pillar-subtitle">External Exposure Analysis</p>
-            <ul class="pillar-features">
-              <li>外部公開サービスの検出</li>
-              <li>SSL/TLS設定の確認</li>
-              <li>DNS設定の監査</li>
-              <li>クラウドリソース露出チェック</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Threat Detection -->
-        <div class="pillar-card">
-          <div class="pillar-number">03</div>
-          <div class="pillar-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-          </div>
-          <div class="pillar-content">
-            <h3>脅威検出</h3>
-            <p class="pillar-subtitle">Proactive Threat Hunting</p>
-            <ul class="pillar-features">
-              <li>ダークウェブモニタリング</li>
-              <li>フィッシングドメイン検出</li>
-              <li>ブランド偽装監視</li>
-              <li>脅威インテリジェンスフィード</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Reporting -->
-        <div class="pillar-card">
-          <div class="pillar-number">04</div>
-          <div class="pillar-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-            </svg>
-          </div>
-          <div class="pillar-content">
-            <h3>セキュリティレポート</h3>
-            <p class="pillar-subtitle">Comprehensive Documentation</p>
-            <ul class="pillar-features">
-              <li>経営層向けサマリー</li>
-              <li>リスク優先度評価</li>
-              <li>改善ロードマップ</li>
-              <li>技術詳細ドキュメント</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     PROCESS
-======================================== -->
-<section id="process">
-  <div class="wrap">
-    <h2>診断プロセス（Assessment Process）</h2>
-
-    <p style="color:var(--text-secondary); max-width:800px; margin-bottom:20px; font-size:1rem; line-height:1.8;">
-      ADCS診断は4つのフェーズで実施されます。各フェーズで発見事項を共有し、お客様と連携しながら進めます
-    </p>
-
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-number">1</div>
-        <h4>スコープ定義</h4>
-        <p>診断範囲と目的を定義。ドメイン、IPレンジ、優先事項を確認します</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">2</div>
-        <h4>情報収集</h4>
-        <p>OSINT技術を用いて公開情報を収集。外部から見える全資産を特定します</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">3</div>
-        <h4>分析・評価</h4>
-        <p>収集データを分析しリスクを評価。脆弱性と脅威の優先順位付けを行います</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">4</div>
-        <h4>レポート</h4>
-        <p>発見事項と推奨事項を報告。経営層向けサマリーと技術詳細を提供します</p>
-      </div>
-    </div>
-
-    <div class="disclaimer">
-      <h4>重要事項</h4>
-      <p>
-        ADCS診断は非侵入型（パッシブ）の評価手法を使用します。対象システムへの直接アクセスや攻撃シミュレーションは含まれません。ペネトレーションテストが必要な場合は別途ご相談ください
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     USE CASES
-======================================== -->
-<section id="use-cases" style="background:rgba(5,8,15,0.3);">
-  <div class="wrap">
-    <h2>活用シーン（Use Cases）</h2>
-
-    <div class="why-avisail-grid">
-      <div class="why-card">
-        <div class="why-content">
-          <h3>M&Aデューデリジェンス</h3>
-          <p>
-            買収対象企業のセキュリティ態勢を事前に評価し、潜在的なリスクと改善コストを把握。統合後のセキュリティ統一計画にも活用できます
-          </p>
-        </div>
-      </div>
-
-      <div class="why-card">
-        <div class="why-content">
-          <h3>サプライチェーンリスク評価</h3>
-          <p>
-            取引先や委託先のセキュリティ状況を把握し、サプライチェーン全体のリスクを管理。サードパーティリスクマネジメントの一環として定期的な評価を実施します
-          </p>
-        </div>
-      </div>
-
-      <div class="why-card">
-        <div class="why-content">
-          <h3>定期セキュリティ監査</h3>
-          <p>
-            年次または四半期ごとの診断で、セキュリティ態勢の変化を継続的にモニタリング。新たな脅威やシステム変更に対応した継続的改善を支援します
-          </p>
-        </div>
-      </div>
-
-      <div class="why-card">
-        <div class="why-content">
-          <h3>インシデント後評価</h3>
-          <p>
-            セキュリティインシデント発生後、攻撃者が利用した可能性のある経路と残存リスクを評価。再発防止策の策定と優先順位付けを支援します
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     FAQ
-======================================== -->
-<section id="faq">
-  <div class="wrap">
-    <h2>よくある質問（FAQ）</h2>
-
-    <div style="max-width:900px; margin:0 auto;">
-
-      <div class="faq-item">
-        <div class="faq-q">Q1. ADCSとペネトレーションテストの違いは何ですか？</div>
-        <div class="faq-a">
-          ADCSは<strong>非侵入型（パッシブ）</strong>の診断であり、対象システムへの直接アクセスや攻撃シミュレーションは行いません。公開情報（OSINT）を基に外部から見える攻撃面を評価します。<br>
-          ペネトレーションテストは実際に攻撃を試みる<strong>侵入型（アクティブ）</strong>の診断であり、ADCSの結果を踏まえて必要に応じて実施することを推奨します
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Q2. 診断にはどのくらいの時間がかかりますか？</div>
-        <div class="faq-a">
-          標準的な診断は<strong>5〜10営業日</strong>で完了します。初期レポートは24時間以内に提供可能です。<br>
-          診断範囲や対象資産の規模により期間は変動しますので、詳細はお問い合わせください
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Q3. どのような企業が対象ですか？</div>
-        <div class="faq-a">
-          <strong>中小企業から大企業まで</strong>幅広く対応しています。<br>
-          特に、セキュリティ専任者がいない中小企業、M&A検討中の企業、サプライチェーンリスク管理を強化したい企業に有効です
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Q4. レポートはどのような形式で提供されますか？</div>
-        <div class="faq-a">
-          <strong>経営層向けサマリー</strong>と<strong>技術詳細レポート</strong>の2種類を提供します。<br>
-          経営層向けはリスクの概要と推奨される対策を分かりやすくまとめ、技術詳細は具体的な発見事項と改善手順を記載します
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Q5. 継続的なモニタリングは可能ですか？</div>
-        <div class="faq-a">
-          はい、<strong>定期診断プラン</strong>をご用意しています。<br>
-          月次・四半期・年次など、お客様のニーズに合わせた継続的なセキュリティモニタリングが可能です
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     CONTACT
-======================================== -->
-<section id="contact" style="background:rgba(5,8,15,0.3);">
-  <div class="wrap">
-    <h2>お問い合わせ（Contact）</h2>
-
-    <div class="contact-card">
-      <h3>セキュリティ診断のご相談</h3>
-      <p>
-        ADCS診断やセキュリティ評価に関するお問い合わせはこちらから。<br>
-        初回相談は無料で承っております
-      </p>
-      <div class="contact-info">
-        <span>1営業日以内に返信いたします</span>
-      </div>
-      <a href="../ja/contact.html?service=adcs" class="cta">お問い合わせフォームへ</a>
-    </div>
-  </div>
-</section>
-
-<!-- Shared Footer -->
-<div id="site-footer"></div>
-<script src="../includes/components.js"></script>
 </body>
 </html>
