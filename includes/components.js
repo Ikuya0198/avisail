@@ -77,8 +77,13 @@
       // /en/about.html -> /ja/about.html
       enPage = path;
       jaPage = path.replace('/en/', '/ja/');
+    } else if (!filename.includes('-en') && !filename.includes('-ja') && !filename.includes('.ja') && filename !== 'index.html') {
+      // Generic default pages like adcs.html, nexus.html -> adcs-en.html, adcs-ja.html
+      // But exclude index.html which uses .ja.html pattern
+      enPage = path.replace('.html', '-en.html');
+      jaPage = path.replace('.html', '-ja.html');
     } else {
-      // Default: assume English, add .ja for Japanese
+      // Default: index.html and similar -> index.html, index.ja.html
       enPage = path;
       jaPage = path.replace('.html', '.ja.html');
     }
