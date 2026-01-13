@@ -116,11 +116,16 @@
 
   // Initialize mobile menu
   function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('nav ul');
+    const mobileMenuBtn = document.querySelector('header .mobile-menu-btn');
+    const navMenu = document.querySelector('header nav ul');
     const body = document.body;
 
-    if (!mobileMenuBtn || !navMenu) return;
+    if (!mobileMenuBtn || !navMenu) {
+      console.warn('Mobile menu elements not found:', { mobileMenuBtn: !!mobileMenuBtn, navMenu: !!navMenu });
+      return;
+    }
+
+    console.log('Mobile menu initialized successfully');
 
     mobileMenuBtn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -144,7 +149,7 @@
       mobileMenuBtn.classList.remove('active');
       navMenu.classList.remove('mobile-menu-open');
       body.style.overflow = '';
-      document.querySelectorAll('.menu-item.menu-open, .lang-selector.menu-open').forEach(item => {
+      document.querySelectorAll('header .menu-item.menu-open, header .lang-selector.menu-open').forEach(item => {
         item.classList.remove('menu-open');
       });
     }
@@ -172,14 +177,14 @@
     });
 
     // Toggle dropdowns on mobile
-    document.querySelectorAll('.menu-item').forEach(item => {
+    document.querySelectorAll('header .menu-item').forEach(item => {
       const link = item.querySelector(':scope > a');
       if (link && item.querySelector('.dropdown')) {
         link.addEventListener('click', function (e) {
           if (window.innerWidth <= 980) {
             e.preventDefault();
             e.stopPropagation();
-            document.querySelectorAll('.menu-item').forEach(otherItem => {
+            document.querySelectorAll('header .menu-item').forEach(otherItem => {
               if (otherItem !== item) otherItem.classList.remove('menu-open');
             });
             item.classList.toggle('menu-open');
@@ -189,7 +194,7 @@
     });
 
     // Toggle language dropdown (Desktop & Mobile)
-    const langSelector = document.querySelector('.lang-selector');
+    const langSelector = document.querySelector('header .lang-selector');
     if (langSelector) {
       langSelector.addEventListener('click', function (e) {
         // Prevent default only if clicking the selector itself to toggle

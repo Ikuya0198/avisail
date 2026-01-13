@@ -347,6 +347,7 @@ footer .footer-bottom a:hover {
     gap: 0;
     display: none;
     overflow-y: auto;
+    z-index: 1000;
   }
 
   header nav ul.mobile-menu-open {
