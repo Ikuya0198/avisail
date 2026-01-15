@@ -1681,6 +1681,74 @@ footer {
     text-align: center;
     gap: 16px;
   }
+
+  /* FAQ mobile optimization */
+  .faq-item {
+    padding: 20px 0;
+  }
+
+  .faq-q {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .faq-a {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Product cards mobile optimization */
+  .product-card {
+    padding: 20px 16px;
+  }
+
+  .product-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Tech list mobile optimization */
+  .tech-list-compact li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .tech-list-compact strong {
+    font-size: 0.9rem;
+  }
+
+  /* Improve hero quote readability */
+  .hero-quote {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Card elements */
+  .card {
+    padding: 24px 20px;
+  }
+
+  /* Pillar descriptions */
+  .pillar-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Optimize section headings */
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
 }
 
 /* ========== PROFESSIONAL POLISH ========== */
